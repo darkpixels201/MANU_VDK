@@ -1,0 +1,14 @@
+
+
+@media only screen and (max-width: 1130px) {
+    .displaying {
+     position: absolute;
+    }
+    .none {
+        display: none;
+    }
+
+    .colorWhite {
+        color: white;
+    }
+  }
