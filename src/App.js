@@ -3,6 +3,7 @@ import { icons } from "./Assets/Icons";
 import React, { Image, Text } from "react";
 import Home from "./Screens/Home";
 import { bold, Poppins } from "./utils/Fonts";
+import Cart from "./Screens/Cart/Cart";
 
 function App() {
   return (
@@ -13,7 +14,8 @@ function App() {
         padding: 0px;
       }
     `}</style>
-      <Home />
+      {/* <Home /> */}
+      <Cart/>
     </div>
   );
 }
