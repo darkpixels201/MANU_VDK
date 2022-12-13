@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from 'react';
+import Swiper from 'react-id-swiper';
 import { Container } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { colors } from "../utils/Colors";
@@ -9,6 +10,13 @@ import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import { icons } from "../Assets/Icons";
 import CustomText from "../Components/CustomText";
+import {
+  Pagination,
+  Navigation,
+  Lazy,
+  Controller
+} from "../../node_modules/swiper/js/swiper.esm";
+// from "swiper/dist/js/swiper.esm";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -19,146 +27,120 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 function Testing() {
-  //   const classes = useStyles();
+  // Swiper instance
+  const [swiper, updateSwiper] = useState(null);
+  // Swiper thumbsinstance
+  const [swiperThumbs, updateSwiperThumbs] = useState(null);
+  // Params definition
+  let params = {
+    modules: [Controller, Pagination, Navigation, Lazy],
+    preloadImages: false,
+    lazy: true,
+    pagination: {
+      el: ".swiper-pagination",
+      type: "bullets",
+      clickable: true
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev"
+    },
+    loop: false,
+    spaceBetween: 30,
+    getSwiper: updateSwiper // Get swiper instance callback
+  };
+  let thumbsParams = {
+    modules: [Controller],
+    slideToClickedSlide: true,
+    slidesPerView: "auto",
+    centeredSlides: true,
+    spaceBetween: 10,
+    getSwiper: updateSwiperThumbs, // Get swiper instance callback
+    style: {
+      width: "100px"
+    }
+  };
+
+  // Bind swiper and swiper thumbs
+  useEffect(() => {
+    if (swiper && swiperThumbs) {
+      swiper.controller.control = swiperThumbs;
+      swiperThumbs.controller.control = swiper;
+    }
+  }, [swiper, swiperThumbs]);
 
   const navbar = [
     {
       id: 1,
-      name: "Home",
+      name: images.banner,
     },
     {
-      id: 1,
-      name: "FAJUS",
+      id: 2,
+      name: images.banner,
     },
-    {
-      id: 1,
-      name: "JEANS",
-    },
-    {
-      id: 1,
-      name: "ROPA",
-    },
-    {
-      id: 1,
-      name: "SHORTS",
-    },
-    {
-      id: 1,
-      name: "NEW",
-    },
-    {
-      id: 1,
-      name: "SALE",
-    },
+    // {
+    //   id: 3,
+    //   name: images.banner,
+    // },
+    // {
+    //   id: 4,
+    //   name: images.banner,
+    // },
+    // {
+    //   id: 5,
+    //   name: images.banner,
+    // },
+    // {
+    //   id: 6,
+    //   name: images.banner,
+    // },
+    // {
+    //   id: 7,
+    //   name: images.banner,
+    // },
   ];
   return (
     <div>
-      <Container maxWidth="xl">
-        <Box
-          sx={{
-            display: "flex",
-            border: "none",
-            boxShadow: "none",
-            //   p: 1,
-            //   bgcolor: "background.paper",
-            //   borderRadius: 1,
-          }}
-        >
-          <Item sx={{ flexGrow: 1, boxShadow: "none" }}>
-            <div
-              style={{
-                display: "flex",
-                // justifyContent: "flex-end",
-                // alignItems: "center",
-                flexDirection: "column",
-                backgroundColor: "red",
-              }}
-            >
-              <CustomText title="MANU VDK" />
-              <CustomText title="STORE" />
+      {/* <Swiper {...gallerySwiperParams}>
+          {navbar.map((item, index) => (
+            <div key={index}>
+              <img style={{height:50, width:50}} src={item.name} />
             </div>
-          </Item>
-          <Item
-            sx={{
-              flexGrow: 1.9,
-              boxShadow: "none",
-              display: "flex",
-              flexDirection: "row",
-              backgroundColor: "yellow",
-              textAlign: "center",
-              justifyContent: "center",
-              alignContent: "center",
-              justifyContent: "flex-end",
-              alignContent: "center",
-              paddingRight:8
-              //   alignSelf:"center",
-            }}
-          >
-            {navbar.map((item, index) => (
-              <div
-                //   className={classes.header}
-                key={index}
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  paddingRight: 30,
-                  alignContent: "center",
-                  justifyContent: "center",
-                  alignContent: "center",
-                  backgroundColor: colors.lightGreen,
-                }}
-              >
-                <CustomText
-                  title={item.name}
-                  fontFamily={"ClashDisplay-Regular"}
-                  fontSize={15}
-                />
-              </div>
-            ))}
-          </Item>
-          <Item
-            sx={{
-              flexGrow: 0.1,
-              boxShadow: "none",
-              display: "flex",
-              flexDirection: "row",
-              //   backgroundColor: "yellow",
-              alignSelf: "center",
-            }}
-          >
+          ))}
+      </Swiper> */}
+           <Swiper {...params}>
+        {images.map((image, idx) => (
+          <div key={`slide_${idx}`} style={{ width: "100px" }}>
             <img
-              src={icons.search}
-              style={{
-                height: 15,
-                width: 15,
-              }}
+              // @note w/o unique key the image won't be updated when the image set updates.
+              key={image.src}
+              className="swiper-lazy"
+              data-src={image.src}
             />
-            <input
-              style={{
-                height: 4,
-                border: "none",
-              }}
-              type="text"
-              id="floatingInput"
+          </div>
+        ))}
+      </Swiper>
+
+      <Swiper {...thumbsParams}>
+        {images.map((image, idx) => (
+          <div key={`slide_${idx}`} className="swiper-slide-auto">
+            <img
+              // @note w/o unique key the image won't be updated when the image set updates.
+              key={image.src}
+              className="swiper-lazy"
+              // @note Ignore that the images aren't matching
+              src={image.src.replace("320/240", "100/100")}
             />
-          </Item>
-          <Item
-            sx={{
-              flexGrow: 1.7,
-              boxShadow: "none",
-              display: "flex",
-              flexDirection: "row",
-                backgroundColor: "yellow",
-              alignSelf: "center",
-            }}
-          >
-            <div style={{ textAlign: "center", flexDirection: "row" }}></div>
-            <div style={{ height: 10, width: 10 }}>
-              <img src={icons.shoppingCart} style={{ height: 20, width: 20 }} />
-            </div>
-          </Item>
-        </Box>
-      </Container>
+          </div>
+        ))}
+      </Swiper>
+        {/* <Swiper {...thumbnailSwiperParams} ref={thumbnailSwiper}>
+          <div style={{ backgroundImage:'https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?cs=srgb&dl=pexels-pixabay-268533.jpg&fm=jpg' }} />
+          <div style={{ backgroundImage:'https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?cs=srgb&dl=pexels-pixabay-268533.jpg&fm=jpg' }} />
+          <div style={{ backgroundImage:'https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?cs=srgb&dl=pexels-pixabay-268533.jpg&fm=jpg' }} />
+          <div style={{ backgroundImage:'https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?cs=srgb&dl=pexels-pixabay-268533.jpg&fm=jpg' }} />
+          <div style={{ backgroundImage:'https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?cs=srgb&dl=pexels-pixabay-268533.jpg&fm=jpg' }} />
+        </Swiper> */}
       {/* <Box sx={{ flexGrow: 1 }}>
         <Grid container spacing={2} >
           <Grid item xs>

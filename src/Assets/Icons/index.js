@@ -9,5 +9,6 @@ export const icons = {
     rightCircleArrow: require('./rightCircleArrow.png'),
     rightArrow: require('./rightArrow.png'),
     dropdown: require('./dropdown.png'),
+    share: require('./share.png'),
     
 }

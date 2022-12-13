@@ -27,7 +27,7 @@ function CustomButton(props) {
         paddingVertical: props.paddingVertical || 12,
         fontFamily: props.fontFamily || "ClashDisplay-Regular",
         cursor: "pointer",
-        textDecoration: props.textDecoration || "underline",
+        textDecoration: props.textDecoration,
         textDecorationColor:colors.white
       }}
       onClick={props.onClick}

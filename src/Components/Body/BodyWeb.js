@@ -1,15 +1,15 @@
 import React from "react";
-import { images } from "../Assets/Images";
-import { colors } from "../utils/Colors";
-import CustomButton from "./CustomButton";
-import CustomText from "./CustomText";
-import Spacer from "./Spacer";
-import "../Assets/Style/font.css";
+import { images } from "../../Assets/Images";
+import { colors } from "../../utils/Colors";
+import CustomButton from "../CustomButton";
+import CustomText from "../CustomText";
+import Spacer from "../Spacer";
+import "../../Assets/Style/font.css";
 import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
-import "../Assets/Style/Body.css";
+import "../../Assets/Style/Body.css";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -19,7 +19,7 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
-function Body() {
+function BodyWeb() {
   return (
     <div>
       <div
@@ -89,6 +89,7 @@ function Body() {
               color={colors.white}
               backgroundColor={colors.grey}
               fontFamily={"ClashDisplay-Light"}
+              textDecoration={"underline"}
             />
           </div>
           <div>
@@ -125,4 +126,4 @@ function Body() {
   );
 }
 
-export default Body;
+export default BodyWeb;
