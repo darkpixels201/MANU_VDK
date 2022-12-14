@@ -10,5 +10,9 @@ export const icons = {
     rightArrow: require('./rightArrow.png'),
     dropdown: require('./dropdown.png'),
     share: require('./share.png'),
+    layout: require('./Layout.png'),
+    home: require('./Home.png'),
+    headset: require('./Headset.png'),
+    drawer: require('./drawer.png'),
     
 }

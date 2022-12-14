@@ -10,6 +10,7 @@ import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import "../../Assets/Style/Body.css";
+import BodySwiper from "./BodySwiper";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -122,6 +123,7 @@ function BodyWeb() {
           />
         </div>
       </div>
+      <BodySwiper />
     </div>
   );
 }

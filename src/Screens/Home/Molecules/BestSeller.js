@@ -5,7 +5,7 @@ import { BestSellerWeb } from './BestSellerWeb'
 const BestSeller = () => {
   return (
     <div>
-      {window.innerWidth <= 951 ? <BestSellerMobile /> : <BestSellerWeb />}
+      {window.innerWidth <= 999 ? <BestSellerMobile /> : <BestSellerWeb />}
     </div>
   )
 }

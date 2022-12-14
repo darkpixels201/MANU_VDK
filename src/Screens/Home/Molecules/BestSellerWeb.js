@@ -46,7 +46,7 @@ export const BestSellerWeb = () => {
   const [currentcustomer, setCurrentCustomer] = useState(null);
 
   const params = {
-    slidesPerView: 3,
+    slidesPerView:  3,
     spaceBetween: 30,
     pagination: {
       el: ".swiper-pagination",
@@ -243,7 +243,8 @@ export const BestSellerWeb = () => {
               <div
                 style={{
                   height: 1,
-                  width: 250,
+                  position:"absolute",
+                  width: 408,
                   backgroundColor: colors.black,
                   justifyContent: "right",
                   marginLeft: 220,

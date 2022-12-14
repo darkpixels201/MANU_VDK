@@ -8,14 +8,14 @@ import Cart from "./Screens/Cart/Cart";
 function App() {
   return (
     <div>
-      <style jsx global>{`
+      {/* <style jsx global>{`
       body {
         margin: 0px;
         padding: 0px;
       }
-    `}</style>
-      {/* <Home /> */}
-      <Cart/>
+    `}</style> */}
+      <Home />
+      {/* <Cart/> */}
     </div>
   );
 }

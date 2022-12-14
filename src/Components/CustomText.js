@@ -14,6 +14,7 @@ function CustomText({...props}) {
             marginBottom: props.marginBottom,
             marginLeft: props.marginLeft,
             marginRight: props.marginRight,
+            paddingLeft:props.paddingLeft,
             alignSelf: props.alignSelf || "flex-start",
             fontWeight: props.fontWeight,
             fontStyle: props.fontStyle,
@@ -22,6 +23,8 @@ function CustomText({...props}) {
             textAlign: props.textAlign,
             lineHeight:props.lineHeight,
             float: props.float,
+            listStyle: props.listStyle,
+            position: props.position
           }}
         >
           {props.title}

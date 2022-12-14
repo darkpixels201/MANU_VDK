@@ -3,6 +3,8 @@ import { images } from "../../Assets/Images";
 import { colors } from "../../utils/Colors";
 import CustomButton from "../CustomButton";
 import CustomText from "../CustomText";
+import Spacer from "../Spacer";
+import BodySwiper from "./BodySwiper";
 
 const BodyMobile = () => {
   return (
@@ -53,6 +55,16 @@ const BodyMobile = () => {
           </div>
         </div>
       </div>
+      <Spacer height={10} />
+      <div style={{display:"flex", flexDirection:"row", justifyContent:"space-between" }}>
+        <div >
+          <img src={images.banner} style={{height:200, width:180}} />
+        </div>
+        <div>
+        <img src={images.banner} style={{height:200, width:180}} />
+        </div>
+      </div>
+      <BodySwiper />
     </div>
   );
 };
