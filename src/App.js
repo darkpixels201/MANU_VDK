@@ -4,6 +4,7 @@ import React, { Image, Text } from "react";
 import Home from "./Screens/Home";
 import { bold, Poppins } from "./utils/Fonts";
 import Cart from "./Screens/Cart/Cart";
+import CompareProducts from "./Screens/CompareProducts/CompareProducts";
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
       }
     `}</style>
       {/* <Home /> */}
-      <Cart/>
+      <CompareProducts/>
     </div>
   );
 }
