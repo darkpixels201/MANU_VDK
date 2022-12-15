@@ -51,19 +51,20 @@ export const NavWeb = () => {
         },
       ];
   return (
-    <div>
+    <div style={{backgroundColor:colors.pureWite,}}>
          <Container maxWidth="xl">
         <Box
           sx={{
             display: "flex",
             border: "none",
             boxShadow: "none",
+            
             //   p: 1,
             //   bgcolor: "background.paper",
             //   borderRadius: 1,
           }}
         >
-          <Item sx={{ flexGrow: 1, boxShadow: "none" }}>
+          <Item sx={{ flexGrow: 1, boxShadow: "none", backgroundColor:colors.pureWite, }}>
             <div
               style={{
                 display: "flex",
@@ -87,7 +88,8 @@ export const NavWeb = () => {
               paddingTop: 0,
               paddingBottom: 0,
               justifyContent: "flex-end",
-              cursor:"pointer"
+              cursor:"pointer",
+              backgroundColor:colors.pureWite,
               // paddingRight: 8,
             }}
           >
@@ -138,6 +140,7 @@ export const NavWeb = () => {
               //   backgroundColor: "yellow",
               alignSelf: "center",
               position: "relative",
+              backgroundColor:colors.pureWite,
             }}
           >
             <img
@@ -176,6 +179,7 @@ export const NavWeb = () => {
               flexDirection: "row",
               // backgroundColor: "yellow",
               alignSelf: "center",
+              backgroundColor:colors.pureWite,
             }}
           >
             <div style={{ textAlign: "center", flexDirection: "row" }}></div>

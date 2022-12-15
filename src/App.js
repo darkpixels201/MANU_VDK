@@ -5,18 +5,19 @@ import Home from "./Screens/Home";
 import { bold, Poppins } from "./utils/Fonts";
 import Cart from "./Screens/Cart/Cart";
 import CompareProducts from "./Screens/CompareProducts/CompareProducts";
+import { Categories } from "./Screens/Categories/Categories";
 
 function App() {
   return (
     <div>
-      <style jsx global>{`
+      {/* <style jsx global>{`
       body {
         margin: 0px;
         padding: 0px;
       }
     `}</style>
       {/* <Home /> */}
-      <CompareProducts/>
+      <Categories/>
     </div>
   );
 }
