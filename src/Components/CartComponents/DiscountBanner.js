@@ -4,12 +4,12 @@ const DiscountBanner = () => {
   return (
     <div
       style={{
-        height: "5vw",
+        height: "3vw",
         backgroundColor: "#686868",
         justifyContent: "center",
         alignItems: "center",
         display: "flex",
-        fontSize: window.innerWidth <= 400 ? "2vw" : "1.5vw",
+        fontSize: window.innerWidth <= 400 ? "1vw" : "1vw",
         textTransform: "uppercase",
         color:'#fff'
       }}

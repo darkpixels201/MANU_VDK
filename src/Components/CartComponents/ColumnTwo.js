@@ -16,6 +16,7 @@ import "./styles.css";
 
 // import required modules
 import { FreeMode, Pagination } from "swiper";
+import { Close } from '@mui/icons-material';
 
 const ColumnTwo = () => {
   return (
@@ -23,7 +24,7 @@ const ColumnTwo = () => {
       <div style={{ flexDirection: "row", display: "flex", flexWrap: "wrap" }}>
         <div
           style={{
-            flex: 4.5,
+            flex: 4,
             display: "flex",
             // flexWrap: "wrap",
             justifyContent: "space-between",
@@ -57,7 +58,7 @@ const ColumnTwo = () => {
             }}
           />
         </div>
-        <div style={{ flex: 5.5, alignItems: "center", display: "flex" }}>
+        <div style={{ flex: 6, alignItems: "center", display: "flex" }}>
           <CustomText
             fontSize={15}
             title="Remember that you have 30 days from the date of purchase
@@ -74,15 +75,14 @@ to request a chnge or return."
         }}
         modules={[FreeMode]}
         // className="mySwiper"
-      
       >
-        <SwiperSlide style={{backgroundColor:"#eee"}}>
+        <SwiperSlide>
           <CartItem />
         </SwiperSlide>
-        <SwiperSlide style={{backgroundColor:"#eee"}}>
+        <SwiperSlide>
           <CartItem />
         </SwiperSlide>
-        <SwiperSlide style={{backgroundColor:"#eee"}}>
+        <SwiperSlide>
           <CartItem />
         </SwiperSlide>
       </Swiper>
@@ -96,8 +96,26 @@ const CartItem = () => (
   <>
     <Spacer height={20} />
     <div style={{ width: "100%" }}>
+      <div
+        style={{
+          backgroundColor: "#000",
+          color: "#fff",
+          height: "2vw",
+          width: "2vw",
+          borderRadius: "1vw",
+          position: "absolute",
+          top: 10,
+          left: 10,
+          zIndex: 99,
+          justifyContent: "center",
+          alignItems: "center",
+          display: "flex",
+        }}
+      >
+        <Close fontSize="small"/>
+      </div>
       <img src={images.banner} style={{ width: "100%" }} />
-      <div >
+      <div>
         <Spacer height={20} />
         <CustomText
           fontSize={16}
@@ -129,6 +147,8 @@ const CartItem = () => (
             <CustomText fontSize={16} title="-" />
             <Spacer width={20} />
             <CustomText fontSize={16} title="1" />
+            <Spacer width={20} />
+            <CustomText fontSize={16} title="+" />
           </div>
         </div>
       </div>

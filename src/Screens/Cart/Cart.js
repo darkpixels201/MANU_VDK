@@ -20,14 +20,16 @@ const Cart = () => {
         <Spacer width={100} />
         <ColumnThree />
       </div> */}
-      <Grid container rowSpacing={{ xs: 5, sm: 2, md: 3 }} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-        <Grid item xs={12} sm={12} md={2}>
+      <Grid container rowSpacing={{ xs: 5, sm: 2, md: 3 }} columnSpacing={{ }}>
+        <Grid item xs={12} sm={12} md={2} style={{display:window.innerWidth <= 400 ? "none" : "block"}}>
           <ColumnOne />
         </Grid>
         <Grid item xs={12} sm={6} md={6}>
           <ColumnTwo />
         </Grid>
-        <Grid item xs={12} sm={6} md={4}>
+        <Grid item xs={12} sm={1} md={1} >
+        </Grid>
+        <Grid item xs={12} sm={5} md={3}>
           <ColumnThree />
         </Grid>
       </Grid>
