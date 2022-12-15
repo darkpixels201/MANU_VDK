@@ -17,7 +17,7 @@ import { colors } from "../../utils/Colors";
 import { Autocomplete, TextField } from "@mui/material";
 import { icons } from "../../Assets/Icons";
 
-const NewArrivals = () => {
+const NewArrivals = (props) => {
   const FilledCircle = [
     {
       id: 1,
@@ -33,19 +33,54 @@ const NewArrivals = () => {
     },
   ];
 
+  const NewArrival = [
+    {
+      id: 1,
+      image: images.banner,
+      text1: "BRASIER DE BANDA",
+      text2: "ANCHA",
+    },
+    {
+      id: 2,
+      image: images.banner,
+      text1: "BRASIER DE BANDA",
+      text2: "ANCHA",
+    },
+    {
+      id: 3,
+      image: images.banner,
+      text1: "BRASIER DE BANDA",
+      text2: "ANCHA",
+    },
+    {
+      id: 4,
+      image: images.banner,
+      text1: "BRASIER DE BANDA",
+      text2: "ANCHA",
+    },
+    {
+      id: 5,
+      image: images.banner,
+      text1: "BRASIER DE BANDA",
+      text2: "ANCHA",
+    },
+  ];
+
   const [count, setCount] = useState(1);
 
   const customer = ["XS", "S", "M", "L", "Xl", "XXl", "XXl"];
 
   const [currentcustomer, setCurrentCustomer] = useState(null);
-  const CartItem = () => (
+  const CartItem = (props) => (
     <div
       style={{
         height: "90vh",
         width: "89%",
         display: "flex",
         justifyContent: "center",
-        
+        display: "inline-block",
+        // backgroundColor: colors.black
+        // backgroundColor: colors.black,
       }}
     >
       {/* <Spacer height={20} /> */}
@@ -53,7 +88,8 @@ const NewArrivals = () => {
         style={{
           width: window.innerWidth <= 1000 ? "90%" : "85%",
           height: window.innerWidth <= 1000 ? "40vh" : "55vh",
-          //   backgroundColor: colors.lightGreen,
+          // backgroundColor: props.on ? colors.black : colors.pureWite,
+          // backgroundColor: colors.lightGreen,
         }}
       >
         {/* <div style={{ width: "90%", height: "40vh" }}> */}
@@ -62,17 +98,34 @@ const NewArrivals = () => {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
+
             // position:"relative",
             // backgroundColor: colors.orangeLight,
           }}
         >
-          <div>
-            <CustomText titlee="NEW" position={"absolute"} />
+          <div style={{top:0, display:"flex", justifyContent:"right"}}>
+          <div
+            style={{
+              backgroundColor: colors.grey,
+              height: 30,
+              width: 60,
+              position: "absolute",
+              display: "flex",
+              justifyContent: "center",
+              alignItems:"center"
+            }}
+          >
+            <CustomText
+              title="NEW"
+              color={colors.white}
+              fontSize={14}
+            />
           </div>
           <img
-            src={images.banner}
+            src={props.image}
             style={{ width: "95%", height: 260, objectFit: "fill" }}
           />
+        </div>
         </div>
         <Spacer height={10} />
         <div>
@@ -88,11 +141,17 @@ const NewArrivals = () => {
               <Spacer height={20} />
               <CustomText
                 fontSize={15}
-                title="BRASIER DE BANDA "
+                title={props.text1}
                 fontFamily={"ClashDisplay-SemiBold"}
                 textAlign={"left"}
+                color={props.on ? colors.pureWite : colors.black}
               />
-              <CustomText fontSize={15} title=" ANCHA" textAlign={"left"} />
+              <CustomText
+                fontSize={15}
+                title={props.text2}
+                textAlign={"left"}
+                color={props.on ? colors.pureWite : colors.black}
+              />
             </div>
 
             <div
@@ -109,7 +168,8 @@ const NewArrivals = () => {
                   options={customer}
                   sx={{ width: 70 }}
                   defaultValue={customer[0]}
-                  clearIcon
+                  // clearIcon
+                  // color={ props.on ? colors.pureWite : colors.black}
                   // popupIcon= {<img src={icons.downArrow} />}
                   renderInput={(params) => (
                     <TextField {...params} variant="standard" />
@@ -128,7 +188,7 @@ const NewArrivals = () => {
                         height: 22,
                         width: 22,
                         borderRadius: 50,
-                        borderColor: colors.black,
+                        borderColor: props.on ? colors.orange : colors.orange,
                         border: "solid",
                         borderWidth: 1,
                         display: "flex",
@@ -182,7 +242,11 @@ const NewArrivals = () => {
             }}
           >
             <div style={{ display: "flex", flexDirection: "column" }}>
-              <CustomText title="$95.00" fontSize={25} />
+              <CustomText
+                title="$95.00"
+                fontSize={25}
+                color={props.on ? colors.pureWite : colors.black}
+              />
             </div>
             <div
               style={{
@@ -210,8 +274,8 @@ const NewArrivals = () => {
     </div>
   );
   return (
-    <div>
-      <Spacer height={70} />
+    <div style={{ backgroundColor: props.on ? colors.black : colors.pureWite }}>
+      <Spacer height={100} />
       <div style={{ display: "flex", flexDirection: "row" }}>
         <div style={{ display: "flex", flex: 1 }}></div>
         <div style={{ display: "flex", flex: 11 }}>
@@ -220,15 +284,20 @@ const NewArrivals = () => {
               title="NEW"
               fontFamily={"ClashDisplay-SemiBold"}
               fontSize={45}
+              color={props.on ? colors.pureWite : colors.black}
             />
-            <CustomText title="ARRIVALS" fontSize={45} />
+            <CustomText
+              title="ARRIVALS"
+              fontSize={45}
+              color={props.on ? colors.pureWite : colors.black}
+            />
           </div>
           <Spacer width={45} />
           <div
             style={{
               height: 1,
               width: "100%",
-              backgroundColor: colors.black,
+              backgroundColor: props.on ? colors.pureWite : colors.black,
               alignSelf: "center",
             }}
           ></div>
@@ -236,46 +305,60 @@ const NewArrivals = () => {
       </div>
       <Spacer height={50} />
       {/* <div style={{ display: "flex" }}> */}
-        <div
-          style={{
-            width: window.innerWidth <= 1000 ? "100%" : "auto",
-            paddingRight: window.innerWidth <= 1000 ? "" : 100,
-            paddingLeft: window.innerWidth <= 1000 ? "" : 100,
+      <div
+        style={{
+          width: window.innerWidth <= 1000 ? "100%" : "auto",
+          paddingRight: window.innerWidth <= 1000 ? "" : 100,
+          paddingLeft: window.innerWidth <= 1000 ? "" : 100,
+        }}
+      >
+        {/* <div style={{ width: "100%", }}> */}
+        <Spacer height={window.innerWidth <= 1000 ? 40 : ""} />
+        <Swiper
+          slidesPerView={
+            window.innerWidth <= 1000 ? (window.innerWidth <= 700 ? 1 : 2) : 3
+          }
+          // slidesPerView={1}
+          spaceBetween={-47}
+          freeMode={true}
+          pagination={{
+            clickable: true,
           }}
+          modules={[FreeMode]}
+          // className="mySwiper"
         >
-          {/* <div style={{ width: "100%", }}> */}
-          <Spacer height={window.innerWidth <= 1000 ? 40 : ""} />
-          <Swiper
-            slidesPerView={window.innerWidth <= 1000 ? window.innerWidth <= 700 ?  1 : 2 : 3}
-            // slidesPerView={1}
-            spaceBetween={-47}
-            freeMode={true}
-            pagination={{
-              clickable: true,
-            }}
-            modules={[FreeMode]}
-            position={"absolute"}
-            style={{position:"relative"}}
-            // className="mySwiper"
-          >
-            <SwiperSlide style={{ backgroundColor: "#eee", position:"relative"  }}>
+          {NewArrival.map((item, index) => (
+            <div key={index}>
+              <SwiperSlide
+                style={{
+                  backgroundColor: props.on ? colors.black : colors.pureWite,
+                }}
+              >
+                <CartItem
+                  image={item.image}
+                  text1={item.text1}
+                  text2={item.text2}
+                  on={props.on}
+                />
+              </SwiperSlide>
+            </div>
+          ))}
+
+          {/* <SwiperSlide style={{ backgroundColor: props.on ? colors.black : colors.pureWite }}>
               <CartItem />
             </SwiperSlide>
-            <SwiperSlide style={{ backgroundColor: "#eee", position:"relative"  }}>
+            <SwiperSlide style={{ backgroundColor: props.on ? colors.black : colors.pureWite }}>
               <CartItem />
             </SwiperSlide>
-            <SwiperSlide style={{ backgroundColor: "#eee", position:"relative"  }}>
+            <SwiperSlide style={{ backgroundColor: props.on ? colors.black : colors.pureWite }}>
               <CartItem />
             </SwiperSlide>
-            <SwiperSlide style={{ backgroundColor: "#eee", position:"relative"  }}>
+            <SwiperSlide style={{ backgroundColor: props.on ? colors.black : colors.pureWite }}>
               <CartItem />
-            </SwiperSlide>
-            <SwiperSlide style={{ backgroundColor: "#eee", position:"relative"  }}>
-              <CartItem />
-            </SwiperSlide>
-          </Swiper>
-        </div>
-        {/* <div style={{ display: "flex", justifyContent: "end" }}>
+            </SwiperSlide> */}
+        </Swiper>
+      </div>
+      {/* <div style={{ display: "flex", justifyContent: "end" }}>
           <img src={icons.circleRightArrow} style={{ height: 50, width: 50 }} />
         </div> */}
       {/* </div> */}

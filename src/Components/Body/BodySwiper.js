@@ -14,66 +14,84 @@ import CustomText from "../CustomText";
 import { images } from "../../Assets/Images";
 import { colors } from "../../utils/Colors";
 import CustomButton from "../CustomButton";
+import { Switch } from "@mui/material";
+import ToggleSwitch from "../ToggleSwitch";
 
-const BodySwiper = () => {
+const BodySwiper = (props) => {
   const SwiperArray = [
     {
       id: 1,
-      name: "",
+      name1: "DIANE",
+      name2: "& GEORDI",
       image: images.banner,
       list1: "Sports bra",
       list2: "Leggings",
       list3: "Top",
-      topContent: "",
+      topContent: true,
     },
     {
       id: 2,
-      name: "",
+      name1: "DIANE",
+      name2: "& GEORDI",
       image: images.banner,
       list1: "Sports bra",
       list2: "Leggings",
       list3: "Top",
+      topContent: false,
     },
     {
       id: 3,
-      name: "",
+      name1: "DIANE",
+      name2: "& GEORDI",
       image: images.banner,
       list1: "Sports bra",
       list2: "Leggings",
       list3: "Top",
-      topContent: "",
+      topContent: true,
     },
     {
       id: 4,
-      name: "",
+      name1: "DIANE",
+      name2: "& GEORDI",
       image: images.banner,
       list1: "Sports bra",
       list2: "Leggings",
       list3: "Top",
+      topContent: false,
     },
     {
       id: 5,
-      name: "",
+      name1: "DIANE",
+      name2: "& GEORDI",
       image: images.banner,
       list1: "Sports bra",
       list2: "Leggings",
       list3: "Top",
-      topContent: "",
+      topContent: true,
     },
     {
       id: 6,
-      name: "",
+      name1: "DIANE",
+      name2: "& GEORDI",
       image: images.banner,
       list1: "Sports bra",
       list2: "Leggings",
       list3: "Top",
+      topContent: false,
     },
   ];
 
+  // const [on, setOn] = useState(false);
+
   return (
-    <div style={{ width: window.innerWidth <= 1000 ? "100%" : "auto" , padding: window.innerWidth <= 1000 ? "" : 130 }}>
-    {/* <div style={{ width: "100%", }}> */}
-    <Spacer height= {window.innerWidth <= 1000 ? 40 : ""}  />
+    <div
+      style={{
+        width: window.innerWidth <= 1000 ? "100%" : "auto",
+        padding: window.innerWidth <= 1000 ? "" : 130,
+        backgroundColor: props.on ? colors.black : colors.pureWite,
+      }}
+    >
+      <Spacer height={window.innerWidth <= 1000 ? 40 : ""} />
       <Swiper
         slidesPerView={window.innerWidth <= 1000 ? 1 : 4}
         // slidesPerView={1}
@@ -83,23 +101,28 @@ const BodySwiper = () => {
           clickable: true,
         }}
         modules={[FreeMode]}
-        // className="mySwiper"
       >
-        <SwiperSlide style={{ backgroundColor: "#eee" }}>
-          <CartItem1 />
-        </SwiperSlide>
-        <SwiperSlide style={{ backgroundColor: "#eee" }}>
-          <CartItem2 />
-        </SwiperSlide>
-        <SwiperSlide style={{ backgroundColor: "#eee" }}>
-          <CartItem1 />
-        </SwiperSlide>
-        <SwiperSlide style={{ backgroundColor: "#eee" }}>
-          <CartItem2 />
-        </SwiperSlide>
-        <SwiperSlide style={{ backgroundColor: "#eee" }}>
-          <CartItem1 />
-        </SwiperSlide>
+        {SwiperArray.map((item, index) => (
+          // <div key={index}>
+            <SwiperSlide
+            key={index}
+              style={{
+                backgroundColor: props.on ? colors.black : colors.pureWite,
+              }}
+            >
+                <CartItem1
+                  on={props.on}
+                  name1={item.name1}
+                  name2={item.name2}
+                  image={item.image}
+                  list1={item.list1}
+                  list2={item.list2}
+                  list3={item.list3}
+                  topContent={item.topContent}
+                />
+            </SwiperSlide>
+          // </div>
+        ))}
       </Swiper>
     </div>
   );
@@ -107,36 +130,48 @@ const BodySwiper = () => {
 
 export default BodySwiper;
 
-const CartItem1 = () => (
+const CartItem1 = (props) => (
   <div
     style={{
       height: "90vh",
       width: "90%",
       display: "flex",
       justifyContent: "center",
+      // backgroundColor: colors.black,
     }}
   >
     <Spacer height={20} />
-    <div style={{ width: window.innerWidth <= 1000 ? "90%" : "80%" , height: window.innerWidth <= 1000 ? "40vh" : "60vh"  }}>
-    {/* <div style={{ width: "90%", height: "40vh" }}> */}
-      <img
-        src={images.banner}
-        style={{ width: "100%", height: "100%", objectFit: "fill" }}
-      />
+    <div
+      style={{
+        width: window.innerWidth <= 1000 ? "90%" : "80%",
+        height: window.innerWidth <= 1000 ? "40vh" : "60vh",
+      }}
+    >
+      {props.topContent ? (
+        <img
+          src={props.image}
+          style={{ width: "100%", height: "100%", objectFit: "fill" }}
+        />
+      ) : (
+        <></>
+      )}
+
       <div>
         <div style={{ display: "flex", flexDirection: "column" }}>
           <Spacer height={20} />
           <CustomText
             fontSize={25}
-            title="DIANE "
+            title={props.name1}
             fontFamily={"ClashDisplay-SemiBold"}
             textAlign={"left"}
+            color={props.on ? colors.white : colors.black}
           />
           <CustomText
             fontSize={25}
-            title=" & GEORDI"
+            title={props.name2}
             fontFamily={"ClashDisplay-SemiBold"}
             textAlign={"left"}
+            color={props.on ? colors.white : colors.black}
           />
         </div>
         <Spacer height={20} />
@@ -153,13 +188,15 @@ const CartItem1 = () => (
                 paddingInlineStart: 15,
                 marginBlockStart: 0,
                 marginBlockEnd: 0,
+                color: props.on ? colors.white : colors.black,
               }}
             >
               <li>
                 <CustomText
                   fontSize={12}
-                  title="Sports bra"
+                  title={props.list1}
                   textAlign={"left"}
+                  color={props.on ? colors.white : colors.black}
                 />
               </li>
             </ul>
@@ -168,10 +205,16 @@ const CartItem1 = () => (
                 paddingInlineStart: 15,
                 marginBlockStart: 0,
                 marginBlockEnd: 0,
+                color: props.on ? colors.white : colors.black,
               }}
             >
               <li>
-                <CustomText fontSize={12} title="Leggings" textAlign={"left"} />
+                <CustomText
+                  fontSize={12}
+                  title={props.list2}
+                  textAlign={"left"}
+                  color={props.on ? colors.white : colors.black}
+                />
               </li>
             </ul>
             <ul
@@ -179,10 +222,16 @@ const CartItem1 = () => (
                 paddingInlineStart: 15,
                 marginBlockStart: 0,
                 marginBlockEnd: 0,
+                color: props.on ? colors.white : colors.black,
               }}
             >
               <li>
-                <CustomText fontSize={12} title="Top" textAlign={"left"} />
+                <CustomText
+                  fontSize={12}
+                  title={props.list3}
+                  textAlign={"left"}
+                  color={props.on ? colors.white : colors.black}
+                />
               </li>
             </ul>
           </div>
@@ -209,11 +258,19 @@ const CartItem1 = () => (
           </div>
         </div>
       </div>
+      {!props.topContent ? (
+        <img
+          src={props.image}
+          style={{ width: "100%", height: "100%", objectFit: "fill" }}
+        />
+      ) : (
+        <></>
+      )}
     </div>
   </div>
 );
 
-const CartItem2 = () => (
+const CartItem2 = (props) => (
   <div
     style={{
       height: "90vh",
@@ -222,22 +279,27 @@ const CartItem2 = () => (
       justifyContent: "center",
     }}
   >
-    {/* <Spacer height={20} /> */}
-    <div style={{ width: window.innerWidth <= 1000 ? "90%" : "80%" , height: window.innerWidth <= 1000 ? "40vh" : "60vh"  }}>
+    <div
+      style={{
+        width: window.innerWidth <= 1000 ? "90%" : "80%",
+        height: window.innerWidth <= 1000 ? "40vh" : "60vh",
+      }}
+    >
       <div>
         <div style={{ display: "flex", flexDirection: "column" }}>
-          {/* <Spacer height={20} /> */}
           <CustomText
             fontSize={25}
             title="DIANE "
             fontFamily={"ClashDisplay-SemiBold"}
             textAlign={"left"}
+            color={props.on ? colors.white : colors.black}
           />
           <CustomText
             fontSize={25}
             title=" & GEORDI"
             fontFamily={"ClashDisplay-SemiBold"}
             textAlign={"left"}
+            color={props.on ? colors.white : colors.black}
           />
         </div>
         <Spacer height={20} />
@@ -254,6 +316,7 @@ const CartItem2 = () => (
                 paddingInlineStart: 15,
                 marginBlockStart: 0,
                 marginBlockEnd: 0,
+                color: props.on ? colors.white : colors.black,
               }}
             >
               <li>
@@ -261,6 +324,7 @@ const CartItem2 = () => (
                   fontSize={12}
                   title="Sports bra"
                   textAlign={"left"}
+                  color={props.on ? colors.white : colors.black}
                 />
               </li>
             </ul>
@@ -269,10 +333,16 @@ const CartItem2 = () => (
                 paddingInlineStart: 15,
                 marginBlockStart: 0,
                 marginBlockEnd: 0,
+                color: props.on ? colors.white : colors.black,
               }}
             >
               <li>
-                <CustomText fontSize={12} title="Leggings" textAlign={"left"} />
+                <CustomText
+                  fontSize={12}
+                  title="Leggings"
+                  textAlign={"left"}
+                  color={props.on ? colors.white : colors.black}
+                />
               </li>
             </ul>
             <ul
@@ -280,10 +350,16 @@ const CartItem2 = () => (
                 paddingInlineStart: 15,
                 marginBlockStart: 0,
                 marginBlockEnd: 0,
+                color: props.on ? colors.white : colors.black,
               }}
             >
               <li>
-                <CustomText fontSize={12} title="Top" textAlign={"left"} />
+                <CustomText
+                  fontSize={12}
+                  title="Top"
+                  textAlign={"left"}
+                  color={props.on ? colors.white : colors.black}
+                />
               </li>
             </ul>
           </div>

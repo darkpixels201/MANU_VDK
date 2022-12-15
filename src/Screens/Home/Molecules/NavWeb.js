@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { images } from "../../../Assets/Images";
@@ -10,6 +10,7 @@ import "../../../Assets/Style/Navbar.css";
 import CustomText from "../../../Components/CustomText";
 import { icons } from "../../../Assets/Icons";
 import { colors } from "../../../utils/Colors";
+import SearchComponent from "../../../Components/SearchComponent";
 
 const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -20,6 +21,7 @@ const Item = styled(Paper)(({ theme }) => ({
   }));
 
 export const NavWeb = () => {
+
     const navbar = [
         {
           id: 1,
@@ -50,6 +52,7 @@ export const NavWeb = () => {
           name: "SALE",
         },
       ];
+      const [open, setOpen] = useState(false);
   return (
     <div style={{backgroundColor:colors.pureWite,}}>
          <Container maxWidth="xl">
@@ -142,35 +145,15 @@ export const NavWeb = () => {
               position: "relative",
               backgroundColor:colors.pureWite,
             }}
+            onClick={() => {
+              setOpen(!open);
+            }}
           >
-            <img
-              src={icons.search}
-              style={{
-                height: 15,
-                width: 15,
-                alignSelf: "center",
-                position: "absolute",
-                paddingLeft: 5,
-              }}
-            />
-            <input
-              style={{
-                height: 20,
-                width: 120,
-                border: "none",
-                alignSelf: "center",
-                // borderBlock: "white",
-                borderRadius: 10,
-                outlineColor: colors.lightGray,
-                borderWidth: 0.1,
-                paddingLeft: 25,
-                borderWidth: 0.1,
-                // outline:"none"
-              }}
-              type="text"
-              id="floatingInput"
-            />
+           
+            
+            <SearchComponent setOpen={setOpen} open={open} />
           </Item>
+          
           <Item
             sx={{
               flexGrow: 1.7,

@@ -4,6 +4,7 @@ import React, { Image, Text } from "react";
 import Home from "./Screens/Home";
 import { bold, Poppins } from "./utils/Fonts";
 import Cart from "./Screens/Cart/Cart";
+import { colors } from "./utils/Colors";
 
 function App() {
   return (

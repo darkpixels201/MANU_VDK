@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Body from "../../Components/Body/Body";
 import BottomBarNavigation from "../../Components/BottomNavigation";
 
@@ -7,18 +7,21 @@ import Navbar from "../../Components/Navbar";
 import NewArrivals from "../../Components/NewArrivals/NewArrivals";
 import BestSeller from "./Molecules/BestSeller";
 import Testing from '../Testing'
+import { colors } from "../../utils/Colors";
 
 
 function Home() {
+  const [on, setOn] = useState(false);
   return (
     <div>
-      <Testing />
-      {/* <Navbar />
-      <Body />
+      {/* <Testing /> */}
+      <Navbar />
+      <Body on={on} setOn={setOn} />
       <BestSeller />
-      <NewArrivals />
+      <NewArrivals on={on} setOn={setOn} />
       <Footer />
-      <BottomBarNavigation /> */}
+      {window.innerWidth <= 900 ? <BottomBarNavigation /> : ""}
+      
     
     </div>
   );
