@@ -53,6 +53,7 @@ export const BestSellerWeb = () => {
       clickable: true,
     },
   };
+  
 
   return (
     <div>
@@ -289,7 +290,7 @@ export const BestSellerWeb = () => {
                           height: 22,
                           width: 22,
                           borderRadius: 50,
-                          borderColor: colors.black,
+                          borderColor: colors.orange,
                           border: "solid",
                           borderWidth: 1,
                           display: "flex",
@@ -344,16 +345,19 @@ export const BestSellerWeb = () => {
               >
                 <Autocomplete
                   options={customer}
-                  sx={{ width: 70 }}
-                  defaultValue={customer[0]}
-                  clearIcon
+                  sx={{ width: 70, }}
+                  // defaultValue={customer[0]}
+                  // clearIcon
+                  color="#fff"
                   // popupIcon= {<img src={icons.downArrow} />}
                   renderInput={(params) => (
-                    <TextField {...params} variant="standard" />
+                    <TextField {...params} variant="standard" style={{}}/>
+                    
                   )}
                   currentcustomer={currentcustomer}
                   onChange={(event, newValue) => setCurrentCustomer(newValue)}
                   // style={{height:10, width:5, backgroundColor:colors.black}}
+                 
                 />
               </div>
             </div>

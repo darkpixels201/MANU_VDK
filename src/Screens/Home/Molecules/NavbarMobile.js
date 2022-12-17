@@ -1,7 +1,8 @@
 import { Container, fontSize } from "@mui/system";
-import React from "react";
+import React, { useState } from "react";
 import { icons } from "../../../Assets/Icons";
 import CustomText from "../../../Components/CustomText";
+import SearchComponent from "../../../Components/SearchComponent";
 import Spacer from "../../../Components/Spacer";
 import { colors } from "../../../utils/Colors";
 
@@ -24,6 +25,7 @@ export const NavbarMobile = () => {
       name: "JEANS",
     },
   ];
+  const [open, setOpen] = useState(false);
   return (
     <div>
       <Spacer height={5} />
@@ -31,8 +33,13 @@ export const NavbarMobile = () => {
         <div>
           <CustomText title="VDK" fontFamily="ClashDisplay-SemiBold" />
         </div>
-        <div style={{ alignSelf: "center" }}>
-          <img
+        <div
+          style={{ alignSelf: "center", }}
+          onClick={() => {
+            setOpen(!open);
+          }}
+        >
+          {/* <img
             src={icons.search}
             style={{
               height: 15,
@@ -63,7 +70,8 @@ export const NavbarMobile = () => {
             }}
             type="text"
             id="floatingInput"
-          />
+          /> */}
+          <SearchComponent setOpen={setOpen} open={open} />
         </div>
         <div>
           <div style={{ height: 10, width: 10, cursor: "pointer" }}>
@@ -73,26 +81,36 @@ export const NavbarMobile = () => {
       </div>
       <Spacer height={20} />
       <Container>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-evenly",
-          flexDirection: "row",
-        }}
-      >
-        {navbar.map((item, index) => (
-          <div key={index}>
-            <div style={{display:"flex", justifyContent:"space-evenly"}}>
-            <div style={{ fontFamily: "ClashDisplay-Regular", fontSize: 12, paddingRight:15 }}>
-              {item.name}
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-evenly",
+            flexDirection: "row",
+          }}
+        >
+          {navbar.map((item, index) => (
+            <div key={index}>
+              <div style={{ display: "flex", justifyContent: "space-evenly" }}>
+                <div
+                  style={{
+                    fontFamily: "ClashDisplay-Regular",
+                    fontSize: 12,
+                    paddingRight: 15,
+                  }}
+                >
+                  {item.name}
+                </div>
+                <div
+                  style={{
+                    width: 1,
+                    height: 15,
+                    backgroundColor: colors.black,
+                  }}
+                ></div>
+              </div>
             </div>
-            <div style={{width:1, height:15, backgroundColor:colors.black}}>
-
-            </div>
-            </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
       </Container>
 
       <Spacer height={15} />

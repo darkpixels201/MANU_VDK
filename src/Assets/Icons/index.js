@@ -14,5 +14,7 @@ export const icons = {
     home: require('./Home.png'),
     headset: require('./Headset.png'),
     drawer: require('./drawer.png'),
+    upArrowCircle: require('./upArrowCircle.png'),
+    whatsApp: require('./whatsApp.png'),
     
 }

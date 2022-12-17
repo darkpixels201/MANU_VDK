@@ -4,8 +4,9 @@ import { images } from "../Assets/Images";
 import "../Assets/Style/DropDown.css";
 import CustomText from "../Components/CustomText";
 import Spacer from "../Components/Spacer";
+import { colors } from "../utils/Colors";
 
-const Testing = () => {
+const SearchComponent = (props) => {
   const SearchArray = [
     {
       id: 1,
@@ -33,6 +34,7 @@ const Testing = () => {
     },
   ];
   const [open, setOpen] = useState(false);
+  //   const [open, setOpen] = useState(false);
 
   let menuRef = useRef();
 
@@ -52,15 +54,41 @@ const Testing = () => {
   });
 
   return (
-    <div className="App">
-      <div ref={menuRef}>
-        <div
+    <div className="App" ref={menuRef}>
+      <div>
+        <img
+          src={icons.search}
+          style={{
+            height: 15,
+            width: 15,
+            alignSelf: "center",
+            textAlign: "center",
+            position: "absolute",
+            marginTop: 3,
+            paddingLeft: 5,
+          }}
+        />
+        <input
+          style={{
+            height: 20,
+            width: 120,
+            border: "none",
+            alignSelf: "center",
+            // borderBlock: "white",
+            borderRadius: 10,
+            outlineColor: colors.lightGray,
+            borderWidth: 0.1,
+            paddingLeft: 25,
+            borderWidth: 0.1,
+            // outline:"none"
+          }}
           onClick={() => {
             setOpen(!open);
           }}
-        >
-          <input />
-        </div>
+          type="text"
+          id="floatingInput"
+        />
+        <Spacer height={10} />
 
         <div style={{ display: "flex", justifyContent: "center" }}>
           <div className={`dropdown-menu ${open ? "active" : "inactive"}`}>
@@ -122,4 +150,4 @@ function DropdownItem(props) {
   );
 }
 
-export default Testing;
+export default SearchComponent;
