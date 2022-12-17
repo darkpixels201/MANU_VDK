@@ -16,15 +16,7 @@ function App() {
   
   return (
     <div>
-      {/* <style jsx global>{`
-      body {
-        margin: 0px;
-        padding: 0px;
-      }
-    `}</style> */}
-       <Home />
-      <Categories/>
-      {/* <CategoryMobile /> */}
+      <CompareProducts/>
     </div>
   );
 }
