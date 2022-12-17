@@ -11,6 +11,7 @@ import CustomText from "../../../Components/CustomText";
 import { icons } from "../../../Assets/Icons";
 import { colors } from "../../../utils/Colors";
 import SearchComponent from "../../../Components/SearchComponent";
+import { Drawer, MuiDrawer } from "../../../Components/Drawer";
 
 const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -53,6 +54,7 @@ export const NavWeb = () => {
         },
       ];
       const [open, setOpen] = useState(false);
+      const [isDrawerOpen, setIsDrawerOpen] = useState(false)
   return (
     <div style={{backgroundColor:colors.white,}}>
          <Container maxWidth="xl">
@@ -77,9 +79,14 @@ export const NavWeb = () => {
                 // backgroundColor: "red",
               }}
             >
-              <CustomText title="MANU VDK" />
+              <CustomText title="MANU VDK" onClick={() => setIsDrawerOpen(true)} />
               <CustomText title="STORE" />
             </div>
+
+
+            <MuiDrawer isDrawerOpen={isDrawerOpen} setIsDrawerOpen={setIsDrawerOpen} />
+
+            
           </Item>
           <Item
             sx={{

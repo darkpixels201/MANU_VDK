@@ -9,6 +9,7 @@ import { images } from "../../Assets/Images";
 import { colors } from "../../utils/Colors";
 import { icons } from "../../Assets/Icons";
 import { Autocomplete, TextField } from "@mui/material";
+import CategoryMobile from "../../Components/CatergoryComponents/CategoryMobile";
 
 export const Categories = () => {
   const [count, setCount] = useState(1);
@@ -280,7 +281,8 @@ export const Categories = () => {
       </Grid>
     </Grid>
   );
-  return (
+
+  const Body = () => (
     <div>
       <DiscountBanner />
       <Grid container rowSpacing={{ xs: 5, sm: 2, md: 3 }} columnSpacing={{}}>
@@ -380,6 +382,12 @@ export const Categories = () => {
       </Grid>
       <Spacer height={100} />
       <Footer />
+    </div>
+  )
+  return (
+    <div>
+      
+      {window.innerWidth <= 800 ? <CategoryMobile /> : <Body />}
     </div>
   );
 };

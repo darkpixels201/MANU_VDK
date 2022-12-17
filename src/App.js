@@ -22,7 +22,7 @@ function App() {
       }
     `}</style> */}
        <Home />
-      <Categories/>
+      {/* <Categories/> */}
       {/* <CategoryMobile /> */}
     </div>
   );

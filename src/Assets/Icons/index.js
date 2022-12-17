@@ -16,5 +16,6 @@ export const icons = {
     drawer: require('./drawer.png'),
     upArrowCircle: require('./upArrowCircle.png'),
     whatsApp: require('./whatsApp.png'),
+    cross: require('./cross.png'),
     
 }
