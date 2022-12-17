@@ -3,12 +3,14 @@ import React, { useState } from "react";
 import DiscountBanner from "../../Components/CartComponents/DiscountBanner";
 import CustomText from "../../Components/CustomText";
 import Spacer from "../../Components/Spacer";
-import { Search, Spa } from "@mui/icons-material";
+import { Label, Search, Spa } from "@mui/icons-material";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import { images } from "../../Assets/Images";
 import { colors } from "../../utils/Colors";
 import { icons } from "../../Assets/Icons";
 import { Autocomplete, TextField } from "@mui/material";
+import Box from "@mui/material/Box";
+import Slider from "@mui/material/Slider";
 
 export const Categories = () => {
   const [count, setCount] = useState(1);
@@ -41,8 +43,8 @@ export const Categories = () => {
     alignItems: "center",
   };
   const Banner = () => (
-    <div style={{ width: "100%", height: "36vw" }}>
-      <div style={{ position: "absolute", top: "36vw", left: 100 }}>
+    <div style={{ height: "36vw" }}>
+      <div style={{ position: "absolute" }}>
         <div style={row}>
           <CustomText
             fontSize={30}
@@ -184,14 +186,20 @@ export const Categories = () => {
           ))}
         </div>
       </div>
-      <div style={{ ...row, justifyContent: "space-between",alignItems:'center' }}>
+      <div
+        style={{
+          ...row,
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
         <div>
           <s style={{ color: "#aaa" }}>$135.00</s>
           <CustomText fontSize={16} title="$95.00" />
         </div>
         <div>
           <a
-          href=""
+            href=""
             style={{
               paddingRight: 25,
               paddingLeft: 25,
@@ -199,7 +207,7 @@ export const Categories = () => {
               paddingBottom: 5,
               backgroundColor: "#686868",
               color: colors.white,
-              textDecoration:"none"
+              textDecoration: "none",
             }}
           >
             +ADD
@@ -215,11 +223,25 @@ export const Categories = () => {
       style={{ height: height || "20vw", width: "100%" }}
     />
   );
-  const Card = ({footer}) => (
+  const Card = ({ footer }) => (
     <>
-    {footer==='up'?<CardFooter />:<></>}
+      {footer === "up" ? (
+        <>
+          <CardFooter />
+          <Spacer height={10} />
+        </>
+      ) : (
+        <></>
+      )}
       <CardImage height={"35vw"} />
-    {footer==='down'?<CardFooter />:<></>}
+      {footer === "down" ? (
+        <>
+          <Spacer height={10} />
+          <CardFooter />
+        </>
+      ) : (
+        <></>
+      )}
     </>
   );
   const Footer = () => (
@@ -229,7 +251,13 @@ export const Categories = () => {
         xs={12}
         sm={12}
         md={12}
-        style={{ backgroundColor: "#343434", paddingRight: 190,paddingLeft:240,paddingTop:100,paddingBottom:100 }}
+        style={{
+          backgroundColor: "#343434",
+          paddingRight: 190,
+          paddingLeft: 240,
+          paddingTop: 100,
+          paddingBottom: 100,
+        }}
       >
         <CustomText
           fontSize={16}
@@ -279,6 +307,61 @@ export const Categories = () => {
         </div>
       </Grid>
     </Grid>
+  );
+  const CatList = () => (
+    <div style={{}}>
+      <Spacer height={100} />
+      <CatItem label={"FILTROS"} icon={true} iconPath={icons.downArrowLine} />
+      <Spacer height={50} />
+      <CatItem label={"COLOR"} icon={true} iconPath={icons.plus} />
+      <Spacer height={40} />
+      <CatItem label={"TALLA"} paddingLeft={60} />
+      <Spacer height={40} />
+      <CatItem label={"INFO 3"} />
+      <Spacer height={40} />
+      <CatItem label={"INFO 4"} />
+      <Spacer height={40} />
+      <CatItem label={"INFO 5"} />
+      <Spacer height={40} />
+      <CatItem label={"PRECIO "} />
+      <Spacer height={40} />
+      <div style={{ paddingLeft: 60, paddingRight: 60 }}>
+        <Slider
+          size="small"
+          defaultValue={0}
+          aria-label="Small"
+          // color="secondary"
+          valueLabelDisplay="auto"
+        />
+        <div style={{ ...row, justifyContent: "space-between" }}>
+          <span>10</span>
+          <span>100</span>
+        </div>
+      </div>
+      {/* <CustomText fontSize={18} title="FILTROS" textAlign={"left"} /> */}
+    </div>
+  );
+  const CatItem = ({ label, icon, iconPath, paddingLeft }) => (
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        width: "60%",
+      }}
+    >
+      <a
+        href="#"
+        style={{
+          color: colors.black,
+          textDecoration: "none",
+          paddingLeft: paddingLeft || 50,
+        }}
+      >
+        {label}
+      </a>
+      {icon ? <img src={iconPath} alt="" style={{ height: 10 }} /> : <></>}
+    </div>
   );
   return (
     <div>
@@ -338,19 +421,15 @@ export const Categories = () => {
         </Grid>
       </Grid>
       <Grid container rowSpacing={{ xs: 5, sm: 2, md: 3 }} columnSpacing={{}}>
-        <Grid item xs={12} sm={12} md={2.3} style={{ backgroundColor: "red" }}>
-          <div
-            style={{ width: "100%", backgroundColor: "black", height: "100%" }}
-          ></div>
+        <Grid item xs={12} sm={12} md={2.3} style={{}}>
+          <div style={{}}>
+            <CatList />
+          </div>
         </Grid>
-        <Grid
-          item
-          xs={12}
-          sm={12}
-          md={9.7}
-          style={{ paddingRight: 90 }}
-        >
-          <Banner />
+        <Grid item xs={12} sm={12} md={9.7} style={{ paddingRight: 90 }}>
+          <div>
+            <Banner />
+          </div>
           <Spacer height={60} />
           <Grid
             container
@@ -360,6 +439,7 @@ export const Categories = () => {
             {[1, 2, 3, 4].map(() => (
               <Grid item xs={6} sm={4} md={3}>
                 <CardImage />
+                <Spacer height={10} />
                 <CardFooter />
               </Grid>
             ))}
@@ -370,9 +450,9 @@ export const Categories = () => {
             rowSpacing={{ xs: 5, sm: 2, md: 3 }}
             columnSpacing={{ xs: 1, sm: 2, md: 6 }}
           >
-            {[1, 2].map(() => (
+            {["up", "down"].map((item) => (
               <Grid item xs={12} sm={12} md={6}>
-                <Card footer={'down'} />
+                <Card footer={item} />
               </Grid>
             ))}
           </Grid>

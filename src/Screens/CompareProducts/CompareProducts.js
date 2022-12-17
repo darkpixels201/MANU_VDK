@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import DiscountBanner from "../../Components/CartComponents/DiscountBanner";
 import { Grid } from "@mui/material";
 import CustomText from "../../Components/CustomText";
@@ -9,8 +9,19 @@ import { images } from "../../Assets/Images";
 import { colors } from "../../utils/Colors";
 import { icons } from "../../Assets/Icons";
 import { Autocomplete, TextField } from "@mui/material";
+import "swiper/css";
+import "swiper/css/pagination";
+import { FreeMode } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+import Draggable from "react-draggable";
+import styled from "styled-components";
+import BottomBarNavigation from "../../Components/BottomNavigation";
 
 const CompareProducts = () => {
+  const [value,setValue]=useState('XS');
+  const noUnderline = {
+    textDecoration: "none",
+  };
   const FilledCircle = [
     {
       id: 1,
@@ -40,6 +51,10 @@ const CompareProducts = () => {
     },
   ];
 
+  function val() {
+    let d = document.getElementById("select_id").value;
+    setValue(d);
+}
   const imgSlider = [{}];
   const [count, setCount] = useState(1);
 
@@ -129,8 +144,9 @@ const CompareProducts = () => {
       </Grid>
     </Grid>
   );
-  return (
-    <div>
+
+  const WebCompareProducts = () => (
+    <>
       <DiscountBanner />
       <Grid container rowSpacing={{ xs: 5, sm: 2, md: 3 }} columnSpacing={{}}>
         <Grid
@@ -443,6 +459,7 @@ const CompareProducts = () => {
                           flexDirection: "row",
                           justifyContent: "space-between",
                           // backgroundColor: colors.orange,
+                          alignItems: "center",
                           width: 200,
                         }}
                       >
@@ -451,7 +468,7 @@ const CompareProducts = () => {
                             display: "flex",
                             flexDirection: "row",
                             justifyContent: "center",
-                            // alignItems:"center",
+                            alignItems: "center",
                             alignSelf: "flex-end",
                             // backgroundColor: colors.parrot,
                           }}
@@ -511,27 +528,38 @@ const CompareProducts = () => {
 
                         <div
                           style={{
-                            // backgroundColor: colors.purple,
-                            display: "flex",
-                            justifyContent: "center",
+                            ...row,
+                            width: 70,
                             alignItems: "center",
+                            justifyContent: "space-between",
                           }}
                         >
-                          <Autocomplete
-                            options={customer}
-                            sx={{ width: 70 }}
-                            defaultValue={customer[0]}
-                            clearIcon
-                            // popupIcon= {<img src={icons.downArrow} />}
-                            renderInput={(params) => (
-                              <TextField {...params} variant="standard" />
-                            )}
-                            currentcustomer={currentcustomer}
-                            onChange={(event, newValue) =>
-                              setCurrentCustomer(newValue)
-                            }
-                            // style={{height:10, width:5, backgroundColor:colors.black}}
+                          <CustomText
+                            title={value}
+                            fontSize={18}
+                            color={colors.black}
                           />
+                          <div
+                            style={{
+                              width: 1,
+                              height: 20,
+                              backgroundColor: colors.black,
+                            }}
+                          />
+                          <select
+                            style={{ width: 14, borderWidth: 0 }}
+                            id={'select_id'}
+                            onChange={val}
+                          >
+                            {/* <optgroup> */}
+                              <option value="XS">XS</option>
+                              <option value="S" >S</option>
+                              <option value="M">M</option>
+                              <option value="L">L</option>
+                              <option value="Xl">Xl</option>
+                              <option value="XXl" selected>XXl</option>
+                            {/* </optgroup> */}
+                          </select>
                         </div>
                       </div>
                       <Spacer height={20} />
@@ -550,7 +578,6 @@ const CompareProducts = () => {
                           <CustomText title="GUíA DE TALLAS" fontSize={10} />
                         </div>
                         <div>
-                          {" "}
                           <img
                             src={icons.rightArrow}
                             style={{
@@ -793,8 +820,308 @@ const CompareProducts = () => {
       </Grid>
 
       <Footer />
+    </>
+  );
+  const MobileCompareProducts = () => (
+    <>
+      <div style={{}}>
+        <div
+          style={{
+            ...row,
+            justifyContent: "space-between",
+            paddingRight: 30,
+            paddingLeft: 30,
+            paddingTop: 10,
+          }}
+        >
+          <CustomText
+            title="VDK"
+            fontSize={16}
+            fontFamily={"ClashDisplay-SemiBold"}
+          />
+          <img src={icons.shoppingCart} alt="" style={{ height: 20 }} />
+        </div>
+        <Spacer height={20} />
+        <img
+          src={images.banner}
+          alt=""
+          style={{ height: 340, width: "100%" }}
+        />
+        <Spacer height={10} />
+        <Swiper
+          slidesPerView={3}
+          spaceBetween={20}
+          freeMode={true}
+          pagination={{
+            clickable: true,
+          }}
+          modules={[FreeMode]}
+          style={{ zIndex: -1 }}
+          // className="mySwiper"
+        >
+          {[1, 2, 3].map((index) => (
+            <SwiperSlide>
+              <img
+                src={images.banner}
+                alt=""
+                style={{ height: 160, width: window.innerWidth / 3 }}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+      <Draggable
+        axis="y"
+        defaultPosition={{ x: 0, y: -50 }}
+        // position={'absolute'}
+        // grid={[25, 25]}
+        // scale={2}
+      >
+        <div
+          style={{
+            width: "100%",
+            height: window.innerHeight,
+            backgroundColor: colors.white,
+            borderTopLeftRadius: 20,
+            borderTopRightRadius: 20,
+          }}
+        >
+          <Spacer height={30} />
+          <div
+            style={{
+              height: 4,
+              backgroundColor: "#1B1B1B",
+              width: 70,
+              margin: "auto",
+            }}
+          />
+          <Spacer height={20} />
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-between",
+              paddingRight: 30,
+              paddingLeft: 30,
+            }}
+          >
+            <CustomText
+              title="Pijama  de Seda"
+              fontSize={20}
+              fontFamily={"ClashDisplay-SemiBold"}
+            />
+            <img src={icons.share} alt="" style={{ height: 20 }} />
+          </div>
+          <div
+            style={{
+              paddingRight: 30,
+              paddingLeft: 30,
+            }}
+          >
+            <CustomText title="PARA MUJER" fontSize={16} />
+          </div>
+          <Spacer height={20} />
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-between",
+              paddingRight: 30,
+              paddingLeft: 30,
+            }}
+          >
+            <div>
+              <s style={{ color: "#686868" }}>$135.00</s>
+              <CustomText title="$95.00 " fontSize={20} />
+            </div>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "center",
+                // alignItems:"center",
+                alignSelf: "flex-end",
+                // backgroundColor: colors.parrot,
+              }}
+            >
+              {FilledCircle.map((circle, index) => (
+                <div key={index} style={{ paddingLeft: 10 }}>
+                  {count == circle.id ? (
+                    <div
+                      style={{
+                        height: 22,
+                        width: 22,
+                        borderRadius: 50,
+                        borderColor: colors.black,
+                        border: "solid",
+                        borderWidth: 1,
+                        display: "flex",
+                        textAlign: "center",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        alignSelf: "center",
+                        cursor: "pointer",
+                      }}
+                    >
+                      <div
+                        style={{
+                          height: 15,
+                          width: 15,
+                          borderRadius: 50,
+                          border: "solid",
+                          borderColor: colors.black,
+                          borderWidth: 0.2,
+                          backgroundColor: circle.bgcolor,
+                        }}
+                      ></div>
+                    </div>
+                  ) : (
+                    <div
+                      style={{
+                        height: 18,
+                        width: 18,
+                        borderRadius: 50,
+                        border: "solid",
+                        borderColor: colors.black,
+                        borderWidth: 0.2,
+                        backgroundColor: circle.bgcolor,
+                        marginTop: 3,
+                        cursor: "pointer",
+                      }}
+                      onClick={() => {
+                        setCount(circle.id);
+                      }}
+                    ></div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+          {/* <Spacer height={10} />
+          <div
+            style={{
+              height: 2,
+              backgroundColor: colors.white,
+              width: "100%",
+              margin: "auto",
+              marginLeft: 20,
+            }}
+          /> */}
+          <Spacer height={20} />
+          {/* <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-between",
+              paddingRight: 20,
+              paddingLeft: 20,
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                flexDirection: "row",
+              }}
+            >
+              <CustomText
+                title="TOTAL "
+                fontSize={16}
+                color={colors.white}
+                fontFamily={"ClashDisplay-SemiBold"}
+              />
+              <Spacer width={2} />
+              <CustomText title="FINAL " fontSize={16} color={colors.white} />
+            </div>
+            <CustomText title="$95.00 " fontSize={16} color={colors.white} />
+          </div>
+          <Spacer height={40} /> */}
+
+          <div
+            style={{
+              flexDirection: "row",
+              display: "flex",
+              // paddingRight: 20,
+              paddingLeft: 20,
+              justifyContent: "space-between",
+            }}
+          >
+            <a
+              href=""
+              style={{
+                backgroundColor: "#686868",
+                color: "#fff",
+                width: "30%",
+                justifyContent: "center",
+                alignItems: "center",
+                display: "flex",
+                paddingRight: 20,
+                paddingLeft: 20,
+                paddingTop: 10,
+                paddingBottom: 10,
+                textDecoration: "none",
+              }}
+            >
+              +ADD TO CART
+            </a>
+            <div style={{ ...row, alignItems: "center" }}>
+              <a href="" style={{ ...noUnderline }}>
+                <CustomText title="-" fontSize={20} />
+              </a>
+              <Spacer width={30} />
+              <CustomText title="1" fontSize={20} />
+
+              <Spacer width={30} />
+              <a href="" style={{ ...noUnderline }}>
+                <CustomText title="+" fontSize={20} />
+              </a>
+              <Spacer width={10} />
+            </div>
+            {/* <CustomButton
+            title={"Apply"}
+            backgroundColor={colors.white}
+            borderRadius={1}
+            color={colors.black}
+          /> */}
+          </div>
+          <Spacer height={30} />
+        </div>
+      </Draggable>
+      <BottomBarNavigation />
+    </>
+  );
+
+  return (
+    <div>
+      <MobileDiv>
+        <MobileCompareProducts />
+      </MobileDiv>
+      <WebDiv>
+        <WebCompareProducts />
+      </WebDiv>
+      {/* {width <= 400 ? (
+        <MobileCompareProducts />
+      ) : (
+        <WebCompareProducts />
+      )} */}
     </div>
   );
 };
 
 export default CompareProducts;
+
+// const MyDiv = styled.div`
+//   @media only screen and (max-width: ${props => props.width ||"400px"}) {
+//     display: none;
+//   }
+//   `;
+const MobileDiv = styled.div`
+  @media only screen and (min-width: 400px) {
+    display: none;
+  }
+`;
+const WebDiv = styled.div`
+  @media only screen and (max-width: 400px) {
+    display: none;
+  }
+`;
