@@ -1,6 +1,6 @@
 import "./App.css";
 import { icons } from "./Assets/Icons";
-import React, { Image, Text } from "react";
+import React, { Image, Text, useEffect, useState } from "react";
 import Home from "./Screens/Home";
 import { bold, Poppins } from "./utils/Fonts";
 import Cart from "./Screens/Cart/Cart";
@@ -13,8 +13,10 @@ import CategoryMobile from "./Components/CatergoryComponents/CategoryMobile";
 
 
 function App() {
+  
   return (
     <div>
+
       {/* <style jsx global>{`
       body {
         margin: 0px;
@@ -24,6 +26,9 @@ function App() {
        <Home />
       {/* <Categories/> */}
       {/* <CategoryMobile /> */}
+
+      {/* <CompareProducts/> */}
+
     </div>
   );
 }

@@ -11,12 +11,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
+import { FreeMode, Pagination } from "swiper";
 
 import "./styles.css";
 
 // import required modules
-import { FreeMode, Pagination } from "swiper";
-import { Close } from '@mui/icons-material';
+import { Close } from "@mui/icons-material";
 
 const ColumnTwo = () => {
   return (
@@ -74,6 +74,7 @@ to request a chnge or return."
           clickable: true,
         }}
         modules={[FreeMode]}
+        // direction={"vertical"}
         // className="mySwiper"
       >
         <SwiperSlide>
@@ -112,7 +113,7 @@ const CartItem = () => (
           display: "flex",
         }}
       >
-        <Close fontSize="small"/>
+        <Close fontSize="small" />
       </div>
       <img src={images.banner} style={{ width: "100%" }} />
       <div>
