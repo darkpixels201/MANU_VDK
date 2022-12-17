@@ -88,7 +88,7 @@ const BodySwiper = (props) => {
       style={{
         width: window.innerWidth <= 1000 ? "100%" : "auto",
         padding: window.innerWidth <= 1000 ? "" : 130,
-        backgroundColor: props.on ? colors.black : colors.pureWite,
+        backgroundColor: props.on ? colors.black : colors.white,
       }}
     >
       <Spacer height={window.innerWidth <= 1000 ? 40 : ""} />
@@ -107,7 +107,7 @@ const BodySwiper = (props) => {
             <SwiperSlide
             key={index}
               style={{
-                backgroundColor: props.on ? colors.black : colors.pureWite,
+                backgroundColor: props.on ? colors.black : colors.white,
               }}
             >
                 <CartItem1

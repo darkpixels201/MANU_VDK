@@ -54,7 +54,7 @@ export const NavWeb = () => {
       ];
       const [open, setOpen] = useState(false);
   return (
-    <div style={{backgroundColor:colors.pureWite,}}>
+    <div style={{backgroundColor:colors.white,}}>
          <Container maxWidth="xl">
         <Box
           sx={{
@@ -67,7 +67,7 @@ export const NavWeb = () => {
             //   borderRadius: 1,
           }}
         >
-          <Item sx={{ flexGrow: 1, boxShadow: "none", backgroundColor:colors.pureWite, }}>
+          <Item sx={{ flexGrow: 1, boxShadow: "none", backgroundColor:colors.white, }}>
             <div
               style={{
                 display: "flex",
@@ -92,7 +92,7 @@ export const NavWeb = () => {
               paddingBottom: 0,
               justifyContent: "flex-end",
               cursor:"pointer",
-              backgroundColor:colors.pureWite,
+              backgroundColor:colors.white,
               // paddingRight: 8,
             }}
           >
@@ -143,7 +143,7 @@ export const NavWeb = () => {
               //   backgroundColor: "yellow",
               alignSelf: "center",
               position: "relative",
-              backgroundColor:colors.pureWite,
+              backgroundColor:colors.white,
             }}
             onClick={() => {
               setOpen(!open);
@@ -162,7 +162,7 @@ export const NavWeb = () => {
               flexDirection: "row",
               // backgroundColor: "yellow",
               alignSelf: "center",
-              backgroundColor:colors.pureWite,
+              backgroundColor:colors.white,
             }}
           >
             <div style={{ textAlign: "center", flexDirection: "row" }}></div>

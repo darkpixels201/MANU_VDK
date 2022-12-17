@@ -122,18 +122,45 @@ function BodyWeb(props) {
             className="resimage"
             style={{ width: "auto", height: "90vh" }}
           />
-        </div>
-        <div
-          style={{ position: "absolute", alignSelf: "flex-end", left: 550 }}
-          className="none"
-        >
-          <CustomText
-            title="Shape Wear"
-            color={colors.white}
-            fontSize={118}
-            fontFamily={"ClashDisplay-Bold"}
-            // justifyContent={"flex-end"}
-          />
+          <div
+            style={{
+              position: "absolute",
+              alignSelf: "flex-end",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+            className="none"
+          >
+            <CustomText
+              title="Shape Wear"
+              color={colors.white}
+              fontSize={118}
+              fontFamily={"ClashDisplay-Bold"}
+              marginBottom={20}
+            />
+          </div>
+          <div
+            style={{
+              position: "absolute",
+              alignSelf: "flex-end",
+              display: 'flex',
+               justifyContent:'flex-end',
+              // alignItems: "right",
+              marginLeft:30,
+              width:700
+            }}
+            className="none"
+          >
+            <CustomText
+              title="For EveryDay Use"
+              color={colors.white}
+              fontSize={30}
+              marginBottom={20}
+              // marginLeft={20}
+              // alignContent={"flex-end"}
+            />
+          </div>
+          
         </div>
       </div>
       <BodySwiper on={props.on} setOn={props.setOn} />

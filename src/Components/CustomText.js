@@ -24,7 +24,8 @@ function CustomText({...props}) {
             lineHeight:props.lineHeight,
             float: props.float,
             listStyle: props.listStyle,
-            position: props.position
+            position: props.position,
+            left: props.left,
           }}
         >
           {props.title}

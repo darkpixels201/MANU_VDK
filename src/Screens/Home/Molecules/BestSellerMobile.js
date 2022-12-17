@@ -35,7 +35,7 @@ const BestSellerMobile = () => {
     },
   ];
 
-  const customer = ["XS", "S", "M", "L", "Xl", "XXl", "XXl"];
+  const customer = ["2XS", "XS", "M", "L", "XL", "2XL"];
 
   const [currentcustomer, setCurrentCustomer] = useState(null);
 
@@ -220,6 +220,7 @@ const BestSellerMobile = () => {
               sx={{ width: 70 }}
               defaultValue={customer[0]}
               clearIcon
+              // clearindicator
               style={{
                 "&&&:before": {
                   borderBottom: "none",
@@ -236,7 +237,7 @@ const BestSellerMobile = () => {
                 <TextField
                   {...params}
                   variant="standard"
-                  underlineShow={false}
+                  underlineshow={"false"}
                 />
               )}
               currentcustomer={currentcustomer}
