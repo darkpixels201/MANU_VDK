@@ -9,16 +9,41 @@ import { MdOutlineHome } from "react-icons/md";
 import { icons } from "../Assets/Icons";
 import { MuiDrawer } from "./Drawer";
 import { Link } from "react-router-dom";
+import CustomText from "./CustomText";
+import { colors } from "../utils/Colors";
 
-export default function BottomBarNavigation() {
+export default function BottomBarNavigation({footer=true}) {
   const [value, setValue] = React.useState("recents");
   const [isDrawerOpen, setIsDrawerOpen] = React.useState(false)
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-
+  function Footer() {
+    return (
+      <div
+        style={{
+          width: "100%",
+          backgroundColor: colors.grey,
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: 40,
+          position: "fixed", bottom: 55,
+          zIndex:99
+        }}
+      >
+        <CustomText
+          title={"VER TODOS LOS RESULTADOS  (25)"}
+          fontSize={10}
+          color={colors.white}
+        />
+      </div>
+    );
+  }
   return (
+      <>
+      {footer?<Footer/>:<></>}
     <div style={{ position: "absolute", display:"flex", justifyContent:"space-between", zIndex:100 }}>
       <BottomNavigation
         sx={{ width: "100%",  position: "fixed", bottom: 0 }}
@@ -50,6 +75,6 @@ export default function BottomBarNavigation() {
         />
       </BottomNavigation>
       <MuiDrawer isDrawerOpen={isDrawerOpen} setIsDrawerOpen={setIsDrawerOpen} />
-    </div>
+    </div></>
   );
 }

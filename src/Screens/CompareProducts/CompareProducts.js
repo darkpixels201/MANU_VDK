@@ -17,7 +17,7 @@ import Draggable from "react-draggable";
 import styled from "styled-components";
 import BottomBarNavigation from "../../Components/BottomNavigation";
 import { DropdownCom } from "../../Components/DropdownCom";
-// import { Rnd } from "react-rnd";
+
 var currentPosition = 0;
 
 const CompareProducts = () => {
@@ -44,15 +44,15 @@ const CompareProducts = () => {
   const BottomImage = [
     {
       id: 1,
-      image: images.banner,
+      image: images.slide7,
     },
     {
       id: 2,
-      image: images.banner,
+      image: images.slide8,
     },
     {
       id: 3,
-      image: images.banner,
+      image: images.slide9,
     },
   ];
 
@@ -265,12 +265,12 @@ const CompareProducts = () => {
               />
             </div>
           </Grid>
-          {[1, 2, 3].map(() => (
+          {[images.slide12,images.slide11,images.slide10].map((item) => (
             <Grid item xs={12} sm={12} md={12} paddingLeft={5}>
               <Spacer height={30} />
               <div style={{ ...row, width: 250 }}>
                 <img
-                  src={images.banner}
+                  src={item}
                   alt=""
                   style={{ width: 130, height: 130, objectFit: "fill" }}
                 />
@@ -376,7 +376,7 @@ const CompareProducts = () => {
                               justifyContent: "center",
                               alignItems: "center",
                             }}
-                            src={images.banner}
+                            src={images.slide6}
                           />
                         </div>
                         {/* <spacer height={120} /> */}
@@ -817,7 +817,7 @@ const CompareProducts = () => {
         </div>
         <Spacer height={20} />
         <img
-          src={images.banner}
+          src={images.slide16}
           alt=""
           style={{ height: 340, width: "100%" }}
         />
@@ -833,10 +833,10 @@ const CompareProducts = () => {
           style={{ zIndex: -1 }}
           // className="mySwiper"
         >
-          {[1, 2, 3].map((index) => (
-            <SwiperSlide>
+          {[images.slide7,images.slide8,images.slide9].map((item,index) => (
+            <SwiperSlide key={index}>
               <img
-                src={images.banner}
+                src={item}
                 alt=""
                 style={{ height: 160, width: window.innerWidth / 3 }}
               />
@@ -846,7 +846,7 @@ const CompareProducts = () => {
       </div>
       <Draggable
         axis="y"
-        defaultPosition={{ x: 0, y: -500 }}
+        defaultPosition={{ x: 0, y: -50 }}
         // position={'absolute'}
         // grid={[25, 25]}
         // scale={2}

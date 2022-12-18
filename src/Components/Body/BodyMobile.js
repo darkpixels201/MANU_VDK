@@ -12,8 +12,8 @@ const BodyMobile = () => {
       <div >
         <div style={{ width: "100%", height: "40vh" }}>
           <img
-            style={{ width: "100%", position: "absolute" }}
-            src={images.banner}
+            style={{ width: "100%", position: "absolute",height:"40vh" }}
+            src={images.mobileHomeBanner}
           />
           <div
             style={{
@@ -58,10 +58,10 @@ const BodyMobile = () => {
       <Spacer height={10} />
       <div style={{display:"flex", flexDirection:"row", justifyContent:"space-between" }}>
         <div >
-          <img src={images.banner} style={{height:200, width:180}} />
+          <img src={images.slide14} style={{height:200, width:190}} />
         </div>
         <div>
-        <img src={images.banner} style={{height:200, width:180}} />
+        <img src={images.slide17} style={{height:200, width:190}} />
         </div>
       </div>
       <BodySwiper />

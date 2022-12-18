@@ -42,31 +42,19 @@ const CategoryMobile = (props) => {
   const NewArrival = [
     {
       id: 1,
-      image: images.banner,
+      image: images.slide7,
       text1: "BRASIER DE BANDA",
       text2: "ANCHA",
     },
     {
       id: 2,
-      image: images.banner,
+      image: images.slide8,
       text1: "BRASIER DE BANDA",
       text2: "ANCHA",
     },
     {
       id: 3,
-      image: images.banner,
-      text1: "BRASIER DE BANDA",
-      text2: "ANCHA",
-    },
-    {
-      id: 4,
-      image: images.banner,
-      text1: "BRASIER DE BANDA",
-      text2: "ANCHA",
-    },
-    {
-      id: 5,
-      image: images.banner,
+      image: images.slide9,
       text1: "BRASIER DE BANDA",
       text2: "ANCHA",
     },
@@ -75,13 +63,13 @@ const CategoryMobile = (props) => {
   const NewArrivalList = [
     {
       id: 1,
-      image: images.banner,
+      image: images.slide16,
       text1: "BRASIER DE BANDA",
       text2: "ANCHA",
     },
     {
       id: 2,
-      image: images.banner,
+      image: images.slide12,
       text1: "BRASIER DE BANDA",
       text2: "ANCHA",
     },
@@ -116,7 +104,7 @@ const CategoryMobile = (props) => {
       <div style={{ width: "100%", height: "50vh" }}>
         <img
           style={{ width: "100%", height: "60vh", position: "absolute" }}
-          src={images.banner}
+          src={images.mobileCatBanner}
         />
         <div
           style={{

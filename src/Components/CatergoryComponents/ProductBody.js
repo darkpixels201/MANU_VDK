@@ -181,21 +181,9 @@ const ProductBody = (props) => {
               </div>
               <Spacer width={17} />
               <div>
-                {/* <Autocomplete
-                  options={customer}
-                  sx={{ width: 40 }}
-                  defaultValue={customer[0]}
-                  // clearIcon
-                  // color={ props.on ? colors.pureWite : colors.black}
-                  // popupIcon= {<img src={icons.downArrow} />}
-                  renderInput={(params) => (
-                    <TextField {...params} variant="standard" />
-                  )}
-                  currentcustomer={currentcustomer}
-                  onChange={(event, newValue) => setCurrentCustomer(newValue)}
-                  // style={{height:10, width:5, backgroundColor:colors.black}}
-                /> */}
-                <DropdownCom />
+
+              <DropdownCom/>
+
               </div>
             </div>
 

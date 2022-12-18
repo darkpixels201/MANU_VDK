@@ -24,34 +24,34 @@ const NewArrivals = (props) => {
   const NewArrival = [
     {
       id: 1,
-      image: images.banner,
+      image: images.slide10,
       text1: "BRASIER DE BANDA",
       text2: "ANCHA",
     },
     {
       id: 2,
-      image: images.banner,
+      image: images.slide11,
       text1: "BRASIER DE BANDA",
       text2: "ANCHA",
     },
     {
       id: 3,
-      image: images.banner,
+      image: images.slide12,
       text1: "BRASIER DE BANDA",
       text2: "ANCHA",
     },
-    {
-      id: 4,
-      image: images.banner,
-      text1: "BRASIER DE BANDA",
-      text2: "ANCHA",
-    },
-    {
-      id: 5,
-      image: images.banner,
-      text1: "BRASIER DE BANDA",
-      text2: "ANCHA",
-    },
+    // {
+    //   id: 4,
+    //   image: images.banner,
+    //   text1: "BRASIER DE BANDA",
+    //   text2: "ANCHA",
+    // },
+    // {
+    //   id: 5,
+    //   image: images.banner,
+    //   text1: "BRASIER DE BANDA",
+    //   text2: "ANCHA",
+    // },
   ];
 
 

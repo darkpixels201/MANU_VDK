@@ -55,7 +55,12 @@ export const Categories = () => {
   };
   const Banner = () => (
     <div style={{ height: "36vw" }}>
-      <div style={{ position: "absolute" }}>
+      <img
+        src={images.catBanner}
+        alt=""
+        style={{ objectFit: "cover", width: "100%", height: "100%" }}
+      />
+      <div style={{ position: "absolute",marginLeft:30,marginTop:-100 }}>
         <div style={row}>
           <CustomText
             fontSize={30}
@@ -81,11 +86,6 @@ export const Categories = () => {
           color={colors.white}
         />
       </div>
-      <img
-        src={images.banner}
-        alt=""
-        style={{ objectFit: "cover", width: "100%", height: "100%" }}
-      />
     </div>
   );
   const CardFooter = () => (
@@ -228,14 +228,14 @@ export const Categories = () => {
       </div>
     </div>
   );
-  const CardImage = ({ height }) => (
+  const CardImage = ({ height,image }) => (
     <img
-      src={images.banner}
+      src={image}
       alt=""
       style={{ height: height || "20vw", width: "100%" }}
     />
   );
-  const Card = ({ footer }) => (
+  const Card = ({ footer,image }) => (
     <>
       {footer === "up" ? (
         <>
@@ -245,7 +245,7 @@ export const Categories = () => {
       ) : (
         <></>
       )}
-      <CardImage height={"35vw"} />
+      <CardImage height={"35vw"} image={image} />
       {footer === "down" ? (
         <>
           <Spacer height={10} />
@@ -461,9 +461,9 @@ export const Categories = () => {
             rowSpacing={{ xs: 5, sm: 2, md: 3 }}
             columnSpacing={{ xs: 1, sm: 2, md: 3 }}
           >
-            {[1, 2, 3, 4].map(() => (
+            {[images.slide6, images.slide7, images.slide13, images.slide11].map((item) => (
               <Grid item xs={6} sm={4} md={3}>
-                <CardImage />
+                <CardImage image={item} />
                 <Spacer height={10} />
                 <CardFooter />
               </Grid>
@@ -475,9 +475,9 @@ export const Categories = () => {
             rowSpacing={{ xs: 5, sm: 2, md: 3 }}
             columnSpacing={{ xs: 1, sm: 2, md: 6 }}
           >
-            {["up", "down"].map((item) => (
+            {[{image:images.slide14,footerPos:"up"},{image:images.slide15,footerPos:"down"}].map((item) => (
               <Grid item xs={12} sm={12} md={6}>
-                <Card footer={item} />
+                <Card footer={item.footerPos} image={item.image} />
               </Grid>
             ))}
           </Grid>

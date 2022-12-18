@@ -121,7 +121,7 @@ function BodyWeb(props) {
           }}
         >
           <img
-            src={images.banner}
+            src={images.homeBanner}
             className="resimage"
             style={{ width: "auto", height: "90vh" }}
           />

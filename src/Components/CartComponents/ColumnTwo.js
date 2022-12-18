@@ -77,15 +77,11 @@ to request a chnge or return."
         // direction={"vertical"}
         // className="mySwiper"
       >
-        <SwiperSlide>
-          <CartItem />
-        </SwiperSlide>
-        <SwiperSlide>
-          <CartItem />
-        </SwiperSlide>
-        <SwiperSlide>
-          <CartItem />
-        </SwiperSlide>
+        {[images.slide16, images.slide8, images.slide8].map((item) => (
+          <SwiperSlide>
+            <CartItem image={item} />
+          </SwiperSlide>
+        ))}
       </Swiper>
     </div>
   );
@@ -93,7 +89,7 @@ to request a chnge or return."
 
 export default ColumnTwo;
 
-const CartItem = () => (
+const CartItem = ({ image }) => (
   <>
     <Spacer height={20} />
     <div style={{ width: "100%" }}>
@@ -115,14 +111,17 @@ const CartItem = () => (
       >
         <Close fontSize="small" />
       </div>
-      <img src={images.banner} style={{ width: "100%" }} />
+      <img src={image} style={{ width: "100%" }} />
       <div>
         <Spacer height={20} />
-        <CustomText
-          fontSize={16}
-          title="Brasier de Banda Ancha para Soporte en Espalda"
-          textAlign={"left"}
-        />
+        <div style={{ display: "flex", textAlign: "left" }}>
+          <span>
+            <b style={{ fontFamily: "ClashDisplay-Bold" }}>
+              Brasier de Banda Ancha{" "}
+            </b>
+            para Soporte en Espalda
+          </span>
+        </div>
         <Spacer height={20} />
         <CustomText
           fontSize={16}
