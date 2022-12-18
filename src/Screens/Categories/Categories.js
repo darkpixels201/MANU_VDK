@@ -9,8 +9,12 @@ import { images } from "../../Assets/Images";
 import { colors } from "../../utils/Colors";
 import { icons } from "../../Assets/Icons";
 import { Autocomplete, TextField } from "@mui/material";
+
+import CategoryMobile from "../../Components/CatergoryComponents/CategoryMobile";
+
 import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
+
 
 export const Categories = () => {
   const [count, setCount] = useState(1);
@@ -308,6 +312,7 @@ export const Categories = () => {
       </Grid>
     </Grid>
   );
+
   const CatList = () => (
     <div style={{}}>
       <Spacer height={100} />
@@ -341,6 +346,8 @@ export const Categories = () => {
       {/* <CustomText fontSize={18} title="FILTROS" textAlign={"left"} /> */}
     </div>
   );
+
+
   const CatItem = ({ label, icon, iconPath, paddingLeft }) => (
     <div
       style={{
@@ -363,7 +370,14 @@ export const Categories = () => {
       {icon ? <img src={iconPath} alt="" style={{ height: 10 }} /> : <></>}
     </div>
   );
-  return (
+
+
+  const Body = () => (
+
+
+ 
+  // return (
+
     <div>
       <DiscountBanner />
       <Grid container rowSpacing={{ xs: 5, sm: 2, md: 3 }} columnSpacing={{}}>
@@ -460,6 +474,12 @@ export const Categories = () => {
       </Grid>
       <Spacer height={100} />
       <Footer />
+    </div>
+  )
+  return (
+    <div>
+      
+      {window.innerWidth <= 800 ? <CategoryMobile /> : <Body />}
     </div>
   );
 };

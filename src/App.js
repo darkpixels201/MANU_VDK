@@ -16,7 +16,19 @@ function App() {
   
   return (
     <div>
-      <CompareProducts/>
+
+      {/* <style jsx global>{`
+      body {
+        margin: 0px;
+        padding: 0px;
+      }
+    `}</style> */}
+       <Home />
+      {/* <Categories/> */}
+      {/* <CategoryMobile /> */}
+
+      {/* <CompareProducts/> */}
+
     </div>
   );
 }

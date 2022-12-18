@@ -24,22 +24,6 @@ const Item = styled(Paper)(({ theme }) => ({
 function Navbar() {
   //   const classes = useStyles();
 
-  const [width, setWidth] = useState(0);
-
-  useEffect(() => {
-    const updateWindowDimensions = () => {
-      const newWidth = window.innerWidth;
-      setWidth(newWidth);
-      console.log("updating height");
-    };
-
-    window.addEventListener("resize", updateWindowDimensions);
-
-    return () => window.removeEventListener("resize", updateWindowDimensions);
-  }, []);
-
-  console.log("give height", width);
-
   return (
     <div>
       <div
@@ -52,11 +36,7 @@ function Navbar() {
           justifyContent: "center",
         }}
       >
-        <CustomText
-          title=" “Obtén un "
-          fontSize={14}
-          color={colors.white}
-        />
+        <CustomText title=" “Obtén un " fontSize={14} color={colors.white} />
         <CustomText
           title="15% de descuento"
           fontSize={14}
