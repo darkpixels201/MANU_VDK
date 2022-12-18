@@ -19,8 +19,6 @@ import { icons } from "../../Assets/Icons";
 import NewArrivalSwiper from "./NewArrivalSwiper";
 
 const NewArrivals = (props) => {
- 
-
   const NewArrival = [
     {
       id: 1,
@@ -54,9 +52,6 @@ const NewArrivals = (props) => {
     // },
   ];
 
-
-
-  
   return (
     <div style={{ backgroundColor: props.on ? colors.black : colors.white }}>
       <Spacer height={100} />
@@ -67,12 +62,12 @@ const NewArrivals = (props) => {
             <CustomText
               title="NEW"
               fontFamily={"ClashDisplay-SemiBold"}
-              fontSize={45}
+              fontSize={window.innerWidth <= 700 ? 25 : 45}
               color={props.on ? colors.pureWite : colors.black}
             />
             <CustomText
               title="ARRIVALS"
-              fontSize={45}
+              fontSize={window.innerWidth <= 700 ? 25 : 45}
               color={props.on ? colors.pureWite : colors.black}
             />
           </div>
@@ -109,22 +104,21 @@ const NewArrivals = (props) => {
             clickable: true,
           }}
           modules={[FreeMode]}
-          // className="mySwiper"
         >
           {NewArrival.map((item, index) => (
-              <SwiperSlide
+            <SwiperSlide
               key={index}
-                style={{
-                  backgroundColor: props.on ? colors.black : colors.white,
-                }}
-              >
-                <NewArrivalSwiper
-                  image={item.image}
-                  text1={item.text1}
-                  text2={item.text2}
-                  on={props.on}
-                />
-              </SwiperSlide>
+              style={{
+                backgroundColor: props.on ? colors.black : colors.white,
+              }}
+            >
+              <NewArrivalSwiper
+                image={item.image}
+                text1={item.text1}
+                text2={item.text2}
+                on={props.on}
+              />
+            </SwiperSlide>
           ))}
 
           {/* <SwiperSlide style={{ backgroundColor: props.on ? colors.black : colors.pureWite }}>

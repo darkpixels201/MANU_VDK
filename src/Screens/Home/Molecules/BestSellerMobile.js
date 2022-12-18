@@ -130,7 +130,7 @@ const BestSellerMobile = () => {
           <div
             style={{
               display: "flex",
-              //   justifyContent: "right",
+                // justifyContent: "flex-end",
               alignItems: "center",
             }}
           >

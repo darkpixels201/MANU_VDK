@@ -18,6 +18,7 @@ import { Link } from "react-router-dom";
 import { MuiDrawer } from "../../Components/Drawer";
 import BottomBarNavigation from "../../Components/BottomNavigation";
 import { DropdownCom } from "../../Components/DropdownCom";
+import '../../Assets/Style/font.css'
 
 export const Categories = () => {
   const [count, setCount] = useState(1);
@@ -220,6 +221,7 @@ export const Categories = () => {
               backgroundColor: "#686868",
               color: colors.white,
               textDecoration: "none",
+              fontFamily: "ClashDisplay-Regular"
             }}
           >
             +ADD

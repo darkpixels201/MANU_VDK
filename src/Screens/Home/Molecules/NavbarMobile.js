@@ -31,12 +31,12 @@ export const NavbarMobile = () => {
   return (
     <div style={{ backgroundColor: colors.white }}>
       <Spacer height={10} />
-      <div style={{ display: "flex", justifyContent: "space-around" }}>
+      <div style={{ display: "flex", justifyContent: "space-around", width:"auto", paddingRight:25, paddingLeft:25 }}>
         <div>
           <CustomText title="VDK" fontFamily="ClashDisplay-SemiBold" />
         </div>
         <div
-          style={{ alignSelf: "center" }}
+          style={{ alignSelf: "center", }}
           onClick={() => {
             setOpen(!open);
           }}
@@ -73,7 +73,7 @@ export const NavbarMobile = () => {
             type="text"
             id="floatingInput"
           /> */}
-          <SearchComponent setOpen={setOpen} open={open} />
+          <SearchComponent setOpen={setOpen} open={open} style={{backgroundColor:colors.lightGray}} />
         </div>
         <div>
           <Link to="/cart">
@@ -91,7 +91,7 @@ export const NavbarMobile = () => {
                   position:"absolute",
                   // margibBottom:20,
                   top:42,
-                  left:364
+                  left:353
                 }}
               >
                 <CustomText

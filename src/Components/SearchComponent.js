@@ -65,7 +65,7 @@ const SearchComponent = (props) => {
         <input
           style={{
             height: 20,
-            width: 120,
+            width: window.innerWidth <= 700 ?  150 : 120,
             border: "none",
             alignSelf: "center",
             // borderBlock: "white",
@@ -74,6 +74,7 @@ const SearchComponent = (props) => {
             borderWidth: 0.1,
             paddingLeft: 25,
             borderWidth: 0.1,
+            backgroundColor: window.innerWidth <= 700 ?  colors.lightestGrey : ""
             // outline:"none"
           }}
           onClick={() => {

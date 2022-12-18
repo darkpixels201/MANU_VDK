@@ -25,30 +25,30 @@ const Footer = () => {
               paddingLeft: window.innerWidth <= 900 ? 40 : 0,
             }}
           >
-            <CustomText title="CONTACTO" color={colors.white} fontSize={15} />
+            <CustomText title="CONTACTO" color={colors.white} fontSize={13} />
             <Spacer height={10} />
             <CustomText
               title="+1 321 450 9305"
               color={colors.white}
-              fontSize={15}
+              fontSize={13}
             />
             <Spacer height={30} />
             <div style={{ display: "flex", flexWrap: "wrap" }}>
               <CustomText
-                title="Privacy Policy"
+                title="Privacy Policy &nbsp;&nbsp;&nbsp; /"
                 color={colors.white}
-                fontSize={15}
+                fontSize={13}
               />
               <CustomText
                 title="Terms And Conditions "
                 color={colors.white}
-                fontSize={15}
+                fontSize={13}
                 paddingLeft={15}
               />
               <CustomText
                 title="Returns & Exchange "
                 color={colors.white}
-                fontSize={15}
+                fontSize={13}
                 paddingLeft={15}
               />
             </div>

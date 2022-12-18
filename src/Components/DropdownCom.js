@@ -8,8 +8,10 @@ export const DropdownCom = () => {
     let d = document.getElementById("select_id").value;
     setValue(d);
   }
+
+ 
   return (
-    <div
+  <div
       style={{
         display:"flex",
         flexDirection:"row",
@@ -18,7 +20,7 @@ export const DropdownCom = () => {
         justifyContent: "space-between",
       }}
     >
-      <CustomText title={value} fontSize={18} color={colors.black} />
+      <CustomText title={value} fontSize={ window.innerWidth <= 700 ? 13 : 18} color={colors.black} />
       <div
         style={{
           width: 1,
@@ -27,12 +29,13 @@ export const DropdownCom = () => {
         }}
       />
       <select
-        style={{ display:"flex" , width: 14, borderWidth: 0, cursor:"pointer" }}
+        style={{ display:"flex" , width: 14, borderWidth: 0, cursor:"pointer", }}
         id={"select_id"}
         onChange={val}
+        defaultValue={val}
       >
         {/* <optgroup> */}
-        <option value="XS">XS</option>
+        <option value="XS" >XS</option>
         <option value="S">S</option>
         <option value="M">M</option>
         <option value="L">L</option>
@@ -43,5 +46,37 @@ export const DropdownCom = () => {
         {/* </optgroup> */}
       </select>
     </div>
+
+
+    
   );
 };
+
+
+            // New
+// const options = [
+//   {value: '2XS', text: '2XS'},
+//   {value: 'S', text: 'S'},
+//   {value: 'M', text: 'M'},
+//   {value: 'L', text: 'L'},
+//   {value: 'XL', text: 'XL'},
+//   {value: '2XL', text: '2XL'},
+// ];
+
+// const [selected, setSelected] = useState(options[0].value);
+
+// const handleChange = event => {
+//   console.log(event.target.value);
+//   setSelected(event.target.value);
+// };
+
+
+// <div>
+//     <select value={selected} onChange={handleChange}>
+//       {options.map(option => (
+//         <option key={option.value} value={option.value}>
+//           {option.text}
+//         </option>
+//       ))}
+//     </select>
+//   </div>

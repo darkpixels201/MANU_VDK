@@ -4,15 +4,16 @@ import { colors } from "../../utils/Colors";
 import CustomButton from "../CustomButton";
 import CustomText from "../CustomText";
 import Spacer from "../Spacer";
+import ToggleSwitch from "../ToggleSwitch";
 import BodySwiper from "./BodySwiper";
 
-const BodyMobile = () => {
+const BodyMobile = (props) => {
   return (
-    <div style={{backgroundColor:colors.white}} >
-      <div >
+    <div style={{ backgroundColor: colors.white }}>
+      <div>
         <div style={{ width: "100%", height: "40vh" }}>
           <img
-            style={{ width: "100%", position: "absolute",height:"40vh" }}
+            style={{ width: "100%", position: "absolute", height: "40vh" }}
             src={images.mobileHomeBanner}
           />
           <div
@@ -22,8 +23,8 @@ const BodyMobile = () => {
               padding: 40,
               display: "flex",
               flexDirection: "column",
-              justifyContent:"flex-end",
-              height:240
+              justifyContent: "flex-end",
+              height: 240,
             }}
           >
             <div>
@@ -56,15 +57,23 @@ const BodyMobile = () => {
         </div>
       </div>
       <Spacer height={10} />
-      <div style={{display:"flex", flexDirection:"row", justifyContent:"space-between" }}>
-        <div >
-          <img src={images.slide14} style={{height:200, width:190}} />
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-between",
+        }}
+      >
+        <div>
+          <img src={images.slide14} style={{ height: 200, width: 190 }} />
         </div>
         <div>
-        <img src={images.slide17} style={{height:200, width:190}} />
+          <img src={images.slide17} style={{ height: 200, width: 190 }} />
         </div>
       </div>
-      <BodySwiper />
+      <Spacer height={12} />
+      <ToggleSwitch on={props.on} setOn={props.setOn} />
+      <BodySwiper on={props.on} setOn={props.setOn} />
     </div>
   );
 };

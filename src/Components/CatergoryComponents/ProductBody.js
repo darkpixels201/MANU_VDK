@@ -173,17 +173,18 @@ const ProductBody = (props) => {
               }}
             >
               <div>
-                <CustomText
-                  title="$95.00"
-                  fontSize={15}
-                  color={props.on ? colors.pureWite : colors.black}
-                />
+                <div style={{ display: "flex", flexDirection: "column" }}>
+                  <s style={{fontSize:10}} >$135.00</s>
+                  <CustomText
+                    title="$95.00"
+                    fontSize={15}
+                    color={props.on ? colors.pureWite : colors.black}
+                  />
+                </div>
               </div>
               <Spacer width={17} />
               <div>
-
-              <DropdownCom/>
-
+                <DropdownCom />
               </div>
             </div>
 

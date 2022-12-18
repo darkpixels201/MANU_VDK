@@ -80,7 +80,7 @@ const CategoryMobile = (props) => {
   
 
   return (
-    <div>
+    <div style={{backgroundColor:colors.white}}>
       <Spacer height={5} />
       <div style={{ display: "flex", justifyContent: "space-around" }}>
         <div>

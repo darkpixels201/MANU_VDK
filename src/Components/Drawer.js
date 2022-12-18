@@ -61,23 +61,11 @@ export const MuiDrawer = (props) => {
           padding={0}
           width={350}
         >
-          <div
-            style={{
-              marginTop: 65,
-              display: "flex",
-              paddingRight: 60,
-              justifyContent: "flex-end",
-              cursor: "pointer",
-            }}
-          >
-            <img
-              src={icons.cross}
-              height={13}
-              width={13}
-              color={colors.black}
-              onClick={() => props.setIsDrawerOpen(false)}
-            />
-          </div>
+          {window.innerWidth <= 700 ? (
+            <MobileTop />
+          ) : (
+            <WebTop setIsDrawerOpen={props.setIsDrawerOpen} />
+          )}
           <Spacer height={30} />
           <List style={{ backgroundColor: colors.black }}>
             {DrawerItem.map((text, index) => (
@@ -102,63 +90,147 @@ export const MuiDrawer = (props) => {
                 </ListItem>
               </Link>
             ))}
-            <Spacer height={200} />
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-around",
-                alignItems: "center",
-              }}
-            >
-              <div style={{ display: "flex", flexDirection: "column" }}>
-                <CustomText
-                  title="Privacy Policy"
-                  color={colors.white}
-                  fontSize={12}
-                  alignSelf="flex-start"
-                  textDecoration={"underline"}
-                />
-                <Spacer height={10} />
-                <CustomText
-                  title="Terms And Conditions "
-                  color={colors.white}
-                  fontSize={12}
-                  textDecoration={"underline"}
-                />
-                <Spacer height={10} />
-                <CustomText
-                  title="Returns & Exchange "
-                  color={colors.white}
-                  fontSize={12}
-                  textDecoration={"underline"}
-                />
-              </div>
-              <div>
-                <img src={icons.headset} height={20} width={20} />
-              </div>
-            </div>
-            <Spacer height={60} />
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-around",
-                alignItems: "center",
-              }}
-            >
-              <div style={{ display: "flex", flexDirection: "column" }}>
-                <CustomText
-                  title="Ventadirekta © 2021. All Rights Reserved"
-                  color={colors.white}
-                  fontSize={10}
-                />
-              </div>
-              <div>
-                <img src={icons.cross} height={13} width={13} />
-              </div>
-            </div>
+
+            {window.innerWidth <= 775 ? <Footer /> : ""}
           </List>
         </Box>
       </Drawer>
     </>
   );
 };
+
+const MobileTop = () => (
+  <>
+  <Spacer height={20} />
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "space-between",
+        width: "auto",
+        paddingRight: 50,
+        paddingLeft: 50,
+      }}
+    >
+      <div>
+        <CustomText
+          title="VDK"
+          color={colors.white}
+        />
+      </div>
+      <div>
+        <Link to="/cart">
+          <div style={{ height: 25, width: 25, cursor: "pointer",  }}>
+            <img src={icons.cartWhite} style={{ height: 20, width: 20,  }} />
+            <div
+                style={{
+                  backgroundColor: colors.lightGray,
+                  borderRadius: 50,
+                  height: 17,
+                  width: 17,
+                  display:"flex",
+                  alignItems:"center",
+                  justifyContent:"center",
+                  position:"absolute",
+                  // margibBottom:20,
+                  top:12,
+                  left:292
+                }}
+              >
+                <CustomText
+                  title="1"
+                  color={colors.white}
+                  fontSize={10}
+                />
+              </div>
+          </div>
+        </Link>
+      </div>
+    </div>
+  </>
+);
+
+      // Web Footer
+
+const WebTop = (props) => (
+  <div>
+    <div
+      style={{
+        marginTop: 65,
+        display: "flex",
+        paddingRight: 60,
+        justifyContent: "flex-end",
+        cursor: "pointer",
+      }}
+    >
+      <img
+        src={icons.cross}
+        height={13}
+        width={13}
+        color={colors.black}
+        onClick={() => props.setIsDrawerOpen(false)}
+      />
+    </div>
+  </div>
+);
+
+
+          // Mobile Footer
+
+const Footer = () => (
+  <>
+    <Spacer height={200} />
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "space-around",
+        alignItems: "center",
+      }}
+    >
+      <div style={{ display: "flex", flexDirection: "column" }}>
+        <CustomText
+          title="Privacy Policy"
+          color={colors.white}
+          fontSize={12}
+          alignSelf="flex-start"
+          textDecoration={"underline"}
+        />
+        <Spacer height={10} />
+        <CustomText
+          title="Terms And Conditions "
+          color={colors.white}
+          fontSize={12}
+          textDecoration={"underline"}
+        />
+        <Spacer height={10} />
+        <CustomText
+          title="Returns & Exchange "
+          color={colors.white}
+          fontSize={12}
+          textDecoration={"underline"}
+        />
+      </div>
+      <div>
+        <img src={icons.headset} height={20} width={20} />
+      </div>
+    </div>
+    <Spacer height={60} />
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "space-around",
+        alignItems: "center",
+      }}
+    >
+      <div style={{ display: "flex", flexDirection: "column" }}>
+        <CustomText
+          title="Ventadirekta © 2021. All Rights Reserved"
+          color={colors.white}
+          fontSize={10}
+        />
+      </div>
+      <div>
+        <img src={icons.cross} height={13} width={13} />
+      </div>
+    </div>
+  </>
+);

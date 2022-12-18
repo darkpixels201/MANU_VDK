@@ -1,16 +1,16 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 import CustomText from "../CustomText";
 import CustomButton from "../CustomButton";
 import { images } from "../../Assets/Images";
 import { colors } from "../../utils/Colors";
 import Spacer from "../Spacer";
-import { Autocomplete, TextField } from '@mui/material';
-import { DropdownCom } from '../DropdownCom';
-import { Link } from 'react-router-dom';
+import { Autocomplete, TextField } from "@mui/material";
+import { DropdownCom } from "../DropdownCom";
+import { Link } from "react-router-dom";
 
 const NewArrivalSwiper = (props) => {
   const customer = ["2XS", "XS", "M", "L", "XL", "2XL"];
-  
+
   const [currentcustomer, setCurrentCustomer] = useState(null);
   const [count, setCount] = useState(1);
 
@@ -29,7 +29,6 @@ const NewArrivalSwiper = (props) => {
     },
   ];
   return (
-   
     <div
       style={{
         height: "90vh",
@@ -61,29 +60,25 @@ const NewArrivalSwiper = (props) => {
             // backgroundColor: colors.orangeLight,
           }}
         >
-          <div style={{top:0, display:"flex", justifyContent:"right"}}>
-          <div
-            style={{
-              backgroundColor: colors.grey,
-              height: 30,
-              width: 60,
-              position: "absolute",
-              display: "flex",
-              justifyContent: "center",
-              alignItems:"center"
-            }}
-          >
-            <CustomText
-              title="NEW"
-              color={colors.white}
-              fontSize={14}
+          <div style={{ top: 0, display: "flex", justifyContent: "right" }}>
+            <div
+              style={{
+                backgroundColor: colors.grey,
+                height: 30,
+                width: 60,
+                position: "absolute",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <CustomText title="NEW" color={colors.white} fontSize={14} />
+            </div>
+            <img
+              src={props.image}
+              style={{ width: "95%", height: 260, objectFit: "fill" }}
             />
           </div>
-          <img
-            src={props.image}
-            style={{ width: "95%", height: 260, objectFit: "fill" }}
-          />
-        </div>
         </div>
         <Spacer height={10} />
         <div>
@@ -121,23 +116,7 @@ const NewArrivalSwiper = (props) => {
                 flex: 4,
               }}
             >
-              <div>
-                {/* <Autocomplete
-                  options={customer}
-                  sx={{ width: 70,  }}
-                  defaultValue={customer[0]}
-                  // clearIcon
-                  // color={ props.on ? colors.pureWite : colors.black}
-                  // popupIcon= {<img src={icons.downArrow} />}
-                  renderInput={(params) => (
-                    <TextField {...params} variant="standard" color="primary" style={{color:colors.white}} />
-                  )}
-                  currentcustomer={currentcustomer}
-                  onChange={(event, newValue) => setCurrentCustomer(newValue)}
-                  // style={{height:10, width:5, backgroundColor:colors.black}}
-                /> */}
-                <DropdownCom />
-              </div>
+              <div>{/* <DropdownCom /> */}</div>
 
               {FilledCircle.map((circle, index) => (
                 <div key={index} style={{ paddingLeft: 10 }}>
@@ -201,9 +180,10 @@ const NewArrivalSwiper = (props) => {
             }}
           >
             <div style={{ display: "flex", flexDirection: "column" }}>
+              <s style={{ fontSize: 13, color: window.innerWidth <= 700 ? colors.grey : colors.black }}>$135.00</s>
               <CustomText
                 title="$95.00"
-                fontSize={25}
+                fontSize={15}
                 color={props.on ? colors.pureWite : colors.black}
               />
             </div>
@@ -215,18 +195,18 @@ const NewArrivalSwiper = (props) => {
               }}
             >
               <Spacer width={20} />
-              <Link to="/cart" style={{textDecoration:"none"}}>
-              <CustomButton
-                title="+ ADD"
-                fontSize={14}
-                justifyContent={"center"}
-                borderRadius={"0"}
-                width={90}
-                height={30}
-                color={colors.white}
-                backgroundColor={colors.grey}
-                fontFamily={"ClashDisplay-Light"}
-              />
+              <Link to="/cart" style={{ textDecoration: "none" }}>
+                <CustomButton
+                  title="+ ADD"
+                  fontSize={14}
+                  justifyContent={"center"}
+                  borderRadius={"0"}
+                  width={90}
+                  height={30}
+                  color={colors.white}
+                  backgroundColor={colors.grey}
+                  fontFamily={"ClashDisplay-Light"}
+                />
               </Link>
             </div>
           </div>
@@ -234,6 +214,6 @@ const NewArrivalSwiper = (props) => {
       </div>
     </div>
   );
-}
+};
 
-export default NewArrivalSwiper
+export default NewArrivalSwiper;
