@@ -108,9 +108,13 @@ export const NavWeb = () => {
                 className="bc"
                 key={index}
                 style={{
-                  paddingRight: 32,
-                  width: 60,
+                  paddingRight: 16,
+                  paddingLeft:16,
+                  width: 63,
                   height: "100%",
+                  alignItems:"center",
+                  display:"flex",
+                  justifyContent:"center"
                   // backgroundColor: colors.lightGreen,
                 }}
               >
