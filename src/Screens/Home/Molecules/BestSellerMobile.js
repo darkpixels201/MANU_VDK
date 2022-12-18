@@ -41,7 +41,7 @@ const BestSellerMobile = () => {
 
   const [count, setCount] = useState(1);
   return (
-    <div style={{ width: "auto", padding: 25,  }}>
+    <div style={{ width: "auto", padding: 25, backgroundColor: colors.white }}>
       <Container maxWidth="lg">
         <div>
           <CustomText

@@ -7,9 +7,12 @@ import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 // import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { MdOutlineHome } from "react-icons/md";
 import { icons } from "../Assets/Icons";
+import { MuiDrawer } from "./Drawer";
+import { Link } from "react-router-dom";
 
 export default function BottomBarNavigation() {
   const [value, setValue] = React.useState("recents");
+  const [isDrawerOpen, setIsDrawerOpen] = React.useState(false)
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -22,12 +25,14 @@ export default function BottomBarNavigation() {
         value={value}
         onChange={handleChange}
       >
+        <Link Link to="/" style={{ textDecoration: "none", display:"flex", justifyContent:"center" }}>
         <BottomNavigationAction
           // label="Recents"
           value="recents"
           // icon={<MdOutlineHome style={{fontSize:20}} />}
           icon={<img src={icons.home} style={{ height: 20, width: 20 }} />}
         />
+        </Link>
         <BottomNavigationAction
           // label="Favorites"
           value="favorites"
@@ -41,9 +46,10 @@ export default function BottomBarNavigation() {
         <BottomNavigationAction
         //   label="Folder"
           value="folder"
-          icon={<img src={icons.drawer} style={{ height: 14, width: 14 }} />}
+          icon={<img src={icons.drawer} style={{ height: 14, width: 14 }} onClick={() => setIsDrawerOpen(true)}  />}
         />
       </BottomNavigation>
+      <MuiDrawer isDrawerOpen={isDrawerOpen} setIsDrawerOpen={setIsDrawerOpen} />
     </div>
   );
 }

@@ -9,7 +9,7 @@ const Footer = () => {
       <div
         style={{
           width: "100%",
-          height:  window.innerWidth <= 900 ? "70vh": "30vh",
+          height: window.innerWidth <= 900 ? "70vh" : "30vh",
           backgroundColor: colors.lightBlack,
           display: "flex",
           justifyContent: "space-around",
@@ -18,7 +18,13 @@ const Footer = () => {
         }}
       >
         <div style={{}}>
-          <div style={{ display: "flex", flexDirection: "column",  paddingLeft:window.innerWidth <= 900 ? 40: 0 }}>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              paddingLeft: window.innerWidth <= 900 ? 40 : 0,
+            }}
+          >
             <CustomText title="CONTACTO" color={colors.white} fontSize={15} />
             <Spacer height={10} />
             <CustomText
@@ -27,7 +33,7 @@ const Footer = () => {
               fontSize={15}
             />
             <Spacer height={30} />
-            <div style={{ display: "flex", flexWrap:"wrap" }}>
+            <div style={{ display: "flex", flexWrap: "wrap" }}>
               <CustomText
                 title="Privacy Policy"
                 color={colors.white}

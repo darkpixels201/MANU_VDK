@@ -8,6 +8,7 @@ import NewArrivals from "../../Components/NewArrivals/NewArrivals";
 import BestSeller from "./Molecules/BestSeller";
 import Testing from '../Testing'
 import { colors } from "../../utils/Colors";
+import { DropdownCom } from "../../Components/DropdownCom";
 
 
 function Home() {

@@ -15,7 +15,7 @@ const ProductBody = (props) => {
   return (
     <div
       style={{
-        height: "50vh",
+        height: 400,
         width: 350,
         display: "flex",
         justifyContent: "center",
@@ -24,7 +24,7 @@ const ProductBody = (props) => {
         // backgroundColor: colors.black,
       }}
     >
-      {/* <Spacer height={20} /> */}
+      {/* <Spacer height={40} /> */}
       <div
         style={{
           width: window.innerWidth <= 1000 ? "85%" : "85%",

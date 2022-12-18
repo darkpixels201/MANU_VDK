@@ -16,6 +16,7 @@ import { colors } from "../../utils/Colors";
 import CustomButton from "../CustomButton";
 import { Switch } from "@mui/material";
 import ToggleSwitch from "../ToggleSwitch";
+import { Link } from "react-router-dom";
 
 const BodySwiper = (props) => {
   const SwiperArray = [
@@ -243,6 +244,7 @@ const CartItem1 = (props) => (
             }}
           >
             <Spacer width={20} />
+            <Link to="/categories">
             <CustomButton
               title="SHOP NOW"
               fontSize={14}
@@ -255,6 +257,7 @@ const CartItem1 = (props) => (
               fontFamily={"ClashDisplay-Light"}
               textDecoration={"underline"}
             />
+            </Link>
           </div>
         </div>
       </div>

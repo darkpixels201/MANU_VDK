@@ -26,7 +26,7 @@ const SwiperProduct = (props) => {
   return (
     <div
       style={{
-        height: "50vh",
+        height: 500,
         width: 350,
         display: "flex",
         justifyContent: "center",
@@ -38,7 +38,7 @@ const SwiperProduct = (props) => {
       {/* <Spacer height={20} /> */}
       <div
         style={{
-          width: window.innerWidth <= 1000 ? "90%" : "85%",
+          width: window.innerWidth <= 1000 ? "75%" : "85%",
           height: window.innerWidth <= 1000 ? "40vh" : "55vh",
           // backgroundColor: props.on ? colors.black : colors.pureWite,
           // backgroundColor: colors.lightGreen,

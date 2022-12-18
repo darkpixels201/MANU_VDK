@@ -22,8 +22,6 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 function Navbar() {
-  //   const classes = useStyles();
-
   return (
     <div>
       <div
