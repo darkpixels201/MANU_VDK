@@ -17,9 +17,13 @@ import Draggable from "react-draggable";
 import styled from "styled-components";
 import BottomBarNavigation from "../../Components/BottomNavigation";
 import { DropdownCom } from "../../Components/DropdownCom";
+import { Rnd } from "react-rnd";
+var currentPosition = 0;
 
 const CompareProducts = () => {
-  const [value,setValue]=useState('XS');
+  const [value, setValue] = useState("XS");
+  const [position, setPosition] = useState(0);
+  const [desc, setDesc] = useState(false);
   const noUnderline = {
     textDecoration: "none",
   };
@@ -55,7 +59,10 @@ const CompareProducts = () => {
   function val() {
     let d = document.getElementById("select_id").value;
     setValue(d);
-}
+  }
+  // const setPosition = (v) => {
+  //   setDesc(v);
+  // };
   const imgSlider = [{}];
   const [count, setCount] = useState(1);
 
@@ -527,7 +534,7 @@ const CompareProducts = () => {
                           ))}
                         </div>
 
-                        <DropdownCom/>
+                        <DropdownCom />
                       </div>
                       <Spacer height={20} />
                       <div
@@ -839,10 +846,19 @@ const CompareProducts = () => {
       </div>
       <Draggable
         axis="y"
-        defaultPosition={{ x: 0, y: -50 }}
+        defaultPosition={{ x: 0, y: -500 }}
         // position={'absolute'}
         // grid={[25, 25]}
         // scale={2}
+        onStop={(ev) => {
+          var rect = ev.target.getBoundingClientRect();
+          // console.log(rect.top, rect.right, rect.bottom, rect.left);
+          // setPosition(ev.target.getBoundingClientRect().top);
+          // currentPosition = ev.target.getBoundingClientRect();
+          // currentPosition.toString(rect.top)
+          // console.log("currentPosition=>", currentPosition);
+          console.log("currentPosition=>", ev.target.getBoundingClientRect());
+        }}
       >
         <div
           style={{
@@ -853,172 +869,219 @@ const CompareProducts = () => {
             borderTopRightRadius: 20,
           }}
         >
-          <Spacer height={30} />
-          <div
-            style={{
-              height: 4,
-              backgroundColor: "#1B1B1B",
-              width: 70,
-              margin: "auto",
-            }}
-          />
-          <Spacer height={20} />
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "space-between",
-              paddingRight: 30,
-              paddingLeft: 30,
-            }}
-          >
-            <CustomText
-              title="Pijama  de Seda"
-              fontSize={20}
-              fontFamily={"ClashDisplay-SemiBold"}
-            />
-            <img src={icons.share} alt="" style={{ height: 20 }} />
-          </div>
-          <div
-            style={{
-              paddingRight: 30,
-              paddingLeft: 30,
-            }}
-          >
-            <CustomText title="PARA MUJER" fontSize={16} />
-          </div>
-          <Spacer height={20} />
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "space-between",
-              paddingRight: 30,
-              paddingLeft: 30,
-            }}
-          >
+          {position <= 450 ? (
             <div>
-              <s style={{ color: "#686868" }}>$135.00</s>
-              <CustomText title="$95.00 " fontSize={20} />
-            </div>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "center",
-                // alignItems:"center",
-                alignSelf: "flex-end",
-                // backgroundColor: colors.parrot,
-              }}
-            >
-              {FilledCircle.map((circle, index) => (
-                <div key={index} style={{ paddingLeft: 10 }}>
-                  {count == circle.id ? (
-                    <div
-                      style={{
-                        height: 22,
-                        width: 22,
-                        borderRadius: 50,
-                        borderColor: colors.black,
-                        border: "solid",
-                        borderWidth: 1,
-                        display: "flex",
-                        textAlign: "center",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        alignSelf: "center",
-                        cursor: "pointer",
-                      }}
-                    >
-                      <div
-                        style={{
-                          height: 15,
-                          width: 15,
-                          borderRadius: 50,
-                          border: "solid",
-                          borderColor: colors.black,
-                          borderWidth: 0.2,
-                          backgroundColor: circle.bgcolor,
-                        }}
-                      ></div>
-                    </div>
-                  ) : (
-                    <div
-                      style={{
-                        height: 18,
-                        width: 18,
-                        borderRadius: 50,
-                        border: "solid",
-                        borderColor: colors.black,
-                        borderWidth: 0.2,
-                        backgroundColor: circle.bgcolor,
-                        marginTop: 3,
-                        cursor: "pointer",
-                      }}
-                      onClick={() => {
-                        setCount(circle.id);
-                      }}
-                    ></div>
-                  )}
+              <Spacer height={30} />
+              <div
+                style={{
+                  ...row,
+                  justifyContent: "space-between",
+                  paddingRight: 30,
+                  paddingLeft: 30,
+                  alignItems: "center",
+                }}
+              >
+                <Spacer width={30} />
+                <div
+                  style={{
+                    height: 4,
+                    backgroundColor: "#1B1B1B",
+                    width: 70,
+                    // margin: "auto",
+                  }}
+                />
+                <img src={icons.share} alt="" style={{ height: 20 }} />
+              </div>
+              <Spacer height={30} />
+              <div
+                style={{
+                  ...row,
+                  justifyContent: "space-between",
+                  paddingRight: 30,
+                  paddingLeft: 30,
+                  // alignItems: "center",
+                }}
+              >
+                <div>
+                  <CustomText
+                    title="Pijama  de Seda"
+                    fontSize={20}
+                    fontFamily={"ClashDisplay-SemiBold"}
+                  />
+                  <CustomText title="PARA MUJER" fontSize={16} />
                 </div>
-              ))}
-            </div>
-          </div>
-          {/* <Spacer height={10} />
-          <div
-            style={{
-              height: 2,
-              backgroundColor: colors.white,
-              width: "100%",
-              margin: "auto",
-              marginLeft: 20,
-            }}
-          /> */}
-          <Spacer height={20} />
-          {/* <div
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "space-between",
-              paddingRight: 20,
-              paddingLeft: 20,
-            }}
-          >
-            <div
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    // alignSelf: "flex-end",
+                    marginTop: -10,
+                    // backgroundColor: colors.parrot,
+                  }}
+                >
+                  {FilledCircle.map((circle, index) => (
+                    <div key={index} style={{ paddingLeft: 10 }}>
+                      {count == circle.id ? (
+                        <div
+                          style={{
+                            height: 22,
+                            width: 22,
+                            borderRadius: 50,
+                            borderColor: colors.black,
+                            border: "solid",
+                            borderWidth: 1,
+                            display: "flex",
+                            textAlign: "center",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            alignSelf: "center",
+                            cursor: "pointer",
+                          }}
+                        >
+                          <div
+                            style={{
+                              height: 15,
+                              width: 15,
+                              borderRadius: 50,
+                              border: "solid",
+                              borderColor: colors.black,
+                              borderWidth: 0.2,
+                              backgroundColor: circle.bgcolor,
+                            }}
+                          ></div>
+                        </div>
+                      ) : (
+                        <div
+                          style={{
+                            height: 18,
+                            width: 18,
+                            borderRadius: 50,
+                            border: "solid",
+                            borderColor: colors.black,
+                            borderWidth: 0.2,
+                            backgroundColor: circle.bgcolor,
+                            marginTop: 3,
+                            cursor: "pointer",
+                          }}
+                          onClick={() => {
+                            setCount(circle.id);
+                          }}
+                        ></div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <Spacer height={10} />
+              <div
+                style={{
+                  ...row,
+                  justifyContent: "space-between",
+                  // paddingRight: 30,
+                  paddingLeft: 30,
+                  alignItems: "center",
+                }}
+              >
+                <div>
+                  <s style={{ color: "#686868" }}>$135.00</s>
+                  <CustomText title="$95.00 " fontSize={20} />
+                </div>
+                <div
+                  style={{
+                    height: 2,
+                    backgroundColor: "#1B1B1B",
+                    width: "55%",
+                    // margin: "auto",
+                  }}
+                />
+              </div>
+              <Spacer height={30} />
+              <div
+                style={{
+                  // ...row,
+                  // justifyContent: "space-between",
+                  paddingRight: 30,
+                  paddingLeft: 30,
+                  // alignItems: "center",
+                }}
+              >
+                <CustomText
+                  title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur congue tellus sem, id porttitor elit fermentum eu. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+                  fontSize={14}
+                />
+                <Spacer height={20} />
+                <CustomText
+                  title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur congue tellus sem, id porttitor elit fermentum eu. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+                  fontSize={14}
+                />
+                <Spacer height={20} />
+                <CustomText
+                  title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur congue tellus sem, id porttitor elit fermentum eu."
+                  fontSize={14}
+                />
+              </div>
+              <Spacer height={100} />
+              <div style={{
+                  ...row,
+                  justifyContent: "space-between",
+                  paddingRight: 30,
+                  paddingLeft: 30,
+                  alignItems: "center",
+                }}>
+                <DropdownCom/>
+                
+                <a
+              href=""
               style={{
-                display: "flex",
+                backgroundColor: "#fff",
+                color: "#1B1B1B",
+                borderWidth: 1,
+                borderColor: "#1B1B1B",
+                borderStyle: "solid",
+                // width: "40%",
                 justifyContent: "center",
-                flexDirection: "row",
+                alignItems: "center",
+                display: "flex",
+                paddingRight: 15,
+                paddingLeft: 15,
+                paddingTop: 10,
+                paddingBottom: 10,
+                textDecoration: "none",
               }}
             >
-              <CustomText
-                title="TOTAL "
-                fontSize={16}
-                color={colors.white}
-                fontFamily={"ClashDisplay-SemiBold"}
-              />
-              <Spacer width={2} />
-              <CustomText title="FINAL " fontSize={16} color={colors.white} />
-            </div>
-            <CustomText title="$95.00 " fontSize={16} color={colors.white} />
-          </div>
-          <Spacer height={40} /> */}
+              GUÍA DE TALLAS
+              <Spacer width={10}/>
+              <img src={icons.rightArrow} alt="" style={{height:10}} />
+            </a>
+              </div>
+              <Spacer height={50} />
+              <div style={{
+                  ...row,
+                  justifyContent: "space-between",
+                  paddingRight: 30,
+                  paddingLeft: 30,
+                  alignItems: "center",
+                }}>
+                  <div style={{ ...row, alignItems: "center" }}>
+            <a href="" style={{ ...noUnderline }}>
+              <CustomText title="-" fontSize={20} />
+            </a>
+            <Spacer width={30} />
+            <CustomText title="1" fontSize={20} />
 
-          <div
-            style={{
-              flexDirection: "row",
-              display: "flex",
-              // paddingRight: 20,
-              paddingLeft: 20,
-              justifyContent: "space-between",
-            }}
-          >
-            <a
+            <Spacer width={30} />
+            <a href="" style={{ ...noUnderline }}>
+              <CustomText title="+" fontSize={20} />
+            </a>
+          </div>
+                <a
               href=""
               style={{
                 backgroundColor: "#686868",
                 color: "#fff",
-                width: "30%",
+                // width: "40%",
                 justifyContent: "center",
                 alignItems: "center",
                 display: "flex",
@@ -1030,28 +1093,168 @@ const CompareProducts = () => {
               }}
             >
               +ADD TO CART
-            </a>
-            <div style={{ ...row, alignItems: "center" }}>
-              <a href="" style={{ ...noUnderline }}>
-                <CustomText title="-" fontSize={20} />
-              </a>
-              <Spacer width={30} />
-              <CustomText title="1" fontSize={20} />
-
-              <Spacer width={30} />
-              <a href="" style={{ ...noUnderline }}>
-                <CustomText title="+" fontSize={20} />
-              </a>
-              <Spacer width={10} />
+            </a> 
+          
+              </div>
             </div>
-            {/* <CustomButton
-            title={"Apply"}
-            backgroundColor={colors.white}
-            borderRadius={1}
-            color={colors.black}
-          /> */}
-          </div>
-          <Spacer height={30} />
+          ) : (
+            <div>
+              <Spacer height={30} />
+              <div
+                style={{
+                  height: 4,
+                  backgroundColor: "#1B1B1B",
+                  width: 70,
+                  margin: "auto",
+                }}
+              />
+              <Spacer height={20} />
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "space-between",
+                  paddingRight: 30,
+                  paddingLeft: 30,
+                }}
+              >
+                <CustomText
+                  title="Pijama  de Seda"
+                  fontSize={20}
+                  fontFamily={"ClashDisplay-SemiBold"}
+                />
+                <img src={icons.share} alt="" style={{ height: 20 }} />
+              </div>
+              <div
+                style={{
+                  paddingRight: 30,
+                  paddingLeft: 30,
+                }}
+              >
+                <CustomText title="PARA MUJER" fontSize={16} />
+              </div>
+              <Spacer height={20} />
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "space-between",
+                  paddingRight: 30,
+                  paddingLeft: 30,
+                }}
+              >
+                <div>
+                  <s style={{ color: "#686868" }}>$135.00</s>
+                  <CustomText title="$95.00 " fontSize={20} />
+                </div>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    justifyContent: "center",
+                    // alignItems:"center",
+                    alignSelf: "flex-end",
+                    // backgroundColor: colors.parrot,
+                  }}
+                >
+                  {FilledCircle.map((circle, index) => (
+                    <div key={index} style={{ paddingLeft: 10 }}>
+                      {count == circle.id ? (
+                        <div
+                          style={{
+                            height: 22,
+                            width: 22,
+                            borderRadius: 50,
+                            borderColor: colors.black,
+                            border: "solid",
+                            borderWidth: 1,
+                            display: "flex",
+                            textAlign: "center",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            alignSelf: "center",
+                            cursor: "pointer",
+                          }}
+                        >
+                          <div
+                            style={{
+                              height: 15,
+                              width: 15,
+                              borderRadius: 50,
+                              border: "solid",
+                              borderColor: colors.black,
+                              borderWidth: 0.2,
+                              backgroundColor: circle.bgcolor,
+                            }}
+                          ></div>
+                        </div>
+                      ) : (
+                        <div
+                          style={{
+                            height: 18,
+                            width: 18,
+                            borderRadius: 50,
+                            border: "solid",
+                            borderColor: colors.black,
+                            borderWidth: 0.2,
+                            backgroundColor: circle.bgcolor,
+                            marginTop: 3,
+                            cursor: "pointer",
+                          }}
+                          onClick={() => {
+                            setCount(circle.id);
+                          }}
+                        ></div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <Spacer height={20} />
+
+              <div
+                style={{
+                  flexDirection: "row",
+                  display: "flex",
+                  paddingLeft: 20,
+                  justifyContent: "space-between",
+                }}
+              >
+                <a
+                  href=""
+                  style={{
+                    backgroundColor: "#686868",
+                    color: "#fff",
+                    width: "30%",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    display: "flex",
+                    paddingRight: 20,
+                    paddingLeft: 20,
+                    paddingTop: 10,
+                    paddingBottom: 10,
+                    textDecoration: "none",
+                  }}
+                >
+                  +ADD TO CART
+                </a>
+                <div style={{ ...row, alignItems: "center" }}>
+                  <a href="" style={{ ...noUnderline }}>
+                    <CustomText title="-" fontSize={20} />
+                  </a>
+                  <Spacer width={30} />
+                  <CustomText title="1" fontSize={20} />
+
+                  <Spacer width={30} />
+                  <a href="" style={{ ...noUnderline }}>
+                    <CustomText title="+" fontSize={20} />
+                  </a>
+                  <Spacer width={10} />
+                </div>
+              </div>
+              <Spacer height={30} />
+            </div>
+          )}
         </div>
       </Draggable>
       <BottomBarNavigation />

@@ -65,76 +65,74 @@ const Cart = () => {
   );
 
   const MobileCartItem = () => (
-    <SwiperSlide style={{height:140}} >
-
-    <div style={{ ...row }}>
-      <div style={{ height: 120, width: 120 }}>
-        <a
-          href=""
-          style={{
-            backgroundColor: "#000",
-            color: "#fff",
-            height: 25,
-            width: 25,
-            borderRadius: 22.5,
-            position: "absolute",
-            marginLeft: 10,
-            marginTop: 15,
-            justifyContent: "center",
-            alignItems: "center",
-            display: "flex",
-          }}
-        >
-          <Close fontSize="inherit" />
-        </a>
-        <img
-          src={images.banner}
-          alt=""
-          style={{ height: "100%", width: 120 }}
-          
-        />
-      </div>
-      <Spacer width={50} />
-      <div>
-        <div style={{ ...row }}>
-          <CustomText
-            title="PRoducto "
-            fontSize={16}
-            fontFamily={"ClashDisplay-SemiBold"}
+    <SwiperSlide style={{ height: 140 }}>
+      <div style={{ ...row }}>
+        <div style={{ height: 120, width: 120 }}>
+          <a
+            href=""
+            style={{
+              backgroundColor: "#000",
+              color: "#fff",
+              height: 25,
+              width: 25,
+              borderRadius: 22.5,
+              position: "absolute",
+              marginLeft: 10,
+              marginTop: 15,
+              justifyContent: "center",
+              alignItems: "center",
+              display: "flex",
+            }}
+          >
+            <Close fontSize="inherit" />
+          </a>
+          <img
+            src={images.banner}
+            alt=""
+            style={{ height: "100%", width: 120 }}
           />
-          <Spacer width={5} />
-          <CustomText title="nombre " fontSize={16} />
         </div>
-        <Spacer height={5} />
-        <CustomText
-          title="Lorem ipsum dolor sit amet, consectetur adipiscing elit.  "
-          fontSize={16}
-        />
-        <Spacer height={10} />
-        <div
-          style={{
-            ...row,
-            justifyContent: "space-between",
-            alignItems: "center",
-          }}
-        >
-          <CustomText title="$95.00" fontSize={16} />
-          <Spacer width={5} />
-          <div style={{ ...row, alignItems: "center" }}>
-            <a href="" style={{ ...noUnderline }}>
-              <CustomText title="-" fontSize={20} />
-            </a>
-            <Spacer width={20} />
-            <CustomText title="1" fontSize={20} />
+        <Spacer width={50} />
+        <div>
+          <div style={{ ...row }}>
+            <CustomText
+              title="PRoducto "
+              fontSize={16}
+              fontFamily={"ClashDisplay-SemiBold"}
+            />
+            <Spacer width={5} />
+            <CustomText title="nombre " fontSize={16} />
+          </div>
+          <Spacer height={5} />
+          <CustomText
+            title="Lorem ipsum dolor sit amet, consectetur adipiscing elit.  "
+            fontSize={16}
+          />
+          <Spacer height={10} />
+          <div
+            style={{
+              ...row,
+              justifyContent: "space-between",
+              alignItems: "center",
+            }}
+          >
+            <CustomText title="$95.00" fontSize={16} />
+            <Spacer width={5} />
+            <div style={{ ...row, alignItems: "center" }}>
+              <a href="" style={{ ...noUnderline }}>
+                <CustomText title="-" fontSize={20} />
+              </a>
+              <Spacer width={20} />
+              <CustomText title="1" fontSize={20} />
 
-            <Spacer width={20} />
-            <a href="" style={{ ...noUnderline }}>
-              <CustomText title="+" fontSize={20} />
-            </a>
+              <Spacer width={20} />
+              <a href="" style={{ ...noUnderline }}>
+                <CustomText title="+" fontSize={20} />
+              </a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
     </SwiperSlide>
   );
   const MobileCart = () => (
@@ -176,28 +174,28 @@ const Cart = () => {
         </div>
         <Spacer height={30} />
         <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "space-around",
-          flexWrap: "wrap",
-          // margin: "4px 4px",
-          // padding: 4,
-          // backgroundColor: "green",
-          width: "100%",
-          height: "100%",
-          overflowX: "hidden",
-          overflowY: "auto",
-          textAlign: "justify",
-        }}
-      >
-        {[1, 2, 3,4,5,6].map((index) => (
-              <>
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-around",
+            flexWrap: "wrap",
+            // margin: "4px 4px",
+            // padding: 4,
+            // backgroundColor: "green",
+            width: "100%",
+            height: "100%",
+            overflowX: "hidden",
+            overflowY: "auto",
+            textAlign: "justify",
+          }}
+        >
+          {[1, 2, 3, 4, 5, 6].map((index) => (
+            <>
               <MobileCartItem key={index} />
-              <Spacer height={20}/>
-              </>
+              <Spacer height={20} />
+            </>
           ))}
-      </div>
+        </div>
         {/* <Swiper
           slidesPerView={3.2}
           // spaceBetween={20}
@@ -343,13 +341,6 @@ const Cart = () => {
             >
               Apply
             </a>
-            {/* <ButtonAnchor/> */}
-            {/* <CustomButton
-            title={"Apply"}
-            backgroundColor={colors.white}
-            borderRadius={1}
-            color={colors.black}
-          /> */}
           </div>
           <Spacer height={40} />
           <div
@@ -410,19 +401,21 @@ const Cart = () => {
           <Spacer height={30} />
         </div>
       </Draggable>
-      
-      <BottomBarNavigation/>
+
+      <BottomBarNavigation />
     </>
   );
-  return <div>
-    <MobileDiv>
+  return (
+    <div>
+      <MobileDiv>
         <MobileCart />
       </MobileDiv>
       <WebDiv>
         <WebCart />
       </WebDiv>
-    {/* {window.innerWidth <= 400 ? <MobileCart /> : <WebCart />} */}
-    </div>;
+      {/* {window.innerWidth <= 400 ? <MobileCart /> : <WebCart />} */}
+    </div>
+  );
 };
 
 export default Cart;
