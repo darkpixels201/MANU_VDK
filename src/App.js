@@ -26,7 +26,7 @@ function App() {
        <Home />
       {/* <Categories/> */}
       {/* <CategoryMobile /> */}
-
+{/* <Cart/> */}
       {/* <CompareProducts/> */}
 
     </div>

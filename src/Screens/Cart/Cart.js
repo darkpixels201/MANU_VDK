@@ -87,7 +87,7 @@ const Cart = () => {
             <Close fontSize="inherit" />
           </a>
           <img
-            src={images.banner}
+            src={images.slide12}
             alt=""
             style={{ height: "100%", width: 120 }}
           />
@@ -196,25 +196,7 @@ const Cart = () => {
             </>
           ))}
         </div>
-        {/* <Swiper
-          slidesPerView={3.2}
-          // spaceBetween={20}
-          freeMode={true}
-          pagination={{
-            clickable: true,
-          }}
-          modules={[FreeMode]}
-          direction={"vertical"}
-          style={{ zIndex: 1 }}
-          // className="mySwiper"
-        >
-          {[1, 2, 3,4,5,6].map((index) => (
-            <SwiperSlide>
-              <MobileCartItem key={index} />
-            </SwiperSlide>
-          ))}
-         
-        </Swiper> */}
+       
       </div>
 
       <Draggable
@@ -360,7 +342,7 @@ const Cart = () => {
                 borderWidth: 2,
                 borderColor: "#fff",
                 borderStyle: "solid",
-                width: "40%",
+                width: "35%",
                 justifyContent: "center",
                 alignItems: "center",
                 display: "flex",
@@ -378,7 +360,7 @@ const Cart = () => {
               style={{
                 backgroundColor: "#aaa",
                 color: "#fff",
-                width: "40%",
+                width: "35%",
                 justifyContent: "center",
                 alignItems: "center",
                 display: "flex",
@@ -391,12 +373,7 @@ const Cart = () => {
             >
               CHECKOUT
             </a>
-            {/* <CustomButton
-            title={"Apply"}
-            backgroundColor={colors.white}
-            borderRadius={1}
-            color={colors.black}
-          /> */}
+            
           </div>
           <Spacer height={30} />
         </div>

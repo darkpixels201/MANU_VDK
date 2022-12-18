@@ -26,15 +26,15 @@ export const BestSellerWeb = () => {
   const BottomImage = [
     {
       id: 1,
-      image: images.banner,
+      image: images.slide7,
     },
     {
       id: 2,
-      image: images.banner,
+      image: images.slide8,
     },
     {
       id: 3,
-      image: images.banner,
+      image: images.slide9,
     },
   ];
 
@@ -145,7 +145,7 @@ export const BestSellerWeb = () => {
                     justifyContent: "center",
                     alignItems: "center",
                   }}
-                  src={images.banner}
+                  src={images.slide6}
                 />
               </div>
               {/* <spacer height={120} /> */}

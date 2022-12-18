@@ -86,7 +86,7 @@ const BestSellerMobile = () => {
                 alignSelf: "center",
                 alignContent: "center",
               }}
-              src={images.banner}
+              src={images.slide13}
             />
           </div>
         </div>

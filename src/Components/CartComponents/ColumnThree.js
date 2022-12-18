@@ -28,15 +28,13 @@ const ColumnThree = () => {
         modules={[FreeMode]}
         // className="mySwiper"
       >
+        {[images.slide6,images.slide7,images.slide8].map((item)=>(
+
         <SwiperSlide>
-          <CartItem />
+          <CartItem image={item} />
         </SwiperSlide>
-        <SwiperSlide>
-          <CartItem />
-        </SwiperSlide>
-        <SwiperSlide>
-          <CartItem />
-        </SwiperSlide>
+        ))}
+        
       </Swiper>
 
       <Spacer height={50} />
@@ -128,9 +126,9 @@ const ColumnThree = () => {
 
 export default ColumnThree;
 
-const CartItem = () => (
+const CartItem = ({image}) => (
   <div>
-    <img src={images.banner} style={{ width: "100%", height: 160 }} />
+    <img src={image} style={{ width: "100%", height: 160 }} />
     <Spacer height={10} />
     <div
       style={{
@@ -139,7 +137,10 @@ const CartItem = () => (
         display: "flex",
       }}
     >
-      <CustomText title="PRoducto nombre" fontSize={10} />
+      <span style={{ fontSize: 10 }}>
+        <b style={{ fontFamily: "ClashDisplay-Bold" }}>PRoducto</b>
+        nombre
+      </span>
       <CustomText title="$95.00" fontSize={10} />
     </div>
   </div>

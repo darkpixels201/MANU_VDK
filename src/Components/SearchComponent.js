@@ -10,28 +10,22 @@ const SearchComponent = (props) => {
   const SearchArray = [
     {
       id: 1,
-      image: images.banner,
+      image: images.slide8,
       name: "Brasier de Banda Ancha  para Soporte en Espalda",
       price: "$95.00",
     },
     {
       id: 2,
-      image: images.banner,
+      image: images.slide9,
       name: "Brasier de Banda Ancha  para Soporte en Espalda",
       price: "$95.00",
     },
     {
       id: 3,
-      image: images.banner,
+      image: images.slide10,
       name: "Brasier de Banda Ancha  para Soporte en Espalda",
       price: "$95.00",
-    },
-    {
-      id: 4,
-      image: images.banner,
-      name: "Brasier de Banda Ancha  para Soporte en Espalda",
-      price: "$95.00",
-    },
+    }
   ];
   const [open, setOpen] = useState(false);
   //   const [open, setOpen] = useState(false);
