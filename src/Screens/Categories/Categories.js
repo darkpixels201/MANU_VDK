@@ -287,7 +287,7 @@ export const Categories = () => {
             color={colors.white}
           />
 
-          <a href="">
+          <a href="*">
             <div style={row}>
               <CustomText
                 fontSize={18}
@@ -382,7 +382,9 @@ export const Categories = () => {
               paddingTop: 20,
             }}
           >
-            <Grid item xs={12} sm={12} md={2.3} style={{paddingLeft: 40,}}>
+   
+<Grid item xs={12} sm={12} md={2.3} style={{paddingLeft: 40,}}>
+            <a href="*" style={{textDecoration:"none"}} >
               <div style={row}>
                 <CustomText
                   fontSize={18}
@@ -399,6 +401,7 @@ export const Categories = () => {
                 textAlign={"left"}
                 fontFamily={"ClashDisplay-SemiBold"}
               />
+              </a>
             </Grid>
             <Grid item xs={12} sm={12} md={9.7} style={{paddingRight: 100,}}>
               <div style={{ ...row, justifyContent: "space-between",paddingLeft:5 }}>
@@ -417,7 +420,7 @@ export const Categories = () => {
                     ...center,
                   }}
                 >
-                  <Link to="/cart">
+                  <Link to="/cart" style={{color:colors.black}}>
                     <ShoppingCartOutlinedIcon />
                   </Link>
                   <Spacer width={50} />

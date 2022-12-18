@@ -5,6 +5,7 @@ import { icons } from "../../../Assets/Icons";
 import { images } from "../../../Assets/Images";
 import CustomButton from "../../../Components/CustomButton";
 import CustomText from "../../../Components/CustomText";
+import { DropdownCom } from "../../../Components/DropdownCom";
 import Spacer from "../../../Components/Spacer";
 import { colors } from "../../../utils/Colors";
 // import { makeStyles } from "@material-ui/core/styles";
@@ -40,6 +41,19 @@ const BestSellerMobile = () => {
   const [currentcustomer, setCurrentCustomer] = useState(null);
 
   const [count, setCount] = useState(1);
+
+  const row = {
+    display: "flex",
+    flexDirection: "row",
+  };
+  const center = {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  };
+  const noUnderline = {
+    textDecoration: "none",
+  };
   return (
     <div style={{ width: "auto", padding: 25, backgroundColor: colors.white }}>
       <Container maxWidth="lg">
@@ -203,8 +217,13 @@ const BestSellerMobile = () => {
             //   alignItems: "center",
           }}
         >
+          <div style={{display:"flex", flexDirection:"column"}} >
+          <s style={{color:colors.lightPurple}} >
+            $135.00
+          </s>
           <div>
-            <CustomText title="$95.00" fontSize={25} />
+            <CustomText title="$95.00" fontSize={20} />
+          </div>
           </div>
 
           <div
@@ -215,7 +234,7 @@ const BestSellerMobile = () => {
               alignItems: "center",
             }}
           >
-            <Autocomplete
+            {/* <Autocomplete
               options={customer}
               sx={{ width: 70 }}
               defaultValue={customer[0]}
@@ -244,7 +263,8 @@ const BestSellerMobile = () => {
               onChange={(event, newValue) => setCurrentCustomer(newValue)}
 
               // style={{height:10, width:5, backgroundColor:colors.black}}
-            />
+            /> */}
+            <DropdownCom />
           </div>
           <div
             style={{
@@ -264,7 +284,7 @@ const BestSellerMobile = () => {
         <div
           style={{
             display: "flex",
-            justifyContent: "space-evenly",
+            justifyContent: "space-between",
             alignItems: "center",
           }}
         >
@@ -281,7 +301,18 @@ const BestSellerMobile = () => {
               fontFamily={"ClashDisplay-Light"}
             />
           </div>
-          <div></div>
+          <div style={{ ...row, alignItems: "center" }}>
+                  <a href="" style={{ ...noUnderline }}>
+                    <CustomText title="-" fontSize={20} />
+                  </a>
+                  <Spacer width={20} />
+                  <CustomText title="1" fontSize={20} />
+
+                  <Spacer width={20} />
+                  <a href="" style={{ ...noUnderline }}>
+                    <CustomText title="+" fontSize={20} />
+                  </a>
+                </div>
         </div>
       </Container>
     </div>

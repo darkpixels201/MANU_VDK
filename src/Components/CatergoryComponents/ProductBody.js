@@ -181,7 +181,9 @@ const ProductBody = (props) => {
               </div>
               <Spacer width={17} />
               <div>
+
               <DropdownCom/>
+
               </div>
             </div>
 
