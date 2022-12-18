@@ -27,7 +27,7 @@ function App() {
             <Route exact path="/cart" name="Cart" element={<Cart />} />
             <Route exact path="/categories" name="categoties" element={<Categories />} />
             <Route exact path="/compareproducts" name="categoties" element={<CompareProducts />} />
-            {/* <Categories /> */}
+            
           </Routes>
         </Suspense>
       </HashRouter>

@@ -2,10 +2,13 @@ import React, { useState } from "react";
 import { colors } from "../utils/Colors";
 import CustomText from "./CustomText";
 
+
+
 export const DropdownCom = () => {
   const [value, setValue] = useState("XS");
   function val() {
     let d = document.getElementById("select_id").value;
+    console.log(d)
     setValue(d);
   }
   return (
@@ -18,11 +21,11 @@ export const DropdownCom = () => {
         justifyContent: "space-between",
       }}
     >
-      <CustomText title={value} fontSize={18} color={colors.black} />
+      <CustomText title={value} fontSize={16} color={colors.black} />
       <div
         style={{
           width: 1,
-          height: 20,
+          height: 25,
           backgroundColor: colors.black,
         }}
       />
@@ -37,7 +40,7 @@ export const DropdownCom = () => {
         <option value="M">M</option>
         <option value="L">L</option>
         <option value="Xl">Xl</option>
-        <option value="XXl" selected>
+        <option value="XXl">
           XXl
         </option>
         {/* </optgroup> */}
