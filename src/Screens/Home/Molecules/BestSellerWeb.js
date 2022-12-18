@@ -7,6 +7,8 @@ import { colors } from "../../../utils/Colors";
 import { icons } from "../../../Assets/Icons";
 import { Autocomplete, TextField } from "@mui/material";
 import Swiper from "react-id-swiper";
+import { DropdownCom } from "../../../Components/DropdownCom";
+import CustomButton from "../../../Components/CustomButton";
 
 export const BestSellerWeb = () => {
   const FilledCircle = [
@@ -46,17 +48,29 @@ export const BestSellerWeb = () => {
   const [currentcustomer, setCurrentCustomer] = useState(null);
 
   const params = {
-    slidesPerView:  3,
+    slidesPerView: 3,
     spaceBetween: 30,
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
     },
   };
-  
+
+  const row = {
+    display: "flex",
+    flexDirection: "row",
+  };
+  const center = {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  };
+  const noUnderline = {
+    textDecoration: "none",
+  };
 
   return (
-    <div>
+    <div style={{ backgroundColor: colors.white }}>
       <Spacer height={80} />
       <div
         style={{
@@ -177,31 +191,6 @@ export const BestSellerWeb = () => {
                 ))}
               </div>
             </div>
-            {/* <div
-              style={{
-                backgroundColor: colors.lightGray,
-                display: "flex",
-                flexDirection: "row",
-              }}
-            >
-              <Swiper
-                style={{ display: "flex", flexDirection: "row" }}
-                {...params}
-              >
-                <div>
-                  <img src={images.title} style={{ height: 100, width: 100 }} />
-                </div>
-                <div>
-                  <img src={images.title} style={{ height: 100, width: 100 }} />
-                </div>
-                <div>
-                  <img src={images.title} style={{ height: 100, width: 100 }} />
-                </div>
-                <div>
-                  <img src={images.title} style={{ height: 100, width: 100 }} />
-                </div>
-              </Swiper>
-            </div> */}
           </div>
 
           <div style={{}}>
@@ -244,7 +233,7 @@ export const BestSellerWeb = () => {
               <div
                 style={{
                   height: 1,
-                  position:"absolute",
+                  position: "absolute",
                   width: 408,
                   backgroundColor: colors.black,
                   justifyContent: "right",
@@ -290,7 +279,7 @@ export const BestSellerWeb = () => {
                           height: 22,
                           width: 22,
                           borderRadius: 50,
-                          borderColor: colors.orange,
+                          borderColor: colors.black,
                           border: "solid",
                           borderWidth: 1,
                           display: "flex",
@@ -343,7 +332,7 @@ export const BestSellerWeb = () => {
                   alignItems: "center",
                 }}
               >
-                <Autocomplete
+                {/* <Autocomplete
                   options={customer}
                   sx={{ width: 70, }}
                   // defaultValue={customer[0]}
@@ -358,7 +347,8 @@ export const BestSellerWeb = () => {
                   onChange={(event, newValue) => setCurrentCustomer(newValue)}
                   // style={{height:10, width:5, backgroundColor:colors.black}}
                  
-                />
+                /> */}
+                <DropdownCom />
               </div>
             </div>
             <Spacer height={20} />
@@ -389,7 +379,45 @@ export const BestSellerWeb = () => {
                 />
               </div>
             </div>
-          </div>
+
+                  <Spacer height={100} />
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  width:400
+                }}
+              >
+                <div style={{ ...row, alignItems: "center" }}>
+                  <a href="" style={{ ...noUnderline }}>
+                    <CustomText title="-" fontSize={20} />
+                  </a>
+                  <Spacer width={20} />
+                  <CustomText title="1" fontSize={20} />
+
+                  <Spacer width={20} />
+                  <a href="" style={{ ...noUnderline }}>
+                    <CustomText title="+" fontSize={20} />
+                  </a>
+                </div>
+                {/* <Spacer width={120} /> */}
+                <div>
+                  <CustomButton
+                    title="+ ADD TO CART"
+                    fontSize={15}
+                    justifyContent={"center"}
+                    borderRadius={"0"}
+                    width={150}
+                    height={40}
+                    color={colors.white}
+                    backgroundColor={colors.grey}
+                    fontFamily={"ClashDisplay-Light"}
+                  />
+                </div>
+              </div>
+            </div>
+
         </div>
         {/* </Container> */}
       </div>

@@ -14,6 +14,7 @@ import BodySwiper from "./BodySwiper";
 import ToggleSwitch from "../ToggleSwitch";
 import { icons } from "../../Assets/Icons";
 import MoveToTop from "../MoveToTop";
+import { Link } from "react-router-dom";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -36,7 +37,7 @@ function BodyWeb(props) {
           flexWrap: "wrap",
           width: "auto",
 
-          // backgroundColor:"red",
+          backgroundColor: colors.white,
           // left:140
         }}
       >
@@ -84,18 +85,20 @@ function BodyWeb(props) {
           </div>
           <Spacer height={130} />
           <div>
-            <CustomButton
-              title="SHOP NOW"
-              fontSize={20}
-              justifyContent={"center"}
-              borderRadius={"0"}
-              width={150}
-              height={50}
-              color={colors.white}
-              backgroundColor={colors.grey}
-              fontFamily={"ClashDisplay-Light"}
-              textDecoration={"underline"}
-            />
+            <Link to="/categories" style={{ textDecoration: "none" }}>
+              <CustomButton
+                title="SHOP NOW"
+                fontSize={20}
+                justifyContent={"center"}
+                borderRadius={"0"}
+                width={150}
+                height={50}
+                color={colors.white}
+                backgroundColor={colors.grey}
+                fontFamily={"ClashDisplay-Light"}
+                textDecoration={"underline"}
+              />
+            </Link>
           </div>
           <div>
             <Spacer height={170} />
@@ -143,11 +146,11 @@ function BodyWeb(props) {
             style={{
               position: "absolute",
               alignSelf: "flex-end",
-              display: 'flex',
-               justifyContent:'flex-end',
+              display: "flex",
+              justifyContent: "flex-end",
               // alignItems: "right",
-              marginLeft:30,
-              width:700
+              marginLeft: 30,
+              width: 700,
             }}
             className="none"
           >
@@ -160,7 +163,6 @@ function BodyWeb(props) {
               // alignContent={"flex-end"}
             />
           </div>
-          
         </div>
       </div>
       <BodySwiper on={props.on} setOn={props.setOn} />

@@ -96,7 +96,14 @@ const SearchComponent = (props) => {
               />
             </div>
             <Spacer height={20} />
-            <div>
+            <div
+              style={{
+                height: 300,
+                overflowX: "hidden",
+                overflowY: "auto",
+                textAlign: "justify",
+              }}
+            >
               {SearchArray.map((item, index) => (
                 <div key={index}>
                   <DropdownItem
@@ -106,14 +113,8 @@ const SearchComponent = (props) => {
                   />
                 </div>
               ))}
-
-              {/* <DropdownItem text={"My Profile"} />
-            <DropdownItem text={"Edit Profile"} />
-            <DropdownItem  text={"Inbox"} />
-            <DropdownItem  text={"Settings"} />
-            <DropdownItem text={"Helps"} />
-            <DropdownItem  text={"Logout"} /> */}
             </div>
+            <Footer />
           </div>
         </div>
       </div>
@@ -129,7 +130,7 @@ function DropdownItem(props) {
           <img src={props.img} style={{ height: 60, width: 60 }}></img>
           <Spacer height={10} />
         </div>
-        <div style={{ width: 70 }}>
+        <div style={{ width: 80 }}>
           <CustomText
             title={props.text}
             fontSize={8}
@@ -140,6 +141,27 @@ function DropdownItem(props) {
           <CustomText title={props.price} fontSize={8} textAlign="left" />
         </div>
       </div>
+    </div>
+  );
+}
+
+function Footer() {
+  return (
+    <div
+      style={{
+        width: "100%",
+        backgroundColor: colors.grey,
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: 30,
+      }}
+    >
+      <CustomText
+        title={"VER TODOS LOS RESULTADOS  (25)"}
+        fontSize={7}
+        color={colors.white}
+      />
     </div>
   );
 }

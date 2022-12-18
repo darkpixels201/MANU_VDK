@@ -20,6 +20,7 @@ import { FreeMode, Pagination } from "swiper";
 import ProductBody from "./ProductBody";
 import SwiperProduct from "./SwiperProduct";
 import Footer from "../Footer";
+import BottomBarNavigation from "../BottomNavigation";
 
 const CategoryMobile = (props) => {
   const [open, setOpen] = useState(false);
@@ -214,6 +215,7 @@ const CategoryMobile = (props) => {
         </div>
       ))}
         <Footer />
+        <BottomBarNavigation />
     </div>
   );
 };

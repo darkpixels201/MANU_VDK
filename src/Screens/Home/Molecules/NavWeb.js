@@ -12,64 +12,69 @@ import { icons } from "../../../Assets/Icons";
 import { colors } from "../../../utils/Colors";
 import SearchComponent from "../../../Components/SearchComponent";
 import { Drawer, MuiDrawer } from "../../../Components/Drawer";
+import { Link } from "react-router-dom";
 
 const Item = styled(Paper)(({ theme }) => ({
-    backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
-    ...theme.typography.body2,
-    padding: theme.spacing(1),
-    textAlign: "center",
-    color: theme.palette.text.secondary,
-  }));
+  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
+  ...theme.typography.body2,
+  padding: theme.spacing(1),
+  textAlign: "center",
+  color: theme.palette.text.secondary,
+}));
 
 export const NavWeb = () => {
-
-    const navbar = [
-        {
-          id: 1,
-          name: "Home",
-        },
-        {
-          id: 1,
-          name: "FAJUS",
-        },
-        {
-          id: 1,
-          name: "JEANS",
-        },
-        {
-          id: 1,
-          name: "ROPA",
-        },
-        {
-          id: 1,
-          name: "SHORTS",
-        },
-        {
-          id: 1,
-          name: "NEW",
-        },
-        {
-          id: 1,
-          name: "SALE",
-        },
-      ];
-      const [open, setOpen] = useState(false);
-      const [isDrawerOpen, setIsDrawerOpen] = useState(false)
+  const navbar = [
+    {
+      id: 1,
+      name: "Home",
+    },
+    {
+      id: 1,
+      name: "FAJUS",
+    },
+    {
+      id: 1,
+      name: "JEANS",
+    },
+    {
+      id: 1,
+      name: "ROPA",
+    },
+    {
+      id: 1,
+      name: "SHORTS",
+    },
+    {
+      id: 1,
+      name: "NEW",
+    },
+    {
+      id: 1,
+      name: "SALE",
+    },
+  ];
+  const [open, setOpen] = useState(false);
   return (
-    <div style={{backgroundColor:colors.white,}}>
-         <Container maxWidth="xl">
+    <div style={{ backgroundColor: colors.white }}>
+      <Container maxWidth="xl">
         <Box
           sx={{
             display: "flex",
             border: "none",
             boxShadow: "none",
-            
+
             //   p: 1,
             //   bgcolor: "background.paper",
             //   borderRadius: 1,
           }}
         >
-          <Item sx={{ flexGrow: 1, boxShadow: "none", backgroundColor:colors.white, }}>
+          <Item
+            sx={{
+              flexGrow: 1,
+              boxShadow: "none",
+              backgroundColor: colors.white,
+            }}
+          >
             <div
               style={{
                 display: "flex",
@@ -79,14 +84,9 @@ export const NavWeb = () => {
                 // backgroundColor: "red",
               }}
             >
-              <CustomText title="MANU VDK" onClick={() => setIsDrawerOpen(true)} />
+              <CustomText title="MANU VDK" fontFamily={"ClashDisplay-SemiBold"} />
               <CustomText title="STORE" />
             </div>
-
-
-            <MuiDrawer isDrawerOpen={isDrawerOpen} setIsDrawerOpen={setIsDrawerOpen} />
-
-            
           </Item>
           <Item
             sx={{
@@ -98,8 +98,8 @@ export const NavWeb = () => {
               paddingTop: 0,
               paddingBottom: 0,
               justifyContent: "flex-end",
-              cursor:"pointer",
-              backgroundColor:colors.white,
+              cursor: "pointer",
+              backgroundColor: colors.white,
               // paddingRight: 8,
             }}
           >
@@ -150,17 +150,15 @@ export const NavWeb = () => {
               //   backgroundColor: "yellow",
               alignSelf: "center",
               position: "relative",
-              backgroundColor:colors.white,
+              backgroundColor: colors.white,
             }}
             onClick={() => {
               setOpen(!open);
             }}
           >
-           
-            
             <SearchComponent setOpen={setOpen} open={open} />
           </Item>
-          
+
           <Item
             sx={{
               flexGrow: 1.7,
@@ -169,16 +167,21 @@ export const NavWeb = () => {
               flexDirection: "row",
               // backgroundColor: "yellow",
               alignSelf: "center",
-              backgroundColor:colors.white,
+              backgroundColor: colors.white,
             }}
           >
             <div style={{ textAlign: "center", flexDirection: "row" }}></div>
-            <div style={{ height: 10, width: 10, cursor:"pointer" }}>
-              <img src={icons.shoppingCart} style={{ height: 20, width: 20 }} />
-            </div>
+            <Link to="/cart">
+              <div style={{ height: 10, width: 10, cursor: "pointer" }}>
+                <img
+                  src={icons.shoppingCart}
+                  style={{ height: 20, width: 20 }}
+                />
+              </div>
+            </Link>
           </Item>
         </Box>
       </Container>
     </div>
-  )
-}
+  );
+};

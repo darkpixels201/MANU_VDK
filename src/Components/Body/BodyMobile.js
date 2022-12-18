@@ -8,8 +8,8 @@ import BodySwiper from "./BodySwiper";
 
 const BodyMobile = () => {
   return (
-    <div>
-      <div>
+    <div style={{backgroundColor:colors.white}} >
+      <div >
         <div style={{ width: "100%", height: "40vh" }}>
           <img
             style={{ width: "100%", position: "absolute",height:"40vh" }}

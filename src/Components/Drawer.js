@@ -1,35 +1,16 @@
-import {
-  Drawer,
-  Box,
-  Typography,
-  IconButton,
-  withStyles,
-  MenuItem,
-} from "@mui/material";
+import { Drawer, Box } from "@mui/material";
 import { useState } from "react";
-import MenuIcon from "@mui/icons-material/Menu";
 import List from "@mui/material/List";
-import Divider from "@mui/material/Divider";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
 import CustomText from "./CustomText";
 import { colors } from "../utils/Colors";
-// import
+import "../Assets/Style/Drawer.css";
+import { icons } from "../Assets/Icons";
+import Spacer from "./Spacer";
 
 export const MuiDrawer = (props) => {
-  // const MyMenuItem = withStyles({
-  //   root: {
-  //     '&:hover': {
-  //       backgroundColor: 'red !important',
-  //       color: 'blue'
-  //     }
-  //   }
-  // })(MenuItem)
-
   const DrawerItem = [
     {
       id: 1,
@@ -63,14 +44,6 @@ export const MuiDrawer = (props) => {
 
   return (
     <>
-      {/* <IconButton
-        onClick={() => setIsDrawerOpen(true)}
-        size='large'
-        edge='start'
-        color='inherit'
-        aria-label='logo'>
-        <MenuIcon />
-      </IconButton> */}
       <Drawer
         anchor="right"
         open={props.isDrawerOpen}
@@ -79,25 +52,45 @@ export const MuiDrawer = (props) => {
       >
         <Box
           p={2}
-          width="250px"
           role="presentation"
           textAlign="center"
           backgroundColor={colors.black}
           height={"100%"}
+          padding={0}
+          width={350}
         >
+          <div
+            style={{
+              marginTop: 65,
+              display: "flex",
+              paddingRight: 60,
+              justifyContent: "flex-end",
+              cursor: "pointer",
+            }}
+          >
+            <img
+              src={icons.cross}
+              height={13}
+              width={13}
+              color={colors.black}
+              onClick={() => props.setIsDrawerOpen(false)}
+            />
+          </div>
+          <Spacer height={30} />
           <List style={{ backgroundColor: colors.black }}>
             {DrawerItem.map((text, index) => (
-              <ListItem key={index} disablePadding>
+              <ListItem
+                className="main mainwidth"
+                style={{ paddingLeft: 40 }}
+                key={index}
+                disablePadding
+              >
                 <ListItemButton>
-                  {/* <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon> */}
                   <ListItemText
                     primary={
                       <CustomText
                         title={text.name}
                         fontSize={15}
-                        fontFamily={"ClashDisplay-SemiBold"}
                         color={colors.white}
                       />
                     }
@@ -111,9 +104,3 @@ export const MuiDrawer = (props) => {
     </>
   );
 };
-
-// const WebDiv = styled.div`
-//   @media only screen and (max-width: 400px) {
-//     display: none;
-//   }
-// `;

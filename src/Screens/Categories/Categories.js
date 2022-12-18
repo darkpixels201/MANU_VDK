@@ -14,7 +14,9 @@ import CategoryMobile from "../../Components/CatergoryComponents/CategoryMobile"
 
 import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
-
+import { Link } from "react-router-dom";
+import { MuiDrawer } from "../../Components/Drawer";
+import BottomBarNavigation from "../../Components/BottomNavigation";
 
 export const Categories = () => {
   const [count, setCount] = useState(1);
@@ -22,6 +24,10 @@ export const Categories = () => {
   const customer = ["XS", "S", "M", "L", "Xl", "XXl", "XXl"];
 
   const [currentcustomer, setCurrentCustomer] = useState(null);
+
+  const [open, setOpen] = useState(false);
+
+  const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
 
   const FilledCircle = [
     {
@@ -347,7 +353,6 @@ export const Categories = () => {
     </div>
   );
 
-
   const CatItem = ({ label, icon, iconPath, paddingLeft }) => (
     <div
       style={{
@@ -371,13 +376,7 @@ export const Categories = () => {
     </div>
   );
 
-
-  const Body = () => (
-
-
- 
-  // return (
-
+  const Body = (props) => (
     <div>
       <DiscountBanner />
       <Grid container rowSpacing={{ xs: 5, sm: 2, md: 3 }} columnSpacing={{}}>
@@ -421,12 +420,19 @@ export const Categories = () => {
                     ...center,
                   }}
                 >
-                  <ShoppingCartOutlinedIcon />
+                  <Link to="/cart">
+                    <ShoppingCartOutlinedIcon />
+                  </Link>
                   <Spacer width={50} />
                   <img
+                    onClick={() => props.setIsDrawerOpen(true)}
                     src={images.twoLines}
                     alt=""
                     style={{ width: 24, height: 10 }}
+                  />
+                  <MuiDrawer
+                    isDrawerOpen={props.isDrawerOpen}
+                    setIsDrawerOpen={setIsDrawerOpen}
                   />
                 </div>
               </div>
@@ -475,11 +481,6 @@ export const Categories = () => {
       <Spacer height={100} />
       <Footer />
     </div>
-  )
-  return (
-    <div>
-      
-      {window.innerWidth <= 800 ? <CategoryMobile /> : <Body />}
-    </div>
   );
+  return <div>{window.innerWidth <= 800 ? <CategoryMobile /> : <Body isDrawerOpen={isDrawerOpen} setIsDrawerOpen={setIsDrawerOpen} />}</div>;
 };

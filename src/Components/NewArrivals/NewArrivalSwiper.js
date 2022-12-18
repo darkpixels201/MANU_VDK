@@ -5,6 +5,8 @@ import { images } from "../../Assets/Images";
 import { colors } from "../../utils/Colors";
 import Spacer from "../Spacer";
 import { Autocomplete, TextField } from '@mui/material';
+import { DropdownCom } from '../DropdownCom';
+import { Link } from 'react-router-dom';
 
 const NewArrivalSwiper = (props) => {
   const customer = ["2XS", "XS", "M", "L", "XL", "2XL"];
@@ -120,7 +122,7 @@ const NewArrivalSwiper = (props) => {
               }}
             >
               <div>
-                <Autocomplete
+                {/* <Autocomplete
                   options={customer}
                   sx={{ width: 70,  }}
                   defaultValue={customer[0]}
@@ -133,7 +135,8 @@ const NewArrivalSwiper = (props) => {
                   currentcustomer={currentcustomer}
                   onChange={(event, newValue) => setCurrentCustomer(newValue)}
                   // style={{height:10, width:5, backgroundColor:colors.black}}
-                />
+                /> */}
+                <DropdownCom />
               </div>
 
               {FilledCircle.map((circle, index) => (
@@ -212,6 +215,7 @@ const NewArrivalSwiper = (props) => {
               }}
             >
               <Spacer width={20} />
+              <Link to="/cart" style={{textDecoration:"none"}}>
               <CustomButton
                 title="+ ADD"
                 fontSize={14}
@@ -223,6 +227,7 @@ const NewArrivalSwiper = (props) => {
                 backgroundColor={colors.grey}
                 fontFamily={"ClashDisplay-Light"}
               />
+              </Link>
             </div>
           </div>
         </div>
