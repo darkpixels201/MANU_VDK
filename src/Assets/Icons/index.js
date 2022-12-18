@@ -18,5 +18,6 @@ export const icons = {
     whatsApp: require('./whatsApp.png'),
     cross: require('./cross.png'),
     cartWhite: require('./cartWhite.png'),
+    user: require('./User.png'),
     
 }

@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 import CustomText from "./CustomText";
 import { colors } from "../utils/Colors";
 
-export default function BottomBarNavigation({footer=true}) {
+export default function BottomBarNavigation({footer=true,cart=false}) {
   const [value, setValue] = React.useState("recents");
   const [isDrawerOpen, setIsDrawerOpen] = React.useState(false)
 
@@ -55,23 +55,23 @@ export default function BottomBarNavigation({footer=true}) {
           // label="Recents"
           value="recents"
           // icon={<MdOutlineHome style={{fontSize:20}} />}
-          icon={<img src={icons.home} style={{ height: 20, width: 20 }} />}
+          icon={<img src={cart?icons.shoppingCart:icons.home} style={{ height: 20, width: 20 }} />}
         />
         </Link>
         <BottomNavigationAction
           // label="Favorites"
           value="favorites"
-          icon={<img src={icons.layout} style={{ height: 20, width: 20 }} />}
+          icon={<img src={cart?icons.headset:icons.layout} style={{ height: 20, width: 20 }} />}
         />
         <BottomNavigationAction
           // label="Nearby"
           value="nearby"
-          icon={<img src={icons.headset} style={{ height: 20, width: 20 }} />}
+          icon={<img src={cart?icons.layout:icons.headset} style={{ height: 20, width: 20 }} />}
         />
         <BottomNavigationAction
         //   label="Folder"
           value="folder"
-          icon={<img src={icons.drawer} style={{ height: 14, width: 14 }} onClick={() => setIsDrawerOpen(true)}  />}
+          icon={<img src={cart?icons.user:icons.drawer} style={{ height: cart?24:14, width: cart?24:14 }} onClick={() => setIsDrawerOpen(true)}  />}
         />
       </BottomNavigation>
       <MuiDrawer isDrawerOpen={isDrawerOpen} setIsDrawerOpen={setIsDrawerOpen} />

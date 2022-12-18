@@ -66,7 +66,7 @@ const Cart = () => {
   );
 
   const MobileCartItem = () => (
-    <SwiperSlide style={{ height: 140 }}>
+    <SwiperSlide style={{ height: 150 }}>
       <div style={{ ...row }}>
         <div style={{ height: 120, width: 120 }}>
           <a
@@ -74,31 +74,33 @@ const Cart = () => {
             style={{
               backgroundColor: "#000",
               color: "#fff",
-              height: 25,
-              width: 25,
-              borderRadius: 22.5,
+              height: 20,
+              width: 20,
+              borderRadius: 10,
               position: "absolute",
-              marginLeft: 10,
-              marginTop: 15,
+              marginLeft: 5,
+              marginTop: 10,
               justifyContent: "center",
               alignItems: "center",
               display: "flex",
             }}
           >
-            <Close fontSize="inherit" />
+            <Close style={{height:12}} />
           </a>
           <img
             src={images.slide12}
             alt=""
-            style={{ height: "100%", width: 120 }}
+            style={{ height: "100%", width: 120,objectFit:"contain" }}
           />
         </div>
         <Spacer width={50} />
         <div>
-          <div style={{ ...row }}>
+          <div style={{ ...row, }}>
             <CustomText
               title="PRoducto "
               fontSize={16}
+              textAlign={"left"}
+              
               fontFamily={"ClashDisplay-SemiBold"}
             />
             <Spacer width={5} />
@@ -108,6 +110,7 @@ const Cart = () => {
           <CustomText
             title="Lorem ipsum dolor sit amet, consectetur adipiscing elit.  "
             fontSize={16}
+            textAlign={"left"}
           />
           <Spacer height={10} />
           <div
@@ -197,7 +200,7 @@ const Cart = () => {
           {[1, 2, 3, 4, 5, 6].map((index) => (
             <>
               <MobileCartItem key={index} />
-              <Spacer height={20} />
+              {/* <Spacer height={30} /> */}
             </>
           ))}
         </div>
@@ -227,6 +230,7 @@ const Cart = () => {
               backgroundColor: colors.white,
               width: 70,
               margin: "auto",
+              borderRadius:100
             }}
           />
           <Spacer height={10} />
@@ -384,7 +388,7 @@ const Cart = () => {
         </div>
       </Draggable>
 
-      <BottomBarNavigation />
+      <BottomBarNavigation footer={false} cart={true} />
     </>
   );
   return (

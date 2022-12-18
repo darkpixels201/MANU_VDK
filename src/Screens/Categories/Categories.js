@@ -17,6 +17,7 @@ import Slider from "@mui/material/Slider";
 import { Link } from "react-router-dom";
 import { MuiDrawer } from "../../Components/Drawer";
 import BottomBarNavigation from "../../Components/BottomNavigation";
+import './style.css';
 import { DropdownCom } from "../../Components/DropdownCom";
 import '../../Assets/Style/font.css'
 
@@ -122,20 +123,7 @@ export const Categories = () => {
             alignItems: "center",
           }}
         >
-          {/* <Autocomplete
-            options={customer}
-            sx={{ width: 10 }}
-            defaultValue={customer[0]}
-            clearIcon
-            // popupIcon= {<img src={icons.downArrow} />}
-            renderInput={(params) => (
-              <TextField {...params} variant="standard" />
-            )}
-            currentcustomer={currentcustomer}
-            onChange={(event, newValue) => setCurrentCustomer(newValue)}
-            // style={{height:10, width:5, backgroundColor:colors.black}}
-          /> */}
-          <DropdownCom />
+          
         </div>
         <div
           style={{
@@ -146,6 +134,7 @@ export const Categories = () => {
             // backgroundColor: colors.parrot,
           }}
         >
+          <DropdownCom/>
           {FilledCircle.map((circle, index) => (
             <div key={index} style={{ paddingLeft: 10 }}>
               {count == circle.id ? (
@@ -381,7 +370,7 @@ export const Categories = () => {
   );
 
   const Body = (props) => (
-    <div>
+    <div style={{padding:0}}>
       <DiscountBanner />
       <Grid container rowSpacing={{ xs: 5, sm: 2, md: 3 }} columnSpacing={{}}>
         <Grid item xs={12} sm={12} md={12}>
@@ -390,13 +379,13 @@ export const Categories = () => {
             rowSpacing={{ xs: 5, sm: 2, md: 3 }}
             columnSpacing={{}}
             style={{
-              paddingLeft: 40,
-              paddingRight: 100,
+              // paddingLeft: 40,
+              // paddingRight: 100,
               paddingTop: 20,
             }}
           >
-            
-            <Grid item xs={12} sm={12} md={3}>
+   
+<Grid item xs={12} sm={12} md={2.3} style={{paddingLeft: 40,}}>
             <a href="*" style={{textDecoration:"none"}} >
               <div style={row}>
                 <CustomText
@@ -416,10 +405,16 @@ export const Categories = () => {
               />
               </a>
             </Grid>
-            <Grid item xs={12} sm={12} md={9}>
-              <div style={{ ...row, justifyContent: "space-between" }}>
+            <Grid item xs={12} sm={12} md={9.7} style={{paddingRight: 100,}}>
+              <div style={{ ...row, justifyContent: "space-between",paddingLeft:5 }}>
                 <div style={{ ...row, padding: 5, ...center }}>
-                  <Search fontSize="small" />
+                  {/* <Search fontSize="small" /> */}
+                  <img
+                    src={icons.search}
+                    alt=""
+                    style={{ width: 16, height: 16 }}
+                  />
+                  <Spacer width={5}/>
                   <input type="text" style={{ borderWidth: 0 }} />
                 </div>
                 <div
