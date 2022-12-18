@@ -4,12 +4,18 @@ import CustomText from "./CustomText";
 
 export const DropdownCom = () => {
   const [value, setValue] = useState("XS");
-  function val() {
-    let d = document.getElementById("select_id").value;
-    console.log(d);
-    setValue(d);
+  function val(e) {
+    // console.log(e.target.value);
+    setValue(e.target.value);
   }
-
+  const options = [
+      {value: 'XS', text: 'XS'},
+      {value: 'S', text: 'S'},
+      {value: 'M', text: 'M'},
+      {value: 'L', text: 'L'},
+      {value: 'XL', text: 'XL'},
+      {value: 'XXL', text: 'XXL'},
+    ];
   return (
     <div
       style={{
@@ -42,44 +48,17 @@ export const DropdownCom = () => {
         }}
         id={"select_id"}
         onChange={val}
-        defaultValue={val}
+        value={value}
+        // defaultValue={val}
       >
-        {/* <optgroup> */}
-        <option value="XS">XS</option>
-        <option value="S">S</option>
-        <option value="M">M</option>
-        <option value="L">L</option>
-        <option value="Xl">Xl</option>
-        <option value="XXl">XXl</option>
-        {/* </optgroup> */}
+        {options.map((opt)=>(
+
+        <option value={opt.value}>{opt.text}</option>
+        ))}
       </select>
+      
     </div>
   );
 };
 
-// New
-// const options = [
-//   {value: '2XS', text: '2XS'},
-//   {value: 'S', text: 'S'},
-//   {value: 'M', text: 'M'},
-//   {value: 'L', text: 'L'},
-//   {value: 'XL', text: 'XL'},
-//   {value: '2XL', text: '2XL'},
-// ];
 
-// const [selected, setSelected] = useState(options[0].value);
-
-// const handleChange = event => {
-//   console.log(event.target.value);
-//   setSelected(event.target.value);
-// };
-
-// <div>
-//     <select value={selected} onChange={handleChange}>
-//       {options.map(option => (
-//         <option key={option.value} value={option.value}>
-//           {option.text}
-//         </option>
-//       ))}
-//     </select>
-//   </div>
