@@ -1,5 +1,7 @@
 import { Container, fontSize } from "@mui/system";
+import { height } from "dom7";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { icons } from "../../../Assets/Icons";
 import CustomText from "../../../Components/CustomText";
 import SearchComponent from "../../../Components/SearchComponent";
@@ -27,14 +29,14 @@ export const NavbarMobile = () => {
   ];
   const [open, setOpen] = useState(false);
   return (
-    <div style={{backgroundColor:colors.white}}>
-      <Spacer height={5} />
+    <div style={{ backgroundColor: colors.white }}>
+      <Spacer height={10} />
       <div style={{ display: "flex", justifyContent: "space-around" }}>
         <div>
           <CustomText title="VDK" fontFamily="ClashDisplay-SemiBold" />
         </div>
         <div
-          style={{ alignSelf: "center", }}
+          style={{ alignSelf: "center" }}
           onClick={() => {
             setOpen(!open);
           }}
@@ -74,9 +76,32 @@ export const NavbarMobile = () => {
           <SearchComponent setOpen={setOpen} open={open} />
         </div>
         <div>
-          <div style={{ height: 10, width: 10, cursor: "pointer" }}>
-            <img src={icons.shoppingCart} style={{ height: 20, width: 20 }} />
-          </div>
+          <Link to="/cart">
+            <div style={{ height: 10, width: 10, cursor: "pointer" }}>
+              <img src={icons.shoppingCart} style={{ height: 20, width: 20 }} />
+              <div
+                style={{
+                  backgroundColor: colors.grey,
+                  borderRadius: 50,
+                  height: 15,
+                  width: 15,
+                  display:"flex",
+                  alignItems:"center",
+                  justifyContent:"center",
+                  position:"absolute",
+                  // margibBottom:20,
+                  top:42,
+                  left:364
+                }}
+              >
+                <CustomText
+                  title="1"
+                  color={colors.white}
+                  fontSize={8}
+                />
+              </div>
+            </div>
+          </Link>
         </div>
       </div>
       <Spacer height={20} />

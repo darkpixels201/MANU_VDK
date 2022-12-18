@@ -16,7 +16,8 @@ export const colors = {
     lightGray:"#8E8E93",
     darkGray:"#343a40",
     tabColor:"#DFD2FD",
-    lightestGrey:"#EAEAEA"
+    lightestGrey:"#EAEAEA",
+    lightPurple:"#C99FFF"
   };
   
   

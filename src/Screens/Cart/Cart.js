@@ -18,6 +18,7 @@ import { FreeMode } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import BottomBarNavigation from "../../Components/BottomNavigation";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const row = {
@@ -156,7 +157,11 @@ const Cart = () => {
             fontSize={16}
             fontFamily={"ClashDisplay-SemiBold"}
           />
+          {/* <Link to="/"> */}
+          <a href="*" >
           <Close />
+          </a>
+          {/* </Link> */}
         </div>
         <Spacer height={20} />
         <div

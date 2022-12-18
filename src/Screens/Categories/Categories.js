@@ -17,6 +17,7 @@ import Slider from "@mui/material/Slider";
 import { Link } from "react-router-dom";
 import { MuiDrawer } from "../../Components/Drawer";
 import BottomBarNavigation from "../../Components/BottomNavigation";
+import { DropdownCom } from "../../Components/DropdownCom";
 
 export const Categories = () => {
   const [count, setCount] = useState(1);
@@ -120,7 +121,7 @@ export const Categories = () => {
             alignItems: "center",
           }}
         >
-          <Autocomplete
+          {/* <Autocomplete
             options={customer}
             sx={{ width: 10 }}
             defaultValue={customer[0]}
@@ -132,7 +133,8 @@ export const Categories = () => {
             currentcustomer={currentcustomer}
             onChange={(event, newValue) => setCurrentCustomer(newValue)}
             // style={{height:10, width:5, backgroundColor:colors.black}}
-          />
+          /> */}
+          <DropdownCom />
         </div>
         <div
           style={{
@@ -296,7 +298,7 @@ export const Categories = () => {
             color={colors.white}
           />
 
-          <a href="">
+          <a href="*">
             <div style={row}>
               <CustomText
                 fontSize={18}
@@ -391,7 +393,9 @@ export const Categories = () => {
               paddingTop: 20,
             }}
           >
+            
             <Grid item xs={12} sm={12} md={3}>
+            <a href="*" style={{textDecoration:"none"}} >
               <div style={row}>
                 <CustomText
                   fontSize={18}
@@ -408,6 +412,7 @@ export const Categories = () => {
                 textAlign={"left"}
                 fontFamily={"ClashDisplay-SemiBold"}
               />
+              </a>
             </Grid>
             <Grid item xs={12} sm={12} md={9}>
               <div style={{ ...row, justifyContent: "space-between" }}>
@@ -420,7 +425,7 @@ export const Categories = () => {
                     ...center,
                   }}
                 >
-                  <Link to="/cart">
+                  <Link to="/cart" style={{color:colors.black}}>
                     <ShoppingCartOutlinedIcon />
                   </Link>
                   <Spacer width={50} />

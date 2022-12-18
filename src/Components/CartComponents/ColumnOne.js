@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { images } from "../../Assets/Images";
 
 const ColumnOne = () => {
@@ -12,7 +13,9 @@ const ColumnOne = () => {
         height:'100%'
       }}
     >
+      <Link to="/">
       <img src={images.backArrow} style={{ width: 40, height: 40 }} />
+      </Link>
     </div>
   );
 };

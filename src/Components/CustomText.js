@@ -26,6 +26,7 @@ function CustomText({...props}) {
             listStyle: props.listStyle,
             position: props.position,
             left: props.left,
+            textDecoration: props.textDecoration,
           }}
         >
           {props.title}

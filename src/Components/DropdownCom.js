@@ -27,7 +27,7 @@ export const DropdownCom = () => {
         }}
       />
       <select
-        style={{ width: 14, borderWidth: 0, cursor:"pointer" }}
+        style={{ display:"flex" , width: 14, borderWidth: 0, cursor:"pointer" }}
         id={"select_id"}
         onChange={val}
       >

@@ -9,12 +9,14 @@ import { colors } from "../utils/Colors";
 import "../Assets/Style/Drawer.css";
 import { icons } from "../Assets/Icons";
 import Spacer from "./Spacer";
+import { Link } from "react-router-dom";
 
 export const MuiDrawer = (props) => {
   const DrawerItem = [
     {
       id: 1,
       name: "HOME",
+      link: "/",
     },
     {
       id: 2,
@@ -79,25 +81,81 @@ export const MuiDrawer = (props) => {
           <Spacer height={30} />
           <List style={{ backgroundColor: colors.black }}>
             {DrawerItem.map((text, index) => (
-              <ListItem
-                className="main mainwidth"
-                style={{ paddingLeft: 40 }}
-                key={index}
-                disablePadding
-              >
-                <ListItemButton>
-                  <ListItemText
-                    primary={
-                      <CustomText
-                        title={text.name}
-                        fontSize={15}
-                        color={colors.white}
-                      />
-                    }
-                  />
-                </ListItemButton>
-              </ListItem>
+              <Link to={text.link} style={{ textDecoration: "none" }}>
+                <ListItem
+                  className="main mainwidth"
+                  style={{ paddingLeft: 40 }}
+                  key={index}
+                  disablePadding
+                >
+                  <ListItemButton>
+                    <ListItemText
+                      primary={
+                        <CustomText
+                          title={text.name}
+                          fontSize={15}
+                          color={colors.white}
+                        />
+                      }
+                    />
+                  </ListItemButton>
+                </ListItem>
+              </Link>
             ))}
+            <Spacer height={200} />
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-around",
+                alignItems: "center",
+              }}
+            >
+              <div style={{ display: "flex", flexDirection: "column" }}>
+                <CustomText
+                  title="Privacy Policy"
+                  color={colors.white}
+                  fontSize={12}
+                  alignSelf="flex-start"
+                  textDecoration={"underline"}
+                />
+                <Spacer height={10} />
+                <CustomText
+                  title="Terms And Conditions "
+                  color={colors.white}
+                  fontSize={12}
+                  textDecoration={"underline"}
+                />
+                <Spacer height={10} />
+                <CustomText
+                  title="Returns & Exchange "
+                  color={colors.white}
+                  fontSize={12}
+                  textDecoration={"underline"}
+                />
+              </div>
+              <div>
+                <img src={icons.headset} height={20} width={20} />
+              </div>
+            </div>
+            <Spacer height={60} />
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-around",
+                alignItems: "center",
+              }}
+            >
+              <div style={{ display: "flex", flexDirection: "column" }}>
+                <CustomText
+                  title="Ventadirekta © 2021. All Rights Reserved"
+                  color={colors.white}
+                  fontSize={10}
+                />
+              </div>
+              <div>
+                <img src={icons.cross} height={13} width={13} />
+              </div>
+            </div>
           </List>
         </Box>
       </Drawer>

@@ -17,7 +17,7 @@ import Draggable from "react-draggable";
 import styled from "styled-components";
 import BottomBarNavigation from "../../Components/BottomNavigation";
 import { DropdownCom } from "../../Components/DropdownCom";
-import { Rnd } from "react-rnd";
+// import { Rnd } from "react-rnd";
 var currentPosition = 0;
 
 const CompareProducts = () => {
