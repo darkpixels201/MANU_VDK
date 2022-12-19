@@ -31,7 +31,7 @@ const NewArrivalSwiper = (props) => {
   return (
     <div
       style={{
-        height: window.innerWidth <= 700 ? "50vh" : "90vh",
+        height: window.innerWidth <= 700 ? "55vh" : "90vh",
         width: "89%",
         display: "flex",
         justifyContent: "center",

@@ -203,6 +203,7 @@ const NewArrivals = (props) => {
                 ))}
               </Swiper>
             </div>
+
             <Link to="/categories" style={{ textDecoration: "none" }}>
               <div
                 style={{
@@ -239,7 +240,7 @@ const NewArrivals = (props) => {
                 {/* </div> */}
               </div>
             </Link>
-            <Spacer height={110} />{" "}
+            <Spacer height={120} />{" "}
           </>
         ) : (
           ""
