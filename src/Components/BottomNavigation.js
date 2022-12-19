@@ -21,21 +21,46 @@ export default function BottomBarNavigation({footer=true,cart=false}) {
   };
   function Footer() {
     return (
+      // <div
+      //   style={{
+      //     width: "100%",
+      //     backgroundColor: colors.grey,
+      //     display: "flex",
+      //     justifyContent: "center",
+      //     alignItems: "center",
+      //     height: 40,
+      //     position: "fixed", bottom: 55,
+      //     zIndex:99
+      //   }}
+      // >
+      //   <CustomText
+      //     title={"VER TODOS LOS RESULTADOS  (25)"}
+      //     fontSize={10}
+      //     color={colors.white}
+      //   />
+      // </div>
       <div
         style={{
           width: "100%",
-          backgroundColor: colors.grey,
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          height: 40,
-          position: "fixed", bottom: 55,
-          zIndex:99
+              backgroundColor: colors.grey,
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              height: 40,
+              position: "fixed", bottom: 55,
+              zIndex:99
         }}
       >
+        <CustomText title=" “Obtén un " fontSize={12} color={colors.white} />
         <CustomText
-          title={"VER TODOS LOS RESULTADOS  (25)"}
-          fontSize={10}
+          title="15% de descuento"
+          fontSize={12}
+          color={colors.white}
+          fontFamily="ClashDisplay-SemiBold"
+        />
+        <CustomText
+          title="por tu primera compra”"
+          fontSize={12}
           color={colors.white}
         />
       </div>

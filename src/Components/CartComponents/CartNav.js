@@ -17,15 +17,18 @@ const CartNav = () => {
       }}
     >
       <div>
-        <CustomText title="MANU VDK" fontWeight={"bold"} />
-        <CustomText title="STORE" />
+        <div style={{display:"flex"}} >
+        <CustomText title="MANU &nbsp; " fontFamily={"ClashDisplay-SemiBold"}  />
+        <CustomText title="VDK"  />
+        </div>
+        <CustomText title="STORE" fontFamily={"ClashDisplay-SemiBold"} />
       </div>
       <div>
         <img
           onClick={() => setIsDrawerOpen(true)}
           src={images.twoLines}
           //   className="resimage"
-          style={{ width: 24, height: 10 }}
+          style={{ width: 24, height: 10, cursor:"pointer" }}
         />
       </div>
       <MuiDrawer

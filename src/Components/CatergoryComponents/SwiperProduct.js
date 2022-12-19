@@ -60,15 +60,18 @@ const SwiperProduct = (props) => {
             <div
               style={{
                 backgroundColor: colors.grey,
-                height: 30,
-                width: 60,
+                height: 60,
+                width: 80,
                 position: "absolute",
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
               }}
             >
-              <CustomText title="NEW" color={colors.white} fontSize={14} />
+              <div style={{display:"flex", flexDirection:"column", justifyContent:"center", alignItens:"center"}} >
+              <CustomText title="30%" color={colors.white} fontSize={17} />
+              <CustomText title="OFF" color={colors.white} fontSize={17} />
+              </div>
             </div>
             <img
               src={props.image}

@@ -31,7 +31,7 @@ const NewArrivalSwiper = (props) => {
   return (
     <div
       style={{
-        height: "90vh",
+        height: window.innerWidth <= 700 ? "50vh" : "90vh",
         width: "89%",
         display: "flex",
         justifyContent: "center",
@@ -116,7 +116,7 @@ const NewArrivalSwiper = (props) => {
                 flex: 4,
               }}
             >
-              <div>{/* <DropdownCom /> */}</div>
+              <div><DropdownCom on={props.on} /></div>
 
               {FilledCircle.map((circle, index) => (
                 <div key={index} style={{ paddingLeft: 10 }}>

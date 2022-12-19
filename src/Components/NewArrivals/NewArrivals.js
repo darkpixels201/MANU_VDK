@@ -218,6 +218,7 @@ const NewArrivals = (props) => {
                     justifyContent: "center",
                     alignSelf: "center",
                     borderStyle: "solid",
+                    borderColor:props.on ? colors.white : colors.black,
                     // borderColor: colors.black,
                     borderWidth: 0.5,
                     width: 150,
@@ -225,7 +226,7 @@ const NewArrivals = (props) => {
                     alignContent: "center",
                   }}
                 >
-                  <CustomText title="GUÍA DE TALLAS" fontSize={12} />
+                  <CustomText title="GUÍA DE TALLAS" fontSize={12} color={props.on ? colors.white : colors.black} />
                   <Spacer width={10} />
                   <img
                     src={icons.rightArrow}

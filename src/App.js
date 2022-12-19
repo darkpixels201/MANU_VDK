@@ -8,6 +8,7 @@ import { HashRouter, Route, Routes } from "react-router-dom";
 import { colors } from "./utils/Colors";
 import CartNav from "./Components/CartComponents/CartNav";
 import { Categories } from "./Screens/Categories/Categories";
+import CategoryMobile from "./Components/CatergoryComponents/CategoryMobile";
 
 // import CompareProducts from "./Screens/CompareProducts/CompareProducts";
 // import { Categories } from "./Screens/Categories/Categories";
@@ -25,8 +26,9 @@ function App() {
           <Routes>
             <Route exact path="/" name="Home" element={<Home />} />
             <Route exact path="/cart" name="Cart" element={<Cart />} />
-            <Route exact path="/categories" name="categoties" element={<Categories />} />
-            <Route exact path="/compareproducts" name="categoties" element={<CompareProducts />} />
+            <Route exact path="/categories" name="categories" element={<Categories />} />
+            <Route exact path="/compareproducts" name="categories" element={<CompareProducts />} />
+            {/* <Route exact path="/CategoryMobile" name="categoties" element={<CategoryMobile />} /> */}
             
           </Routes>
         </Suspense>

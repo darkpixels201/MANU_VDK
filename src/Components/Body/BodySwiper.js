@@ -88,10 +88,13 @@ const BodySwiper = (props) => {
         // slidesPerView={1}
         spaceBetween={-47}
         freeMode={true}
-        pagination={{
-          clickable: true,
-        }}
-        modules={[FreeMode]}
+        // pagination={{
+        //   clickable: true,
+        // }}
+        modules={[Pagination]}
+        pagination={true}
+        color={colors.black}
+        // modules={[FreeMode]}
       >
         {SwiperArray.map((item, index) => (
           // <div key={index}>
@@ -222,6 +225,7 @@ const CartItem1 = (props) => (
                   title={props.list3}
                   textAlign={"left"}
                   color={props.on ? colors.white : colors.black}
+                  marginBottom={10}
                 />
               </li>
             </ul>

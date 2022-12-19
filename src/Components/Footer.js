@@ -51,6 +51,7 @@ const Footer = () => {
                 fontSize={13}
                 paddingLeft={15}
               />
+              
             </div>
           </div>
         </div>

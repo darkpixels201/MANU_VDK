@@ -140,7 +140,7 @@ const Cart = () => {
     </SwiperSlide>
   );
   const MobileCart = () => (
-    <>
+    <div style={{backgroundColor:colors.white}}>
       <div
         style={{
           paddingRight: 20,
@@ -389,7 +389,7 @@ const Cart = () => {
       </Draggable>
 
       <BottomBarNavigation footer={false} cart={true} />
-    </>
+    </div>
   );
   return (
     <div>

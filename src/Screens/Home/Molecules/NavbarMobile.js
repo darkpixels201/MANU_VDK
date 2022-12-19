@@ -81,7 +81,7 @@ export const NavbarMobile = () => {
           <Link to="/cart">
             <div style={{ height: 10, width: 10, cursor: "pointer" }}>
               <img src={icons.shoppingCart} style={{ height: 20, width: 20 }} />
-              <div style={{width:27, display:"flex", justifyContent:"flex-end", height:10, position:"absolute", top:42}}>
+              <div style={{width:27, display:"flex", justifyContent:"flex-end", height:10, position:"absolute", top:4}}>
               <div
                 style={{
                   backgroundColor: colors.grey,
@@ -93,7 +93,7 @@ export const NavbarMobile = () => {
                   justifyContent:"center",
                   // position:"fixed",
                   // margibBottom:20,
-                  top:42,
+                  // top:32,
                   // left:353
                 }}
               >

@@ -26,7 +26,7 @@ function Home() {
     return () => window.removeEventListener("resize", updateWindowDimensions);
   }, []);
   return (
-    <div>
+    <div style={{overflowX:"hidden", overflowY:"scroll"}}>
       {/* <Testing /> */}
       <Navbar />
       <Body on={on} setOn={setOn} />

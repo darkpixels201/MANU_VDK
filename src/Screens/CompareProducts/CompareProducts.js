@@ -17,7 +17,7 @@ import Draggable from "react-draggable";
 import styled from "styled-components";
 import BottomBarNavigation from "../../Components/BottomNavigation";
 import { DropdownCom } from "../../Components/DropdownCom";
-import '../../Assets/Style/font.css'
+import "../../Assets/Style/font.css";
 import { MuiDrawer } from "../../Components/Drawer";
 import { Link } from "react-router-dom";
 
@@ -159,7 +159,7 @@ const CompareProducts = () => {
   );
 
   const WebCompareProducts = (props) => (
-    <>
+    <div style={{ backgroundColor: colors.white }}>
       <DiscountBanner />
       <Grid container rowSpacing={{ xs: 5, sm: 2, md: 3 }} columnSpacing={{}}>
         <Grid
@@ -210,24 +210,30 @@ const CompareProducts = () => {
                   <Search fontSize="small" />
                   <input type="text" style={{ borderWidth: 0 }} />
                 </div>
-                <div
-                  style={{
-                    ...center,
-                  }}
-                >
-                  <ShoppingCartOutlinedIcon />
-                  <Spacer width={50} />
-                  <img
-                    src={images.twoLines}
-                    alt=""
-                    style={{ width: 24, height: 10 }}
-                    onClick={() => props.setIsDrawerOpen(true)}
-                  />
-                </div>
+                
+                  <div
+                    style={{
+                      ...center,
+                    }}
+                  >
+                    <Link to="/cart" >
+                    <ShoppingCartOutlinedIcon style={{color:colors.black}} />
+                    </Link>
+                    <Spacer width={50} />
+                    
+                    <img
+                      src={images.twoLines}
+                      alt=""
+                      style={{ width: 24, height: 10, cursor:"pointer" }}
+                      onClick={() => props.setIsDrawerOpen(true)}
+                    />
+                    
+                  </div>
+                
                 <MuiDrawer
-        isDrawerOpen={props.isDrawerOpen}
-        setIsDrawerOpen={props.setIsDrawerOpen}
-      />
+                  isDrawerOpen={props.isDrawerOpen}
+                  setIsDrawerOpen={props.setIsDrawerOpen}
+                />
               </div>
             </Grid>
           </Grid>
@@ -251,11 +257,13 @@ const CompareProducts = () => {
           >
             <Grid item xs={12} sm={12} md={12} paddingLeft={5}>
               <Spacer height={50} />
-              <img
-                src={images.backArrow}
-                alt=""
-                style={{ width: 30, height: 30, objectFit: "fill" }}
-              />
+              <Link to="/">
+                <img
+                  src={images.backArrow}
+                  alt=""
+                  style={{ width: 30, height: 30, objectFit: "fill" }}
+                />
+              </Link>
             </Grid>
           </Grid>
           <Grid item xs={12} sm={12} md={12} paddingLeft={7}>
@@ -275,7 +283,7 @@ const CompareProducts = () => {
               />
             </div>
           </Grid>
-          {[images.slide12,images.slide11,images.slide10].map((item) => (
+          {[images.slide12, images.slide11, images.slide10].map((item) => (
             <Grid item xs={12} sm={12} md={12} paddingLeft={5}>
               <Spacer height={30} />
               <div style={{ ...row, width: 250 }}>
@@ -603,6 +611,7 @@ const CompareProducts = () => {
                           <span>+</span>
                         </div>
                         <div>
+                          <Link to="/cart" >
                           <button
                             style={{
                               backgroundColor: "#686868",
@@ -611,11 +620,17 @@ const CompareProducts = () => {
                               paddingLeft: 20,
                               paddingTop: 10,
                               paddingBottom: 10,
+                              textDecoration: "none",
+                              fontFamily: "ClashDisplay-Regular",
+                              borderStyle:"none",
+                              cursor:"pointer"
+
                               // fontFamily:"ClashDisplay-SemiBold"
                             }}
                           >
                             +ADD TO CART
                           </button>
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -805,10 +820,10 @@ const CompareProducts = () => {
       </Grid>
 
       <Footer />
-    </>
+    </div>
   );
   const MobileCompareProducts = () => (
-    <>
+    <div >
       <div style={{}}>
         <div
           style={{
@@ -825,7 +840,7 @@ const CompareProducts = () => {
             fontFamily={"ClashDisplay-SemiBold"}
           />
           <Link to="/cart">
-          <img src={icons.shoppingCart} alt="" style={{ height: 20 }} />
+            <img src={icons.shoppingCart} alt="" style={{ height: 20 }} />
           </Link>
         </div>
         <Spacer height={20} />
@@ -846,7 +861,7 @@ const CompareProducts = () => {
           style={{ zIndex: -1 }}
           // className="mySwiper"
         >
-          {[images.slide7,images.slide8,images.slide9].map((item,index) => (
+          {[images.slide7, images.slide8, images.slide9].map((item, index) => (
             <SwiperSlide key={index}>
               <img
                 src={item}
@@ -1036,82 +1051,84 @@ const CompareProducts = () => {
                 />
               </div>
               <Spacer height={100} />
-              <div style={{
+              <div
+                style={{
                   ...row,
                   justifyContent: "space-between",
                   paddingRight: 30,
                   paddingLeft: 30,
                   alignItems: "center",
-                }}>
-
-                  {/* ORIGINAL ONE */}
+                }}
+              >
+                {/* ORIGINAL ONE */}
                 <DropdownCom />
-                
+
                 <a
-              href=""
-              style={{
-                backgroundColor: "#fff",
-                color: "#1B1B1B",
-                borderWidth: 1,
-                borderColor: "#1B1B1B",
-                borderStyle: "solid",
-                // width: "40%",
-                justifyContent: "center",
-                alignItems: "center",
-                display: "flex",
-                paddingRight: 15,
-                paddingLeft: 15,
-                paddingTop: 10,
-                paddingBottom: 10,
-                textDecoration: "none",
-                fontFamily:"ClashDisplay-R"
-              }}
-            >
-              GUÍA DE TALLAS
-              <Spacer width={10}/>
-              <img src={icons.rightArrow} alt="" style={{height:10}} />
-            </a>
+                  href=""
+                  style={{
+                    backgroundColor: "#fff",
+                    color: "#1B1B1B",
+                    borderWidth: 1,
+                    borderColor: "#1B1B1B",
+                    borderStyle: "solid",
+                    // width: "40%",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    display: "flex",
+                    paddingRight: 15,
+                    paddingLeft: 15,
+                    paddingTop: 10,
+                    paddingBottom: 10,
+                    textDecoration: "none",
+                    fontFamily: "ClashDisplay-R",
+                  }}
+                >
+                  GUÍA DE TALLAS
+                  <Spacer width={10} />
+                  <img src={icons.rightArrow} alt="" style={{ height: 10 }} />
+                </a>
               </div>
               <Spacer height={50} />
-              <div style={{
+              <div
+                style={{
                   ...row,
                   justifyContent: "space-between",
                   paddingRight: 30,
                   paddingLeft: 30,
                   alignItems: "center",
-                }}>
-                  <div style={{ ...row, alignItems: "center" }}>
-            <a href="" style={{ ...noUnderline }}>
-              <CustomText title="-" fontSize={20} />
-            </a>
-            <Spacer width={30} />
-            <CustomText title="1" fontSize={20} />
+                }}
+              >
+                <div style={{ ...row, alignItems: "center" }}>
+                  <a href="" style={{ ...noUnderline }}>
+                    <CustomText title="-" fontSize={20} />
+                  </a>
+                  <Spacer width={30} />
+                  <CustomText title="1" fontSize={20} />
 
-            <Spacer width={30} />
-            <a href="" style={{ ...noUnderline }}>
-              <CustomText title="+" fontSize={20} />
-            </a>
-          </div>
+                  <Spacer width={30} />
+                  <a href="" style={{ ...noUnderline }}>
+                    <CustomText title="+" fontSize={20} />
+                  </a>
+                </div>
                 <a
-              href=""
-              style={{
-                backgroundColor: "#686868",
-                color: "#fff",
-                // width: "40%",
-                justifyContent: "center",
-                alignItems: "center",
-                display: "flex",
-                paddingRight: 20,
-                paddingLeft: 20,
-                paddingTop: 10,
-                paddingBottom: 10,
-                textDecoration: "none",
-                fontFamily:"ClashDisplay-Regular"
-              }}
-            >
-              +ADD TO CART
-            </a> 
-          
+                  href=""
+                  style={{
+                    backgroundColor: "#686868",
+                    color: "#fff",
+                    // width: "40%",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    display: "flex",
+                    paddingRight: 20,
+                    paddingLeft: 20,
+                    paddingTop: 10,
+                    paddingBottom: 10,
+                    textDecoration: "none",
+                    fontFamily: "ClashDisplay-Regular",
+                  }}
+                >
+                  +ADD TO CART
+                </a>
               </div>
             </div>
           ) : (
@@ -1251,7 +1268,6 @@ const CompareProducts = () => {
                     paddingTop: 10,
                     paddingBottom: 10,
                     textDecoration: "none",
-                    
                   }}
                 >
                   +ADD TO CART
@@ -1276,7 +1292,7 @@ const CompareProducts = () => {
         </div>
       </Draggable>
       <BottomBarNavigation />
-    </>
+    </div>
   );
 
   return (
@@ -1285,7 +1301,10 @@ const CompareProducts = () => {
         <MobileCompareProducts />
       </MobileDiv>
       <WebDiv>
-        <WebCompareProducts  isDrawerOpen={isDrawerOpen} setIsDrawerOpen={setIsDrawerOpen} />
+        <WebCompareProducts
+          isDrawerOpen={isDrawerOpen}
+          setIsDrawerOpen={setIsDrawerOpen}
+        />
       </WebDiv>
       {/* {width <= 400 ? (
         <MobileCompareProducts />

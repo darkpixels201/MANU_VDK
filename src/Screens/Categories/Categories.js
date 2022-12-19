@@ -319,7 +319,7 @@ export const Categories = () => {
       <Spacer height={50} />
       <CatItem label={"COLOR"} icon={true} iconPath={icons.plus} />
       <Spacer height={40} />
-      <CatItem label={"TALLA"} paddingLeft={60} />
+      <CatItem label={"TALLA"} paddingLeft={52} />
       <Spacer height={40} />
       <CatItem label={"INFO 3"} />
       <Spacer height={40} />
@@ -370,7 +370,7 @@ export const Categories = () => {
   );
 
   const Body = (props) => (
-    <div style={{padding:0}}>
+    <div style={{padding:0, backgroundColor:colors.white}}>
       <DiscountBanner />
       <Grid container rowSpacing={{ xs: 5, sm: 2, md: 3 }} columnSpacing={{}}>
         <Grid item xs={12} sm={12} md={12}>

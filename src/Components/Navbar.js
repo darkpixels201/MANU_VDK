@@ -24,29 +24,33 @@ const Item = styled(Paper)(({ theme }) => ({
 function Navbar() {
   return (
     <div>
-      <div
-        style={{
-          width: "100%",
-          height: 40,
-          backgroundColor: colors.grey,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <CustomText title=" “Obtén un " fontSize={14} color={colors.white} />
-        <CustomText
-          title="15% de descuento"
-          fontSize={14}
-          color={colors.white}
-          fontFamily="ClashDisplay-SemiBold"
-        />
-        <CustomText
-          title="por tu primera compra”"
-          fontSize={14}
-          color={colors.white}
-        />
-      </div>
+      {window.innerWidth <= 951 ? (
+        ""
+      ) : (
+        <div
+          style={{
+            width: "100%",
+            height: 40,
+            backgroundColor: colors.grey,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <CustomText title=" “Obtén un " fontSize={14} color={colors.white} />
+          <CustomText
+            title="15% de descuento"
+            fontSize={14}
+            color={colors.white}
+            fontFamily="ClashDisplay-SemiBold"
+          />
+          <CustomText
+            title="por tu primera compra”"
+            fontSize={14}
+            color={colors.white}
+          />
+        </div>
+      )}
 
       {window.innerWidth <= 951 ? <NavbarMobile /> : <NavWeb />}
       {/* <Container maxWidth="xl">

@@ -29,15 +29,15 @@ export const BestSellerWeb = () => {
   const BottomImage = [
     {
       id: 1,
-      image: images.banner,
+      image: images.slide13,
     },
     {
       id: 2,
-      image: images.banner,
+      image: images.slide12,
     },
     {
       id: 3,
-      image: images.banner,
+      image: images.slide10,
     },
   ];
 
@@ -111,6 +111,7 @@ export const BestSellerWeb = () => {
           </div>
         </div>
       </div>
+      <Spacer height={10} />
 
       {/* Best Seller Body */}
 
@@ -160,7 +161,7 @@ export const BestSellerWeb = () => {
                     justifyContent: "center",
                     alignItems: "center",
                   }}
-                  src={images.banner}
+                  src={images.slide13}
                 />
               </div>
               {/* <spacer height={120} /> */}
@@ -235,7 +236,7 @@ export const BestSellerWeb = () => {
                 style={{
                   height: 1,
                   position: "absolute",
-                  width: 408,
+                  width: 355,
                   backgroundColor: colors.black,
                   justifyContent: "right",
                   marginLeft: 220,
@@ -362,6 +363,8 @@ export const BestSellerWeb = () => {
                 display: "flex",
                 justifyContent: "space-evenly",
                 alignItems: "center",
+                overflowX:"hidden",
+                overflowY:"hidden"
               }}
             >
               <div>

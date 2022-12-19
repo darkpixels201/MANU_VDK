@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { colors } from "../utils/Colors";
 import CustomText from "./CustomText";
 
-export const DropdownCom = () => {
+export const DropdownCom = (props) => {
   const [value, setValue] = useState("XS");
   function val(e) {
     // console.log(e.target.value);
@@ -29,14 +29,14 @@ export const DropdownCom = () => {
       <CustomText
         title={value}
         fontSize={window.innerWidth <= 700 ? 13 : 18}
-        color={colors.black}
+        color={props.on ? colors.white : colors.black}
       />
 
       <div
         style={{
           width: 1,
           height: 25,
-          backgroundColor: colors.black,
+          backgroundColor: props.on ? colors.white : colors.black,
         }}
       />
       <select
@@ -45,6 +45,8 @@ export const DropdownCom = () => {
           width: 14,
           borderWidth: 0,
           cursor: "pointer",
+          backgroundColor:props.on ? colors.black : colors.white,
+          color:props.on ? colors.white : colors.black
         }}
         id={"select_id"}
         onChange={val}
@@ -53,7 +55,7 @@ export const DropdownCom = () => {
       >
         {options.map((opt)=>(
 
-        <option value={opt.value}>{opt.text}</option>
+        <option style={{color:props.on ? colors.white : colors.black}} value={opt.value}>{opt.text}</option>
         ))}
       </select>
       
