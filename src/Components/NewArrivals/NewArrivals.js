@@ -17,6 +17,7 @@ import { colors } from "../../utils/Colors";
 import { Autocomplete, TextField } from "@mui/material";
 import { icons } from "../../Assets/Icons";
 import NewArrivalSwiper from "./NewArrivalSwiper";
+import { Link } from "react-router-dom";
 
 const NewArrivals = (props) => {
   const NewArrival = [
@@ -38,18 +39,18 @@ const NewArrivals = (props) => {
       text1: "BRASIER DE BANDA",
       text2: "ANCHA",
     },
-    // {
-    //   id: 4,
-    //   image: images.banner,
-    //   text1: "BRASIER DE BANDA",
-    //   text2: "ANCHA",
-    // },
-    // {
-    //   id: 5,
-    //   image: images.banner,
-    //   text1: "BRASIER DE BANDA",
-    //   text2: "ANCHA",
-    // },
+    {
+      id: 4,
+      image: images.slide12,
+      text1: "BRASIER DE BANDA",
+      text2: "ANCHA",
+    },
+    {
+      id: 5,
+      image: images.slide11,
+      text1: "BRASIER DE BANDA",
+      text2: "ANCHA",
+    },
   ];
 
   return (
@@ -93,6 +94,8 @@ const NewArrivals = (props) => {
       >
         {/* <div style={{ width: "100%", }}> */}
         <Spacer height={window.innerWidth <= 1000 ? 40 : ""} />
+        <div>
+          <div>
         <Swiper
           slidesPerView={
             window.innerWidth <= 1000 ? (window.innerWidth <= 700 ? 1 : 2) : 3
@@ -120,20 +123,126 @@ const NewArrivals = (props) => {
               />
             </SwiperSlide>
           ))}
+          
 
-          {/* <SwiperSlide style={{ backgroundColor: props.on ? colors.black : colors.pureWite }}>
-              <CartItem />
-            </SwiperSlide>
-            <SwiperSlide style={{ backgroundColor: props.on ? colors.black : colors.pureWite }}>
-              <CartItem />
-            </SwiperSlide>
-            <SwiperSlide style={{ backgroundColor: props.on ? colors.black : colors.pureWite }}>
-              <CartItem />
-            </SwiperSlide>
-            <SwiperSlide style={{ backgroundColor: props.on ? colors.black : colors.pureWite }}>
-              <CartItem />
-            </SwiperSlide> */}
+
         </Swiper>
+
+        </div>
+        <div>
+          {window.innerWidth >= 1100 ? (
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "end",
+                // position: "relative",
+              }}
+            >
+              <img
+                src={icons.circleRightArrow}
+                style={{
+                  height: 50,
+                  width: 50,
+                  position: "absolute",
+                  top:2900,
+                  // bottom: 10,
+                  right: 50,
+                  // marginLeft:70
+                }}
+              />
+            </div>
+          ) : (
+            ""
+          )}
+          </div>
+        </div>
+
+        
+
+        {window.innerWidth <= 700 ? (
+          <>
+            <div
+              style={{
+                width: window.innerWidth <= 1000 ? "100%" : "auto",
+                paddingRight: window.innerWidth <= 1000 ? "" : 100,
+                paddingLeft: window.innerWidth <= 1000 ? "" : 100,
+              }}
+            >
+              {/* <div style={{ width: "100%", }}> */}
+              <Spacer height={window.innerWidth <= 10 ? 40 : ""} />
+              <Swiper
+                slidesPerView={
+                  window.innerWidth <= 1000
+                    ? window.innerWidth <= 700
+                      ? 1
+                      : 2
+                    : 3
+                }
+                // slidesPerView={1}
+                spaceBetween={-47}
+                freeMode={true}
+                pagination={{
+                  clickable: true,
+                }}
+                modules={[FreeMode]}
+              >
+                {NewArrival.map((item, index) => (
+                  <SwiperSlide
+                    key={index}
+                    style={{
+                      backgroundColor: props.on ? colors.black : colors.white,
+                    }}
+                  >
+                    <NewArrivalSwiper
+                      image={item.image}
+                      text1={item.text1}
+                      text2={item.text2}
+                      on={props.on}
+                    />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </div>
+            <Link to="/categories" style={{ textDecoration: "none" }}>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+              >
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    alignSelf: "center",
+                    borderStyle: "solid",
+                    // borderColor: colors.black,
+                    borderWidth: 0.5,
+                    width: 150,
+                    height: 30,
+                    alignContent: "center",
+                  }}
+                >
+                  <CustomText title="GUÍA DE TALLAS" fontSize={12} />
+                  <Spacer width={10} />
+                  <img
+                    src={icons.rightArrow}
+                    style={{ height: 8, width: 18 }}
+                  />
+                </div>
+                {/* <div style={{ display: "flex", justifyContent: "end" }}>
+          <img src={icons.circleRightArrow} style={{ height: 50, width: 50 }} />
+        </div> */}
+                {/* </div> */}
+              </div>
+            </Link>
+            <Spacer height={110} />{" "}
+          </>
+        ) : (
+          ""
+        )}
       </div>
       {/* <div style={{ display: "flex", justifyContent: "end" }}>
           <img src={icons.circleRightArrow} style={{ height: 50, width: 50 }} />

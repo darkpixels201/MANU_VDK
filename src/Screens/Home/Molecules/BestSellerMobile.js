@@ -234,36 +234,7 @@ const BestSellerMobile = () => {
               alignItems: "center",
             }}
           >
-            {/* <Autocomplete
-              options={customer}
-              sx={{ width: 70 }}
-              defaultValue={customer[0]}
-              clearIcon
-              // clearindicator
-              style={{
-                "&&&:before": {
-                  borderBottom: "none",
-                },
-              }}
-              //   InputProps={{
-              //     disableUnderline: true,
-              //   }}
-              //   underlineShow={false}
-              //   disableUnderline={true}
-
-              // popupIcon= {<img src={icons.downArrow} />}
-              renderInput={(params) => (
-                <TextField
-                  {...params}
-                  variant="standard"
-                  underlineshow={"false"}
-                />
-              )}
-              currentcustomer={currentcustomer}
-              onChange={(event, newValue) => setCurrentCustomer(newValue)}
-
-              // style={{height:10, width:5, backgroundColor:colors.black}}
-            /> */}
+           
             <DropdownCom />
           </div>
           <div
@@ -272,6 +243,9 @@ const BestSellerMobile = () => {
               width: 100,
               backgroundColor: colors.black,
               marginTop: 10,
+
+
+              // position:"absolute"
               //   left: 100,
               //   marginRight:30
               //   marginLeft:20

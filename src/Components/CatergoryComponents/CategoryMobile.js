@@ -21,6 +21,7 @@ import ProductBody from "./ProductBody";
 import SwiperProduct from "./SwiperProduct";
 import Footer from "../Footer";
 import BottomBarNavigation from "../BottomNavigation";
+import { Link } from "react-router-dom";
 
 const CategoryMobile = (props) => {
   const [open, setOpen] = useState(false);
@@ -95,9 +96,11 @@ const CategoryMobile = (props) => {
           <SearchComponent setOpen={setOpen} open={open} />
         </div>
         <div>
+          <Link to="/cart">
           <div style={{ height: 10, width: 10, cursor: "pointer" }}>
             <img src={icons.shoppingCart} style={{ height: 20, width: 20 }} />
           </div>
+          </Link>
         </div>
       </div>
 

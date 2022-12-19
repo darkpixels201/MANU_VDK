@@ -91,7 +91,7 @@ export const MuiDrawer = (props) => {
               </Link>
             ))}
 
-            {window.innerWidth <= 775 ? <Footer /> : ""}
+            {window.innerWidth <= 775 ? <Footer setIsDrawerOpen={props.setIsDrawerOpen} /> : ""}
           </List>
         </Box>
       </Drawer>
@@ -176,7 +176,7 @@ const WebTop = (props) => (
 
           // Mobile Footer
 
-const Footer = () => (
+const Footer = (props) => (
   <>
     <Spacer height={200} />
     <div
@@ -229,7 +229,7 @@ const Footer = () => (
         />
       </div>
       <div>
-        <img src={icons.cross} height={13} width={13} />
+        <img onClick={() => props.setIsDrawerOpen(false)} src={icons.cross} height={13} width={13} />
       </div>
     </div>
   </>
