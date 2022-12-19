@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { images } from "../../Assets/Images";
 import { colors } from "../../utils/Colors";
 import CustomButton from "../CustomButton";
@@ -28,6 +29,7 @@ const BodyMobile = (props) => {
             }}
           >
             <div>
+              <Link to="/categories">
               <CustomButton
                 title="SHOP NOW"
                 fontSize={15}
@@ -40,6 +42,7 @@ const BodyMobile = (props) => {
                 fontFamily={"ClashDisplay-Light"}
                 textDecoration={"underline"}
               />
+              </Link>
             </div>
             <div>
               <CustomText

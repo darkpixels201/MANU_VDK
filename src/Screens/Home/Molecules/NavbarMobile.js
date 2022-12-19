@@ -33,7 +33,9 @@ export const NavbarMobile = () => {
       <Spacer height={10} />
       <div style={{ display: "flex", justifyContent: "space-around", width:"auto", paddingRight:25, paddingLeft:25 }}>
         <div>
+          <Link to="/" style={{textDecoration:"none"}} >
           <CustomText title="VDK" fontFamily="ClashDisplay-SemiBold" />
+          </Link>
         </div>
         <div
           style={{ alignSelf: "center", }}
@@ -79,6 +81,7 @@ export const NavbarMobile = () => {
           <Link to="/cart">
             <div style={{ height: 10, width: 10, cursor: "pointer" }}>
               <img src={icons.shoppingCart} style={{ height: 20, width: 20 }} />
+              <div style={{width:27, display:"flex", justifyContent:"flex-end", height:10, position:"absolute", top:42}}>
               <div
                 style={{
                   backgroundColor: colors.grey,
@@ -88,17 +91,19 @@ export const NavbarMobile = () => {
                   display:"flex",
                   alignItems:"center",
                   justifyContent:"center",
-                  position:"absolute",
+                  // position:"fixed",
                   // margibBottom:20,
                   top:42,
-                  left:353
+                  // left:353
                 }}
               >
                 <CustomText
                   title="1"
                   color={colors.white}
                   fontSize={8}
+                  // position={"fixed"}
                 />
+              </div>
               </div>
             </div>
           </Link>

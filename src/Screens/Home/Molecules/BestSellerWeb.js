@@ -9,6 +9,7 @@ import { Autocomplete, TextField } from "@mui/material";
 import Swiper from "react-id-swiper";
 import { DropdownCom } from "../../../Components/DropdownCom";
 import CustomButton from "../../../Components/CustomButton";
+import { Link } from "react-router-dom";
 
 export const BestSellerWeb = () => {
   const FilledCircle = [
@@ -28,15 +29,15 @@ export const BestSellerWeb = () => {
   const BottomImage = [
     {
       id: 1,
-      image: images.slide7,
+      image: images.banner,
     },
     {
       id: 2,
-      image: images.slide8,
+      image: images.banner,
     },
     {
       id: 3,
-      image: images.slide9,
+      image: images.banner,
     },
   ];
 
@@ -159,7 +160,7 @@ export const BestSellerWeb = () => {
                     justifyContent: "center",
                     alignItems: "center",
                   }}
-                  src={images.slide6}
+                  src={images.banner}
                 />
               </div>
               {/* <spacer height={120} /> */}
@@ -403,6 +404,7 @@ export const BestSellerWeb = () => {
                 </div>
                 {/* <Spacer width={120} /> */}
                 <div>
+                  <Link to="/cart" style={{textDecoration:'none'}}>
                   <CustomButton
                     title="+ ADD TO CART"
                     fontSize={15}
@@ -414,6 +416,7 @@ export const BestSellerWeb = () => {
                     backgroundColor={colors.grey}
                     fontFamily={"ClashDisplay-Light"}
                   />
+                  </Link>
                 </div>
               </div>
             </div>

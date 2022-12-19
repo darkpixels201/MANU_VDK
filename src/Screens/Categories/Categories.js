@@ -453,6 +453,8 @@ export const Categories = () => {
             <Banner />
           </div>
           <Spacer height={60} />
+
+         
           <Grid
             container
             rowSpacing={{ xs: 5, sm: 2, md: 3 }}
@@ -466,7 +468,23 @@ export const Categories = () => {
               </Grid>
             ))}
           </Grid>
+           
           <Spacer height={60} />
+
+          {/* LINE WILL COME HERE */}
+          <div style={{width:"81%",   display:"flex", justifyContent:"flex-end", position:"absolute"}} >
+          <div
+                style={{
+                  height: 1,
+                  position: "absolute",
+                  width: 458,
+                  backgroundColor: colors.black,
+                  justifyContent: "flex-start",
+                  // marginLeft: 220,
+                }}
+              ></div>
+              </div>
+              <Spacer height={40} />
           <Grid
             container
             rowSpacing={{ xs: 5, sm: 2, md: 3 }}

@@ -84,7 +84,7 @@ const ColumnThree = () => {
           placeholder="Enter Coupon Code here"
         />
         <button
-          style={{ backgroundColor: "#000", color: "#fff", width: "25%" }}
+          style={{ backgroundColor: "#000", color: "#fff", width: "25%", borderStyle:"hidden" }}
         >
           Apply
         </button>
@@ -99,6 +99,7 @@ const ColumnThree = () => {
             paddingLeft: 25,
             paddingTop: 10,
             paddingBottom: 10,
+            borderStyle:"hidden"
           }}
         >
           CHECKOUT
@@ -115,6 +116,7 @@ const ColumnThree = () => {
             paddingLeft: 25,
             paddingTop: 10,
             paddingBottom: 10,
+            borderWidth:1,
           }}
         >
           CONTINUE SHOPPING

@@ -85,7 +85,7 @@ function BodyWeb(props) {
           </div>
           <Spacer height={130} />
           <div>
-            <Link to="/categories" style={{ textDecoration: "none" }}>
+            <Link to="/compareproducts" style={{ textDecoration: "none" }}>
               <CustomButton
                 title="SHOP NOW"
                 fontSize={20}

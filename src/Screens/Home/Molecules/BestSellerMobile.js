@@ -1,6 +1,7 @@
 import { Autocomplete, TextField } from "@mui/material";
 import { Container } from "@mui/system";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { icons } from "../../../Assets/Icons";
 import { images } from "../../../Assets/Images";
 import CustomButton from "../../../Components/CustomButton";
@@ -263,6 +264,7 @@ const BestSellerMobile = () => {
           }}
         >
           <div>
+            <Link to="/cart" style={{textDecoration:"none"}}>
             <CustomButton
               title="+ ADD TO CART"
               fontSize={15}
@@ -274,6 +276,7 @@ const BestSellerMobile = () => {
               backgroundColor={colors.grey}
               fontFamily={"ClashDisplay-Light"}
             />
+            </Link>
           </div>
           <div style={{ ...row, alignItems: "center" }}>
                   <a href="" style={{ ...noUnderline }}>

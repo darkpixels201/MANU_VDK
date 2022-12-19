@@ -17,6 +17,9 @@ import Draggable from "react-draggable";
 import styled from "styled-components";
 import BottomBarNavigation from "../../Components/BottomNavigation";
 import { DropdownCom } from "../../Components/DropdownCom";
+import '../../Assets/Style/font.css'
+import { MuiDrawer } from "../../Components/Drawer";
+import { Link } from "react-router-dom";
 
 var currentPosition = 0;
 
@@ -88,6 +91,8 @@ const CompareProducts = () => {
     alignItems: "center",
   };
 
+  const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
+
   const Footer = () => (
     <Grid container rowSpacing={{ xs: 5, sm: 2, md: 3 }} columnSpacing={{}}>
       <Grid
@@ -153,7 +158,7 @@ const CompareProducts = () => {
     </Grid>
   );
 
-  const WebCompareProducts = () => (
+  const WebCompareProducts = (props) => (
     <>
       <DiscountBanner />
       <Grid container rowSpacing={{ xs: 5, sm: 2, md: 3 }} columnSpacing={{}}>
@@ -216,8 +221,13 @@ const CompareProducts = () => {
                     src={images.twoLines}
                     alt=""
                     style={{ width: 24, height: 10 }}
+                    onClick={() => props.setIsDrawerOpen(true)}
                   />
                 </div>
+                <MuiDrawer
+        isDrawerOpen={props.isDrawerOpen}
+        setIsDrawerOpen={props.setIsDrawerOpen}
+      />
               </div>
             </Grid>
           </Grid>
@@ -601,6 +611,7 @@ const CompareProducts = () => {
                               paddingLeft: 20,
                               paddingTop: 10,
                               paddingBottom: 10,
+                              // fontFamily:"ClashDisplay-SemiBold"
                             }}
                           >
                             +ADD TO CART
@@ -813,7 +824,9 @@ const CompareProducts = () => {
             fontSize={16}
             fontFamily={"ClashDisplay-SemiBold"}
           />
+          <Link to="/cart">
           <img src={icons.shoppingCart} alt="" style={{ height: 20 }} />
+          </Link>
         </div>
         <Spacer height={20} />
         <img
@@ -1030,7 +1043,9 @@ const CompareProducts = () => {
                   paddingLeft: 30,
                   alignItems: "center",
                 }}>
-                <DropdownCom/>
+
+                  {/* ORIGINAL ONE */}
+                <DropdownCom />
                 
                 <a
               href=""
@@ -1049,6 +1064,7 @@ const CompareProducts = () => {
                 paddingTop: 10,
                 paddingBottom: 10,
                 textDecoration: "none",
+                fontFamily:"ClashDisplay-R"
               }}
             >
               GUÍA DE TALLAS
@@ -1090,6 +1106,7 @@ const CompareProducts = () => {
                 paddingTop: 10,
                 paddingBottom: 10,
                 textDecoration: "none",
+                fontFamily:"ClashDisplay-Regular"
               }}
             >
               +ADD TO CART
@@ -1234,6 +1251,7 @@ const CompareProducts = () => {
                     paddingTop: 10,
                     paddingBottom: 10,
                     textDecoration: "none",
+                    
                   }}
                 >
                   +ADD TO CART
@@ -1267,7 +1285,7 @@ const CompareProducts = () => {
         <MobileCompareProducts />
       </MobileDiv>
       <WebDiv>
-        <WebCompareProducts />
+        <WebCompareProducts  isDrawerOpen={isDrawerOpen} setIsDrawerOpen={setIsDrawerOpen} />
       </WebDiv>
       {/* {width <= 400 ? (
         <MobileCompareProducts />
