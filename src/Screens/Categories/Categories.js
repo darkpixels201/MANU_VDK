@@ -21,6 +21,7 @@ import "./style.css";
 import { DropdownCom } from "../../Components/DropdownCom";
 import "../../Assets/Style/font.css";
 import { FilledCircleCom } from "../../Components/FilledCircleCom";
+import { CartWeb } from "../../Components/CatergoryComponents/CatWeb/CatWeb";
 
 export const Categories = () => {
   const [count, setCount] = useState(1);
@@ -33,20 +34,7 @@ export const Categories = () => {
 
   const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
 
-  const FilledCircle = [
-    {
-      id: 1,
-      bgcolor: colors.lightGray,
-    },
-    {
-      id: 2,
-      bgcolor: colors.black,
-    },
-    // {
-    //   id: 3,
-    //   bgcolor: colors.white,
-    // },
-  ];
+  
   const row = {
     display: "flex",
     flexDirection: "row",
@@ -56,149 +44,8 @@ export const Categories = () => {
     justifyContent: "center",
     alignItems: "center",
   };
-  const Banner = () => (
-    <div style={{ height: "36vw" }}>
-      <img
-        src={images.catBanner}
-        alt=""
-        style={{ objectFit: "cover", width: "100%", height: "100%" }}
-      />
-      <div style={{ position: "absolute", marginLeft: 30, marginTop: -100 }}>
-        <div style={row}>
-          <CustomText
-            fontSize={30}
-            title=" DIANE"
-            textAlign={"left"}
-            fontFamily={"ClashDisplay-SemiBold"}
-            color={colors.white}
-          />
-          <Spacer width={10} />
-          <CustomText
-            fontSize={30}
-            title="&"
-            textAlign={"left"}
-            fontFamily={"ClashDisplay-SemiBold"}
-            color={colors.white}
-          />
-        </div>
-        <CustomText
-          fontSize={30}
-          title="GEORDI"
-          textAlign={"left"}
-          fontFamily={"ClashDisplay-SemiBold"}
-          color={colors.white}
-        />
-      </div>
-    </div>
-  );
-  const CardFooter = () => (
-    <div>
-      <div
-        style={{
-          ...row,
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
-      >
-        <div>
-          <CustomText
-            fontSize={16}
-            title="Brasier de"
-            textAlign={"left"}
-            fontFamily={"ClashDisplay-SemiBold"}
-            // color={colors.white}
-          />
-          {/* <Spacer height={5} /> */}
-          <CustomText
-            fontSize={16}
-            title="Banda Ancha"
-            textAlign={"left"}
-            // color={colors.white}
-          />
-        </div>
-        <div
-          style={{
-            // backgroundColor: colors.purple,
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        ></div>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            // justifyContent: "center",
-            alignItems: "center",
-            // backgroundColor: colors.parrot,
-          }}
-        >
-          <DropdownCom />
-          
-
-          <FilledCircleCom FilledCircle={FilledCircle}/>
-         
-        </div>
-      </div>
-      <div
-        style={{
-          ...row,
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
-      >
-        <div>
-          <s style={{ color: "#aaa" }}>$135.00</s>
-          <CustomText fontSize={16} title="$95.00" />
-        </div>
-        <div>
-          <a
-            href=""
-            style={{
-              paddingRight: 25,
-              paddingLeft: 25,
-              paddingTop: 5,
-              paddingBottom: 5,
-              backgroundColor: "#686868",
-              color: colors.white,
-              textDecoration: "none",
-              fontFamily: "ClashDisplay-Regular",
-            }}
-          >
-            +ADD
-          </a>
-        </div>
-      </div>
-    </div>
-  );
-  const CardImage = ({ height, image }) => (
-    <img
-      src={image}
-      alt=""
-      style={{ height: height || "20vw", width: "100%" }}
-    />
-  );
-  const Card = ({ footer, image }) => (
-    <>
-      {footer === "up" ? (
-        <>
-          <CardFooter />
-          <Spacer height={10} />
-        </>
-      ) : (
-        <></>
-      )}
-      <CardImage height={"35vw"} image={image} />
-      {footer === "down" ? (
-        <>
-          <Spacer height={10} />
-          <CardFooter />
-        </>
-      ) : (
-        <></>
-      )}
-    </>
-  );
+  
+  
   const Footer = () => (
     <Grid container rowSpacing={{ xs: 5, sm: 2, md: 3 }} columnSpacing={{}}>
       <Grid
@@ -264,218 +111,17 @@ export const Categories = () => {
     </Grid>
   );
 
-  const CatList = () => (
-    <div style={{}}>
-      <Spacer height={100} />
-      <CatItem label={"FILTROS"} icon={true} iconPath={icons.downArrowLine} />
-      <Spacer height={50} />
-      <CatItem label={"COLOR"} icon={true} iconPath={icons.plus} />
-      <Spacer height={40} />
-      <CatItem label={"TALLA"} paddingLeft={52} />
-      <Spacer height={40} />
-      <CatItem label={"INFO 3"} />
-      <Spacer height={40} />
-      <CatItem label={"INFO 4"} />
-      <Spacer height={40} />
-      <CatItem label={"INFO 5"} />
-      <Spacer height={40} />
-      <CatItem label={"PRECIO "} />
-      <Spacer height={40} />
-      <div style={{ paddingLeft: 60, paddingRight: 60 }}>
-        <Slider
-          size="small"
-          defaultValue={0}
-          aria-label="Small"
-          // color="secondary"
-          valueLabelDisplay="auto"
-        />
-        <div style={{ ...row, justifyContent: "space-between" }}>
-          <span>10</span>
-          <span>100</span>
-        </div>
-      </div>
-      {/* <CustomText fontSize={18} title="FILTROS" textAlign={"left"} /> */}
-    </div>
-  );
+  
 
-  const CatItem = ({ label, icon, iconPath, paddingLeft }) => (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        width: "60%",
-      }}
-    >
-      <a
-        href="#"
-        style={{
-          color: colors.black,
-          textDecoration: "none",
-          paddingLeft: paddingLeft || 50,
-        }}
-      >
-        {label}
-      </a>
-      {icon ? <img src={iconPath} alt="" style={{ height: 10 }} /> : <></>}
-    </div>
-  );
+  
 
-  const Body = (props) => (
-    <div style={{ padding: 0, backgroundColor: colors.white }}>
-      <DiscountBanner />
-      <Grid container rowSpacing={{ xs: 5, sm: 2, md: 3 }} columnSpacing={{}}>
-        <Grid item xs={12} sm={12} md={12}>
-          <Grid
-            container
-            rowSpacing={{ xs: 5, sm: 2, md: 3 }}
-            columnSpacing={{}}
-            style={{
-              // paddingLeft: 40,
-              // paddingRight: 100,
-              paddingTop: 20,
-            }}
-          >
-            <Grid item xs={12} sm={12} md={2.3} style={{ paddingLeft: 40 }}>
-              <a href="*" style={{ textDecoration: "none" }}>
-                <div style={row}>
-                  <CustomText
-                    fontSize={18}
-                    title="MANU"
-                    textAlign={"left"}
-                    fontFamily={"ClashDisplay-SemiBold"}
-                  />
-                  <Spacer width={5} />
-                  <CustomText fontSize={18} title="VDK" />
-                </div>
-                <CustomText
-                  fontSize={18}
-                  title="STORE"
-                  textAlign={"left"}
-                  fontFamily={"ClashDisplay-SemiBold"}
-                />
-              </a>
-            </Grid>
-            <Grid item xs={12} sm={12} md={9.7} style={{ paddingRight: 100 }}>
-              <div
-                style={{
-                  ...row,
-                  justifyContent: "space-between",
-                  paddingLeft: 5,
-                }}
-              >
-                <div style={{ ...row, padding: 5, ...center }}>
-                  {/* <Search fontSize="small" /> */}
-                  <img
-                    src={icons.search}
-                    alt=""
-                    style={{ width: 16, height: 16 }}
-                  />
-                  <Spacer width={5} />
-                  <input type="text" style={{ borderWidth: 0 }} />
-                </div>
-                <div
-                  style={{
-                    ...center,
-                  }}
-                >
-                  <Link to="/cart" style={{ color: colors.black }}>
-                    <ShoppingCartOutlinedIcon />
-                  </Link>
-                  <Spacer width={50} />
-                  <img
-                    onClick={() => props.setIsDrawerOpen(true)}
-                    src={images.twoLines}
-                    alt=""
-                    style={{ width: 24, height: 10 }}
-                  />
-                  <MuiDrawer
-                    isDrawerOpen={props.isDrawerOpen}
-                    setIsDrawerOpen={setIsDrawerOpen}
-                  />
-                </div>
-              </div>
-            </Grid>
-          </Grid>
-        </Grid>
-      </Grid>
-      <Grid container rowSpacing={{ xs: 5, sm: 2, md: 3 }} columnSpacing={{}}>
-        <Grid item xs={12} sm={12} md={2.3} style={{}}>
-          <div style={{}}>
-            <CatList />
-          </div>
-        </Grid>
-        <Grid item xs={12} sm={12} md={9.7} style={{ paddingRight: 90 }}>
-          <div>
-            <Banner />
-          </div>
-          <Spacer height={60} />
-
-          <Grid
-            container
-            rowSpacing={{ xs: 5, sm: 2, md: 3 }}
-            columnSpacing={{ xs: 1, sm: 2, md: 3 }}
-          >
-            {[images.slide6, images.slide7, images.slide13, images.slide11].map(
-              (item) => (
-                <Grid item xs={6} sm={4} md={3}>
-                  <CardImage image={item} />
-                  <Spacer height={10} />
-                  <CardFooter />
-                </Grid>
-              )
-            )}
-          </Grid>
-
-          <Spacer height={60} />
-
-          {/* LINE WILL COME HERE */}
-          <div
-            style={{
-              width: "81%",
-              display: "flex",
-              justifyContent: "flex-end",
-              position: "absolute",
-            }}
-          >
-            <div
-              style={{
-                height: 1,
-                position: "absolute",
-                width: 458,
-                backgroundColor: colors.black,
-                justifyContent: "flex-start",
-                // marginLeft: 220,
-              }}
-            ></div>
-          </div>
-          <Spacer height={40} />
-          <Grid
-            container
-            rowSpacing={{ xs: 5, sm: 2, md: 3 }}
-            columnSpacing={{ xs: 1, sm: 2, md: 6 }}
-          >
-            {[
-              { image: images.slide14, footerPos: "up" },
-              { image: images.slide15, footerPos: "down" },
-            ].map((item) => (
-              <Grid item xs={12} sm={12} md={6}>
-                <Card footer={item.footerPos} image={item.image} />
-              </Grid>
-            ))}
-          </Grid>
-        </Grid>
-      </Grid>
-      <Spacer height={100} />
-      <Footer />
-    </div>
-  );
+  
   return (
     <div>
       {window.innerWidth <= 480 ? (
         <CategoryMobile />
       ) : (
-        <Body isDrawerOpen={isDrawerOpen} setIsDrawerOpen={setIsDrawerOpen} />
+        <CartWeb isDrawerOpen={isDrawerOpen} setIsDrawerOpen={setIsDrawerOpen} />
       )}
     </div>
   );
