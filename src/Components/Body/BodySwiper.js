@@ -20,7 +20,7 @@ const BodySwiper = (props) => {
       id: 1,
       name1: "DIANE",
       name2: "& GEORDI",
-      image: images.slideMobile1,
+      image: window.innerWidth<=480?images.slideMobile1:images.slide3,
       list1: "Sports bra",
       list2: "Leggings",
       list3: "Top",
@@ -30,7 +30,7 @@ const BodySwiper = (props) => {
       id: 2,
       name1: "DIANE",
       name2: "& GEORDI",
-      image: images.slideMobile2,
+      image: window.innerWidth<=480?images.slideMobile2:images.slide2,
       list1: "Sports bra",
       list2: "Leggings",
       list3: "Top",
@@ -40,7 +40,7 @@ const BodySwiper = (props) => {
       id: 3,
       name1: "DIANE",
       name2: "& GEORDI",
-      image: images.slideMobile1,
+      image: window.innerWidth<=480?images.slideMobile1:images.slide5,
       list1: "Sports bra",
       list2: "Leggings",
       list3: "Top",
@@ -50,7 +50,7 @@ const BodySwiper = (props) => {
       id: 4,
       name1: "DIANE",
       name2: "& GEORDI",
-      image: images.slideMobile2,
+      image: window.innerWidth<=480?images.slideMobile2:images.slide4,
       list1: "Sports bra",
       list2: "Leggings",
       list3: "Top",
@@ -120,7 +120,7 @@ const BodyItems = (props) => (
       {props.topContent ? (
         <img
           src={props.image}
-          style={{ width: "100%", height: "100%", objectFit: "contain" }}
+          style={{ width: "100%", height: "100%", objectFit: "fill" }}
         />
       ) : (
         <></>
