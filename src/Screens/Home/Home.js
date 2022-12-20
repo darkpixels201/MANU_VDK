@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import Body from "../../Components/Body/Body";
 import BottomBarNavigation from "../../Components/BottomNavigation";
 import Footer from "../../Components/Footer";
-import Navbar from "../../Components/Navbar";
+import BestSeller from "../../Components/HomeComponents/BestSeller";
+import Navbar from "../../Components/HomeComponents/Navbar";
 import NewArrivals from "../../Components/NewArrivals/NewArrivals";
-import BestSeller from "./Molecules/BestSeller";
+// import BestSeller from "./Molecules/BestSeller";
 
 function Home() {
   const [on, setOn] = useState(false);

@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { images } from "../../../Assets/Images";
-import CustomText from "../../../Components/CustomText";
-import Spacer from "../../../Components/Spacer";
+import CustomText from "../../CustomText";
+import Spacer from "../../Spacer";
 import { colors } from "../../../utils/Colors";
 import { icons } from "../../../Assets/Icons";
-import { DropdownCom } from "../../../Components/DropdownCom";
-import CustomButton from "../../../Components/CustomButton";
+import { DropdownCom } from "../../DropdownCom";
+import CustomButton from "../../CustomButton";
 import { Link } from "react-router-dom";
 
 export const BestSellerWeb = () => {

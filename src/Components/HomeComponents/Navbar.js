@@ -1,11 +1,13 @@
 import React from "react";
-import { colors } from "../utils/Colors";
+import { colors } from "../../utils/Colors";
 import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
-import CustomText from "../Components/CustomText";
-import "../Assets/Style/Navbar.css";
-import { NavbarMobile } from "../Screens/Home/Molecules/NavbarMobile";
-import { NavWeb } from "../Screens/Home/Molecules/NavWeb";
+import CustomText from "../CustomText";
+import "../../Assets/Style/Navbar.css";
+import { NavbarMobile } from "./HomeMobile/NavbarMobile";
+import { NavWeb } from "./HomeWeb/NavWeb";
+// import { NavbarMobile } from "../../Screens/Home/Molecules/NavbarMobile";
+// import { NavWeb } from "../../Screens/Home/Molecules/NavWeb";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
