@@ -1323,7 +1323,7 @@ export default CompareProducts;
 //   }
 //   `;
 const MobileDiv = styled.div`
-  @media only screen and (min-width: 400px) {
+  @media only screen and (min-width: 480px) {
     display: none;
   }
 `;
