@@ -17,9 +17,9 @@ import Slider from "@mui/material/Slider";
 import { Link } from "react-router-dom";
 import { MuiDrawer } from "../../Components/Drawer";
 import BottomBarNavigation from "../../Components/BottomNavigation";
-import './style.css';
+import "./style.css";
 import { DropdownCom } from "../../Components/DropdownCom";
-import '../../Assets/Style/font.css'
+import "../../Assets/Style/font.css";
 
 export const Categories = () => {
   const [count, setCount] = useState(1);
@@ -62,7 +62,7 @@ export const Categories = () => {
         alt=""
         style={{ objectFit: "cover", width: "100%", height: "100%" }}
       />
-      <div style={{ position: "absolute",marginLeft:30,marginTop:-100 }}>
+      <div style={{ position: "absolute", marginLeft: 30, marginTop: -100 }}>
         <div style={row}>
           <CustomText
             fontSize={30}
@@ -122,9 +122,7 @@ export const Categories = () => {
             justifyContent: "center",
             alignItems: "center",
           }}
-        >
-          
-        </div>
+        ></div>
         <div
           style={{
             display: "flex",
@@ -134,7 +132,8 @@ export const Categories = () => {
             // backgroundColor: colors.parrot,
           }}
         >
-          <DropdownCom/>
+          <DropdownCom />
+          
           {FilledCircle.map((circle, index) => (
             <div key={index} style={{ paddingLeft: 10 }}>
               {count == circle.id ? (
@@ -210,7 +209,7 @@ export const Categories = () => {
               backgroundColor: "#686868",
               color: colors.white,
               textDecoration: "none",
-              fontFamily: "ClashDisplay-Regular"
+              fontFamily: "ClashDisplay-Regular",
             }}
           >
             +ADD
@@ -219,14 +218,14 @@ export const Categories = () => {
       </div>
     </div>
   );
-  const CardImage = ({ height,image }) => (
+  const CardImage = ({ height, image }) => (
     <img
       src={image}
       alt=""
       style={{ height: height || "20vw", width: "100%" }}
     />
   );
-  const Card = ({ footer,image }) => (
+  const Card = ({ footer, image }) => (
     <>
       {footer === "up" ? (
         <>
@@ -370,7 +369,7 @@ export const Categories = () => {
   );
 
   const Body = (props) => (
-    <div style={{padding:0, backgroundColor:colors.white}}>
+    <div style={{ padding: 0, backgroundColor: colors.white }}>
       <DiscountBanner />
       <Grid container rowSpacing={{ xs: 5, sm: 2, md: 3 }} columnSpacing={{}}>
         <Grid item xs={12} sm={12} md={12}>
@@ -384,29 +383,34 @@ export const Categories = () => {
               paddingTop: 20,
             }}
           >
-   
-<Grid item xs={12} sm={12} md={2.3} style={{paddingLeft: 40,}}>
-            <a href="*" style={{textDecoration:"none"}} >
-              <div style={row}>
+            <Grid item xs={12} sm={12} md={2.3} style={{ paddingLeft: 40 }}>
+              <a href="*" style={{ textDecoration: "none" }}>
+                <div style={row}>
+                  <CustomText
+                    fontSize={18}
+                    title="MANU"
+                    textAlign={"left"}
+                    fontFamily={"ClashDisplay-SemiBold"}
+                  />
+                  <Spacer width={5} />
+                  <CustomText fontSize={18} title="VDK" />
+                </div>
                 <CustomText
                   fontSize={18}
-                  title="MANU"
+                  title="STORE"
                   textAlign={"left"}
                   fontFamily={"ClashDisplay-SemiBold"}
                 />
-                <Spacer width={5} />
-                <CustomText fontSize={18} title="VDK" />
-              </div>
-              <CustomText
-                fontSize={18}
-                title="STORE"
-                textAlign={"left"}
-                fontFamily={"ClashDisplay-SemiBold"}
-              />
               </a>
             </Grid>
-            <Grid item xs={12} sm={12} md={9.7} style={{paddingRight: 100,}}>
-              <div style={{ ...row, justifyContent: "space-between",paddingLeft:5 }}>
+            <Grid item xs={12} sm={12} md={9.7} style={{ paddingRight: 100 }}>
+              <div
+                style={{
+                  ...row,
+                  justifyContent: "space-between",
+                  paddingLeft: 5,
+                }}
+              >
                 <div style={{ ...row, padding: 5, ...center }}>
                   {/* <Search fontSize="small" /> */}
                   <img
@@ -414,7 +418,7 @@ export const Categories = () => {
                     alt=""
                     style={{ width: 16, height: 16 }}
                   />
-                  <Spacer width={5}/>
+                  <Spacer width={5} />
                   <input type="text" style={{ borderWidth: 0 }} />
                 </div>
                 <div
@@ -422,7 +426,7 @@ export const Categories = () => {
                     ...center,
                   }}
                 >
-                  <Link to="/cart" style={{color:colors.black}}>
+                  <Link to="/cart" style={{ color: colors.black }}>
                     <ShoppingCartOutlinedIcon />
                   </Link>
                   <Spacer width={50} />
@@ -454,43 +458,54 @@ export const Categories = () => {
           </div>
           <Spacer height={60} />
 
-         
           <Grid
             container
             rowSpacing={{ xs: 5, sm: 2, md: 3 }}
             columnSpacing={{ xs: 1, sm: 2, md: 3 }}
           >
-            {[images.slide6, images.slide7, images.slide13, images.slide11].map((item) => (
-              <Grid item xs={6} sm={4} md={3}>
-                <CardImage image={item} />
-                <Spacer height={10} />
-                <CardFooter />
-              </Grid>
-            ))}
+            {[images.slide6, images.slide7, images.slide13, images.slide11].map(
+              (item) => (
+                <Grid item xs={6} sm={4} md={3}>
+                  <CardImage image={item} />
+                  <Spacer height={10} />
+                  <CardFooter />
+                </Grid>
+              )
+            )}
           </Grid>
-           
+
           <Spacer height={60} />
 
           {/* LINE WILL COME HERE */}
-          <div style={{width:"81%",   display:"flex", justifyContent:"flex-end", position:"absolute"}} >
           <div
-                style={{
-                  height: 1,
-                  position: "absolute",
-                  width: 458,
-                  backgroundColor: colors.black,
-                  justifyContent: "flex-start",
-                  // marginLeft: 220,
-                }}
-              ></div>
-              </div>
-              <Spacer height={40} />
+            style={{
+              width: "81%",
+              display: "flex",
+              justifyContent: "flex-end",
+              position: "absolute",
+            }}
+          >
+            <div
+              style={{
+                height: 1,
+                position: "absolute",
+                width: 458,
+                backgroundColor: colors.black,
+                justifyContent: "flex-start",
+                // marginLeft: 220,
+              }}
+            ></div>
+          </div>
+          <Spacer height={40} />
           <Grid
             container
             rowSpacing={{ xs: 5, sm: 2, md: 3 }}
             columnSpacing={{ xs: 1, sm: 2, md: 6 }}
           >
-            {[{image:images.slide14,footerPos:"up"},{image:images.slide15,footerPos:"down"}].map((item) => (
+            {[
+              { image: images.slide14, footerPos: "up" },
+              { image: images.slide15, footerPos: "down" },
+            ].map((item) => (
               <Grid item xs={12} sm={12} md={6}>
                 <Card footer={item.footerPos} image={item.image} />
               </Grid>
@@ -502,5 +517,13 @@ export const Categories = () => {
       <Footer />
     </div>
   );
-  return <div>{window.innerWidth <= 800 ? <CategoryMobile /> : <Body isDrawerOpen={isDrawerOpen} setIsDrawerOpen={setIsDrawerOpen} />}</div>;
+  return (
+    <div>
+      {window.innerWidth <= 800 ? (
+        <CategoryMobile />
+      ) : (
+        <Body isDrawerOpen={isDrawerOpen} setIsDrawerOpen={setIsDrawerOpen} />
+      )}
+    </div>
+  );
 };
