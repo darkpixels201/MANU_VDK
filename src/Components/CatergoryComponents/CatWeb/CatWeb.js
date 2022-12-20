@@ -51,7 +51,7 @@ export const CartWeb = (props) => {
                 />
               </a>
             </Grid>
-            <Grid item xs={12} sm={12} md={9.7} style={{ paddingRight: 100 }}>
+            <Grid item xs={12} sm={12} md={9.7} style={{ paddingRight: window.innerWidth<=900?10:100 }}>
               <div
                 style={{
                   ...row,
@@ -100,7 +100,7 @@ export const CartWeb = (props) => {
             <CatList />
           </div>
         </Grid>
-        <Grid item xs={12} sm={12} md={9.7} style={{ paddingRight: 90 }}>
+        <Grid item xs={12} sm={12} md={9.7} style={{ paddingRight: window.innerWidth<=900?10:90 }}>
           <div>
             <Banner />
           </div>
@@ -111,7 +111,7 @@ export const CartWeb = (props) => {
             rowSpacing={{ xs: 5, sm: 2, md: 3 }}
             columnSpacing={{ xs: 1, sm: 2, md: 3 }}
           >
-            {[images.slide6, images.slide7, images.slide13, images.slide11].map(
+            {[images.slide13, images.slide7, images.slide13, images.slide7].map(
               (item) => (
                 <Grid item xs={6} sm={4} md={3}>
                   <CardImage image={item} />
