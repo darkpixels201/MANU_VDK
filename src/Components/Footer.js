@@ -49,7 +49,7 @@ const Footer = () => {
                 title="Returns & Exchange "
                 color={colors.white}
                 fontSize={13}
-                paddingLeft={15}
+                paddingLeft={window.innerWidth <= 900 ? 0 : 15}
               />
             </div>
           </div>

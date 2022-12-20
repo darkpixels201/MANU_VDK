@@ -407,7 +407,7 @@ const Cart = () => {
 export default Cart;
 
 const MobileDiv = styled.div`
-  @media only screen and (min-width: 400px) {
+  @media only screen and (min-width: 420px) {
     display: none;
   }
 `;
