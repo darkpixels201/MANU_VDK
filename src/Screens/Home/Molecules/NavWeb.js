@@ -1,17 +1,13 @@
 import React, { useState } from "react";
 import { Container } from "@mui/material";
-import { makeStyles } from "@mui/styles";
-import { images } from "../../../Assets/Images";
 import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
-import Grid from "@mui/material/Grid";
 import "../../../Assets/Style/Navbar.css";
 import CustomText from "../../../Components/CustomText";
 import { icons } from "../../../Assets/Icons";
 import { colors } from "../../../utils/Colors";
 import SearchComponent from "../../../Components/SearchComponent";
-import { Drawer, MuiDrawer } from "../../../Components/Drawer";
 import { Link } from "react-router-dom";
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -62,10 +58,6 @@ export const NavWeb = () => {
             display: "flex",
             border: "none",
             boxShadow: "none",
-
-            //   p: 1,
-            //   bgcolor: "background.paper",
-            //   borderRadius: 1,
           }}
         >
           <Item
@@ -78,13 +70,13 @@ export const NavWeb = () => {
             <div
               style={{
                 display: "flex",
-                // justifyContent: "flex-end",
-                // alignItems: "center",
                 flexDirection: "column",
-                // backgroundColor: "red",
               }}
             >
-              <CustomText title="MANU VDK" fontFamily={"ClashDisplay-SemiBold"} />
+              <CustomText
+                title="MANU VDK"
+                fontFamily={"ClashDisplay-SemiBold"}
+              />
               <CustomText title="STORE" />
             </div>
           </Item>
@@ -94,13 +86,11 @@ export const NavWeb = () => {
               boxShadow: "none",
               display: "flex",
               flexDirection: "row",
-              // backgroundColor: "yellow",
               paddingTop: 0,
               paddingBottom: 0,
               justifyContent: "flex-end",
               cursor: "pointer",
               backgroundColor: colors.white,
-              // paddingRight: 8,
             }}
           >
             {navbar.map((item, index) => (
@@ -109,20 +99,14 @@ export const NavWeb = () => {
                 key={index}
                 style={{
                   paddingRight: 16,
-                  paddingLeft:16,
+                  paddingLeft: 16,
                   width: 63,
                   height: "100%",
-                  alignItems:"center",
-                  display:"flex",
-                  justifyContent:"center"
-                  // backgroundColor: colors.lightGreen,
+                  alignItems: "center",
+                  display: "flex",
+                  justifyContent: "center",
                 }}
               >
-                {/* <CustomText
-                  title={item.name}
-                  fontFamily={"ClashDisplay-Regular"}
-                  fontSize={15}
-                /> */}
                 <ul
                   style={{
                     listStyle: "none",
@@ -151,7 +135,6 @@ export const NavWeb = () => {
               boxShadow: "none",
               display: "flex",
               flexDirection: "row",
-              //   backgroundColor: "yellow",
               alignSelf: "center",
               position: "relative",
               backgroundColor: colors.white,
@@ -169,7 +152,6 @@ export const NavWeb = () => {
               boxShadow: "none",
               display: "flex",
               flexDirection: "row",
-              // backgroundColor: "yellow",
               alignSelf: "center",
               backgroundColor: colors.white,
             }}

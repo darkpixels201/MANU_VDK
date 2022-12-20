@@ -1,4 +1,3 @@
-import { Autocomplete, TextField } from "@mui/material";
 import { Container } from "@mui/system";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
@@ -9,17 +8,6 @@ import CustomText from "../../../Components/CustomText";
 import { DropdownCom } from "../../../Components/DropdownCom";
 import Spacer from "../../../Components/Spacer";
 import { colors } from "../../../utils/Colors";
-// import { makeStyles } from "@material-ui/core/styles";
-// const useStyles = makeStyles({
-//   underline: {
-//     "&&&:before": {
-//       borderBottom: "none"
-//     },
-//     "&&:after": {
-//       borderBottom: "none"
-//     }
-//   }
-// });
 
 const BestSellerMobile = () => {
   const FilledCircle = [
@@ -36,10 +24,6 @@ const BestSellerMobile = () => {
       bgcolor: colors.white,
     },
   ];
-
-  const customer = ["2XS", "XS", "M", "L", "XL", "2XL"];
-
-  const [currentcustomer, setCurrentCustomer] = useState(null);
 
   const [count, setCount] = useState(1);
 
@@ -110,7 +94,6 @@ const BestSellerMobile = () => {
           style={{
             display: "flex",
             justifyContent: "space-around",
-            // backgroundColor: colors.pinkish,
           }}
         >
           <div></div>
@@ -124,14 +107,11 @@ const BestSellerMobile = () => {
               justifyContent: "center",
               alignItems: "center",
               marginTop: 7,
-              //   justifyContent: "right",
-              //   marginLeft: 220,
             }}
           ></div>
           <div
             style={{
               display: "flex",
-                // justifyContent: "flex-end",
               alignItems: "center",
             }}
           >
@@ -215,27 +195,22 @@ const BestSellerMobile = () => {
             display: "flex",
             justifyContent: "space-between",
             flexDirection: "row",
-            //   alignItems: "center",
           }}
         >
-          <div style={{display:"flex", flexDirection:"column"}} >
-          <s style={{color:colors.lightPurple}} >
-            $135.00
-          </s>
-          <div>
-            <CustomText title="$95.00" fontSize={20} />
-          </div>
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <s style={{ color: colors.lightPurple }}>$135.00</s>
+            <div>
+              <CustomText title="$95.00" fontSize={20} />
+            </div>
           </div>
 
           <div
             style={{
-              // backgroundColor: colors.purple,
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
             }}
           >
-           
             <DropdownCom />
           </div>
           <div
@@ -244,14 +219,6 @@ const BestSellerMobile = () => {
               width: 100,
               backgroundColor: colors.black,
               marginTop: 10,
-
-
-              // position:"absolute"
-              //   left: 100,
-              //   marginRight:30
-              //   marginLeft:20
-              //   justifyContent: "right",
-              //   marginLeft: 220,
             }}
           ></div>
         </div>
@@ -264,32 +231,32 @@ const BestSellerMobile = () => {
           }}
         >
           <div>
-            <Link to="/cart" style={{textDecoration:"none"}}>
-            <CustomButton
-              title="+ ADD TO CART"
-              fontSize={15}
-              justifyContent={"center"}
-              borderRadius={"0"}
-              width={150}
-              height={40}
-              color={colors.white}
-              backgroundColor={colors.grey}
-              fontFamily={"ClashDisplay-Light"}
-            />
+            <Link to="/cart" style={{ textDecoration: "none" }}>
+              <CustomButton
+                title="+ ADD TO CART"
+                fontSize={15}
+                justifyContent={"center"}
+                borderRadius={"0"}
+                width={150}
+                height={40}
+                color={colors.white}
+                backgroundColor={colors.grey}
+                fontFamily={"ClashDisplay-Light"}
+              />
             </Link>
           </div>
           <div style={{ ...row, alignItems: "center" }}>
-                  <a href="" style={{ ...noUnderline }}>
-                    <CustomText title="-" fontSize={20} />
-                  </a>
-                  <Spacer width={20} />
-                  <CustomText title="1" fontSize={20} />
+            <a href="" style={{ ...noUnderline }}>
+              <CustomText title="-" fontSize={20} />
+            </a>
+            <Spacer width={20} />
+            <CustomText title="1" fontSize={20} />
 
-                  <Spacer width={20} />
-                  <a href="" style={{ ...noUnderline }}>
-                    <CustomText title="+" fontSize={20} />
-                  </a>
-                </div>
+            <Spacer width={20} />
+            <a href="" style={{ ...noUnderline }}>
+              <CustomText title="+" fontSize={20} />
+            </a>
+          </div>
         </div>
       </Container>
     </div>

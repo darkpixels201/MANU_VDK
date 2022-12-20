@@ -25,10 +25,9 @@ const SearchComponent = (props) => {
       image: images.slide10,
       name: "Brasier de Banda Ancha  para Soporte en Espalda",
       price: "$95.00",
-    }
+    },
   ];
   const [open, setOpen] = useState(false);
-  //   const [open, setOpen] = useState(false);
 
   let menuRef = useRef();
 
@@ -65,17 +64,16 @@ const SearchComponent = (props) => {
         <input
           style={{
             height: 20,
-            width: window.innerWidth <= 700 ?  150 : 120,
+            width: window.innerWidth <= 700 ? 150 : 120,
             border: "none",
             alignSelf: "center",
-            // borderBlock: "white",
             borderRadius: 10,
             outlineColor: colors.lightGray,
             borderWidth: 0.1,
             paddingLeft: 25,
             borderWidth: 0.1,
-            backgroundColor: window.innerWidth <= 700 ?  colors.lightestGrey : ""
-            // outline:"none"
+            backgroundColor:
+              window.innerWidth <= 700 ? colors.lightestGrey : "",
           }}
           onClick={() => {
             setOpen(!open);

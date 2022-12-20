@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
@@ -8,13 +8,11 @@ import "swiper/css/pagination";
 import "./styles.css";
 
 // import required modules
-import { FreeMode, Pagination } from "swiper";
+import { FreeMode } from "swiper";
 import Spacer from "../Spacer";
 import CustomText from "../CustomText";
-import CustomButton from "../CustomButton";
 import { images } from "../../Assets/Images";
 import { colors } from "../../utils/Colors";
-import { Autocomplete, TextField } from "@mui/material";
 import { icons } from "../../Assets/Icons";
 import NewArrivalSwiper from "./NewArrivalSwiper";
 import { Link } from "react-router-dom";
@@ -84,7 +82,6 @@ const NewArrivals = (props) => {
         </div>
       </div>
       <Spacer height={50} />
-      {/* <div style={{ display: "flex" }}> */}
       <div
         style={{
           width: window.innerWidth <= 1000 ? "100%" : "auto",
@@ -92,72 +89,65 @@ const NewArrivals = (props) => {
           paddingLeft: window.innerWidth <= 1000 ? "" : 100,
         }}
       >
-        {/* <div style={{ width: "100%", }}> */}
         <Spacer height={window.innerWidth <= 1000 ? 40 : ""} />
         <div>
           <div>
-        <Swiper
-          slidesPerView={
-            window.innerWidth <= 1000 ? (window.innerWidth <= 700 ? 1 : 2) : 3
-          }
-          // slidesPerView={1}
-          spaceBetween={-47}
-          freeMode={true}
-          pagination={{
-            clickable: true,
-          }}
-          modules={[FreeMode]}
-        >
-          {NewArrival.map((item, index) => (
-            <SwiperSlide
-              key={index}
-              style={{
-                backgroundColor: props.on ? colors.black : colors.white,
+            <Swiper
+              slidesPerView={
+                window.innerWidth <= 1000
+                  ? window.innerWidth <= 700
+                    ? 1
+                    : 2
+                  : 3
+              }
+              spaceBetween={-47}
+              freeMode={true}
+              pagination={{
+                clickable: true,
               }}
+              modules={[FreeMode]}
             >
-              <NewArrivalSwiper
-                image={item.image}
-                text1={item.text1}
-                text2={item.text2}
-                on={props.on}
-              />
-            </SwiperSlide>
-          ))}
-          
-
-
-        </Swiper>
-
-        </div>
-        <div>
-          {window.innerWidth >= 1100 ? (
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "end",
-                // position: "relative",
-              }}
-            >
-              <img
-                src={icons.circleRightArrow}
+              {NewArrival.map((item, index) => (
+                <SwiperSlide
+                  key={index}
+                  style={{
+                    backgroundColor: props.on ? colors.black : colors.white,
+                  }}
+                >
+                  <NewArrivalSwiper
+                    image={item.image}
+                    text1={item.text1}
+                    text2={item.text2}
+                    on={props.on}
+                  />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+          <div>
+            {window.innerWidth >= 1100 ? (
+              <div
                 style={{
-                  height: 50,
-                  width: 50,
-                  position: "absolute",
-                  top:2900,
-                  // bottom: 10,
-                  right: 50,
-                  // marginLeft:70
+                  display: "flex",
+                  justifyContent: "end",
                 }}
-              />
-            </div>
-          ) : (
-            ""
-          )}
+              >
+                <img
+                  src={icons.circleRightArrow}
+                  style={{
+                    height: 50,
+                    width: 50,
+                    position: "absolute",
+                    top: 2900,
+                    right: 50,
+                  }}
+                />
+              </div>
+            ) : (
+              ""
+            )}
           </div>
         </div>
-
-        
 
         {window.innerWidth <= 700 ? (
           <>
@@ -168,7 +158,6 @@ const NewArrivals = (props) => {
                 paddingLeft: window.innerWidth <= 1000 ? "" : 100,
               }}
             >
-              {/* <div style={{ width: "100%", }}> */}
               <Spacer height={window.innerWidth <= 10 ? 40 : ""} />
               <Swiper
                 slidesPerView={
@@ -178,7 +167,6 @@ const NewArrivals = (props) => {
                       : 2
                     : 3
                 }
-                // slidesPerView={1}
                 spaceBetween={-47}
                 freeMode={true}
                 pagination={{
@@ -203,7 +191,6 @@ const NewArrivals = (props) => {
                 ))}
               </Swiper>
             </div>
-
             <Link to="/categories" style={{ textDecoration: "none" }}>
               <div
                 style={{
@@ -219,25 +206,24 @@ const NewArrivals = (props) => {
                     justifyContent: "center",
                     alignSelf: "center",
                     borderStyle: "solid",
-                    borderColor:props.on ? colors.white : colors.black,
-                    // borderColor: colors.black,
+                    borderColor: props.on ? colors.white : colors.black,
                     borderWidth: 0.5,
                     width: 150,
                     height: 30,
                     alignContent: "center",
                   }}
                 >
-                  <CustomText title="GUÍA DE TALLAS" fontSize={12} color={props.on ? colors.white : colors.black} />
+                  <CustomText
+                    title="GUÍA DE TALLAS"
+                    fontSize={12}
+                    color={props.on ? colors.white : colors.black}
+                  />
                   <Spacer width={10} />
                   <img
                     src={icons.rightArrow}
                     style={{ height: 8, width: 18 }}
                   />
                 </div>
-                {/* <div style={{ display: "flex", justifyContent: "end" }}>
-          <img src={icons.circleRightArrow} style={{ height: 50, width: 50 }} />
-        </div> */}
-                {/* </div> */}
               </div>
             </Link>
             <Spacer height={120} />{" "}
@@ -246,10 +232,6 @@ const NewArrivals = (props) => {
           ""
         )}
       </div>
-      {/* <div style={{ display: "flex", justifyContent: "end" }}>
-          <img src={icons.circleRightArrow} style={{ height: 50, width: 50 }} />
-        </div> */}
-      {/* </div> */}
     </div>
   );
 };

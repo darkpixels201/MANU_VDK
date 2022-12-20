@@ -1,5 +1,5 @@
 import React from "react";
-import '../Assets/Style/font.css'
+import "../Assets/Style/font.css";
 import { colors } from "../utils/Colors";
 
 function CustomButton(props) {
@@ -7,7 +7,6 @@ function CustomButton(props) {
     <div
       style={{
         backgroundColor: props.backgroundColor,
-        // backgroundGradient: <LinearGradient colors={["#8E59E2", "#f3f3f3"]} />,
         display: props.display || "flex",
         width: props.width || "100%",
         height: props.height,
@@ -21,14 +20,13 @@ function CustomButton(props) {
         marginTop: props.marginTop,
         shadowColor: props.shadowColor || "black",
         shadowRadius: props.shadowRadius || 8,
-        //   alignItems: props.alignItems ||  "center",
         marginBottom: props.marginBottom,
         marginHorizontal: props.marginHorizontal,
         paddingVertical: props.paddingVertical || 12,
         fontFamily: props.fontFamily || "ClashDisplay-Regular",
         cursor: "pointer",
         textDecoration: props.textDecoration,
-        textDecorationColor:colors.white
+        textDecorationColor: colors.white,
       }}
       onClick={props.onClick}
     >
@@ -42,7 +40,9 @@ function CustomButton(props) {
         >
           {props.icon ? props.icon : null}
 
-          <div style={{ color: "white", fontSize: props.fontSize || 15 }}>{props.title}</div>
+          <div style={{ color: "white", fontSize: props.fontSize || 15 }}>
+            {props.title}
+          </div>
         </div>
       </div>
     </div>

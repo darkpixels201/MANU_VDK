@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { images } from "../../Assets/Images";
 import { colors } from "../../utils/Colors";
 import CustomButton from "../CustomButton";
@@ -8,11 +8,9 @@ import "../../Assets/Style/font.css";
 import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
-import Grid from "@mui/material/Grid";
 import "../../Assets/Style/Body.css";
 import BodySwiper from "./BodySwiper";
 import ToggleSwitch from "../ToggleSwitch";
-import { icons } from "../../Assets/Icons";
 import MoveToTop from "../MoveToTop";
 import { Link } from "react-router-dom";
 
@@ -31,14 +29,11 @@ function BodyWeb(props) {
       <div
         style={{
           display: "flex",
-          // flexDirection: "row",
           justifyContent: "center",
           position: "relative",
           flexWrap: "wrap",
           width: "auto",
-
           backgroundColor: colors.white,
-          // left:140
         }}
       >
         <div
@@ -46,10 +41,6 @@ function BodyWeb(props) {
             display: "flex",
             flexDirection: "column",
             marginTop: 85,
-
-            // width: "auto",
-            // justifyContent:"end"
-            // left:200
           }}
           className="displaying"
         >
@@ -67,13 +58,9 @@ function BodyWeb(props) {
               fontFamily={"ClashDisplay-Bold"}
             />
           </div>
-          {/* <text style={{fontSize:120,}}>Body</text> */}
           <div
             style={{
               marginTop: 100,
-              // display: "flex",
-              // justifyContent: "flex-start",
-              // alignSelf: "flex-end",
             }}
           >
             <CustomText
@@ -148,7 +135,6 @@ function BodyWeb(props) {
               alignSelf: "flex-end",
               display: "flex",
               justifyContent: "flex-end",
-              // alignItems: "right",
               marginLeft: 30,
               width: 700,
             }}
@@ -159,8 +145,6 @@ function BodyWeb(props) {
               color={colors.white}
               fontSize={30}
               marginBottom={20}
-              // marginLeft={20}
-              // alignContent={"flex-end"}
             />
           </div>
         </div>

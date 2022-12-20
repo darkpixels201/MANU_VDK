@@ -1,5 +1,4 @@
 import { Container, fontSize } from "@mui/system";
-import { height } from "dom7";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { icons } from "../../../Assets/Icons";
@@ -31,79 +30,59 @@ export const NavbarMobile = () => {
   return (
     <div style={{ backgroundColor: colors.white }}>
       <Spacer height={10} />
-      <div style={{ display: "flex", justifyContent: "space-around", width:"auto", paddingRight:25, paddingLeft:25 }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-around",
+          width: "auto",
+          paddingRight: 25,
+          paddingLeft: 25,
+        }}
+      >
         <div>
-          <Link to="/" style={{textDecoration:"none"}} >
-          <CustomText title="VDK" fontFamily="ClashDisplay-SemiBold" />
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <CustomText title="VDK" fontFamily="ClashDisplay-SemiBold" />
           </Link>
         </div>
         <div
-          style={{ alignSelf: "center", }}
+          style={{ alignSelf: "center" }}
           onClick={() => {
             setOpen(!open);
           }}
         >
-          {/* <img
-            src={icons.search}
-            style={{
-              height: 15,
-              width: 15,
-              alignSelf: "center",
-              position: "absolute",
-              paddingLeft: 5,
-              alignSelf: "center",
-              alignContent: "center",
-              alignItems: "center",
-              marginTop: 3,
-            }}
+          <SearchComponent
+            setOpen={setOpen}
+            open={open}
+            style={{ backgroundColor: colors.lightGray }}
           />
-          <input
-            style={{
-              height: 20,
-              width: 120,
-              border: "none",
-              alignSelf: "center",
-              // borderBlock: "white",
-              borderRadius: 10,
-              outlineColor: colors.lightGray,
-              borderWidth: 0.1,
-              paddingLeft: 25,
-              borderWidth: 0.1,
-              backgroundColor: colors.lightestGrey,
-              // outline:"none"
-            }}
-            type="text"
-            id="floatingInput"
-          /> */}
-          <SearchComponent setOpen={setOpen} open={open} style={{backgroundColor:colors.lightGray}} />
         </div>
         <div>
           <Link to="/cart">
             <div style={{ height: 10, width: 10, cursor: "pointer" }}>
               <img src={icons.shoppingCart} style={{ height: 20, width: 20 }} />
-              <div style={{width:27, display:"flex", justifyContent:"flex-end", height:10, position:"absolute", top:4}}>
               <div
                 style={{
-                  backgroundColor: colors.grey,
-                  borderRadius: 50,
-                  height: 15,
-                  width: 15,
-                  display:"flex",
-                  alignItems:"center",
-                  justifyContent:"center",
-                  // position:"fixed",
-                  // margibBottom:20,
-                  // top:32,
-                  // left:353
+                  width: 27,
+                  display: "flex",
+                  justifyContent: "flex-end",
+                  height: 10,
+                  position: "absolute",
+                  top: 4,
                 }}
               >
-                <CustomText
-                  title="1"
-                  color={colors.white}
-                  fontSize={8}
-                  // position={"fixed"}
-                />
-              </div>
+                <div
+                  style={{
+                    backgroundColor: colors.grey,
+                    borderRadius: 50,
+                    height: 15,
+                    width: 15,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <CustomText title="1" color={colors.white} fontSize={8} />
+                </div>
               </div>
             </div>
           </Link>

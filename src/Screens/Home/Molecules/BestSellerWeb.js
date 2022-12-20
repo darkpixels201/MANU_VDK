@@ -1,12 +1,9 @@
-import { Container } from "@mui/system";
 import React, { useState } from "react";
 import { images } from "../../../Assets/Images";
 import CustomText from "../../../Components/CustomText";
 import Spacer from "../../../Components/Spacer";
 import { colors } from "../../../utils/Colors";
 import { icons } from "../../../Assets/Icons";
-import { Autocomplete, TextField } from "@mui/material";
-import Swiper from "react-id-swiper";
 import { DropdownCom } from "../../../Components/DropdownCom";
 import CustomButton from "../../../Components/CustomButton";
 import { Link } from "react-router-dom";
@@ -41,31 +38,13 @@ export const BestSellerWeb = () => {
     },
   ];
 
-  const imgSlider = [{}];
   const [count, setCount] = useState(1);
-
-  const customer = ["XS", "S", "M", "L", "Xl", "XXl", "XXl"];
-
-  const [currentcustomer, setCurrentCustomer] = useState(null);
-
-  const params = {
-    slidesPerView: 3,
-    spaceBetween: 30,
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-  };
 
   const row = {
     display: "flex",
     flexDirection: "row",
   };
-  const center = {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-  };
+
   const noUnderline = {
     textDecoration: "none",
   };
@@ -115,31 +94,20 @@ export const BestSellerWeb = () => {
 
       {/* Best Seller Body */}
 
-      <div
-      // style={{
-      //   display: "flex",
-      //   flexWrap: "wrap",
-      //   // backgroundColor: colors.lightGreen
-      // }}
-      >
-        {/* <Container> */}
+      <div>
         <div
           style={{
             display: "flex",
             flexDirection: "row",
             justifyContent: "space-around",
             flexWrap: "wrap",
-            // backgroundColor: colors.lightGreen,
             height: "70vh",
           }}
         >
           <div>
             <div
               style={{
-                // height: 700,
                 width: 500,
-                // backgroundColor: colors.parrot,
-                // display:"flex"
               }}
             >
               <div
@@ -148,30 +116,23 @@ export const BestSellerWeb = () => {
                   width: "100%",
                   display: "flex",
                   justifyContent: "center",
-                  //   alignItems: "center",
-                  //   alignContent:"center",
-                  //   alignSelf:"center"
                 }}
               >
                 <img
                   style={{
                     height: 400,
                     width: 400,
-                    // display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
                   }}
                   src={images.slide13}
                 />
               </div>
-              {/* <spacer height={120} /> */}
               <div
                 style={{
-                  //   backgroundColor: colors.pinkish,
                   display: "flex",
                   flexDirection: "row",
                   justifyContent: "space-around",
-                  //   marginTop: 70,
                   width: "100%",
                   marginTop: 20,
                 }}
@@ -185,7 +146,6 @@ export const BestSellerWeb = () => {
                       display: "flex",
                       flexDirection: "row",
                       justifyContent: "center",
-                      // backgroundColor: colors.orangeLight,
                     }}
                   >
                     <img src={image.image} />
@@ -202,7 +162,6 @@ export const BestSellerWeb = () => {
                 flexDirection: "row",
                 justifyContent: "space-between",
                 width: 500,
-                // backgroundColor: colors.purple
               }}
             >
               <div style={{ width: 320 }}>
@@ -259,7 +218,6 @@ export const BestSellerWeb = () => {
                 display: "flex",
                 flexDirection: "row",
                 justifyContent: "space-between",
-                // backgroundColor: colors.orange,
                 width: 200,
               }}
             >
@@ -268,9 +226,7 @@ export const BestSellerWeb = () => {
                   display: "flex",
                   flexDirection: "row",
                   justifyContent: "center",
-                  // alignItems:"center",
                   alignSelf: "flex-end",
-                  // backgroundColor: colors.parrot,
                 }}
               >
                 {FilledCircle.map((circle, index) => (
@@ -328,28 +284,11 @@ export const BestSellerWeb = () => {
 
               <div
                 style={{
-                  // backgroundColor: colors.purple,
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
                 }}
               >
-                {/* <Autocomplete
-                  options={customer}
-                  sx={{ width: 70, }}
-                  // defaultValue={customer[0]}
-                  // clearIcon
-                  color="#fff"
-                  // popupIcon= {<img src={icons.downArrow} />}
-                  renderInput={(params) => (
-                    <TextField {...params} variant="standard" style={{}}/>
-                    
-                  )}
-                  currentcustomer={currentcustomer}
-                  onChange={(event, newValue) => setCurrentCustomer(newValue)}
-                  // style={{height:10, width:5, backgroundColor:colors.black}}
-                 
-                /> */}
                 <DropdownCom />
               </div>
             </div>
@@ -363,8 +302,8 @@ export const BestSellerWeb = () => {
                 display: "flex",
                 justifyContent: "space-evenly",
                 alignItems: "center",
-                overflowX:"hidden",
-                overflowY:"hidden"
+                overflowX: "hidden",
+                overflowY: "hidden",
               }}
             >
               <div>
@@ -384,30 +323,29 @@ export const BestSellerWeb = () => {
               </div>
             </div>
 
-                  <Spacer height={100} />
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                  width:400
-                }}
-              >
-                <div style={{ ...row, alignItems: "center" }}>
-                  <a href="" style={{ ...noUnderline }}>
-                    <CustomText title="-" fontSize={20} />
-                  </a>
-                  <Spacer width={20} />
-                  <CustomText title="1" fontSize={20} />
+            <Spacer height={100} />
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                width: 400,
+              }}
+            >
+              <div style={{ ...row, alignItems: "center" }}>
+                <a href="" style={{ ...noUnderline }}>
+                  <CustomText title="-" fontSize={20} />
+                </a>
+                <Spacer width={20} />
+                <CustomText title="1" fontSize={20} />
 
-                  <Spacer width={20} />
-                  <a href="" style={{ ...noUnderline }}>
-                    <CustomText title="+" fontSize={20} />
-                  </a>
-                </div>
-                {/* <Spacer width={120} /> */}
-                <div>
-                  <Link to="/cart" style={{textDecoration:'none'}}>
+                <Spacer width={20} />
+                <a href="" style={{ ...noUnderline }}>
+                  <CustomText title="+" fontSize={20} />
+                </a>
+              </div>
+              <div>
+                <Link to="/cart" style={{ textDecoration: "none" }}>
                   <CustomButton
                     title="+ ADD TO CART"
                     fontSize={15}
@@ -419,13 +357,11 @@ export const BestSellerWeb = () => {
                     backgroundColor={colors.grey}
                     fontFamily={"ClashDisplay-Light"}
                   />
-                  </Link>
-                </div>
+                </Link>
               </div>
             </div>
-
+          </div>
         </div>
-        {/* </Container> */}
       </div>
     </div>
   );

@@ -30,18 +30,18 @@ const BodyMobile = (props) => {
           >
             <div>
               <Link to="/categories">
-              <CustomButton
-                title="SHOP NOW"
-                fontSize={15}
-                justifyContent={"center"}
-                borderRadius={"0"}
-                width={120}
-                height={35}
-                color={colors.white}
-                backgroundColor={colors.grey}
-                fontFamily={"ClashDisplay-Light"}
-                textDecoration={"underline"}
-              />
+                <CustomButton
+                  title="SHOP NOW"
+                  fontSize={15}
+                  justifyContent={"center"}
+                  borderRadius={"0"}
+                  width={120}
+                  height={35}
+                  color={colors.white}
+                  backgroundColor={colors.grey}
+                  fontFamily={"ClashDisplay-Light"}
+                  textDecoration={"underline"}
+                />
               </Link>
             </div>
             <div>

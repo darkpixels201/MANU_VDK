@@ -5,7 +5,6 @@ import CustomText from "./CustomText";
 export const DropdownCom = (props) => {
   const [value, setValue] = useState("XS");
   function val(e) {
-    // console.log(e.target.value);
     setValue(e.target.value);
   }
   const options = [
@@ -51,7 +50,6 @@ export const DropdownCom = (props) => {
         id={"select_id"}
         onChange={val}
         value={value}
-        // defaultValue={val}
       >
         {options.map((opt)=>(
 
