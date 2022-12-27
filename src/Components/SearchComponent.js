@@ -48,7 +48,11 @@ const SearchComponent = (props) => {
 
   return (
     <div className="App" ref={menuRef}>
-      <div>
+      <div
+        onClick={() => {
+          setOpen(!open);
+        }}
+      >
         <img
           src={icons.search}
           style={{
@@ -59,6 +63,7 @@ const SearchComponent = (props) => {
             position: "absolute",
             marginTop: 3,
             paddingLeft: 5,
+            cursor:"pointer"
           }}
         />
         <input
@@ -74,9 +79,6 @@ const SearchComponent = (props) => {
             borderWidth: 0.1,
             backgroundColor:
               window.innerWidth <= 700 ? colors.lightestGrey : "",
-          }}
-          onClick={() => {
-            setOpen(!open);
           }}
           type="text"
           id="floatingInput"

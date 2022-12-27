@@ -22,7 +22,8 @@ export const NavWeb = () => {
   const navbar = [
     {
       id: 1,
-      name: "Home",
+      name: "HOME",
+      active: "ClashDisplay-SemiBold",
     },
     {
       id: 1,
@@ -119,7 +120,9 @@ export const NavWeb = () => {
                     <p
                       style={{
                         fontSize: 15,
-                        fontFamily: "ClashDisplay-Regular",
+                        fontFamily: item.active
+                          ? "ClashDisplay-Semibold"
+                          : "ClashDisplay-Regular",
                       }}
                     >
                       {item.name}
@@ -156,15 +159,15 @@ export const NavWeb = () => {
               backgroundColor: colors.white,
             }}
           >
-            <div style={{ textAlign: "center", flexDirection: "row" }}></div>
+            {/* <div style={{ textAlign: "center", flexDirection: "row" }}></div> */}
+              <div style={{ height: 25, width: 25, cursor: "pointer", }}>
             <Link to="/cart">
-              <div style={{ height: 10, width: 10, cursor: "pointer" }}>
                 <img
                   src={icons.shoppingCart}
                   style={{ height: 20, width: 20 }}
                 />
-              </div>
             </Link>
+              </div>
           </Item>
         </Box>
       </Container>

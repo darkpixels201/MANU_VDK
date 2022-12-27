@@ -87,7 +87,7 @@ function BodyWeb(props) {
               />
             </Link>
           </div>
-          <div>
+          <div className="none" >
             <Spacer height={170} />
             <CustomText title=". Pagos seguros" fontSize={15} />
             <Spacer height={12} />
@@ -119,7 +119,7 @@ function BodyWeb(props) {
               justifyContent: "center",
               alignItems: "center",
             }}
-            className="none"
+            // className="none"
           >
             <CustomText
               title="Shape Wear"

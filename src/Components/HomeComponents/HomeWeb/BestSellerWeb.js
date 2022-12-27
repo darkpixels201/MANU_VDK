@@ -50,6 +50,7 @@ export const BestSellerWeb = () => {
   };
 
   return (
+    <>
     <div style={{ backgroundColor: colors.white }}>
       <Spacer height={80} />
       <div
@@ -364,5 +365,8 @@ export const BestSellerWeb = () => {
         </div>
       </div>
     </div>
+    <Spacer  height={window.innerWidth <= 999 ? 600 : 80} />
+
+    </>
   );
 };

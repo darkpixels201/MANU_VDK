@@ -2,6 +2,7 @@ import "./App.css";
 import React, { Suspense } from "react";
 import { HashRouter, Route, Routes } from "react-router-dom";
 import { Categories } from "./Screens/Categories/Categories";
+import { colors } from "./utils/Colors";
 
 const Home = React.lazy(() => import("./Screens/Home/Home"));
 const Cart = React.lazy(() => import("./Screens/Cart/Cart"));
@@ -11,7 +12,7 @@ const CompareProducts = React.lazy(() =>
 
 function App() {
   return (
-    <div>
+    <div style={{backgroundColor:colors.white}} >
       <HashRouter>
         <Suspense>
           <Routes>

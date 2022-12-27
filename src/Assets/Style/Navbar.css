@@ -2,6 +2,15 @@
     background-color: black;
     color: white;
 }
+.bc{
+  color: black;
+}
+/* .bl-color {
+  color: black;
+}
+.bl-color:hover {
+  color: white;
+} */
 
 /* @media only screen and (max-width: 600px) {
     body {

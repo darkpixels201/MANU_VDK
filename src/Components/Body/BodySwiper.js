@@ -6,7 +6,7 @@ import "swiper/css/pagination";
 
 import "./styles.css";
 
-import { Pagination } from "swiper";
+import { Navigation, Pagination } from "swiper";
 import Spacer from "../Spacer";
 import CustomText from "../CustomText";
 import { images } from "../../Assets/Images";
@@ -56,6 +56,36 @@ const BodySwiper = (props) => {
       list3: "Top",
       topContent: false,
     },
+    {
+      id: 5,
+      name1: "DIANE",
+      name2: "& GEORDI",
+      image: window.innerWidth<=480?images.slideMobile2:images.slide2,
+      list1: "Sports bra",
+      list2: "Leggings",
+      list3: "Top",
+      topContent: false,
+    },
+    {
+      id: 6,
+      name1: "DIANE",
+      name2: "& GEORDI",
+      image: window.innerWidth<=480?images.slideMobile1:images.slide5,
+      list1: "Sports bra",
+      list2: "Leggings",
+      list3: "Top",
+      topContent: true,
+    },
+    {
+      id: 7,
+      name1: "DIANE",
+      name2: "& GEORDI",
+      image: window.innerWidth<=480?images.slideMobile2:images.slide4,
+      list1: "Sports bra",
+      list2: "Leggings",
+      list3: "Top",
+      topContent: false,
+    },
   ];
 
   return (
@@ -68,10 +98,11 @@ const BodySwiper = (props) => {
     >
       <Spacer height={window.innerWidth <= 1000 ? 40 : ""} />
       <Swiper
-        slidesPerView={window.innerWidth <= 1000 ? 1 : 4}
+        slidesPerView={window.innerWidth <= 1000  ? 3 : 4}
         spaceBetween={-47}
         freeMode={true}
         modules={[Pagination]}
+        navigation={true}
         pagination={true}
         color={colors.black}
       >

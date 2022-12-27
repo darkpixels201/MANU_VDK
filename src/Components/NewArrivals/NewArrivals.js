@@ -8,7 +8,7 @@ import "swiper/css/pagination";
 import "./styles.css";
 
 // import required modules
-import { FreeMode } from "swiper";
+import { FreeMode, Navigation } from "swiper";
 import Spacer from "../Spacer";
 import CustomText from "../CustomText";
 import { images } from "../../Assets/Images";
@@ -101,11 +101,16 @@ const NewArrivals = (props) => {
                   : 3
               }
               spaceBetween={-47}
-              freeMode={true}
+              // freeMode={true}
+              // navigation={true}
+              navigation={{
+                prevEl: ".prev",
+                nextEl: ".next",
+              }}
               pagination={{
                 clickable: true,
               }}
-              modules={[FreeMode]}
+              modules={[Navigation]}
             >
               {NewArrival.map((item, index) => (
                 <SwiperSlide
@@ -130,7 +135,9 @@ const NewArrivals = (props) => {
                 style={{
                   display: "flex",
                   justifyContent: "end",
+                  cursor:"pointer"
                 }}
+                className="next"
               >
                 <img
                   src={icons.circleRightArrow}
@@ -138,7 +145,7 @@ const NewArrivals = (props) => {
                     height: 50,
                     width: 50,
                     position: "absolute",
-                    top: 2900,
+                    top: 2970,
                     right: 50,
                   }}
                 />
