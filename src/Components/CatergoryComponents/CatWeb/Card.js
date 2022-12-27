@@ -16,7 +16,7 @@ export const Card = ({ footer, image }) => (
     ) : (
       <></>
     )}
-    <CardImage height={"35vw"} image={image} />
+    <CardImage height={"auto"} image={image} />
     {footer === "down" ? (
       <>
         <Spacer height={10} />
@@ -122,5 +122,5 @@ export const CardFooter = () => (
   </div>
 );
 export const CardImage = ({ height, image }) => (
-  <img src={image} alt="" style={{ height: height || "20vw", width: "100%" }} />
+  <img src={image} alt="" style={{ height: height || "auto", width: "100%" }} />
 );
