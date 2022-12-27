@@ -95,7 +95,7 @@ function BodyWeb(props) {
             <Spacer height={12} />
             <CustomText title=". Atención personalizada" fontSize={15} />
             <Spacer height={12} />
-            <ToggleSwitch on={props.on} setOn={props.setOn} />
+            {/* <ToggleSwitch on={props.on} setOn={props.setOn} /> */}
           </div>
         </div>
 

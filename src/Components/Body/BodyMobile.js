@@ -75,7 +75,7 @@ const BodyMobile = (props) => {
         </div>
       </div>
       <Spacer height={12} />
-      <ToggleSwitch on={props.on} setOn={props.setOn} />
+      {/* <ToggleSwitch on={props.on} setOn={props.setOn} /> */}
       <BodySwiper on={props.on} setOn={props.setOn} />
     </div>
   );

@@ -135,7 +135,7 @@ const NewArrivals = (props) => {
                 style={{
                   display: "flex",
                   justifyContent: "end",
-                  cursor:"pointer"
+                  cursor: "pointer",
                 }}
                 className="next"
               >
