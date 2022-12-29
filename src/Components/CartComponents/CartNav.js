@@ -1,7 +1,9 @@
 import React from "react";
+import { icons } from "../../Assets/Icons";
 import { images } from "../../Assets/Images";
 import CustomText from "../CustomText";
 import { MuiDrawer } from "../Drawer";
+import Spacer from "../Spacer";
 
 const CartNav = () => {
   const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
@@ -23,12 +25,19 @@ const CartNav = () => {
         </div>
         <CustomText title="STORE" fontFamily={"ClashDisplay-SemiBold"} />
       </div>
-      <div>
+      <div style={{display:"flex",flexDirection:"column",justifyContent:"center", cursor:"pointer"}}>
         <img
           onClick={() => setIsDrawerOpen(true)}
-          src={images.twoLines}
+          src={icons.line}
           //   className="resimage"
-          style={{ width: 24, height: 10, cursor:"pointer" }}
+          style={{ width: 24, height: 3, }}
+        />
+        <Spacer height={8}/>
+        <img
+          onClick={() => setIsDrawerOpen(true)}
+          src={icons.line}
+          //   className="resimage"
+          style={{ width: 24, height: 3 }}
         />
       </div>
       <MuiDrawer

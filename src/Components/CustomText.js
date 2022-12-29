@@ -27,6 +27,7 @@ function CustomText({...props}) {
             position: props.position,
             left: props.left,
             textDecoration: props.textDecoration,
+            maxLines: props.maxLines
           }}
         >
           {props.title}

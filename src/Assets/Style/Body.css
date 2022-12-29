@@ -1,14 +1,23 @@
-
-
 @media only screen and (max-width: 1130px) {
-    .displaying {
-     position: absolute;
-    }
-    .none {
-        display: none;
-    }
-
-    .colorWhite {
-        color: white;
-    }
+  .displaying {
+    position: absolute;
   }
+  .none {
+    display: none;
+  }
+
+  .colorWhite {
+    color: white;
+  }
+}
+
+nav.sticky {
+  /* width: auto;
+  height: 50px; */
+  /* background: rgba(0, 0, 0, 0.8);
+  border-top: 1px solid rgba (255, 255, 255, •2);
+  border-bottom: 1px solid rgba (255, 255, 255, 0.2); */
+    position: sticky;
+    top: 0;
+  
+}

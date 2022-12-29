@@ -16,6 +16,7 @@ import { DropdownCom } from "../../DropdownCom";
 import { FilledCircleCom } from "../../FilledCircleCom";
 import "swiper/css";
 import "swiper/css/pagination";
+import FilledRightCircle from "../../FilledCircle";
 // import "../font.css";
 
 const BottomImage = [
@@ -51,6 +52,13 @@ const FilledCircle = [
 export const WebCompareProducts = (props) => {
   const [count, setCount] = useState(1);
 
+  const [counter, setCounter] = useState(1);
+  const addOne = (counter, setCounter) => {
+    setCounter(counter + 1);
+  };
+  const minusOne = (counter, setCounter) => {
+    if (counter > 1) setCounter(counter - 1);
+  };
   return (
     <div style={{ backgroundColor: colors.white }}>
       <DiscountBanner />
@@ -69,6 +77,7 @@ export const WebCompareProducts = (props) => {
             }}
           >
             <Grid item xs={12} sm={12} md={3}>
+            <Link to="/" style={{textDecoration:"none"}} >
               <div style={row}>
                 <CustomText
                   fontSize={18}
@@ -85,6 +94,7 @@ export const WebCompareProducts = (props) => {
                 textAlign={"left"}
                 fontFamily={"ClashDisplay-SemiBold"}
               />
+            </Link>
             </Grid>
             <Grid item xs={12} sm={12} md={9}>
               <div style={{ ...row, justifyContent: "space-between" }}>
@@ -103,12 +113,30 @@ export const WebCompareProducts = (props) => {
                   </Link>
                   <Spacer width={50} />
 
-                  <img
-                    src={images.twoLines}
-                    alt=""
-                    style={{ width: 24, height: 10, cursor: "pointer" }}
+                  
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "center",
+                      cursor: "pointer",
+                    }}
                     onClick={() => props.setIsDrawerOpen(true)}
-                  />
+                  >
+                    <img
+                      // onClick={() => setIsDrawerOpen(true)}
+                      src={icons.line}
+                      //   className="resimage"
+                      style={{ width: 24, height: 2 }}
+                    />
+                    <Spacer height={8} />
+                    <img
+                      // onClick={() => setIsDrawerOpen(true)}
+                      src={icons.line}
+                      //   className="resimage"
+                      style={{ width: 24, height: 2 }}
+                    />
+                  </div>
                 </div>
 
                 <MuiDrawer
@@ -139,11 +167,8 @@ export const WebCompareProducts = (props) => {
             <Grid item xs={12} sm={12} md={12} paddingLeft={5}>
               <Spacer height={50} />
               <Link to="/">
-                <img
-                  src={images.backArrow}
-                  alt=""
-                  style={{ width: 30, height: 30, objectFit: "fill" }}
-                />
+              <FilledRightCircle left={true} size={2} />
+
               </Link>
             </Grid>
           </Grid>
@@ -192,7 +217,7 @@ export const WebCompareProducts = (props) => {
                     <Spacer width={5} />
                     <CustomText
                       fontSize={14}
-                      title="Nombre"
+                      title="NOMBRE"
                       textAlign={"left"}
                     />
                   </div>
@@ -402,17 +427,41 @@ export const WebCompareProducts = (props) => {
                           paddingLeft: 10,
                         }}
                       >
-                        <div
-                          style={{
-                            ...row,
-                            width: "30%",
-                            justifyContent: "space-between",
-                          }}
-                        >
-                          <span>-</span>
-                          <span>1</span>
-                          <span>+</span>
-                        </div>
+                        <div style={{ ...row, alignItems: "center" }}>
+                  <div
+                    style={{
+                      cursor: "pointer",
+                      height: 10,
+                      width: 20,
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                  >
+                    <CustomText
+                      title="-"
+                      fontSize={20}
+                      onClick={() => minusOne(counter, setCounter)}
+                    />
+                  </div>
+                  <Spacer width={20} />
+                  <CustomText title={counter} fontSize={20} />
+
+                  <Spacer width={20} />
+                  <div
+                    style={{
+                      cursor: "pointer",
+                      height: 10,
+                      width: 20,
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                    onClick={() => addOne(counter, setCounter)}
+                  >
+                    <CustomText title="+" fontSize={20} />
+                  </div>
+                </div>
                         <div>
                           <Link to="/cart">
                             <button

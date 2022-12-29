@@ -19,7 +19,7 @@ const Item = styled(Paper)(({ theme }) => ({
 
 function Navbar() {
   return (
-    <div>
+    <div style={{position:"sticky", width:"100%", zIndex:100, top:0}} >
       {window.innerWidth <= 951 ? (
         ""
       ) : (

@@ -141,7 +141,7 @@ const CartItem = ({image}) => (
     >
       <span style={{ fontSize: 10 }}>
         <b style={{ fontFamily: "ClashDisplay-Bold" }}>PRoducto</b>
-        nombre
+       &nbsp; nombre
       </span>
       <CustomText title="$95.00" fontSize={10} />
     </div>

@@ -17,8 +17,13 @@ import "./styles.css";
 
 // import required modules
 import { Close } from "@mui/icons-material";
+import { row } from "../../utils/CommonStyles";
+import { CartItem } from "./CartItem";
 
 const ColumnTwo = () => {
+
+  
+
   return (
     <div style={{ flex: 6 }}>
       <div style={{ flexDirection: "row", display: "flex", flexWrap: "wrap" }}>
@@ -89,69 +94,4 @@ to request a chnge or return."
 
 export default ColumnTwo;
 
-const CartItem = ({ image }) => (
-  <>
-    <Spacer height={20} />
-    <div style={{ width: "100%" }}>
-      <div
-        style={{
-          backgroundColor: "#000",
-          color: "#fff",
-          height: "2vw",
-          width: "2vw",
-          borderRadius: "1vw",
-          position: "absolute",
-          top: 10,
-          left: 10,
-          zIndex: 99,
-          justifyContent: "center",
-          alignItems: "center",
-          display: "flex",
-        }}
-      >
-        <Close fontSize="small" />
-      </div>
-      <img src={image} style={{ width: "100%" }} />
-      <div>
-        <Spacer height={20} />
-        <div style={{ display: "flex", textAlign: "left" }}>
-          <span>
-            <b style={{ fontFamily: "ClashDisplay-Bold" }}>
-              Brasier de Banda Ancha{" "}
-            </b>
-            para Soporte en Espalda
-          </span>
-        </div>
-        <Spacer height={20} />
-        <CustomText
-          fontSize={16}
-          title="Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Curabitur congue tellus sem, id porttitor elit fermentum eu."
-          textAlign={"left"}
-        />
-        <Spacer height={50} />
-        <div
-          style={{
-            flexDirection: "row",
-            display: "flex",
-            justifyContent: "space-between",
-          }}
-        >
-          <CustomText fontSize={16} title="$95.00" />
-          <div
-            style={{
-              flexDirection: "row",
-              display: "flex",
-              marginRight: 10,
-            }}
-          >
-            <CustomText fontSize={16} title="-" />
-            <Spacer width={20} />
-            <CustomText fontSize={16} title="1" />
-            <Spacer width={20} />
-            <CustomText fontSize={16} title="+" />
-          </div>
-        </div>
-      </div>
-    </div>
-  </>
-);
+

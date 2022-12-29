@@ -16,6 +16,7 @@ import { colors } from "../../utils/Colors";
 import { icons } from "../../Assets/Icons";
 import NewArrivalSwiper from "./NewArrivalSwiper";
 import { Link } from "react-router-dom";
+import FilledRightCircle from "../FilledCircle";
 
 const NewArrivals = (props) => {
   const NewArrival = [
@@ -91,6 +92,34 @@ const NewArrivals = (props) => {
       >
         <Spacer height={window.innerWidth <= 1000 ? 40 : ""} />
         <div>
+        <div>
+            {window.innerWidth >= 1100 ? (
+              // <div
+              //   style={{
+              //     display: "flex",
+              //     justifyContent: "end",
+              //     cursor: "pointer",
+              //   }}
+              //   className="next"
+              // >
+              //   <img
+              //     src={icons.circleRightArrow}
+              //     style={{
+              //       height: 50,
+              //       width: 50,
+              //       position: "absolute",
+              //       top: 2970,
+              //       right: 50,
+              //     }}
+              //   />
+              // </div>
+              <div className="next" style={{position:"absolute", zIndex:100, right:35}} >
+              <FilledRightCircle />
+              </div>
+            ) : (
+              ""
+            )}
+          </div>
           <div>
             <Swiper
               slidesPerView={
@@ -129,31 +158,7 @@ const NewArrivals = (props) => {
               ))}
             </Swiper>
           </div>
-          <div>
-            {window.innerWidth >= 1100 ? (
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "end",
-                  cursor: "pointer",
-                }}
-                className="next"
-              >
-                <img
-                  src={icons.circleRightArrow}
-                  style={{
-                    height: 50,
-                    width: 50,
-                    position: "absolute",
-                    top: 2970,
-                    right: 50,
-                  }}
-                />
-              </div>
-            ) : (
-              ""
-            )}
-          </div>
+          
         </div>
 
         {window.innerWidth <= 700 ? (

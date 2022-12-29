@@ -102,8 +102,7 @@ export const CardFooter = () => (
         <CustomText fontSize={16} title="$95.00" />
       </div>
       <div>
-        <a
-          href=""
+        <div
           style={{
             paddingRight: 25,
             paddingLeft: 25,
@@ -113,10 +112,11 @@ export const CardFooter = () => (
             color: colors.white,
             textDecoration: "none",
             fontFamily: "ClashDisplay-Regular",
+            cursor:"pointer"
           }}
         >
           +ADD
-        </a>
+        </div>
       </div>
     </div>
   </div>

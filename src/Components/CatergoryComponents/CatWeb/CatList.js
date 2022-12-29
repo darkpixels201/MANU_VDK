@@ -48,16 +48,17 @@ const CatItem = ({ label, icon, iconPath, paddingLeft }) => (
       width: "60%",
     }}
   >
-    <a
-      href="#"
+    <div
+
       style={{
         color: colors.black,
         textDecoration: "none",
         paddingLeft: paddingLeft || 50,
+        cursor:"pointer"
       }}
     >
       {label}
-    </a>
+    </div>
     {icon ? <img src={iconPath} alt="" style={{ height: 10 }} /> : <></>}
   </div>
 );

@@ -19,5 +19,7 @@ export const icons = {
     cross: require('./cross.png'),
     cartWhite: require('./cartWhite.png'),
     user: require('./User.png'),
+    leftArrow: require('./leftArrow.png'),
+    line: require('./line.png'),
     
 }

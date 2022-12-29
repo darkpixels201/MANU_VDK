@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Container } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
@@ -9,6 +9,7 @@ import { icons } from "../../../Assets/Icons";
 import { colors } from "../../../utils/Colors";
 import SearchComponent from "../../../Components/SearchComponent";
 import { Link } from "react-router-dom";
+import '../../../Assets/Style/Body.css'
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -51,27 +52,42 @@ export const NavWeb = () => {
     },
   ];
   const [open, setOpen] = useState(false);
+  const [sticky, setSticky] = useState (false);
+
+  useEffect ( () => {
+    const handleScroll = () =>
+    {
+    setSticky (window.scrollY > 200); 
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window. removeEventListener("scroll", handleScroll);
+    });
   return (
-    <div style={{ backgroundColor: colors.white }}>
-      <Container maxWidth="xl">
+    <div style={{ backgroundColor: colors.white, position:"sticky"}}  >
+      {/* <nav style={{}} > */}
+      <Container maxWidth="xl" style={{position:"sticky"}} >
+        <nav style={{position:"sticky"}}>
         <Box
           sx={{
             display: "flex",
             border: "none",
             boxShadow: "none",
+            position:"sticky"
           }}
-        >
+          >
           <Item
             sx={{
               flexGrow: 1,
               boxShadow: "none",
               backgroundColor: colors.white,
+              position:"sticky"
             }}
           >
             <div
               style={{
                 display: "flex",
                 flexDirection: "column",
+                position:"sticky"
               }}
             >
               <CustomText
@@ -92,7 +108,9 @@ export const NavWeb = () => {
               justifyContent: "flex-end",
               cursor: "pointer",
               backgroundColor: colors.white,
+              position:"sticky"
             }}
+           
           >
             {navbar.map((item, index) => (
               <div
@@ -141,6 +159,7 @@ export const NavWeb = () => {
               alignSelf: "center",
               position: "relative",
               backgroundColor: colors.white,
+              position:"sticky"
             }}
             onClick={() => {
               setOpen(!open);
@@ -157,10 +176,11 @@ export const NavWeb = () => {
               flexDirection: "row",
               alignSelf: "center",
               backgroundColor: colors.white,
+              position:"sticky"
             }}
           >
             {/* <div style={{ textAlign: "center", flexDirection: "row" }}></div> */}
-              <div style={{ height: 25, width: 25, cursor: "pointer", }}>
+              <div style={{ height: 25, width: 25, cursor: "pointer", position:"sticky", top:0 }}>
             <Link to="/cart">
                 <img
                   src={icons.shoppingCart}
@@ -170,7 +190,9 @@ export const NavWeb = () => {
               </div>
           </Item>
         </Box>
+        </nav>
       </Container>
+      {/* </nav> */}
     </div>
   );
 };

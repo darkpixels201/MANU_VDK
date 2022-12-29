@@ -64,7 +64,7 @@ const BodySwiper = (props) => {
       list1: "Sports bra",
       list2: "Leggings",
       list3: "Top",
-      topContent: false,
+      topContent: true,
     },
     {
       id: 6,
@@ -74,7 +74,7 @@ const BodySwiper = (props) => {
       list1: "Sports bra",
       list2: "Leggings",
       list3: "Top",
-      topContent: true,
+      topContent: false,
     },
     {
       id: 7,
@@ -84,7 +84,7 @@ const BodySwiper = (props) => {
       list1: "Sports bra",
       list2: "Leggings",
       list3: "Top",
-      topContent: false,
+      topContent: true,
     },
   ];
 
@@ -137,7 +137,7 @@ export default BodySwiper;
 const BodyItems = (props) => (
   <div
     style={{
-      height: "90vh",
+      height: "95vh",
       width: "90%",
       display: "flex",
       justifyContent: "center",

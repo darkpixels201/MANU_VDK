@@ -11,19 +11,41 @@ const SearchComponent = (props) => {
     {
       id: 1,
       image: images.slide8,
-      name: "Brasier de Banda Ancha  para Soporte en Espalda",
+      name1: "Brasier de Banda Ancha ",
+      name2: " para ",
+      name3: " Soporte en Espalda",
       price: "$95.00",
     },
     {
       id: 2,
       image: images.slide9,
-      name: "Brasier de Banda Ancha  para Soporte en Espalda",
+      name1: "Brasier de Banda Ancha ",
+      name2: " para ",
+      name3: " Soporte en Espalda",
       price: "$95.00",
     },
     {
       id: 3,
       image: images.slide10,
-      name: "Brasier de Banda Ancha  para Soporte en Espalda",
+      name1: "Brasier de Banda Ancha ",
+      name2: " para ",
+      name3: " Soporte en Espalda",
+      price: "$95.00",
+    },
+    {
+      id: 3,
+      image: images.slide10,
+      name1: "Brasier de Banda Ancha ",
+      name2: " para ",
+      name3: " Soporte en Espalda",
+      price: "$95.00",
+    },
+    {
+      id: 3,
+      image: images.slide10,
+      name1: "Brasier de Banda Ancha ",
+      name2: " para ",
+      name3: " Soporte en Espalda",
       price: "$95.00",
     },
   ];
@@ -48,11 +70,7 @@ const SearchComponent = (props) => {
 
   return (
     <div className="App" ref={menuRef}>
-      <div
-        onClick={() => {
-          setOpen(!open);
-        }}
-      >
+
         <img
           src={icons.search}
           style={{
@@ -63,7 +81,10 @@ const SearchComponent = (props) => {
             position: "absolute",
             marginTop: 3,
             paddingLeft: 5,
-            cursor:"pointer"
+            cursor: "pointer",
+          }}
+          onClick={() => {
+            setOpen(!open);
           }}
         />
         <input
@@ -82,11 +103,17 @@ const SearchComponent = (props) => {
           }}
           type="text"
           id="floatingInput"
+          onClick={() => {
+            setOpen(!open);
+          }}
         />
         <Spacer height={10} />
 
         <div style={{ display: "flex", justifyContent: "center" }}>
-          <div className={`dropdown-menu ${open ? "active" : "inactive"}`}>
+          <div
+            className={`dropdown-menu ${open? 'active' : 'inactive'}`}
+            style={{ width: 300 }}
+          >
             <Spacer height={20} />
             <div style={{ display: "flex", justifyContent: "space-evenly" }}>
               <CustomText title="RESULTADOS" fontSize={10} />
@@ -99,7 +126,7 @@ const SearchComponent = (props) => {
             <Spacer height={20} />
             <div
               style={{
-                height: 300,
+                height: 250,
                 overflowX: "hidden",
                 overflowY: "auto",
                 textAlign: "justify",
@@ -108,7 +135,9 @@ const SearchComponent = (props) => {
               {SearchArray.map((item, index) => (
                 <div key={index}>
                   <DropdownItem
-                    text={item.name}
+                    text1={item.name1}
+                    text2={item.name2}
+                    text3={item.name3}
                     img={item.image}
                     price={item.price}
                   />
@@ -118,7 +147,7 @@ const SearchComponent = (props) => {
             <Footer />
           </div>
         </div>
-      </div>
+      
     </div>
   );
 };
@@ -126,19 +155,47 @@ const SearchComponent = (props) => {
 function DropdownItem(props) {
   return (
     <div className="dropdownItem">
-      <div style={{ display: "flex", justifyContent: "space-evenly" }}>
+      <div
+        style={{
+          display: "flex",
+          paddingLeft: 30,
+          paddingRight: 30,
+          justifyContent: "center",
+        }}
+      >
         <div>
           <img src={props.img} style={{ height: 60, width: 60 }}></img>
           <Spacer height={10} />
         </div>
-        <div style={{ width: 80 }}>
+        <Spacer width={10} />
+        <div style={{}}>
+          <div style={{ display: "flex", flexDirection: "row" }}>
+            {/* <p><b>{props.text}</b>{props.text2}</p> */}
+
+            <CustomText
+              title={props.text1}
+              fontSize={10}
+              textAlign="left"
+              fontFamily="ClashDisplay-SemiBold"
+              maxLines={1}
+            />
+            <Spacer width={5} />
+            <CustomText
+              title={props.text2}
+              fontSize={10}
+              textAlign="left"
+              // fontFamily="ClashDisplay-SemiBold"
+              maxLines={1}
+            />
+          </div>
           <CustomText
-            title={props.text}
-            fontSize={8}
+            title={props.text3}
+            fontSize={10}
             textAlign="left"
-            fontFamily="ClashDisplay-SemiBold"
+            // fontFamily="ClashDisplay-SemiBold"
+            maxLines={1}
           />
-          <Spacer height={10} />
+          <Spacer height={26} />
           <CustomText title={props.price} fontSize={8} textAlign="left" />
         </div>
       </div>
@@ -160,7 +217,7 @@ function Footer() {
     >
       <CustomText
         title={"VER TODOS LOS RESULTADOS  (25)"}
-        fontSize={7}
+        fontSize={9}
         color={colors.white}
       />
     </div>
