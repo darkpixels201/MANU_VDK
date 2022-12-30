@@ -14,6 +14,7 @@ import Footer from "../../Footer";
 import { Banner } from "./Banner";
 import { CatList } from "./CatList";
 import { Card, CardFooter, CardImage } from "./Card";
+import SearchComponent from "../../SearchComponent";
 
 export const CartWeb = (props) => {
   return (
@@ -60,14 +61,8 @@ export const CartWeb = (props) => {
                 }}
               >
                 <div style={{ ...row, padding: 5, ...center }}>
-                  {/* <Search fontSize="small" /> */}
-                  <img
-                    src={icons.search}
-                    alt=""
-                    style={{ width: 16, height: 16 }}
-                  />
-                  <Spacer width={5} />
-                  <input type="text" style={{ borderWidth: 0 }} />
+                  
+                  <SearchComponent/>
                 </div>
                 <div
                   style={{

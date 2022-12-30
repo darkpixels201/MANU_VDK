@@ -17,6 +17,7 @@ import { FilledCircleCom } from "../../FilledCircleCom";
 import "swiper/css";
 import "swiper/css/pagination";
 import FilledRightCircle from "../../FilledCircle";
+import SearchComponent from "../../SearchComponent";
 // import "../font.css";
 
 const BottomImage = [
@@ -99,8 +100,7 @@ export const WebCompareProducts = (props) => {
             <Grid item xs={12} sm={12} md={9}>
               <div style={{ ...row, justifyContent: "space-between" }}>
                 <div style={{ ...row, padding: 5, ...center }}>
-                  <Search fontSize="small" />
-                  <input type="text" style={{ borderWidth: 0 }} />
+                  <SearchComponent/>
                 </div>
 
                 <div

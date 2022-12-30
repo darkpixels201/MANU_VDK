@@ -69,7 +69,7 @@ const SearchComponent = (props) => {
   });
 
   return (
-    <div className="App" ref={menuRef}>
+    <div className="App" ref={menuRef} >
 
         <img
           src={icons.search}
@@ -91,15 +91,16 @@ const SearchComponent = (props) => {
           style={{
             height: 20,
             width: window.innerWidth <= 700 ? 150 : 120,
-            border: "none",
             alignSelf: "center",
             borderRadius: 10,
-            outlineColor: colors.lightGray,
-            borderWidth: 0.1,
+            borderColor:colors.lightGray,
+            borderStyle:"solid",
             paddingLeft: 25,
-            borderWidth: 0.1,
+            borderWidth: open?1:0,
             backgroundColor:
               window.innerWidth <= 700 ? colors.lightestGrey : "",
+            outline:"none",
+              
           }}
           type="text"
           id="floatingInput"
