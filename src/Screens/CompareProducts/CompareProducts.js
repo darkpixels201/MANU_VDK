@@ -11,11 +11,11 @@ const CompareProducts = () => {
 
   return (
     <div style={{}} >
-      {window.innerWidth <= 480 ?   <MobileCompareProducts /> : <WebCompareProducts 
+      {/* {window.innerWidth <= 480 ?   <MobileCompareProducts /> : <WebCompareProducts 
           isDrawerOpen={isDrawerOpen}
           setIsDrawerOpen={setIsDrawerOpen}
-        />}
-      {/* <MobileDiv>
+        />} */}
+      <MobileDiv>
         <MobileCompareProducts />
       </MobileDiv>
       <WebDiv>
@@ -23,7 +23,7 @@ const CompareProducts = () => {
           isDrawerOpen={isDrawerOpen}
           setIsDrawerOpen={setIsDrawerOpen}
         />
-      </WebDiv> */}
+      </WebDiv>
     </div>
   );
 };

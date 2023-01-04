@@ -16,6 +16,7 @@ import { DropdownCom } from "../../DropdownCom";
 import "swiper/css";
 import "swiper/css/pagination";
 import NewArrivalSwiper from "../../NewArrivals/NewArrivalSwiper";
+import PlusMinusCom from "../../PlusMinusCom";
 // import "../font.css";
 
 export const MobileCompareProducts = () => {
@@ -54,8 +55,11 @@ export const MobileCompareProducts = () => {
       image: images.slide9,
     },
   ];
+  const [state, setState] = useState({
+    drag: 0,
+  });
   return (
-    <div  >
+    <div>
       <div>
         <div
           style={{
@@ -90,10 +94,10 @@ export const MobileCompareProducts = () => {
             clickable: true,
           }}
           modules={[FreeMode]}
-          style={{ zIndex: 0, backgroundColor:colors.lightGreen }}
+          style={{ zIndex: 0,  }}
           // className="mySwiper"
         >
-          {[images.slide7, images.slide8, images.slide9].map((item, index) => (
+          {[images.slide7, images.slide8, images.slide9,images.slide8, images.slide9].map((item, index) => (
             <SwiperSlide key={index}>
               <img
                 src={item}
@@ -105,34 +109,36 @@ export const MobileCompareProducts = () => {
         </Swiper>
       </div>
 
-
-      {/* <Draggable
+      <Draggable
+      cancel=".cancelDragEffect"
         axis="y"
         defaultPosition={{ x: 0, y: -50 }}
         bounds={{ top: -540, left: -100, right: 100, bottom: 0 }}
         // position={'absolute'}
         // grid={[25, 25]}
         // scale={2}
-        onStop={(ev) => {
-          var rect = ev.target.getBoundingClientRect();
+        onDrag={(ev) => {
+          // var rect = ev.target.getBoundingClientRect();
           // console.log(rect.top, rect.right, rect.bottom, rect.left);
           // setPosition(ev.target.getBoundingClientRect().top);
           // currentPosition = ev.target.getBoundingClientRect();
           // currentPosition.toString(rect.top)
           // console.log("currentPosition=>", currentPosition);
-          console.log("currentPosition=>", ev.target.getBoundingClientRect());
+          setState({ ...state, drag: ev.target.getBoundingClientRect().y });
+          console.log("currentPosition=>", state.drag);
         }}
       >
         <div
           style={{
             width: "100%",
-            height: window.innerHeight,
+            height: state.drag <= 400?window.innerHeight:window.innerHeight/2,
             backgroundColor: colors.white,
             borderTopLeftRadius: 20,
             borderTopRightRadius: 20,
           }}
         >
-          {position <= 450 ? (
+          {state.drag <= 400 && state.drag? (
+            
             <div>
               <Spacer height={30} />
               <div
@@ -172,6 +178,7 @@ export const MobileCompareProducts = () => {
                   <CustomText title="PARA MUJER" fontSize={16} />
                 </div>
                 <div
+                className="cancelDragEffect"
                   style={{
                     display: "flex",
                     flexDirection: "row",
@@ -236,9 +243,12 @@ export const MobileCompareProducts = () => {
                   alignItems: "center",
                 }}
               >
-                <DropdownCom />
+                <div className="cancelDragEffect">
+                  <DropdownCom />
+                </div>
 
                 <a
+                className="cancelDragEffect"
                   href=""
                   style={{
                     backgroundColor: "#fff",
@@ -273,19 +283,11 @@ export const MobileCompareProducts = () => {
                   alignItems: "center",
                 }}
               >
-                <div style={{ ...row, alignItems: "center" }}>
-                  <a href="" style={{ ...noUnderline }}>
-                    <CustomText title="-" fontSize={20} />
-                  </a>
-                  <Spacer width={30} />
-                  <CustomText title="1" fontSize={20} />
-
-                  <Spacer width={30} />
-                  <a href="" style={{ ...noUnderline }}>
-                    <CustomText title="+" fontSize={20} />
-                  </a>
+                <div className="cancelDragEffect">
+                  <PlusMinusCom/>
                 </div>
                 <a
+                className="cancelDragEffect"
                   href=""
                   style={{
                     backgroundColor: "#686868",
@@ -357,6 +359,7 @@ export const MobileCompareProducts = () => {
                   <CustomText title="$95.00 " fontSize={20} />
                 </div>
                 <div
+                className="cancelDragEffect"
                   style={{
                     display: "flex",
                     flexDirection: "row",
@@ -378,11 +381,12 @@ export const MobileCompareProducts = () => {
                 }}
               >
                 <a
+                className="cancelDragEffect"
                   href=""
                   style={{
                     backgroundColor: "#686868",
                     color: "#fff",
-                    width: "30%",
+                    // width: "30%",
                     justifyContent: "center",
                     alignItems: "center",
                     display: "flex",
@@ -395,27 +399,19 @@ export const MobileCompareProducts = () => {
                 >
                   +ADD TO CART
                 </a>
-                <div style={{ ...row, alignItems: "center" }}>
-                  <a href="" style={{ ...noUnderline }}>
-                    <CustomText title="-" fontSize={20} />
-                  </a>
-                  <Spacer width={30} />
-                  <CustomText title="1" fontSize={20} />
+                <div className="cancelDragEffect">
 
-                  <Spacer width={30} />
-                  <a href="" style={{ ...noUnderline }}>
-                    <CustomText title="+" fontSize={20} />
-                  </a>
-                  <Spacer width={10} />
+                <PlusMinusCom />
                 </div>
               </div>
               <Spacer height={30} />
             </div>
           )}
+          
         </div>
-      </Draggable> */}
-      <NewArrivalSwiper />
-      
+      </Draggable>
+      {/* <NewArrivalSwiper /> */}
+
       <BottomBarNavigation />
     </div>
   );
