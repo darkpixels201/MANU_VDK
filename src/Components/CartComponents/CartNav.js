@@ -1,6 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { icons } from "../../Assets/Icons";
 import { images } from "../../Assets/Images";
+import { colors } from "../../utils/Colors";
 import CustomText from "../CustomText";
 import { MuiDrawer } from "../Drawer";
 import Spacer from "../Spacer";
@@ -16,15 +18,20 @@ const CartNav = () => {
         paddingRight: 56,
         paddingTop: 15,
         paddingBottom: 15,
+        position: "sticky",
+            // width: "100%",
+            zIndex: 110,
+            top: 40,
+            backgroundColor: colors.white,
       }}
     >
-      <div>
+      <Link to="/" style={{textDecoration:"none"}} >
         <div style={{display:"flex"}} >
         <CustomText title="MANU &nbsp; " fontFamily={"ClashDisplay-SemiBold"}  />
         <CustomText title="VDK"  />
         </div>
         <CustomText title="STORE" fontFamily={"ClashDisplay-SemiBold"} />
-      </div>
+      </Link>
       <div style={{display:"flex",flexDirection:"column",justifyContent:"center", cursor:"pointer"}}>
         <img
           onClick={() => setIsDrawerOpen(true)}

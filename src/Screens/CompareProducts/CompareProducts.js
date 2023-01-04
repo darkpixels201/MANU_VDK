@@ -10,8 +10,12 @@ const CompareProducts = () => {
   const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
 
   return (
-    <div>
-      <MobileDiv>
+    <div style={{}} >
+      {window.innerWidth <= 480 ?   <MobileCompareProducts /> : <WebCompareProducts 
+          isDrawerOpen={isDrawerOpen}
+          setIsDrawerOpen={setIsDrawerOpen}
+        />}
+      {/* <MobileDiv>
         <MobileCompareProducts />
       </MobileDiv>
       <WebDiv>
@@ -19,7 +23,7 @@ const CompareProducts = () => {
           isDrawerOpen={isDrawerOpen}
           setIsDrawerOpen={setIsDrawerOpen}
         />
-      </WebDiv>
+      </WebDiv> */}
     </div>
   );
 };

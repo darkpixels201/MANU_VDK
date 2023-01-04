@@ -15,6 +15,7 @@ import Spacer from "../../Spacer";
 import { DropdownCom } from "../../DropdownCom";
 import "swiper/css";
 import "swiper/css/pagination";
+import NewArrivalSwiper from "../../NewArrivals/NewArrivalSwiper";
 // import "../font.css";
 
 export const MobileCompareProducts = () => {
@@ -48,10 +49,14 @@ export const MobileCompareProducts = () => {
       id: 3,
       image: images.slide9,
     },
+    {
+      id: 3,
+      image: images.slide9,
+    },
   ];
   return (
-    <div>
-      <div style={{}}>
+    <div  >
+      <div>
         <div
           style={{
             ...row,
@@ -85,7 +90,7 @@ export const MobileCompareProducts = () => {
             clickable: true,
           }}
           modules={[FreeMode]}
-          style={{ zIndex: -1 }}
+          style={{ zIndex: 0, backgroundColor:colors.lightGreen }}
           // className="mySwiper"
         >
           {[images.slide7, images.slide8, images.slide9].map((item, index) => (
@@ -99,9 +104,12 @@ export const MobileCompareProducts = () => {
           ))}
         </Swiper>
       </div>
-      <Draggable
+
+
+      {/* <Draggable
         axis="y"
         defaultPosition={{ x: 0, y: -50 }}
+        bounds={{ top: -540, left: -100, right: 100, bottom: 0 }}
         // position={'absolute'}
         // grid={[25, 25]}
         // scale={2}
@@ -142,7 +150,6 @@ export const MobileCompareProducts = () => {
                     height: 4,
                     backgroundColor: "#1B1B1B",
                     width: 70,
-                    // margin: "auto",
                   }}
                 />
                 <img src={icons.share} alt="" style={{ height: 20 }} />
@@ -154,7 +161,6 @@ export const MobileCompareProducts = () => {
                   justifyContent: "space-between",
                   paddingRight: 30,
                   paddingLeft: 30,
-                  // alignItems: "center",
                 }}
               >
                 <div>
@@ -171,9 +177,7 @@ export const MobileCompareProducts = () => {
                     flexDirection: "row",
                     justifyContent: "center",
                     alignItems: "center",
-                    // alignSelf: "flex-end",
                     marginTop: -10,
-                    // backgroundColor: colors.parrot,
                   }}
                 >
                   <FilledCircleCom FilledCircle={FilledCircle} />
@@ -184,7 +188,6 @@ export const MobileCompareProducts = () => {
                 style={{
                   ...row,
                   justifyContent: "space-between",
-                  // paddingRight: 30,
                   paddingLeft: 30,
                   alignItems: "center",
                 }}
@@ -198,18 +201,14 @@ export const MobileCompareProducts = () => {
                     height: 2,
                     backgroundColor: "#1B1B1B",
                     width: "55%",
-                    // margin: "auto",
                   }}
                 />
               </div>
               <Spacer height={30} />
               <div
                 style={{
-                  // ...row,
-                  // justifyContent: "space-between",
                   paddingRight: 30,
                   paddingLeft: 30,
-                  // alignItems: "center",
                 }}
               >
                 <CustomText
@@ -237,7 +236,6 @@ export const MobileCompareProducts = () => {
                   alignItems: "center",
                 }}
               >
-                {/* ORIGINAL ONE */}
                 <DropdownCom />
 
                 <a
@@ -363,9 +361,7 @@ export const MobileCompareProducts = () => {
                     display: "flex",
                     flexDirection: "row",
                     justifyContent: "center",
-                    // alignItems:"center",
                     alignSelf: "flex-end",
-                    // backgroundColor: colors.parrot,
                   }}
                 >
                   <FilledCircleCom FilledCircle={FilledCircle} />
@@ -417,7 +413,9 @@ export const MobileCompareProducts = () => {
             </div>
           )}
         </div>
-      </Draggable>
+      </Draggable> */}
+      <NewArrivalSwiper />
+      
       <BottomBarNavigation />
     </div>
   );

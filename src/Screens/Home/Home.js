@@ -5,6 +5,7 @@ import Footer from "../../Components/Footer";
 import BestSeller from "../../Components/HomeComponents/BestSeller";
 import Navbar from "../../Components/HomeComponents/Navbar";
 import NewArrivals from "../../Components/NewArrivals/NewArrivals";
+import Pratice from "../Pratice";
 // import BestSeller from "./Molecules/BestSeller";
 
 function Home() {
@@ -23,6 +24,7 @@ function Home() {
   }, []);
   return (
     <div>
+      {/* <Pratice /> */}
       <Navbar />
       <Body on={on} setOn={setOn} />
       <BestSeller />

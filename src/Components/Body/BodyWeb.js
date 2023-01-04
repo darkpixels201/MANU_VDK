@@ -124,9 +124,9 @@ function BodyWeb(props) {
             <CustomText
               title="Shape Wear"
               color={colors.white}
-              fontSize={118}
+              fontSize={"15vh"}
               fontFamily={"ClashDisplay-Bold"}
-              marginBottom={20}
+              marginBottom={25}
             />
           </div>
           <div
@@ -136,6 +136,7 @@ function BodyWeb(props) {
               display: "flex",
               justifyContent: "flex-end",
               marginLeft: 30,
+              marginRight:window.innerHeight <= 758 ? 70 : 0,
               width: 700,
             }}
             className="none"
@@ -143,7 +144,7 @@ function BodyWeb(props) {
             <CustomText
               title="For EveryDay Use"
               color={colors.white}
-              fontSize={30}
+              fontSize={"2vw"}
               marginBottom={20}
             />
           </div>

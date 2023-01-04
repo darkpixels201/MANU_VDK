@@ -51,9 +51,9 @@ export const DropdownCom = (props) => {
         onChange={val}
         value={value}
       >
-        {options.map((opt)=>(
+        {options.map((opt, index)=>(
 
-        <option style={{color:props.on ? colors.white : colors.black}} value={opt.value}>{opt.text}</option>
+        <option key={index} style={{color:props.on ? colors.white : colors.black}} value={opt.value}>{opt.text}</option>
         ))}
       </select>
       

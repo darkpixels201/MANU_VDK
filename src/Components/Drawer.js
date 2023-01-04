@@ -68,7 +68,7 @@ export const MuiDrawer = (props) => {
           <Spacer height={30} />
           <List style={{ backgroundColor: colors.black }}>
             {DrawerItem.map((text, index) => (
-              <Link to={text.link} style={{ textDecoration: "none" }}>
+              <Link key={index} to={text.link} style={{ textDecoration: "none" }}>
                 <ListItem
                   className="main mainwidth"
                   style={{ paddingLeft: 40 }}

@@ -27,6 +27,14 @@ const BestSellerMobile = () => {
 
   const [count, setCount] = useState(1);
 
+  const [counter, setCounter] = useState(1);
+  const addOne = (counter, setCounter) => {
+    setCounter(counter + 1);
+  };
+  const minusOne = (counter, setCounter) => {
+    if (counter > 1) setCounter(counter - 1);
+  };
+
   const row = {
     display: "flex",
     flexDirection: "row",
@@ -246,16 +254,16 @@ const BestSellerMobile = () => {
             </Link>
           </div>
           <div style={{ ...row, alignItems: "center" }}>
-            <a href="" style={{ ...noUnderline }}>
-              <CustomText title="-" fontSize={20} />
-            </a>
+            <div>
+              <CustomText title="-" fontSize={20} onClick={() => minusOne(counter, setCounter)} />
+            </div>
             <Spacer width={20} />
-            <CustomText title="1" fontSize={20} />
+            <CustomText title={counter} fontSize={20} />
 
             <Spacer width={20} />
-            <a href="" style={{ ...noUnderline }}>
-              <CustomText title="+" fontSize={20} />
-            </a>
+            <div>
+              <CustomText onClick={() => addOne(counter, setCounter)} title="+" fontSize={20} />
+            </div>
           </div>
         </div>
       </Container>

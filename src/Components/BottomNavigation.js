@@ -61,7 +61,7 @@ export default function BottomBarNavigation({ footer = true, cart = false }) {
           onChange={handleChange}
         >
           <Link
-            Link
+            // Link
             to="/"
             style={{
               textDecoration: "none",

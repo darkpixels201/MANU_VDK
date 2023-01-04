@@ -81,12 +81,16 @@ const CategoryMobile = (props) => {
   
 
   return (
-    <div style={{backgroundColor:colors.white}}>
+    <div style={{backgroundColor:colors.white, }}>
       <Spacer height={5} />
-      <div style={{ display: "flex", justifyContent: "space-around" }}>
-        <div>
+      <div style={{ display: "flex", justifyContent: "space-around", position: "sticky",
+          width: "100%",
+          zIndex: 110,
+          top: 0,
+          backgroundColor: colors.white, }}>
+        <Link to="/" style={{textDecoration:"none"}} >
           <CustomText title="VDK" fontFamily="ClashDisplay-SemiBold" />
-        </div>
+        </Link>
         <div
           style={{ alignSelf: "center" }}
           onClick={() => {

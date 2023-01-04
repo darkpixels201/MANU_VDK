@@ -29,7 +29,7 @@ const BodyMobile = (props) => {
             }}
           >
             <div>
-              <Link to="/categories">
+              <Link to="/compareproducts">
                 <CustomButton
                   title="SHOP NOW"
                   fontSize={15}

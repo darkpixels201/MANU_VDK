@@ -64,7 +64,19 @@ export const WebCompareProducts = (props) => {
     <div style={{ backgroundColor: colors.white }}>
       <DiscountBanner />
       <Grid container rowSpacing={{ xs: 5, sm: 2, md: 3 }} columnSpacing={{}}>
-        <Grid item xs={12} sm={12} md={12}>
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={12}
+          style={{
+            position: "sticky",
+            width: "100%",
+            zIndex: 110,
+            top: 40,
+            backgroundColor: colors.white,
+          }}
+        >
           <Grid
             container
             rowSpacing={{ xs: 5, sm: 2, md: 3 }}
@@ -73,34 +85,34 @@ export const WebCompareProducts = (props) => {
               // display: window.innerWidth <= 400 ? "none" : "block",
               paddingLeft: 40,
               paddingRight: 100,
-              paddingTop: 20,
+              // paddingTop: 20,
               // paddingBottom: 100,
             }}
           >
             <Grid item xs={12} sm={12} md={3}>
-            <Link to="/" style={{textDecoration:"none"}} >
-              <div style={row}>
+              <Link to="/" style={{ textDecoration: "none" }}>
+                <div style={row}>
+                  <CustomText
+                    fontSize={18}
+                    title="MANU"
+                    textAlign={"left"}
+                    fontFamily={"ClashDisplay-SemiBold"}
+                  />
+                  <Spacer width={5} />
+                  <CustomText fontSize={18} title="VDK" />
+                </div>
                 <CustomText
                   fontSize={18}
-                  title="MANU"
+                  title="STORE"
                   textAlign={"left"}
                   fontFamily={"ClashDisplay-SemiBold"}
                 />
-                <Spacer width={5} />
-                <CustomText fontSize={18} title="VDK" />
-              </div>
-              <CustomText
-                fontSize={18}
-                title="STORE"
-                textAlign={"left"}
-                fontFamily={"ClashDisplay-SemiBold"}
-              />
-            </Link>
+              </Link>
             </Grid>
             <Grid item xs={12} sm={12} md={9}>
               <div style={{ ...row, justifyContent: "space-between" }}>
                 <div style={{ ...row, padding: 5, ...center }}>
-                  <SearchComponent/>
+                  <SearchComponent />
                 </div>
 
                 <div
@@ -113,7 +125,6 @@ export const WebCompareProducts = (props) => {
                   </Link>
                   <Spacer width={50} />
 
-                  
                   <div
                     style={{
                       display: "flex",
@@ -167,8 +178,7 @@ export const WebCompareProducts = (props) => {
             <Grid item xs={12} sm={12} md={12} paddingLeft={5}>
               <Spacer height={50} />
               <Link to="/">
-              <FilledRightCircle left={true} size={2} />
-
+                <FilledRightCircle left={true} size={2} />
               </Link>
             </Grid>
           </Grid>
@@ -428,40 +438,40 @@ export const WebCompareProducts = (props) => {
                         }}
                       >
                         <div style={{ ...row, alignItems: "center" }}>
-                  <div
-                    style={{
-                      cursor: "pointer",
-                      height: 10,
-                      width: 20,
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                    }}
-                  >
-                    <CustomText
-                      title="-"
-                      fontSize={20}
-                      onClick={() => minusOne(counter, setCounter)}
-                    />
-                  </div>
-                  <Spacer width={20} />
-                  <CustomText title={counter} fontSize={20} />
+                          <div
+                            style={{
+                              cursor: "pointer",
+                              height: 10,
+                              width: 20,
+                              display: "flex",
+                              justifyContent: "center",
+                              alignItems: "center",
+                            }}
+                          >
+                            <CustomText
+                              title="-"
+                              fontSize={20}
+                              onClick={() => minusOne(counter, setCounter)}
+                            />
+                          </div>
+                          <Spacer width={20} />
+                          <CustomText title={counter} fontSize={20} />
 
-                  <Spacer width={20} />
-                  <div
-                    style={{
-                      cursor: "pointer",
-                      height: 10,
-                      width: 20,
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                    }}
-                    onClick={() => addOne(counter, setCounter)}
-                  >
-                    <CustomText title="+" fontSize={20} />
-                  </div>
-                </div>
+                          <Spacer width={20} />
+                          <div
+                            style={{
+                              cursor: "pointer",
+                              height: 10,
+                              width: 20,
+                              display: "flex",
+                              justifyContent: "center",
+                              alignItems: "center",
+                            }}
+                            onClick={() => addOne(counter, setCounter)}
+                          >
+                            <CustomText title="+" fontSize={20} />
+                          </div>
+                        </div>
                         <div>
                           <Link to="/cart">
                             <button

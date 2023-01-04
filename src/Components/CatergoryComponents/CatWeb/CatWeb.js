@@ -20,7 +20,18 @@ export const CartWeb = (props) => {
   return (
     <div style={{ padding: 0, backgroundColor: colors.white }}>
       <DiscountBanner />
-      <Grid container rowSpacing={{ xs: 5, sm: 2, md: 3 }} columnSpacing={{}}>
+      <Grid
+        container
+        rowSpacing={{ xs: 5, sm: 2, md: 3 }}
+        columnSpacing={{}}
+        style={{
+          position: "sticky",
+          width: "100%",
+          zIndex: 110,
+          top: 40,
+          backgroundColor: colors.white,
+        }}
+      >
         <Grid item xs={12} sm={12} md={12}>
           <Grid
             container
@@ -29,7 +40,7 @@ export const CartWeb = (props) => {
             style={{
               // paddingLeft: 40,
               // paddingRight: 100,
-              paddingTop: 20,
+              // paddingTop: 20,
             }}
           >
             <Grid item xs={12} sm={12} md={2.3} style={{ paddingLeft: 40 }}>
@@ -52,7 +63,13 @@ export const CartWeb = (props) => {
                 />
               </a>
             </Grid>
-            <Grid item xs={12} sm={12} md={9.7} style={{ paddingRight: window.innerWidth<=900?10:100 }}>
+            <Grid
+              item
+              xs={12}
+              sm={12}
+              md={9.7}
+              style={{ paddingRight: window.innerWidth <= 900 ? 10 : 100 }}
+            >
               <div
                 style={{
                   ...row,
@@ -61,8 +78,7 @@ export const CartWeb = (props) => {
                 }}
               >
                 <div style={{ ...row, padding: 5, ...center }}>
-                  
-                  <SearchComponent/>
+                  <SearchComponent />
                 </div>
                 <div
                   style={{
@@ -95,7 +111,13 @@ export const CartWeb = (props) => {
             <CatList />
           </div>
         </Grid>
-        <Grid item xs={12} sm={12} md={9.7} style={{ paddingRight: window.innerWidth<=900?10:90 }}>
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={9.7}
+          style={{ paddingRight: window.innerWidth <= 900 ? 10 : 90 }}
+        >
           <div>
             <Banner />
           </div>
