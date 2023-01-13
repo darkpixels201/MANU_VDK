@@ -24,9 +24,21 @@ function App() {
               name="categories"
               element={<Categories />}
             />
+            {/* <Route
+              exact
+              path="/categories/:id"
+              name="categories"
+              element={<Categories />}
+            /> */}
             <Route
               exact
               path="/compareproducts"
+              name="categories"
+              element={<CompareProducts />}
+            />
+            <Route
+              exact
+              path="/compareproducts/:id"
               name="categories"
               element={<CompareProducts />}
             />

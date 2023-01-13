@@ -1,7 +1,7 @@
 import { Search } from "@mui/icons-material";
 import { Grid } from "@mui/material";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { colors } from "../../../utils/Colors";
 import { center, row } from "../../../utils/CommonStyles";
 import DiscountBanner from "../../CartComponents/DiscountBanner";
@@ -18,6 +18,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import FilledRightCircle from "../../FilledCircle";
 import SearchComponent from "../../SearchComponent";
+import ProductArray from "../../../utils/ProductArray";
 // import "../font.css";
 
 const BottomImage = [
@@ -50,7 +51,11 @@ const FilledCircle = [
   // },
 ];
 
+
+
 export const WebCompareProducts = (props) => {
+  const { id } = useParams();
+  console.log(id);
   const [count, setCount] = useState(1);
 
   const [counter, setCounter] = useState(1);
@@ -199,8 +204,8 @@ export const WebCompareProducts = (props) => {
               />
             </div>
           </Grid>
-          {[images.slide12, images.slide11, images.slide10].map((item) => (
-            <Grid item xs={12} sm={12} md={12} paddingLeft={5}>
+          {[images.slide12, images.slide11, images.slide10].map((item, index) => (
+            <Grid key={index} item xs={12} sm={12} md={12} paddingLeft={5}>
               <Spacer height={30} />
               <div style={{ ...row, width: 250 }}>
                 <img
@@ -261,7 +266,11 @@ export const WebCompareProducts = (props) => {
                   rowSpacing={{ xs: 5, sm: 2, md: 3 }}
                   columnSpacing={{}}
                 >
-                  <Grid item xs={12} sm={12} md={8}>
+
+                  {ProductArray.map((item, index) => (
+                    <>
+                      {item.id == id ? (
+                        <Grid key={index} item xs={12} sm={12} md={8}>
                     <div>
                       <div
                         style={{
@@ -282,7 +291,7 @@ export const WebCompareProducts = (props) => {
                               justifyContent: "center",
                               alignItems: "center",
                             }}
-                            src={images.slide6}
+                            src={item.image}
                           />
                         </div>
                         {/* <spacer height={120} /> */}
@@ -324,6 +333,11 @@ export const WebCompareProducts = (props) => {
                       </div>
                     </div>
                   </Grid>
+                      ) : null}
+
+                    </>
+                  ))}
+                  
                   <Grid
                     item
                     xs={12}
@@ -331,7 +345,179 @@ export const WebCompareProducts = (props) => {
                     md={4}
                     style={{ paddingTop: 25, paddingRight: 98 }}
                   >
-                    <div style={{}}>
+
+                    {ProductArray.map((item, index) => (
+                      <div key={index} >
+                        {item.id == id ? (
+                          <div style={{}}>
+                          <div>
+                            <Spacer height={50} />
+                            <div style={{ width: 320 }}>
+                              <div style={{ display: "flex" }}>
+                                <CustomText
+                                  title={item.text1}
+                                  fontFamily="ClashDisplay-SemiBold"
+                                  fontSize={20}
+                                />
+                                <Spacer width={5} />
+                                <CustomText title="para" fontSize={20} />
+                              </div>
+    
+                              <CustomText
+                                title={item.text2}
+                                fontSize={20}
+                              />
+                            </div>
+                          </div>
+                          <Spacer height={30} />
+                          <s style={{ color: "#aaa" }}>$135.00</s>
+                          <div style={{ ...row, alignItems: "center" }}>
+                            <CustomText title={item.price} fontSize={30} />
+                            <div
+                              style={{
+                                backgroundColor: "#000",
+                                height: 1,
+                                width: "15%",
+                                position: "absolute",
+                                right: 0,
+                              }}
+                            />
+                          </div>
+    
+                          <Spacer height={30} />
+                          <div
+                            style={{
+                              display: "flex",
+                              flexDirection: "row",
+                              justifyContent: "space-between",
+                              // backgroundColor: colors.orange,
+                              alignItems: "center",
+                              width: 200,
+                            }}
+                          >
+                            <div
+                              style={{
+                                display: "flex",
+                                flexDirection: "row",
+                                justifyContent: "center",
+                                alignItems: "center",
+                                alignSelf: "flex-end",
+                                // backgroundColor: colors.parrot,
+                              }}
+                            >
+                              <FilledCircleCom FilledCircle={FilledCircle} />
+                            </div>
+    
+                            <DropdownCom />
+                          </div>
+                          <Spacer height={20} />
+                          <div
+                            style={{
+                              border: "solid",
+                              width: 140,
+                              height: 30,
+                              borderWidth: 0.5,
+                              display: "flex",
+                              justifyContent: "space-evenly",
+                              alignItems: "center",
+                            }}
+                          >
+                            <div>
+                              <CustomText title={item.text1} fontSize={10} />
+                            </div>
+                            <div>
+                              <img
+                                src={icons.rightArrow}
+                                style={{
+                                  height: 8,
+                                  width: 13,
+                                  display: "flex",
+                                  justifyContent: "center",
+                                }}
+                              />
+                            </div>
+                          </div>
+                          <Spacer height={100} />
+                          <CustomText title="DESCRIPTION" fontSize={18} />
+                          <Spacer height={20} />
+                          <div style={{ width: "100%" }}>
+                            <CustomText
+                              fontSize={13}
+                              title="Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Curabitur congue tellus sem, id porttitor elit fermentum eu. Orci varius natoque penatibus et magnis diseefermu parturient montes, nascetur ridiculus mus.Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Curabitur congue tellus sem, id porttitor elit fermentum"
+                            />
+                          </div>
+                          <Spacer height={50} />
+                          <div
+                            style={{
+                              ...row,
+                              justifyContent: "space-between",
+                              alignItems: "center",
+                              paddingLeft: 10,
+                            }}
+                          >
+                            <div style={{ ...row, alignItems: "center" }}>
+                              <div
+                                style={{
+                                  cursor: "pointer",
+                                  height: 10,
+                                  width: 20,
+                                  display: "flex",
+                                  justifyContent: "center",
+                                  alignItems: "center",
+                                }}
+                              >
+                                <CustomText
+                                  title="-"
+                                  fontSize={20}
+                                  onClick={() => minusOne(counter, setCounter)}
+                                />
+                              </div>
+                              <Spacer width={20} />
+                              <CustomText title={counter} fontSize={20} />
+    
+                              <Spacer width={20} />
+                              <div
+                                style={{
+                                  cursor: "pointer",
+                                  height: 10,
+                                  width: 20,
+                                  display: "flex",
+                                  justifyContent: "center",
+                                  alignItems: "center",
+                                }}
+                                onClick={() => addOne(counter, setCounter)}
+                              >
+                                <CustomText title="+" fontSize={20} />
+                              </div>
+                            </div>
+                            <div>
+                              <Link to="/cart">
+                                <button
+                                  style={{
+                                    backgroundColor: "#686868",
+                                    color: "#fff",
+                                    paddingRight: 20,
+                                    paddingLeft: 20,
+                                    paddingTop: 10,
+                                    paddingBottom: 10,
+                                    textDecoration: "none",
+                                    fontFamily: "ClashDisplay-Regular",
+                                    borderStyle: "none",
+                                    cursor: "pointer",
+                                  }}
+                                >
+                                  +ADD TO CART
+                                </button>
+                              </Link>
+                            </div>
+                          </div>
+                        </div>
+                        ) : null }
+                        
+                      </div>
+                    ))}
+
+                    {/* <div style={{}}>
                       <div>
                         <Spacer height={50} />
                         <div style={{ width: 320 }}>
@@ -493,7 +679,9 @@ export const WebCompareProducts = (props) => {
                           </Link>
                         </div>
                       </div>
-                    </div>
+                    </div> */}
+
+                    {/* END OF DATA */}
                   </Grid>
                 </Grid>
               </div>

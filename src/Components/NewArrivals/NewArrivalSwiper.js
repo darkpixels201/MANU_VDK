@@ -6,10 +6,11 @@ import { colors } from "../../utils/Colors";
 import Spacer from "../Spacer";
 import { Autocomplete, TextField } from "@mui/material";
 import { DropdownCom } from "../DropdownCom";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "../../Assets/Style/font.css";
 
 const NewArrivalSwiper = (props) => {
+
   const customer = ["2XS", "XS", "M", "L", "XL", "2XL"];
 
   const [currentcustomer, setCurrentCustomer] = useState(null);
@@ -42,13 +43,15 @@ const NewArrivalSwiper = (props) => {
       }}
     >
       {/* <Spacer height={20} /> */}
+      <Link to={`compareproducts/${props.id}`} style={{textDecoration:"none"}} >
       <div
         style={{
           width: window.innerWidth <= 1000 ? "90%" : "85%",
           height: window.innerWidth <= 1000 ? "40vh" : "55vh",
-          // backgroundColor: props.on ? colors.black : colors.pureWite,
+            // backgroundColor: props.on ? colors.black : colors.pureWite,
           // backgroundColor: colors.lightGreen,
         }}
+
       >
         {/* <div style={{ width: "90%", height: "40vh" }}> */}
         <div
@@ -61,7 +64,7 @@ const NewArrivalSwiper = (props) => {
             // backgroundColor: colors.orangeLight,
           }}
         >
-          <div style={{ top: 0, display: "flex", justifyContent: "right" }}>
+          <div style={{ top: 0, display: "flex", justifyContent: "right",  }}>
             <div
               style={{
                 backgroundColor: colors.grey,
@@ -193,7 +196,7 @@ const NewArrivalSwiper = (props) => {
                 $135.00
               </s>
               <CustomText
-                title="$95.00"
+                title={props.price}
                 fontSize={15}
                 color={props.on ? colors.pureWite : colors.black}
               />
@@ -223,6 +226,7 @@ const NewArrivalSwiper = (props) => {
           </div>
         </div>
       </div>
+      </Link>
     </div>
   );
 };

@@ -17,40 +17,41 @@ import { icons } from "../../Assets/Icons";
 import NewArrivalSwiper from "./NewArrivalSwiper";
 import { Link } from "react-router-dom";
 import FilledRightCircle from "../FilledCircle";
+import ProductArray from "../../utils/ProductArray";
 
 const NewArrivals = (props) => {
-  const NewArrival = [
-    {
-      id: 1,
-      image: images.slide10,
-      text1: "BRASIER DE BANDA",
-      text2: "ANCHA",
-    },
-    {
-      id: 2,
-      image: images.slide11,
-      text1: "BRASIER DE BANDA",
-      text2: "ANCHA",
-    },
-    {
-      id: 3,
-      image: images.slide12,
-      text1: "BRASIER DE BANDA",
-      text2: "ANCHA",
-    },
-    {
-      id: 4,
-      image: images.slide12,
-      text1: "BRASIER DE BANDA",
-      text2: "ANCHA",
-    },
-    {
-      id: 5,
-      image: images.slide11,
-      text1: "BRASIER DE BANDA",
-      text2: "ANCHA",
-    },
-  ];
+  // const NewArrival = [
+  //   {
+  //     id: 1,
+  //     image: images.slide10,
+  //     text1: "BRASIER DE BANDA",
+  //     text2: "ANCHA",
+  //   },
+  //   {
+  //     id: 2,
+  //     image: images.slide11,
+  //     text1: "BRASIER DE BANDA",
+  //     text2: "ANCHA",
+  //   },
+  //   {
+  //     id: 3,
+  //     image: images.slide12,
+  //     text1: "BRASIER DE BANDA",
+  //     text2: "ANCHA",
+  //   },
+  //   {
+  //     id: 4,
+  //     image: images.slide12,
+  //     text1: "BRASIER DE BANDA",
+  //     text2: "ANCHA",
+  //   },
+  //   {
+  //     id: 5,
+  //     image: images.slide11,
+  //     text1: "BRASIER DE BANDA",
+  //     text2: "ANCHA",
+  //   },
+  // ];
 
   return (
     <div style={{ backgroundColor: props.on ? colors.black : colors.white }}>
@@ -141,7 +142,7 @@ const NewArrivals = (props) => {
               }}
               modules={[Navigation]}
             >
-              {NewArrival.map((item, index) => (
+              {ProductArray.map((item, index) => (
                 <SwiperSlide
                   key={index}
                   style={{
@@ -152,6 +153,8 @@ const NewArrivals = (props) => {
                     image={item.image}
                     text1={item.text1}
                     text2={item.text2}
+                    price={item.price}
+                    id={item.id}
                     on={props.on}
                   />
                 </SwiperSlide>
@@ -186,7 +189,7 @@ const NewArrivals = (props) => {
                 }}
                 modules={[FreeMode]}
               >
-                {NewArrival.map((item, index) => (
+                {ProductArray.map((item, index) => (
                   <SwiperSlide
                     key={index}
                     style={{
