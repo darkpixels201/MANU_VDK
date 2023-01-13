@@ -16,6 +16,7 @@ const ColumnOne = () => {
     >
       <Link to="/">
       {/* <img src={images.backArrow} style={{ width: 40, height: 40 }} /> */}
+      <div style={{marginTop:10}} />
       <FilledRightCircle left={true}  />
       </Link>
     </div>

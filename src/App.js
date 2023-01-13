@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { Suspense } from "react";
+import React, { Suspense, useState } from "react";
 import { HashRouter, Route, Routes } from "react-router-dom";
 import { Categories } from "./Screens/Categories/Categories";
 import { colors } from "./utils/Colors";

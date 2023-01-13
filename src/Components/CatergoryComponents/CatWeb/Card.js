@@ -6,7 +6,7 @@ import { DropdownCom } from "../../DropdownCom";
 import { FilledCircleCom } from "../../FilledCircleCom";
 import Spacer from "../../Spacer";
 
-export const Card = ({ footer, image }) => (
+export const Card = ({ footer, image,  }) => (
   <>
     {footer === "up" ? (
       <>
@@ -43,7 +43,7 @@ const FilledCircle = [
   // },
 ];
 
-export const CardFooter = () => (
+export const CardFooter = ({index}) => (
   <div>
     <div
       style={{
@@ -98,8 +98,12 @@ export const CardFooter = () => (
       }}
     >
       <div>
-        <s style={{ color: "#aaa" }}>$135.00</s>
-        <CustomText fontSize={16} title="$95.00" />
+      {index === 0 ? (<s style={{ color: "#aaa" }}>$135.00</s>): null }
+      
+        {/* <s style={{ color: "#aaa" }}>$135.00</s> */}
+        <div style={{marginTop:(index === 0 ?  0 : 15 )}} />
+        <CustomText fontSize={16} title="$95.00" marginTop={index === 0 ?  50 : 50 } />
+        {/* <span style={{marginTop:50}} /> */}
       </div>
       <div>
         <div

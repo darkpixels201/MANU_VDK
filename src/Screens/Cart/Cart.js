@@ -9,12 +9,13 @@ import { WebCart } from "../../Components/CartComponents/WebCart";
 const Cart = () => {
   return (
     <div>
-      <MobileDiv>
+      {window.innerWidth <= 480 ? <MobileCart /> : <WebCart />}
+      {/* <MobileDiv>
         <MobileCart />
       </MobileDiv>
       <WebDiv>
         <WebCart />
-      </WebDiv>
+      </WebDiv> */}
       {/* {window.innerWidth <= 400 ? <MobileCart /> : <WebCart />} */}
     </div>
   );

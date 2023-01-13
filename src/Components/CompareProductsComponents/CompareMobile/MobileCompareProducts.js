@@ -70,11 +70,13 @@ export const MobileCompareProducts = () => {
             paddingTop: 10,
           }}
         >
+          <Link to="/" style={{textDecoration:"none"}}>
           <CustomText
             title="VDK"
             fontSize={16}
             fontFamily={"ClashDisplay-SemiBold"}
           />
+          </Link>
           <Link to="/cart">
             <img src={icons.shoppingCart} alt="" style={{ height: 20 }} />
           </Link>

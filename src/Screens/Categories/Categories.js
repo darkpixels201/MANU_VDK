@@ -6,6 +6,7 @@ import { CartWeb } from "../../Components/CatergoryComponents/CatWeb/CatWeb";
 
 export const Categories = () => {
   const [open, setOpen] = useState(false);
+  const [on, setOn] = useState(false);
   const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
 
   return (
@@ -16,6 +17,7 @@ export const Categories = () => {
         <CartWeb
           isDrawerOpen={isDrawerOpen}
           setIsDrawerOpen={setIsDrawerOpen}
+          on={on}
         />
       )}
     </div>

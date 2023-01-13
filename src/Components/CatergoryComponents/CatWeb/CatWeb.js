@@ -44,7 +44,7 @@ export const CartWeb = (props) => {
             }}
           >
             <Grid item xs={12} sm={12} md={2.3} style={{ paddingLeft: 40 }}>
-              <a href="*" style={{ textDecoration: "none" }}>
+              <Link to='/' style={{ textDecoration: "none" }}>
                 <div style={row}>
                   <CustomText
                     fontSize={18}
@@ -61,7 +61,7 @@ export const CartWeb = (props) => {
                   textAlign={"left"}
                   fontFamily={"ClashDisplay-SemiBold"}
                 />
-              </a>
+              </Link>
             </Grid>
             <Grid
               item
@@ -108,7 +108,7 @@ export const CartWeb = (props) => {
       <Grid container rowSpacing={{ xs: 5, sm: 2, md: 3 }} columnSpacing={{}}>
         <Grid item xs={12} sm={12} md={2.3} style={{}}>
           <div style={{}}>
-            <CatList />
+            <CatList on={props.on} />
           </div>
         </Grid>
         <Grid
@@ -129,11 +129,11 @@ export const CartWeb = (props) => {
             columnSpacing={{ xs: 1, sm: 2, md: 3 }}
           >
             {[images.slide13, images.slide7, images.slide13, images.slide7].map(
-              (item) => (
+              (item, index) => (
                 <Grid item xs={6} sm={4} md={3}>
-                  <CardImage image={item} />
+                  <CardImage image={item}   />
                   <Spacer height={10} />
-                  <CardFooter />
+                  <CardFooter index={index} />
                 </Grid>
               )
             )}

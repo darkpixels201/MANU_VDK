@@ -152,11 +152,7 @@ const CategoryMobile = (props) => {
         <Spacer height={window.innerWidth <= 1000 ? 140 : ""} />
         <Swiper
           slidesPerView={
-            window.innerWidth <= 1000
-              ? window.innerWidth <= 700
-                ? 1.35
-                : 2
-              : 3
+            window.innerWidth <= 1000 ? window.innerWidth <= 700 ? 1.35 : 2 : 3
           }
           // slidesPerView={1}
         //   spaceBetween={-37}

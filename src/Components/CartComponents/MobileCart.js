@@ -79,7 +79,7 @@ export const MobileCart = () => (
      
      <Draggable
       cancel=".cancelDragEffect"
-      bounds={{ top: -100, left: -100, right: 100,  }}
+      bounds={{ top: -1e00, left: -100, right: 100, bottom:110 }}
               axis="y"
               // defaultPosition={{ x: 0, y: 100 }}
               // position={'absolute'}

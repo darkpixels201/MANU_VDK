@@ -7,6 +7,7 @@ import Spacer from "../Spacer";
 import { Autocomplete, TextField } from "@mui/material";
 import { DropdownCom } from "../DropdownCom";
 import { Link } from "react-router-dom";
+import "../../Assets/Style/font.css";
 
 const NewArrivalSwiper = (props) => {
   const customer = ["2XS", "XS", "M", "L", "XL", "2XL"];
@@ -116,7 +117,9 @@ const NewArrivalSwiper = (props) => {
                 flex: 4,
               }}
             >
-              <div><DropdownCom on={props.on} /></div>
+              <div>
+                <DropdownCom on={props.on} />
+              </div>
 
               {FilledCircle.map((circle, index) => (
                 <div key={index} style={{ paddingLeft: 10 }}>
@@ -180,7 +183,15 @@ const NewArrivalSwiper = (props) => {
             }}
           >
             <div style={{ display: "flex", flexDirection: "column" }}>
-              <s style={{ fontSize: 13, color: window.innerWidth <= 700 ? colors.grey : colors.black }}>$135.00</s>
+              <s
+                style={{
+                  fontSize: 13,
+                  color: window.innerWidth <= 700 ? colors.grey : colors.black,
+                  fontFamily: "ClashDisplay-Regular",
+                }}
+              >
+                $135.00
+              </s>
               <CustomText
                 title="$95.00"
                 fontSize={15}

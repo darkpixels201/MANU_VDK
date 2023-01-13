@@ -1,5 +1,6 @@
 import React from "react";
 import { icons } from "../Assets/Icons";
+import { colors } from "../utils/Colors";
 
 const FilledRightCircle = ({left=false,size=1}) => {
   return (
@@ -15,9 +16,9 @@ const FilledRightCircle = ({left=false,size=1}) => {
           alignItems: "center",
           justifyContent: "center",
           cursor:"pointer",
+          borderColor:colors.black,
         }}
       >
-        
         <img src={left?icons.leftArrow:icons.rightArrow} style={{ height: 10/size, width: 18/size }} />
         
       </div>
