@@ -12,6 +12,9 @@ import "swiper/css/pagination";
 import { FreeMode, Pagination } from "swiper";
 
 import "./styles.css";
+import ProductArray from "../../utils/ProductArray";
+import { Link } from "react-router-dom";
+import { colors } from "../../utils/Colors";
 
 const ColumnThree = () => {
   return (
@@ -28,13 +31,11 @@ const ColumnThree = () => {
         modules={[FreeMode]}
         // className="mySwiper"
       >
-        {[images.slide6,images.slide7,images.slide8].map((item)=>(
-
-        <SwiperSlide>
-          <CartItem image={item} />
-        </SwiperSlide>
+        {ProductArray.map((item, index) => (
+          <SwiperSlide key={index}>
+            <CartItem image={item.image} id={item.id} price={item.price} />
+          </SwiperSlide>
         ))}
-        
       </Swiper>
 
       <Spacer height={50} />
@@ -84,7 +85,12 @@ const ColumnThree = () => {
           placeholder="Enter Coupon Code here"
         />
         <button
-          style={{ backgroundColor: "#000", color: "#fff", width: "25%", borderStyle:"hidden" }}
+          style={{
+            backgroundColor: "#000",
+            color: "#fff",
+            width: "25%",
+            borderStyle: "hidden",
+          }}
         >
           Apply
         </button>
@@ -99,7 +105,7 @@ const ColumnThree = () => {
             paddingLeft: 25,
             paddingTop: 10,
             paddingBottom: 10,
-            borderStyle:"hidden"
+            borderStyle: "hidden",
           }}
         >
           CHECKOUT
@@ -116,7 +122,7 @@ const ColumnThree = () => {
             paddingLeft: 25,
             paddingTop: 10,
             paddingBottom: 10,
-            borderWidth:1,
+            borderWidth: 1,
           }}
         >
           CONTINUE SHOPPING
@@ -128,22 +134,27 @@ const ColumnThree = () => {
 
 export default ColumnThree;
 
-const CartItem = ({image}) => (
+const CartItem = ({ image, ...props }) => (
   <div>
-    <img src={image} style={{ width: "100%", height: 160 }} />
-    <Spacer height={10} />
-    <div
-      style={{
-        flexDirection: "row",
-        justifyContent: "space-between",
-        display: "flex",
-      }}
+    <Link
+      to={`/compareproducts/${props.id}`}
+      style={{ textDecoration: "none", color: colors.black }}
     >
-      <span style={{ fontSize: 10 }}>
-        <b style={{ fontFamily: "ClashDisplay-Bold" }}>PRoducto</b>
-       &nbsp; nombre
-      </span>
-      <CustomText title="$95.00" fontSize={10} />
-    </div>
+      <img src={image} style={{ width: "100%", height: 160 }} />
+      <Spacer height={10} />
+      <div
+        style={{
+          flexDirection: "row",
+          justifyContent: "space-between",
+          display: "flex",
+        }}
+      >
+        <span style={{ fontSize: 10 }}>
+          <b style={{ fontFamily: "ClashDisplay-Bold" }}>PRoducto</b>
+          &nbsp; nombre
+        </span>
+        <CustomText title={props.price} fontSize={10} />
+      </div>
+    </Link>
   </div>
 );

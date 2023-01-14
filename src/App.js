@@ -26,7 +26,7 @@ function App() {
             />
             {/* <Route
               exact
-              path="/categories/:id"
+              path="categories/compareproducts/:id"
               name="categories"
               element={<Categories />}
             /> */}
@@ -42,6 +42,12 @@ function App() {
               name="categories"
               element={<CompareProducts />}
             />
+             {/* <Route
+              exact
+              path="cart/compareproducts/:id"
+              name="categories"
+              element={<CompareProducts />}
+            /> */}
           </Routes>
         </Suspense>
       </HashRouter>

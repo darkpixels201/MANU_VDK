@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { colors } from "../../../utils/Colors";
 import { row } from "../../../utils/CommonStyles";
 import CustomText from "../../CustomText";
@@ -6,7 +7,7 @@ import { DropdownCom } from "../../DropdownCom";
 import { FilledCircleCom } from "../../FilledCircleCom";
 import Spacer from "../../Spacer";
 
-export const Card = ({ footer, image,  }) => (
+export const Card = ({ footer, image, ...props }) => (
   <>
     {footer === "up" ? (
       <>
@@ -16,7 +17,7 @@ export const Card = ({ footer, image,  }) => (
     ) : (
       <></>
     )}
-    <CardImage height={"auto"} image={image} />
+    <CardImage1 height={"auto"} image={image} id={props.id} />
     {footer === "down" ? (
       <>
         <Spacer height={10} />
@@ -43,7 +44,7 @@ const FilledCircle = [
   // },
 ];
 
-export const CardFooter = ({index}) => (
+export const CardFooter = ({ index, ...props }) => (
   <div>
     <div
       style={{
@@ -98,11 +99,15 @@ export const CardFooter = ({index}) => (
       }}
     >
       <div>
-      {index === 0 ? (<s style={{ color: "#aaa" }}>$135.00</s>): null }
-      
+        {index === 0 ? <s style={{ color: "#aaa" }}>$135.00</s> : null}
+
         {/* <s style={{ color: "#aaa" }}>$135.00</s> */}
-        <div style={{marginTop:(index === 0 ?  0 : 15 )}} />
-        <CustomText fontSize={16} title="$95.00" marginTop={index === 0 ?  50 : 50 } />
+        <div style={{ marginTop: index === 0 ? 0 : 15 }} />
+        <CustomText
+          fontSize={16}
+          title={props.price}
+          marginTop={index === 0 ? 50 : 50}
+        />
         {/* <span style={{marginTop:50}} /> */}
       </div>
       <div>
@@ -116,7 +121,7 @@ export const CardFooter = ({index}) => (
             color: colors.white,
             textDecoration: "none",
             fontFamily: "ClashDisplay-Regular",
-            cursor:"pointer"
+            cursor: "pointer",
           }}
         >
           +ADD
@@ -125,6 +130,28 @@ export const CardFooter = ({index}) => (
     </div>
   </div>
 );
-export const CardImage = ({ height, image }) => (
-  <img src={image} alt="" style={{ height: height || "auto", width: "100%" }} />
+export const CardImage = ({ height, image, ...props }) => (
+  <Link
+    to={`/compareproducts/${props.id}`}
+    style={{ textDecoration: "none", color: colors.black }}
+  >
+    <img
+      src={image}
+      alt=""
+      style={{ height: height || "auto", width: "100%" }}
+    />
+  </Link>
+);
+
+export const CardImage1 = ({ height, image, ...props }) => (
+  <Link
+    to={`/compareproducts/${props.id}`}
+    style={{ textDecoration: "none", color: colors.black }}
+  >
+    <img
+      src={image}
+      alt=""
+      style={{ height: height || "auto", width: "100%" }}
+    />
+  </Link>
 );

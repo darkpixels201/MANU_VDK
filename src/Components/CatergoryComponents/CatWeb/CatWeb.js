@@ -15,6 +15,7 @@ import { Banner } from "./Banner";
 import { CatList } from "./CatList";
 import { Card, CardFooter, CardImage } from "./Card";
 import SearchComponent from "../../SearchComponent";
+import ProductArray from "../../../utils/ProductArray";
 
 export const CartWeb = (props) => {
   return (
@@ -37,14 +38,16 @@ export const CartWeb = (props) => {
             container
             rowSpacing={{ xs: 5, sm: 2, md: 3 }}
             columnSpacing={{}}
-            style={{
-              // paddingLeft: 40,
-              // paddingRight: 100,
-              // paddingTop: 20,
-            }}
+            style={
+              {
+                // paddingLeft: 40,
+                // paddingRight: 100,
+                // paddingTop: 20,
+              }
+            }
           >
             <Grid item xs={12} sm={12} md={2.3} style={{ paddingLeft: 40 }}>
-              <Link to='/' style={{ textDecoration: "none" }}>
+              <Link to="/" style={{ textDecoration: "none" }}>
                 <div style={row}>
                   <CustomText
                     fontSize={18}
@@ -128,15 +131,18 @@ export const CartWeb = (props) => {
             rowSpacing={{ xs: 5, sm: 2, md: 3 }}
             columnSpacing={{ xs: 1, sm: 2, md: 3 }}
           >
-            {[images.slide13, images.slide7, images.slide13, images.slide7].map(
-              (item, index) => (
-                <Grid item xs={6} sm={4} md={3}>
-                  <CardImage image={item}   />
-                  <Spacer height={10} />
-                  <CardFooter index={index} />
-                </Grid>
-              )
-            )}
+            {ProductArray.map((item, index) => (
+              <Grid item xs={6} sm={4} md={3} key={index}>
+                <CardImage
+                  image={item.image}
+                  height={250}
+                  id={item.id}
+                  price={item.price}
+                />
+                <Spacer height={10} />
+                <CardFooter index={index} id={item.id} price={item.price} />
+              </Grid>
+            ))}
           </Grid>
 
           <Spacer height={60} />
@@ -167,14 +173,20 @@ export const CartWeb = (props) => {
             rowSpacing={{ xs: 5, sm: 2, md: 3 }}
             columnSpacing={{ xs: 1, sm: 2, md: 6 }}
           >
-            {[
-              { image: images.slide14, footerPos: "up" },
-              { image: images.slide15, footerPos: "down" },
-            ].map((item) => (
-              <Grid item xs={12} sm={12} md={6}>
-                <Card footer={item.footerPos} image={item.image} />
+            {ProductArray.map((item, index) => (
+              <Grid item xs={12} sm={12} md={6} key={index}>
+                {item.id >= 3 ? (
+                  ""
+                ) : (
+                  <Card footer={item.footerPos} image={item.image} id={item.id} price={item.price} />
+                )}
               </Grid>
             ))}
+            {/* {ProductArray.map((item, index) => (
+              <>
+              {item.id >= 3 ? "" : item.price}
+              </>
+            ))} */}
           </Grid>
         </Grid>
       </Grid>

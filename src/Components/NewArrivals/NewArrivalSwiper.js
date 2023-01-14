@@ -43,7 +43,7 @@ const NewArrivalSwiper = (props) => {
       }}
     >
       {/* <Spacer height={20} /> */}
-      <Link to={`compareproducts/${props.id}`} style={{textDecoration:"none"}} >
+      
       <div
         style={{
           width: window.innerWidth <= 1000 ? "90%" : "85%",
@@ -78,10 +78,12 @@ const NewArrivalSwiper = (props) => {
             >
               <CustomText title="NEW" color={colors.white} fontSize={14} />
             </div>
+            <Link to={`compareproducts/${props.id}`} style={{textDecoration:"none"}} >
             <img
               src={props.image}
               style={{ width: "95%", height: 260, objectFit: "fill" }}
             />
+            </Link>
           </div>
         </div>
         <Spacer height={10} />
@@ -226,7 +228,6 @@ const NewArrivalSwiper = (props) => {
           </div>
         </div>
       </div>
-      </Link>
     </div>
   );
 };

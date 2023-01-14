@@ -19,11 +19,10 @@ import "./styles.css";
 import { Close } from "@mui/icons-material";
 import { row } from "../../utils/CommonStyles";
 import { CartItem } from "./CartItem";
+import { Link } from "@mui/material";
+import ProductArray  from "../../utils/ProductArray";
 
 const ColumnTwo = () => {
-
-  
-
   return (
     <div style={{ flex: 6 }}>
       <div style={{ flexDirection: "row", display: "flex", flexWrap: "wrap" }}>
@@ -82,9 +81,15 @@ to request a chnge or return."
         // direction={"vertical"}
         // className="mySwiper"
       >
-        {[images.slide16, images.slide8, images.slide8].map((item) => (
-          <SwiperSlide>
-            <CartItem image={item} />
+        {/* {[{id:1,image:images.slide16}, {id:2,image:images.slide8}, {id:3,image:images.slide8}].map((item, index) => (
+          <SwiperSlide key={index} >
+            <CartItem image={item.image} id={item.id} />
+          </SwiperSlide>
+        ))} */}
+
+        {ProductArray.map((item, index) => (
+          <SwiperSlide key={index}>
+            <CartItem image={item.image} id={item.id} price={item.price} />
           </SwiperSlide>
         ))}
       </Swiper>
@@ -93,5 +98,3 @@ to request a chnge or return."
 };
 
 export default ColumnTwo;
-
-
