@@ -20,7 +20,7 @@ const BodySwiper = (props) => {
       id: 1,
       name1: "DIANE",
       name2: "& GEORDI",
-      image: window.innerWidth<=480?images.slideMobile1:images.slide3,
+      image: `window.innerWidth<=480?images.slideMobile1:images.slide3`,
       list1: "Sports bra",
       list2: "Leggings",
       list3: "Top",
