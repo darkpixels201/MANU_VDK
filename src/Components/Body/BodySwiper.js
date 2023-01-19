@@ -137,7 +137,7 @@ export default BodySwiper;
 const BodyItems = (props) => (
   <div
     style={{
-      height: "95vh",
+      height: window.innerWidth <= 951 ?"75vh":"95vh",
       width: "90%",
       display: "flex",
       justifyContent: "center",

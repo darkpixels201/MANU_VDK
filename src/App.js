@@ -3,6 +3,8 @@ import React, { Suspense, useState } from "react";
 import { HashRouter, Route, Routes } from "react-router-dom";
 import { Categories } from "./Screens/Categories/Categories";
 import { colors } from "./utils/Colors";
+import SearchComponent from "./Components/SearchComponent";
+import SearchComMobile from "./Components/SearchComMobile";
 
 const Home = React.lazy(() => import("./Screens/Home/Home"));
 const Cart = React.lazy(() => import("./Screens/Cart/Cart"));
@@ -41,6 +43,12 @@ function App() {
               path="/compareproducts/:id"
               name="categories"
               element={<CompareProducts />}
+            />
+            <Route
+              exact
+              path="/searchComMobile"
+              name="searchComMobile"
+              element={<SearchComMobile />}
             />
              {/* <Route
               exact

@@ -6,6 +6,7 @@ import CustomText from "../../../Components/CustomText";
 import SearchComponent from "../../../Components/SearchComponent";
 import Spacer from "../../../Components/Spacer";
 import { colors } from "../../../utils/Colors";
+import SearchComMobile from "../../SearchComMobile";
 
 export const NavbarMobile = () => {
   const navbar = [
@@ -50,11 +51,15 @@ export const NavbarMobile = () => {
             setOpen(!open);
           }}
         >
+          <Link to="/searchComMobile">
+
           <SearchComponent
             setOpen={setOpen}
             open={open}
             style={{ backgroundColor: colors.lightGray }}
           />
+          </Link>
+          
         </div>
         <div>
           <Link to="/cart">
