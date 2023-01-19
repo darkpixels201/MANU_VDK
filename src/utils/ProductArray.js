@@ -34,14 +34,14 @@ export const ProductArray = [
       price:"$500.00",
       type:"arrival",
     },
-    {
-      id: 5,
-      image: images.slide11,
-      text1: "BRASIER DE BANDA",
-      text2: "ANCHA",
-      price:"$800.00",
-      type:"arrival",
-    },
+    // {
+    //   id: 5,
+    //   image: images.slide11,
+    //   text1: "BRASIER DE BANDA",
+    //   text2: "ANCHA",
+    //   price:"$800.00",
+    //   type:"arrival",
+    // },
   ];
 
   export default ProductArray

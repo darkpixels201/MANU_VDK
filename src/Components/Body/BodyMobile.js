@@ -14,7 +14,7 @@ const BodyMobile = (props) => {
       <div>
         <div style={{ width: "100%", height: "40vh" }}>
           <img
-            style={{ width: "100%", position: "absolute", height: "40vh" }}
+            style={{ width: "100%", position: "absolute", height: "auto" }}
             src={images.mobileHomeBanner}
           />
           <div
@@ -25,7 +25,7 @@ const BodyMobile = (props) => {
               display: "flex",
               flexDirection: "column",
               justifyContent: "flex-end",
-              height: 240,
+              height: 300,
             }}
           >
             <div>
@@ -59,7 +59,7 @@ const BodyMobile = (props) => {
           </div>
         </div>
       </div>
-      <Spacer height={10} />
+      <Spacer height={75} />
       <div
         style={{
           display: "flex",
