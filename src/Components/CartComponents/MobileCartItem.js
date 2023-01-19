@@ -4,14 +4,15 @@ import { SwiperSlide } from 'swiper/react';
 import { images } from '../../Assets/Images';
 import { noUnderline, row } from '../../utils/CommonStyles';
 import CustomText from '../CustomText';
+import PlusMinusCom from '../PlusMinusCom';
 import Spacer from '../Spacer';
 
-export const MobileCartItem = () => (
+export const MobileCartItem = ({onPressClose}) => (
     <SwiperSlide style={{ height: 150 }}>
       <div style={{ ...row }}>
         <div style={{ height: 120, width: 120 }}>
           <a
-            href=""
+            onClick={onPressClose}
             style={{
               backgroundColor: "#000",
               color: "#fff",
@@ -63,7 +64,8 @@ export const MobileCartItem = () => (
           >
             <CustomText title="$95.00" fontSize={16} />
             <Spacer width={5} />
-            <div style={{ ...row, alignItems: "center" }}>
+            <PlusMinusCom/>
+            {/* <div style={{ ...row, alignItems: "center" }}>
               <a href="" style={{ ...noUnderline }}>
                 <CustomText title="-" fontSize={20} />
               </a>
@@ -74,7 +76,7 @@ export const MobileCartItem = () => (
               <a href="" style={{ ...noUnderline }}>
                 <CustomText title="+" fontSize={20} />
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
