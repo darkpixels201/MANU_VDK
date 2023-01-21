@@ -23,9 +23,9 @@ export const colors = {
     // lightGreen:"#f2ffff",
     // purple:"#CA5DFF",
 
-    colorA:"#FFF9FE",
-    colorB:"#D84EA9",
-    colorC:"#EFB733",
+    colorA:"#F9F2EC",
+    colorB:"#C16565",
+    colorC:"#542E2E",
   };
   
   
