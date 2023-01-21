@@ -1,11 +1,12 @@
 import React from "react";
+import { colors } from "../../utils/Colors";
 
 const DiscountBanner = () => {
   return (
     <div
       style={{
         height: "3vw",
-        backgroundColor: "#686868",
+        backgroundColor: colors.green,
         justifyContent: "center",
         alignItems: "center",
         display: "flex",

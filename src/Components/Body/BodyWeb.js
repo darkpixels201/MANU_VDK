@@ -33,7 +33,7 @@ function BodyWeb(props) {
           position: "relative",
           flexWrap: "wrap",
           width: "auto",
-          backgroundColor: colors.white,
+          backgroundColor: colors.lightGreen,
         }}
       >
         <div
@@ -56,6 +56,7 @@ function BodyWeb(props) {
               style={{ position: "fixed" }}
               fontSize={100}
               fontFamily={"ClashDisplay-Bold"}
+              color={colors.purple}
             />
           </div>
           <div
@@ -68,6 +69,7 @@ function BodyWeb(props) {
               fontSize={100}
               lineHeight={0.7}
               fontFamily={"ClashDisplay-Bold"}
+              color={colors.purple}
             />
           </div>
           <Spacer height={130} />
@@ -81,7 +83,7 @@ function BodyWeb(props) {
                 width={150}
                 height={50}
                 color={colors.white}
-                backgroundColor={colors.grey}
+                backgroundColor={colors.green}
                 fontFamily={"ClashDisplay-Light"}
                 textDecoration={"underline"}
               />
@@ -95,7 +97,7 @@ function BodyWeb(props) {
             <Spacer height={12} />
             <CustomText title=". Atención personalizada" fontSize={15} />
             <Spacer height={12} />
-            {/* <ToggleSwitch on={props.on} setOn={props.setOn} /> */}
+            <ToggleSwitch on={props.on} setOn={props.setOn} />
           </div>
         </div>
 

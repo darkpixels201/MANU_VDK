@@ -19,10 +19,10 @@ export const CartItem = ({ image, ...props }) => {
     <>
       <Spacer height={20} />
       
-        <div style={{ width: "100%" }}>
+        <div style={{ width: "100%", backgroundColor:colors.lightGreen }}>
           <div
             style={{
-              backgroundColor: "#000",
+              backgroundColor: colors.purple,
               color: "#fff",
               height: window.innerWidth <= 1000 ? 25 : "2vw",
               width: window.innerWidth <= 1000 ? 25 : "2vw",
@@ -68,7 +68,7 @@ export const CartItem = ({ image, ...props }) => {
                 justifyContent: "space-between",
               }}
             >
-              <CustomText fontSize={16} title={props.price} />
+              <CustomText fontSize={16} title={props.price} color={colors.purple} />
               <div style={{ ...row, alignItems: "center" }}>
                 <div
                   style={{

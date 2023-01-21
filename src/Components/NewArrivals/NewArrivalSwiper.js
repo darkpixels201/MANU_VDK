@@ -67,7 +67,7 @@ const NewArrivalSwiper = (props) => {
           <div style={{ top: 0, display: "flex", justifyContent: "right",  }}>
             <div
               style={{
-                backgroundColor: colors.grey,
+                backgroundColor: colors.green,
                 height: 30,
                 width: 60,
                 position: "absolute",
@@ -220,7 +220,7 @@ const NewArrivalSwiper = (props) => {
                   width={90}
                   height={30}
                   color={colors.white}
-                  backgroundColor={colors.grey}
+                  backgroundColor={colors.green}
                   fontFamily={"ClashDisplay-Light"}
                 />
               </Link>

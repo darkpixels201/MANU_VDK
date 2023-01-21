@@ -117,7 +117,7 @@ export const CardFooter = ({ index, ...props }) => (
             paddingLeft: 25,
             paddingTop: 5,
             paddingBottom: 5,
-            backgroundColor: "#686868",
+            backgroundColor: colors.green,
             color: colors.white,
             textDecoration: "none",
             fontFamily: "ClashDisplay-Regular",

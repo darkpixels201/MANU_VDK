@@ -93,7 +93,7 @@ const BodySwiper = (props) => {
       style={{
         width: window.innerWidth <= 1000 ? "100%" : "auto",
         padding: window.innerWidth <= 1000 ? "" : 130,
-        backgroundColor: props.on ? colors.black : colors.white,
+        backgroundColor: props.on ? colors.purple : colors.lightGreen,
       }}
     >
       {/* window.innerWidth <= 1000 ? window.innerWidth <= 700 ? 1 : 2 : 3 */}
@@ -112,7 +112,7 @@ const BodySwiper = (props) => {
           <SwiperSlide
             key={index}
             style={{
-              backgroundColor: props.on ? colors.black : colors.white,
+              backgroundColor: props.on ? colors.purple : colors.lightGreen,
             }}
           >
             <BodyItems
@@ -167,14 +167,14 @@ const BodyItems = (props) => (
             title={props.name1}
             fontFamily={"ClashDisplay-SemiBold"}
             textAlign={"left"}
-            color={props.on ? colors.white : colors.black}
+            color={props.on ? colors.white : colors.purple}
           />
           <CustomText
             fontSize={25}
             title={props.name2}
             fontFamily={"ClashDisplay-SemiBold"}
             textAlign={"left"}
-            color={props.on ? colors.white : colors.black}
+            color={props.on ? colors.white : colors.purple}
           />
         </div>
         <Spacer height={20} />
@@ -256,7 +256,7 @@ const BodyItems = (props) => (
                 width={100}
                 height={30}
                 color={colors.white}
-                backgroundColor={colors.grey}
+                backgroundColor={colors.green}
                 fontFamily={"ClashDisplay-Light"}
                 textDecoration={"underline"}
               />

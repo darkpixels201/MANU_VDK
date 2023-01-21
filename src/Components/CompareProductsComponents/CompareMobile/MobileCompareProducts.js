@@ -17,6 +17,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import NewArrivalSwiper from "../../NewArrivals/NewArrivalSwiper";
 import PlusMinusCom from "../../PlusMinusCom";
+import { color } from "@mui/system";
 // import "../font.css";
 
 export const MobileCompareProducts = () => {
@@ -134,7 +135,7 @@ export const MobileCompareProducts = () => {
           style={{
             width: "100%",
             height: state.drag <= 400?window.innerHeight:window.innerHeight/2,
-            backgroundColor: colors.white,
+            backgroundColor: colors.lightGreen,
             borderTopLeftRadius: 20,
             borderTopRightRadius: 20,
           }}
@@ -156,7 +157,7 @@ export const MobileCompareProducts = () => {
                 <div
                   style={{
                     height: 4,
-                    backgroundColor: "#1B1B1B",
+                    backgroundColor: colors.purple,
                     width: 70,
                   }}
                 />
@@ -202,7 +203,7 @@ export const MobileCompareProducts = () => {
                 }}
               >
                 <div>
-                  <s style={{ color: "#686868" }}>$135.00</s>
+                  <s style={{ color: colors.purple }}>$135.00</s>
                   <CustomText title="$95.00 " fontSize={20} />
                 </div>
                 <div
@@ -253,10 +254,10 @@ export const MobileCompareProducts = () => {
                 className="cancelDragEffect"
                   href=""
                   style={{
-                    backgroundColor: "#fff",
-                    color: "#1B1B1B",
+                    backgroundColor: colors.lightGreen,
+                    color: colors.purple,
                     borderWidth: 1,
-                    borderColor: "#1B1B1B",
+                    borderColor: colors.purple,
                     borderStyle: "solid",
                     // width: "40%",
                     justifyContent: "center",
@@ -292,7 +293,7 @@ export const MobileCompareProducts = () => {
                 className="cancelDragEffect"
                   href=""
                   style={{
-                    backgroundColor: "#686868",
+                    backgroundColor: colors.green,
                     color: "#fff",
                     // width: "40%",
                     justifyContent: "center",
@@ -316,7 +317,7 @@ export const MobileCompareProducts = () => {
               <div
                 style={{
                   height: 4,
-                  backgroundColor: "#1B1B1B",
+                  backgroundColor: colors.purple,
                   width: 70,
                   margin: "auto",
                 }}
@@ -357,8 +358,8 @@ export const MobileCompareProducts = () => {
                 }}
               >
                 <div>
-                  <s style={{ color: "#686868" }}>$135.00</s>
-                  <CustomText title="$95.00 " fontSize={20} />
+                  <s style={{ color: colors.purple }}>$135.00</s>
+                  <CustomText title="$95.00" fontSize={20} />
                 </div>
                 <div
                 className="cancelDragEffect"
@@ -386,7 +387,7 @@ export const MobileCompareProducts = () => {
                 className="cancelDragEffect"
                   href=""
                   style={{
-                    backgroundColor: "#686868",
+                    backgroundColor: colors.green,
                     color: "#fff",
                     // width: "30%",
                     justifyContent: "center",

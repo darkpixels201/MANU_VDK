@@ -22,7 +22,7 @@ const CartNav = () => {
             // width: "100%",
             zIndex: 110,
             top: 40,
-            backgroundColor: colors.white,
+            backgroundColor: colors.lightGreen,
       }}
     >
       <Link to="/" style={{textDecoration:"none"}} >

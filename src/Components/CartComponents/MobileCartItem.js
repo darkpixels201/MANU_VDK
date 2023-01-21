@@ -2,19 +2,20 @@ import { Close } from '@mui/icons-material';
 import React from 'react'
 import { SwiperSlide } from 'swiper/react';
 import { images } from '../../Assets/Images';
+import { colors } from '../../utils/Colors';
 import { noUnderline, row } from '../../utils/CommonStyles';
 import CustomText from '../CustomText';
 import PlusMinusCom from '../PlusMinusCom';
 import Spacer from '../Spacer';
 
 export const MobileCartItem = ({onPressClose}) => (
-    <SwiperSlide style={{ height: 150 }}>
+    <SwiperSlide style={{ height: 150, backgroundColor:colors.lightGreen }}>
       <div style={{ ...row }}>
         <div style={{ height: 120, width: 120 }}>
           <a
             onClick={onPressClose}
             style={{
-              backgroundColor: "#000",
+              backgroundColor: colors.purple ,
               color: "#fff",
               height: 20,
               width: 20,
@@ -42,7 +43,7 @@ export const MobileCartItem = ({onPressClose}) => (
               title="PRoducto "
               fontSize={16}
               textAlign={"left"}
-              
+              color={colors.purple}
               fontFamily={"ClashDisplay-SemiBold"}
             />
             <Spacer width={5} />
@@ -62,7 +63,7 @@ export const MobileCartItem = ({onPressClose}) => (
               alignItems: "center",
             }}
           >
-            <CustomText title="$95.00" fontSize={16} />
+            <CustomText title="$95.00" fontSize={16} color={colors.purple} />
             <Spacer width={5} />
             <PlusMinusCom/>
             {/* <div style={{ ...row, alignItems: "center" }}>

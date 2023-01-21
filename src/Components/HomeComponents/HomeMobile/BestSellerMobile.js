@@ -48,7 +48,7 @@ const BestSellerMobile = () => {
     textDecoration: "none",
   };
   return (
-    <div style={{ width: "auto", padding: 25, backgroundColor: colors.white }}>
+    <div style={{ width: "auto", padding: 25, backgroundColor: colors.lightGreen }}>
       <Container maxWidth="lg">
         <div>
           <CustomText
@@ -110,7 +110,7 @@ const BestSellerMobile = () => {
               height: 4,
               borderRadius: 5,
               width: 100,
-              backgroundColor: colors.black,
+              backgroundColor: colors.purple,
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
@@ -248,7 +248,7 @@ const BestSellerMobile = () => {
                 width={150}
                 height={40}
                 color={colors.white}
-                backgroundColor={colors.grey}
+                backgroundColor={colors.green}
                 fontFamily={"ClashDisplay-Light"}
               />
             </Link>

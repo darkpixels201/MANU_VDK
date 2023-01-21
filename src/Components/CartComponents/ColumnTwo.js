@@ -21,6 +21,7 @@ import { row } from "../../utils/CommonStyles";
 import { CartItem } from "./CartItem";
 import { Link } from "@mui/material";
 import ProductArray  from "../../utils/ProductArray";
+import { colors } from "../../utils/Colors";
 
 const ColumnTwo = () => {
   return (
@@ -46,6 +47,7 @@ const ColumnTwo = () => {
               title="MY"
               fontSize={window.innerWidth <= 400 ? "10vw" : "3vw"}
               fontFamily={"ClashDisplay-SemiBold"}
+              color={colors.purple}
             />
             <CustomText
               title="CART"

@@ -19,7 +19,7 @@ export default function BottomBarNavigation({ footer = true, cart = false }) {
       <div
         style={{
           width: "100%",
-          backgroundColor: colors.grey,
+          backgroundColor: colors.green,
           display: "flex",
           justifyContent: "center",
           alignItems: "center",

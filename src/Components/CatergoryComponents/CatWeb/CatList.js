@@ -49,13 +49,13 @@ export const CatList = (props) => {
       >
         <ListItemText
           disableTypography={true}
-          primary="Color"
-          sx={{ fontFamily: "ClashDisplay-Regular" }}
+          primary="COLOR"
+          sx={{ fontFamily: "ClashDisplay-Regular", color:colors.purple }}
         />
         <img src={icons.plus} alt="" style={{ height: 10 }} />
       </ListItemButton>
 
-      <Collapse in={open} timeout="auto" unmountOnExit>
+      <Collapse in={open} timeout="auto" unmountOnExit >
         <List component="div" disablePadding>
           {/* <ListItemButton sx={{ pl: 7, fontSize: 13 }}>
             <ListItemText
@@ -172,8 +172,8 @@ export const CatList = (props) => {
           sx={{fontFamily: "ClashDisplay-Regular"}}
         />
         <div style={{ ...row, justifyContent: "space-between" }}>
-          <CustomText title="10" fontSize={13} />
-          <CustomText title="100" fontSize={13} />
+          <CustomText title="10" fontSize={13} color={colors.purple} />
+          <CustomText title="100" fontSize={13} color={colors.purple}  />
           {/* <span>10</span>
           <span>100</span> */}
         </div>
@@ -194,7 +194,7 @@ const CatItem = ({ label, icon, iconPath, paddingLeft }) => (
   >
     <div
       style={{
-        color: colors.black,
+        color: colors.purple,
         textDecoration: "none",
         paddingLeft: paddingLeft || 50,
         cursor: "pointer",

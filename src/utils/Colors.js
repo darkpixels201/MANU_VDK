@@ -1,9 +1,9 @@
 export const colors = {
-    primary:'#f1e6fe',
-    secondary:"#8E97FD",
+    primary:'#',
+    secondary:"#CA5DFF",
     pinkish:"#EF5DA8",
-    purple:"#AEAFF7",
-    lightGreen:"#A0E3E2",
+    // purple:"#AEAFF7",
+    // lightGreen:"#A0E3E2",
     orange:"#F09E54",
     orangeLight:"#FFC97E",
     parrot:"#C3F2A6",
@@ -17,7 +17,11 @@ export const colors = {
     darkGray:"#343a40",
     tabColor:"#DFD2FD",
     lightestGrey:"#EAEAEA",
-    lightPurple:"#C99FFF"
+    lightPurple:"#C99FFF",
+
+    green:"#1DC3B1",
+    lightGreen:"#f2ffff",
+    purple:"#CA5DFF",
   };
   
   

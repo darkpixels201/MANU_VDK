@@ -69,7 +69,7 @@ const SearchComponent = (props) => {
   });
 
   return (
-    <div className="App" ref={menuRef} >
+    <div className="App" ref={menuRef}  >
 
         <img
           src={icons.search}
@@ -209,7 +209,7 @@ function Footer() {
     <div
       style={{
         width: "100%",
-        backgroundColor: colors.grey,
+        backgroundColor: colors.green,
         display: "flex",
         justifyContent: "center",
         alignItems: "center",

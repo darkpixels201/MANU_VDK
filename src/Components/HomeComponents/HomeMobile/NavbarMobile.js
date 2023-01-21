@@ -52,14 +52,12 @@ export const NavbarMobile = () => {
           }}
         >
           <Link to="/searchComMobile">
-
-          <SearchComponent
-            setOpen={setOpen}
-            open={open}
-            style={{ backgroundColor: colors.lightGray }}
-          />
+            <SearchComponent
+              setOpen={setOpen}
+              open={open}
+              style={{ backgroundColor: colors.lightGray }}
+            />
           </Link>
-          
         </div>
         <div>
           <Link to="/cart">
@@ -77,7 +75,7 @@ export const NavbarMobile = () => {
               >
                 <div
                   style={{
-                    backgroundColor: colors.grey,
+                    backgroundColor: colors.purple,
                     borderRadius: 50,
                     height: 15,
                     width: 15,
@@ -93,8 +91,10 @@ export const NavbarMobile = () => {
           </Link>
         </div>
       </div>
-      <Spacer height={20} />
-      <Container>
+      <div style={{ backgroundColor: colors.lightGreen }}>
+        <Spacer height={20} />
+      </div>
+      <Container style={{ backgroundColor: colors.lightGreen }}>
         <div
           style={{
             display: "flex",
@@ -110,6 +110,7 @@ export const NavbarMobile = () => {
                     fontFamily: "ClashDisplay-Regular",
                     fontSize: 12,
                     paddingRight: 15,
+                    color: colors.purple,
                   }}
                 >
                   {item.name}
@@ -127,7 +128,9 @@ export const NavbarMobile = () => {
         </div>
       </Container>
 
-      <Spacer height={15} />
+      <div style={{ backgroundColor: colors.lightGreen }}>
+        <Spacer height={15} />
+      </div>
     </div>
   );
 };

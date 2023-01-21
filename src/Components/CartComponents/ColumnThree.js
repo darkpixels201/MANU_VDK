@@ -19,7 +19,7 @@ import { colors } from "../../utils/Colors";
 const ColumnThree = () => {
   return (
     <div style={{ flex: 2.5, paddingRight: 100 }}>
-      <CustomText title="PUEDE INTERESARTE" fontSize={16} />
+      <CustomText title="PUEDE INTERESARTE" color={colors.purple} fontSize={16} />
       <Spacer height={20} />
       <Swiper
         slidesPerView={1.8}
@@ -57,8 +57,8 @@ const ColumnThree = () => {
           display: "flex",
         }}
       >
-        <CustomText title="DISCOUNTS" fontSize={16} />
-        <CustomText title="$95.00" fontSize={16} />
+        <CustomText title="DISCOUNTS" color={colors.purple} fontSize={16} />
+        <CustomText title="$95.00" color={colors.purple}  fontSize={16} />
       </div>
       <Spacer height={12} />
       <div style={{ height: 1, backgroundColor: "#000", width: "130%" }} />
@@ -81,12 +81,12 @@ const ColumnThree = () => {
         }}
       >
         <input
-          style={{ width: "75%", padding: 5 }}
+          style={{ width: "75%", padding: 5, backgroundColor:colors.lightGreen, borderColor:colors.purple }}
           placeholder="Enter Coupon Code here"
         />
         <button
           style={{
-            backgroundColor: "#000",
+            backgroundColor: colors.purple,
             color: "#fff",
             width: "25%",
             borderStyle: "hidden",
@@ -99,7 +99,7 @@ const ColumnThree = () => {
       <div style={{ display: "flex", justifyContent: "right" }}>
         <button
           style={{
-            backgroundColor: "#686868",
+            backgroundColor: colors.green,
             color: "#fff",
             paddingRight: 25,
             paddingLeft: 25,
@@ -123,6 +123,8 @@ const ColumnThree = () => {
             paddingTop: 10,
             paddingBottom: 10,
             borderWidth: 1,
+            color:colors.purple,
+            borderColor:colors.purple
           }}
         >
           CONTINUE SHOPPING

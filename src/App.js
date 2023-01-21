@@ -14,7 +14,7 @@ const CompareProducts = React.lazy(() =>
 
 function App() {
   return (
-    <div style={{backgroundColor:colors.white}} >
+    <div style={{backgroundColor:colors.lightGreen}} >
       <HashRouter>
         <Suspense>
           <Routes>

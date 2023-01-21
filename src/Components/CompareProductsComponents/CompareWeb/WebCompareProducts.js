@@ -74,7 +74,7 @@ export const WebCompareProducts = (props) => {
     if (counter > 1) setCounter(counter - 1);
   };
   return (
-    <div style={{ backgroundColor: colors.white }}>
+    <div style={{ backgroundColor: colors.lightGreen }}>
       <DiscountBanner />
       <Grid container rowSpacing={{ xs: 5, sm: 2, md: 3 }} columnSpacing={{}}>
         <Grid
@@ -98,6 +98,7 @@ export const WebCompareProducts = (props) => {
               // display: window.innerWidth <= 400 ? "none" : "block",
               paddingLeft: 40,
               paddingRight: 100,
+              backgroundColor:colors.lightGreen
               // paddingTop: 20,
               // paddingBottom: 100,
             }}
@@ -203,6 +204,7 @@ export const WebCompareProducts = (props) => {
                 title="PUEDE"
                 textAlign={"left"}
                 fontFamily={"ClashDisplay-SemiBold"}
+                color={colors.purple}
               />
               <Spacer width={5} />
               <CustomText
@@ -236,6 +238,7 @@ export const WebCompareProducts = (props) => {
                         title="PRoducto"
                         textAlign={"left"}
                         fontFamily={"ClashDisplay-SemiBold"}
+                        color={colors.purple}
                       />
 
                       <Spacer width={5} />
@@ -250,6 +253,7 @@ export const WebCompareProducts = (props) => {
                         fontSize={14}
                         title="$95.00"
                         textAlign={"left"}
+                        color={colors.purple}
                       />
                     </div>
                   </div>
@@ -408,6 +412,7 @@ export const WebCompareProducts = (props) => {
                                     title={item.text1}
                                     fontFamily="ClashDisplay-SemiBold"
                                     fontSize={20}
+                                    color={colors.purple}
                                   />
                                   <Spacer width={5} />
                                   <CustomText title="para" fontSize={20} />
@@ -419,7 +424,7 @@ export const WebCompareProducts = (props) => {
                             <Spacer height={30} />
                             <s style={{ color: "#aaa" }}>$135.00</s>
                             <div style={{ ...row, alignItems: "center" }}>
-                              <CustomText title={item.price} fontSize={30} />
+                              <CustomText title={item.price} color={colors.purple} fontSize={30} />
                               <div
                                 style={{
                                   backgroundColor: "#000",
@@ -467,10 +472,11 @@ export const WebCompareProducts = (props) => {
                                 display: "flex",
                                 justifyContent: "space-evenly",
                                 alignItems: "center",
+                                borderColor:colors.purple
                               }}
                             >
                               <div>
-                                <CustomText title={item.text1} fontSize={10} />
+                                <CustomText title={item.text1} color={colors.purple} fontSize={10} />
                               </div>
                               <div>
                                 <img
@@ -543,7 +549,7 @@ export const WebCompareProducts = (props) => {
                                 <Link to="/cart">
                                   <button
                                     style={{
-                                      backgroundColor: "#686868",
+                                      backgroundColor: colors.green,
                                       color: "#fff",
                                       paddingRight: 20,
                                       paddingLeft: 20,

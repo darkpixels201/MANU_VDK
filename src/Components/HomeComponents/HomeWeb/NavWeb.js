@@ -25,6 +25,7 @@ export const NavWeb = () => {
       id: 1,
       name: "HOME",
       active: "ClashDisplay-SemiBold",
+      // textColor:colors.purple, 
     },
     {
       id: 1,
@@ -53,6 +54,7 @@ export const NavWeb = () => {
   ];
   const [open, setOpen] = useState(false);
   const [sticky, setSticky] = useState (false);
+  const [active, setActive] = useState (0);
 
   useEffect ( () => {
     const handleScroll = () =>
@@ -63,16 +65,16 @@ export const NavWeb = () => {
     return () => window. removeEventListener("scroll", handleScroll);
     });
   return (
-    <div style={{ backgroundColor: colors.white, position:"sticky"}}  >
+    <div style={{ backgroundColor: colors.lightGreen, position:"sticky"}}  >
       {/* <nav style={{}} > */}
-      <Container maxWidth="xl" style={{position:"sticky"}} >
-        <nav style={{position:"sticky"}}>
+      <Container maxWidth="xl" style={{position:"sticky", }} >
+        <nav style={{position:"sticky", }}>
         <Box
           sx={{
             display: "flex",
             border: "none",
             boxShadow: "none",
-            position:"sticky"
+            position:"sticky", 
           }}
           >
           <Item
@@ -80,19 +82,21 @@ export const NavWeb = () => {
               flexGrow: 1,
               boxShadow: "none",
               backgroundColor: colors.white,
-              position:"sticky"
+              position:"sticky",
+              backgroundColor: colors.lightGreen
             }}
           >
             <div
               style={{
                 display: "flex",
                 flexDirection: "column",
-                position:"sticky"
+                position:"sticky",
               }}
             >
               <CustomText
                 title="MANU VDK"
                 fontFamily={"ClashDisplay-SemiBold"}
+                backgroundColor={colors.lightGreen}
               />
               <CustomText title="STORE" />
             </div>
@@ -108,7 +112,8 @@ export const NavWeb = () => {
               justifyContent: "flex-end",
               cursor: "pointer",
               backgroundColor: colors.white,
-              position:"sticky"
+              position:"sticky",
+              backgroundColor: colors.lightGreen
             }}
            
           >
@@ -141,6 +146,7 @@ export const NavWeb = () => {
                         fontFamily: item.active
                           ? "ClashDisplay-Semibold"
                           : "ClashDisplay-Regular",
+                          color: index === active ? colors.purple : ""
                       }}
                     >
                       {item.name}
@@ -159,7 +165,8 @@ export const NavWeb = () => {
               alignSelf: "center",
               position: "relative",
               backgroundColor: colors.white,
-              position:"sticky"
+              position:"sticky",
+              backgroundColor: colors.lightGreen
             }}
             onClick={() => {
               setOpen(!open);
@@ -176,7 +183,8 @@ export const NavWeb = () => {
               flexDirection: "row",
               alignSelf: "center",
               backgroundColor: colors.white,
-              position:"sticky"
+              position:"sticky",
+              backgroundColor: colors.lightGreen,
             }}
           >
             {/* <div style={{ textAlign: "center", flexDirection: "row" }}></div> */}
@@ -184,7 +192,7 @@ export const NavWeb = () => {
             <Link to="/cart">
                 <img
                   src={icons.shoppingCart}
-                  style={{ height: 20, width: 20 }}
+                  style={{ height: 20, width: 20}}
                 />
             </Link>
               </div>
