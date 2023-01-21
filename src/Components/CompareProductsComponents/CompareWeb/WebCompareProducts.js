@@ -25,6 +25,7 @@ import { FreeMode, Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 // import "../font.css";
+import IconTint from 'react-icon-tint';
 
 const BottomImage = [
   {
@@ -135,7 +136,7 @@ export const WebCompareProducts = (props) => {
                   }}
                 >
                   <Link to="/cart">
-                    <ShoppingCartOutlinedIcon style={{ color: colors.black }} />
+                    <ShoppingCartOutlinedIcon style={{ color: colors.colorB }} />
                   </Link>
                   <Spacer width={50} />
 
@@ -148,18 +149,20 @@ export const WebCompareProducts = (props) => {
                     }}
                     onClick={() => props.setIsDrawerOpen(true)}
                   >
-                    <img
+                    <IconTint
                       // onClick={() => setIsDrawerOpen(true)}
                       src={icons.line}
                       //   className="resimage"
                       style={{ width: 24, height: 2 }}
+                      color={colors.colorB}
                     />
                     <Spacer height={8} />
-                    <img
+                    <IconTint
                       // onClick={() => setIsDrawerOpen(true)}
                       src={icons.line}
                       //   className="resimage"
                       style={{ width: 24, height: 2 }}
+                      color={colors.colorB}
                     />
                   </div>
                 </div>

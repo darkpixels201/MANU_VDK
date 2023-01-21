@@ -59,7 +59,7 @@ const BodyMobile = (props) => {
           </div>
         </div>
       </div>
-      <Spacer height={75} />
+      <Spacer height={100} />
       <div
         style={{
           display: "flex",

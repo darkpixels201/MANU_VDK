@@ -10,6 +10,7 @@ import { colors } from "../../../utils/Colors";
 import SearchComponent from "../../../Components/SearchComponent";
 import { Link } from "react-router-dom";
 import "../../../Assets/Style/Body.css";
+import IconTint from 'react-icon-tint';
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -207,9 +208,10 @@ export const NavWeb = () => {
                 }}
               >
                 <Link to="/cart">
-                  <img
+                  <IconTint
                     src={icons.shoppingCart}
                     style={{ height: 20, width: 20 }}
+                    color={colors.colorB}
                   />
                 </Link>
               </div>

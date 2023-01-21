@@ -18,6 +18,7 @@ import NewArrivalSwiper from "./NewArrivalSwiper";
 import { Link } from "react-router-dom";
 import FilledRightCircle from "../FilledCircle";
 import ProductArray from "../../utils/ProductArray";
+import IconTint from 'react-icon-tint';
 
 const NewArrivals = (props) => {
   // const NewArrival = [
@@ -221,7 +222,7 @@ const NewArrivals = (props) => {
                     justifyContent: "center",
                     alignSelf: "center",
                     borderStyle: "solid",
-                    borderColor: props.on ? colors.white : colors.black,
+                    borderColor: props.on ? colors.white : colors.colorB,
                     borderWidth: 0.5,
                     width: 150,
                     height: 30,
@@ -231,12 +232,13 @@ const NewArrivals = (props) => {
                   <CustomText
                     title="GUÍA DE TALLAS"
                     fontSize={12}
-                    color={props.on ? colors.white : colors.black}
+                    color={props.on ? colors.white : colors.colorB}
                   />
                   <Spacer width={10} />
-                  <img
+                  <IconTint
                     src={icons.rightArrow}
                     style={{ height: 8, width: 18 }}
+                    color={colors.colorB}
                   />
                 </div>
               </div>

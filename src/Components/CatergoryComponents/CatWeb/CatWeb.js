@@ -16,6 +16,7 @@ import { CatList } from "./CatList";
 import { Card, CardFooter, CardImage } from "./Card";
 import SearchComponent from "../../SearchComponent";
 import ProductArray from "../../../utils/ProductArray";
+import IconTint from 'react-icon-tint';
 
 export const CartWeb = (props) => {
   return (
@@ -89,15 +90,16 @@ export const CartWeb = (props) => {
                     ...center,
                   }}
                 >
-                  <Link to="/cart" style={{ color: colors.black }}>
+                  <Link to="/cart" style={{ color: colors.colorB }}>
                     <ShoppingCartOutlinedIcon />
                   </Link>
                   <Spacer width={50} />
-                  <img
+                  <IconTint
                     onClick={() => props.setIsDrawerOpen(true)}
                     src={images.twoLines}
                     alt=""
                     style={{ width: 24, height: 10 }}
+                    color={colors.colorB}
                   />
                   <MuiDrawer
                     isDrawerOpen={props.isDrawerOpen}

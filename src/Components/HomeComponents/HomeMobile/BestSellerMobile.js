@@ -8,6 +8,7 @@ import CustomText from "../../../Components/CustomText";
 import { DropdownCom } from "../../../Components/DropdownCom";
 import Spacer from "../../../Components/Spacer";
 import { colors } from "../../../utils/Colors";
+import IconTint from 'react-icon-tint';
 
 const BestSellerMobile = () => {
   const FilledCircle = [
@@ -55,6 +56,7 @@ const BestSellerMobile = () => {
             title="BEST SELLERS - SELLING"
             fontFamily="ClashDisplay-SemiBold"
             fontSize={25}
+            color={colors.colorB}
           />
           <CustomText
             title="LIKE A HOT CAKE"
@@ -123,7 +125,7 @@ const BestSellerMobile = () => {
               alignItems: "center",
             }}
           >
-            <img src={icons.share} style={{ height: 20, width: 20 }} />
+            <IconTint color={colors.colorB} src={icons.share} style={{ height: 20, width: 20 }} />
           </div>
         </div>
         <Spacer height={10} />

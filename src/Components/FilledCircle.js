@@ -1,6 +1,8 @@
 import React from "react";
 import { icons } from "../Assets/Icons";
 import { colors } from "../utils/Colors";
+import IconTint from 'react-icon-tint';
+
 
 const FilledRightCircle = ({left=false,size=1}) => {
   return (
@@ -19,7 +21,7 @@ const FilledRightCircle = ({left=false,size=1}) => {
           borderColor:colors.colorB,
         }}
       >
-        <img src={left?icons.leftArrow:icons.rightArrow} style={{ height: 10/size, width: 18/size, }} />
+        <IconTint src={left?icons.leftArrow:icons.rightArrow} style={{ height: 10/size, width: 18/size, }} color={colors.colorB} />
         
       </div>
     </div>

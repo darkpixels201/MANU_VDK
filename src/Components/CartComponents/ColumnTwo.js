@@ -20,8 +20,10 @@ import { Close } from "@mui/icons-material";
 import { row } from "../../utils/CommonStyles";
 import { CartItem } from "./CartItem";
 import { Link } from "@mui/material";
-import ProductArray  from "../../utils/ProductArray";
+import ProductArray from "../../utils/ProductArray";
 import { colors } from "../../utils/Colors";
+import IconTint from 'react-icon-tint';
+
 
 const ColumnTwo = () => {
   return (
@@ -55,13 +57,14 @@ const ColumnTwo = () => {
               fontFamily={"Poppins"}
             />
           </div>
-          <img
+          <IconTint
             src={images.ellipse}
             style={{
               width: window.innerWidth <= 400 ? "3vw" : "1vw",
               height: window.innerWidth <= 400 ? "3vw" : "1vw",
               marginTop: 10,
             }}
+            color={colors.colorB}
           />
         </div>
         <div style={{ flex: 6, alignItems: "center", display: "flex" }}>

@@ -18,6 +18,7 @@ import "swiper/css/pagination";
 import NewArrivalSwiper from "../../NewArrivals/NewArrivalSwiper";
 import PlusMinusCom from "../../PlusMinusCom";
 import { color } from "@mui/system";
+import IconTint from 'react-icon-tint';
 // import "../font.css";
 
 export const MobileCompareProducts = () => {
@@ -161,7 +162,7 @@ export const MobileCompareProducts = () => {
                     width: 70,
                   }}
                 />
-                <img src={icons.share} alt="" style={{ height: 20 }} />
+                <IconTint src={icons.share} alt="" style={{ height: 20 }} color={colors.colorB} />
               </div>
               <Spacer height={30} />
               <div
@@ -337,7 +338,7 @@ export const MobileCompareProducts = () => {
                   fontSize={20}
                   fontFamily={"ClashDisplay-SemiBold"}
                 />
-                <img src={icons.share} alt="" style={{ height: 20 }} />
+                <IconTint src={icons.share} alt="" style={{ height: 20 }} color={colors.colorB} />
               </div>
               <div
                 style={{
