@@ -19,9 +19,9 @@ export const colors = {
     lightestGrey:"#EAEAEA",
     lightPurple:"#C99FFF",
 
-    green:"#1DC3B1",
-    lightGreen:"#f2ffff",
-    purple:"#CA5DFF",
+    green:"#FF720E",
+    lightGreen:"#FDE3D0",
+    purple:"#884384",
   };
   
   
