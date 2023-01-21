@@ -10,7 +10,7 @@ import BodySwiper from "./BodySwiper";
 
 const BodyMobile = (props) => {
   return (
-    <div style={{ backgroundColor: colors.lightGreen }}>
+    <div style={{ backgroundColor: colors.colorA }}>
       <div>
         <div style={{ width: "100%", height: "40vh" }}>
           <img
@@ -38,7 +38,7 @@ const BodyMobile = (props) => {
                   width={120}
                   height={35}
                   color={colors.white}
-                  backgroundColor={colors.green}
+                  backgroundColor={colors.colorC}
                   fontFamily={"ClashDisplay-Light"}
                   textDecoration={"underline"}
                 />

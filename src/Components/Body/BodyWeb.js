@@ -33,7 +33,7 @@ function BodyWeb(props) {
           position: "relative",
           flexWrap: "wrap",
           width: "auto",
-          backgroundColor: colors.lightGreen,
+          backgroundColor: colors.colorA,
         }}
       >
         <div
@@ -56,7 +56,7 @@ function BodyWeb(props) {
               style={{ position: "fixed" }}
               fontSize={100}
               fontFamily={"ClashDisplay-Bold"}
-              color={colors.purple}
+              color={colors.colorB}
             />
           </div>
           <div
@@ -69,7 +69,7 @@ function BodyWeb(props) {
               fontSize={100}
               lineHeight={0.7}
               fontFamily={"ClashDisplay-Bold"}
-              color={colors.purple}
+              color={colors.colorB}
             />
           </div>
           <Spacer height={130} />
@@ -83,7 +83,7 @@ function BodyWeb(props) {
                 width={150}
                 height={50}
                 color={colors.white}
-                backgroundColor={colors.green}
+                backgroundColor={colors.colorC}
                 fontFamily={"ClashDisplay-Light"}
                 textDecoration={"underline"}
               />

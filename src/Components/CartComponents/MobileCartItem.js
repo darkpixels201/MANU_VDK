@@ -9,13 +9,13 @@ import PlusMinusCom from '../PlusMinusCom';
 import Spacer from '../Spacer';
 
 export const MobileCartItem = ({onPressClose}) => (
-    <SwiperSlide style={{ height: 150, backgroundColor:colors.lightGreen }}>
+    <SwiperSlide style={{ height: 150, backgroundColor:colors.colorA }}>
       <div style={{ ...row }}>
         <div style={{ height: 120, width: 120 }}>
           <a
             onClick={onPressClose}
             style={{
-              backgroundColor: colors.purple ,
+              backgroundColor: colors.colorB ,
               color: "#fff",
               height: 20,
               width: 20,
@@ -43,7 +43,7 @@ export const MobileCartItem = ({onPressClose}) => (
               title="PRoducto "
               fontSize={16}
               textAlign={"left"}
-              color={colors.purple}
+              color={colors.colorB}
               fontFamily={"ClashDisplay-SemiBold"}
             />
             <Spacer width={5} />
@@ -63,7 +63,7 @@ export const MobileCartItem = ({onPressClose}) => (
               alignItems: "center",
             }}
           >
-            <CustomText title="$95.00" fontSize={16} color={colors.purple} />
+            <CustomText title="$95.00" fontSize={16} color={colors.colorB} />
             <Spacer width={5} />
             <PlusMinusCom/>
             {/* <div style={{ ...row, alignItems: "center" }}>

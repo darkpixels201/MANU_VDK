@@ -55,7 +55,7 @@ export const MuiDrawer = (props) => {
           p={2}
           role="presentation"
           textAlign="center"
-          backgroundColor={colors.black}
+          backgroundColor={colors.colorB}
           height={"100%"}
           padding={0}
           width={350}
@@ -66,7 +66,7 @@ export const MuiDrawer = (props) => {
             <WebTop setIsDrawerOpen={props.setIsDrawerOpen} />
           )}
           <Spacer height={30} />
-          <List style={{ backgroundColor: colors.black }}>
+          <List style={{ backgroundColor: colors.colorB }}>
             {DrawerItem.map((text, index) => (
               <Link key={index} to={text.link} style={{ textDecoration: "none" }}>
                 <ListItem
@@ -122,7 +122,7 @@ const MobileTop = () => (
             <img src={icons.cartWhite} style={{ height: 20, width: 20,  }} />
             <div
                 style={{
-                  backgroundColor: colors.lightGray,
+                  backgroundColor: colors.colorC,
                   borderRadius: 50,
                   height: 17,
                   width: 17,

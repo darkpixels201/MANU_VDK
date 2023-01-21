@@ -6,6 +6,7 @@ import { MuiDrawer } from "./Drawer";
 import { Link } from "react-router-dom";
 import CustomText from "./CustomText";
 import { colors } from "../utils/Colors";
+import IconTint from 'react-icon-tint';
 
 export default function BottomBarNavigation({ footer = true, cart = false }) {
   const [value, setValue] = React.useState("recents");
@@ -19,7 +20,7 @@ export default function BottomBarNavigation({ footer = true, cart = false }) {
       <div
         style={{
           width: "100%",
-          backgroundColor: colors.green,
+          backgroundColor: colors.colorC,
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
@@ -72,9 +73,10 @@ export default function BottomBarNavigation({ footer = true, cart = false }) {
             <BottomNavigationAction
               value="recents"
               icon={
-                <img
+                <IconTint
                   src={cart ? icons.shoppingCart : icons.home}
                   style={{ height: 20, width: 20 }}
+                  color={colors.colorC}
                 />
               }
             />
@@ -82,28 +84,31 @@ export default function BottomBarNavigation({ footer = true, cart = false }) {
           <BottomNavigationAction
             value="favorites"
             icon={
-              <img
+              <IconTint
                 src={cart ? icons.headset : icons.layout}
                 style={{ height: 20, width: 20 }}
+                color={colors.colorC}
               />
             }
           />
           <BottomNavigationAction
             value="nearby"
             icon={
-              <img
+              <IconTint
                 src={cart ? icons.layout : icons.headset}
                 style={{ height: 20, width: 20 }}
+                color={colors.colorC}
               />
             }
           />
           <BottomNavigationAction
             value="folder"
             icon={
-              <img
+              <IconTint
                 src={cart ? icons.user : icons.drawer}
                 style={{ height: cart ? 24 : 14, width: cart ? 24 : 14 }}
                 onClick={() => setIsDrawerOpen(true)}
+                color={colors.colorC}
               />
             }
           />

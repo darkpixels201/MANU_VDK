@@ -50,7 +50,7 @@ export const CatList = (props) => {
         <ListItemText
           disableTypography={true}
           primary="COLOR"
-          sx={{ fontFamily: "ClashDisplay-Regular", color:colors.purple }}
+          sx={{ fontFamily: "ClashDisplay-Regular", color:colors.colorB }}
         />
         <img src={icons.plus} alt="" style={{ height: 10 }} />
       </ListItemButton>
@@ -172,8 +172,8 @@ export const CatList = (props) => {
           sx={{fontFamily: "ClashDisplay-Regular"}}
         />
         <div style={{ ...row, justifyContent: "space-between" }}>
-          <CustomText title="10" fontSize={13} color={colors.purple} />
-          <CustomText title="100" fontSize={13} color={colors.purple}  />
+          <CustomText title="10" fontSize={13} color={colors.colorB} />
+          <CustomText title="100" fontSize={13} color={colors.colorB}  />
           {/* <span>10</span>
           <span>100</span> */}
         </div>
@@ -194,7 +194,7 @@ const CatItem = ({ label, icon, iconPath, paddingLeft }) => (
   >
     <div
       style={{
-        color: colors.purple,
+        color: colors.colorB,
         textDecoration: "none",
         paddingLeft: paddingLeft || 50,
         cursor: "pointer",

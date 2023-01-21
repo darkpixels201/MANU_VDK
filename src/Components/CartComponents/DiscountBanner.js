@@ -6,7 +6,7 @@ const DiscountBanner = () => {
     <div
       style={{
         height: "3vw",
-        backgroundColor: colors.green,
+        backgroundColor: colors.colorC,
         justifyContent: "center",
         alignItems: "center",
         display: "flex",

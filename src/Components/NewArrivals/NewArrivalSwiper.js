@@ -49,7 +49,7 @@ const NewArrivalSwiper = (props) => {
           width: window.innerWidth <= 1000 ? "90%" : "85%",
           height: window.innerWidth <= 1000 ? "40vh" : "55vh",
             // backgroundColor: props.on ? colors.black : colors.pureWite,
-          // backgroundColor: colors.lightGreen,
+          // backgroundColor: colors.colorA,
         }}
 
       >
@@ -67,7 +67,7 @@ const NewArrivalSwiper = (props) => {
           <div style={{ top: 0, display: "flex", justifyContent: "right",  }}>
             <div
               style={{
-                backgroundColor: colors.green,
+                backgroundColor: colors.colorC,
                 height: 30,
                 width: 60,
                 position: "absolute",
@@ -220,7 +220,7 @@ const NewArrivalSwiper = (props) => {
                   width={90}
                   height={30}
                   color={colors.white}
-                  backgroundColor={colors.green}
+                  backgroundColor={colors.colorC}
                   fontFamily={"ClashDisplay-Light"}
                 />
               </Link>

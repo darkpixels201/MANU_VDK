@@ -19,7 +19,7 @@ import ProductArray from "../../../utils/ProductArray";
 
 export const CartWeb = (props) => {
   return (
-    <div style={{ padding: 0, backgroundColor: colors.lightGreen }}>
+    <div style={{ padding: 0, backgroundColor: colors.colorA }}>
       <DiscountBanner />
       <Grid
         container
@@ -43,11 +43,11 @@ export const CartWeb = (props) => {
                 // paddingLeft: 40,
                 // paddingRight: 100,
                 // paddingTop: 20,
-                backgroundColor:colors.lightGreen
+                backgroundColor:colors.colorA
               }
             }
           >
-            <Grid item xs={12} sm={12} md={2.3} style={{ paddingLeft: 40 , backgroundColor:colors.lightGreen}}>
+            <Grid item xs={12} sm={12} md={2.3} style={{ paddingLeft: 40 , backgroundColor:colors.colorA}}>
               <Link to="/" style={{ textDecoration: "none" }}>
                 <div style={row}>
                   <CustomText
@@ -120,7 +120,7 @@ export const CartWeb = (props) => {
           xs={12}
           sm={12}
           md={9.7}
-          style={{ paddingRight: window.innerWidth <= 900 ? 10 : 90, backgroundColor:colors.lightGreen }}
+          style={{ paddingRight: window.innerWidth <= 900 ? 10 : 90, backgroundColor:colors.colorA }}
         >
           <div >
             <Banner />
@@ -131,7 +131,7 @@ export const CartWeb = (props) => {
             container
             rowSpacing={{ xs: 5, sm: 2, md: 3 }}
             columnSpacing={{ xs: 1, sm: 2, md: 3 }}
-            sx={{backgroundColor:colors.lightGreen}}
+            sx={{backgroundColor:colors.colorA}}
           >
             {ProductArray.map((item, index) => (
               <Grid item xs={6} sm={4} md={3} key={index}>

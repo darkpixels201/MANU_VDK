@@ -31,7 +31,7 @@ const ProductBody = (props) => {
           width: window.innerWidth <= 1000 ? "85%" : "85%",
           height: window.innerWidth <= 1000 ? "40vh" : "55vh",
           // backgroundColor: props.on ? colors.black : colors.pureWite,
-          // backgroundColor: colors.lightGreen,
+          // backgroundColor: colors.colorA,
         }}
       >
         {/* <div style={{ width: "90%", height: "40vh" }}> */}
@@ -178,7 +178,7 @@ const ProductBody = (props) => {
                   <CustomText
                     title="$95.00"
                     fontSize={15}
-                    color={props.on ? colors.pureWite : colors.black}
+                    color={props.on ? colors.pureWite : colors.colorB}
                   />
                 </div>
               </div>
@@ -204,7 +204,7 @@ const ProductBody = (props) => {
                 width={90}
                 height={30}
                 color={colors.white}
-                backgroundColor={colors.grey}
+                backgroundColor={colors.colorC}
                 fontFamily={"ClashDisplay-Light"}
                 // alignSelf={"flex-end"}
               />

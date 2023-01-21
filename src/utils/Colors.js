@@ -19,9 +19,13 @@ export const colors = {
     lightestGrey:"#EAEAEA",
     lightPurple:"#C99FFF",
 
-    green:"#1DC3B1",
-    lightGreen:"#f2ffff",
-    purple:"#CA5DFF",
+    // green:"#1DC3B1",
+    // lightGreen:"#f2ffff",
+    // purple:"#CA5DFF",
+
+    colorA:"#f2ffff",
+    colorB:"#CA5DFF",
+    colorC:"#1DC3B1",
   };
   
   

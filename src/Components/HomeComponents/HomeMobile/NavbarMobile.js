@@ -75,7 +75,7 @@ export const NavbarMobile = () => {
               >
                 <div
                   style={{
-                    backgroundColor: colors.purple,
+                    backgroundColor: colors.colorB,
                     borderRadius: 50,
                     height: 15,
                     width: 15,
@@ -91,10 +91,10 @@ export const NavbarMobile = () => {
           </Link>
         </div>
       </div>
-      <div style={{ backgroundColor: colors.lightGreen }}>
+      <div style={{ backgroundColor: colors.colorA }}>
         <Spacer height={20} />
       </div>
-      <Container style={{ backgroundColor: colors.lightGreen }}>
+      <Container style={{ backgroundColor: colors.colorA }}>
         <div
           style={{
             display: "flex",
@@ -110,7 +110,7 @@ export const NavbarMobile = () => {
                     fontFamily: "ClashDisplay-Regular",
                     fontSize: 12,
                     paddingRight: 15,
-                    color: colors.purple,
+                    color: colors.colorB,
                   }}
                 >
                   {item.name}
@@ -128,7 +128,7 @@ export const NavbarMobile = () => {
         </div>
       </Container>
 
-      <div style={{ backgroundColor: colors.lightGreen }}>
+      <div style={{ backgroundColor: colors.colorA }}>
         <Spacer height={15} />
       </div>
     </div>

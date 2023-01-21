@@ -27,7 +27,7 @@ function Navbar() {
           style={{
             width: "100%",
             height: 40,
-            backgroundColor: colors.green,
+            backgroundColor: colors.colorC,
             display: "flex",
             alignItems: "center",
             justifyContent: "center",

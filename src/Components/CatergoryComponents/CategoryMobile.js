@@ -146,6 +146,7 @@ const CategoryMobile = (props) => {
           width: window.innerWidth <= 1000 ? "100%" : "auto",
           paddingRight: window.innerWidth <= 1000 ? "" : 100,
           paddingLeft: window.innerWidth <= 1000 ? "" : 100,
+          backgroundColor:colors.colorA
         }}
       >
         {/* <div style={{ width: "100%", }}> */}
@@ -169,6 +170,7 @@ const CategoryMobile = (props) => {
                 style={{
                   backgroundColor: props.on ? colors.black : colors.white,
                   paddingLeft: 40,
+                  backgroundColor:colors.colorA
                 }}
               >
                 <SwiperProduct
@@ -200,7 +202,7 @@ const CategoryMobile = (props) => {
         <div
           key={index}
           style={{
-            backgroundColor: props.on ? colors.black : colors.white,
+            backgroundColor: props.on ? colors.black : colors.colorA,
             // paddingLeft: 40,
             display: "flex",
             justifyContent: "center",

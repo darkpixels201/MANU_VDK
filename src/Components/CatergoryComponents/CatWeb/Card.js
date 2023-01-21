@@ -71,7 +71,7 @@ export const CardFooter = ({ index, ...props }) => (
       </div>
       <div
         style={{
-          // backgroundColor: colors.purple,
+          // backgroundColor: colors.colorB,
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
@@ -117,7 +117,7 @@ export const CardFooter = ({ index, ...props }) => (
             paddingLeft: 25,
             paddingTop: 5,
             paddingBottom: 5,
-            backgroundColor: colors.green,
+            backgroundColor: colors.colorC,
             color: colors.white,
             textDecoration: "none",
             fontFamily: "ClashDisplay-Regular",

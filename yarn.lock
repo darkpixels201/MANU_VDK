@@ -7847,6 +7847,11 @@ react-horizontal-scrolling-menu@^3.2.3:
   dependencies:
     smooth-scroll-into-view-if-needed "^1.1.32"
 
+react-icon-tint@^2.4.2:
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/react-icon-tint/-/react-icon-tint-2.4.2.tgz#573cd9e4713e728cf01b0b5bf06c4275a1f7b670"
+  integrity sha512-dqcYbMB+45vhpkgC7QBhQbGuoLkUBbnvE/QvGh3HIjXFT6gX7QuG3w2DJ2JS9BWyQfBVUET+b7LQl/uaP7x5RQ==
+
 react-icons@^4.7.1:
   version "4.7.1"
   resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-4.7.1.tgz#0f4b25a5694e6972677cb189d2a72eabea7a8345"

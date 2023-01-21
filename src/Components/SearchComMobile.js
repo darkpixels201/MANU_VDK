@@ -281,7 +281,7 @@ function Footer() {
     <div
       style={{
         width: "100%",
-        backgroundColor: colors.green,
+        backgroundColor: colors.colorC,
         display: "flex",
         justifyContent: "center",
         alignItems: "center",

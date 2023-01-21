@@ -16,7 +16,7 @@ const FilledRightCircle = ({left=false,size=1}) => {
           alignItems: "center",
           justifyContent: "center",
           cursor:"pointer",
-          borderColor:colors.purple,
+          borderColor:colors.colorB,
         }}
       >
         <img src={left?icons.leftArrow:icons.rightArrow} style={{ height: 10/size, width: 18/size, }} />

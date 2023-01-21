@@ -1,10 +1,19 @@
 .bc:hover {
-    background-color: #CA5DFF;
+    background-color: #CA5DFF;     /* colorB */
     color: white;
 }
 .bc{
   color: black;
 }
+
+.bgwhite:hover {
+  color: white;
+  /* background-color: red; */
+}
+.bgwhite {
+  color:#CA5DFF;    /* colorB */
+}
+
 /* .bl-color {
   color: black;
 }

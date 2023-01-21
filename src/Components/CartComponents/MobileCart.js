@@ -11,7 +11,7 @@ import { MobileCartItem } from "./MobileCartItem";
 export const MobileCart = () => {
   const [cartList, setCartList] = useState([1, 2, 3, 4, 5]);
   return (
-    <div style={{ backgroundColor: colors.lightGreen }}>
+    <div style={{ backgroundColor: colors.colorA }}>
       <div
         style={{
           paddingRight: 20,
@@ -47,7 +47,7 @@ export const MobileCart = () => {
             title="MY"
             fontSize={26}
             fontFamily={"ClashDisplay-SemiBold"}
-            color={colors.purple}
+            color={colors.colorB}
           />
           <Spacer width={5} />
           <CustomText title="CART" fontSize={26} />
@@ -61,7 +61,7 @@ export const MobileCart = () => {
             flexWrap: "wrap",
             // margin: "4px 4px",
             // padding: 4,
-            // backgroundColor: "green",
+            // backgroundColor: "colorC",
             width: "100%",
             height: "90%",
             overflowX: "hidden",
@@ -99,7 +99,7 @@ export const MobileCart = () => {
           style={{
             width: "100%",
             height: window.innerHeight / 1.8,
-            backgroundColor: colors.purple,
+            backgroundColor: colors.colorB,
             borderTopLeftRadius: 20,
             borderTopRightRadius: 20,
           }}
@@ -108,7 +108,7 @@ export const MobileCart = () => {
           <div
             style={{
               height: 4,
-              backgroundColor: colors.green,
+              backgroundColor: colors.colorC,
               width: 70,
               margin: "auto",
               borderRadius: 100,
@@ -144,7 +144,7 @@ export const MobileCart = () => {
           <div
             style={{
               height: 2,
-              backgroundColor: colors.green,
+              backgroundColor: colors.colorC,
               width: "100%",
               margin: "auto",
               marginLeft: 20,
@@ -192,10 +192,10 @@ export const MobileCart = () => {
               style={{
                 width: "75%",
                 padding: 5,
-                backgroundColor: colors.purple,
-                color: colors.green,
+                backgroundColor: colors.colorB,
+                color: colors.colorC,
                 borderWidth: 2,
-                borderColor: colors.green,
+                borderColor: colors.colorC,
                 borderStyle: "solid",
               }}
               placeholder="Enter Coupon Code here"
@@ -204,7 +204,7 @@ export const MobileCart = () => {
               className="cancelDragEffect"
               href=""
               style={{
-                backgroundColor: colors.green,
+                backgroundColor: colors.colorC,
                 color: colors.white,
                 width: "25%",
                 justifyContent: "center",
@@ -230,10 +230,10 @@ export const MobileCart = () => {
               className="cancelDragEffect"
               href=""
               style={{
-                backgroundColor: colors.purple,
+                backgroundColor: colors.colorB,
                 color: "#fff",
                 borderWidth: 2,
-                borderColor: colors.green,
+                borderColor: colors.colorC,
                 borderStyle: "solid",
                 width: "35%",
                 justifyContent: "center",
@@ -252,7 +252,7 @@ export const MobileCart = () => {
               className="cancelDragEffect"
               href=""
               style={{
-                backgroundColor: colors.green,
+                backgroundColor: colors.colorC,
                 color: "#fff",
                 width: "35%",
                 justifyContent: "center",

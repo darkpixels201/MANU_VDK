@@ -60,7 +60,7 @@ export const BestSellerWeb = () => {
 
   return (
     <>
-      <div style={{ backgroundColor: colors.lightGreen }}>
+      <div style={{ backgroundColor: colors.colorA }}>
         <Spacer height={80} />
         <div
           style={{
@@ -92,7 +92,7 @@ export const BestSellerWeb = () => {
                 title="BEST SELLERS -"
                 fontFamily="ClashDisplay-SemiBold"
                 fontSize={50}
-                color={colors.purple}
+                color={colors.colorB}
               />
               <CustomText
                 title="SELLING"
@@ -231,7 +231,7 @@ export const BestSellerWeb = () => {
                 ></div>
               </div>
               <div style={{}}>
-                <CustomText title="$95.00" fontSize={30} color={colors.purple} />
+                <CustomText title="$95.00" fontSize={30} color={colors.colorB} />
               </div>
               <Spacer height={25} />
               <div style={{ width: 340 }}>
@@ -332,11 +332,11 @@ export const BestSellerWeb = () => {
                   alignItems: "center",
                   overflowX: "hidden",
                   overflowY: "hidden",
-                  borderColor:colors.purple
+                  borderColor:colors.colorB
                 }}
               >
                 <div>
-                  <CustomText title="GUíA DE TALLAS" fontSize={10} color={colors.purple} />
+                  <CustomText title="GUíA DE TALLAS" fontSize={10} color={colors.colorB} />
                 </div>
                 <div>
                   {" "}
@@ -406,7 +406,7 @@ export const BestSellerWeb = () => {
                       width={150}
                       height={40}
                       color={colors.white}
-                      backgroundColor={colors.green}
+                      backgroundColor={colors.colorC}
                       fontFamily={"ClashDisplay-Light"}
                     />
                   </Link>

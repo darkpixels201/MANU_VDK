@@ -74,7 +74,7 @@ export const WebCompareProducts = (props) => {
     if (counter > 1) setCounter(counter - 1);
   };
   return (
-    <div style={{ backgroundColor: colors.lightGreen }}>
+    <div style={{ backgroundColor: colors.colorA }}>
       <DiscountBanner />
       <Grid container rowSpacing={{ xs: 5, sm: 2, md: 3 }} columnSpacing={{}}>
         <Grid
@@ -98,7 +98,7 @@ export const WebCompareProducts = (props) => {
               // display: window.innerWidth <= 400 ? "none" : "block",
               paddingLeft: 40,
               paddingRight: 100,
-              backgroundColor:colors.lightGreen
+              backgroundColor:colors.colorA
               // paddingTop: 20,
               // paddingBottom: 100,
             }}
@@ -204,7 +204,7 @@ export const WebCompareProducts = (props) => {
                 title="PUEDE"
                 textAlign={"left"}
                 fontFamily={"ClashDisplay-SemiBold"}
-                color={colors.purple}
+                color={colors.colorB}
               />
               <Spacer width={5} />
               <CustomText
@@ -238,7 +238,7 @@ export const WebCompareProducts = (props) => {
                         title="PRoducto"
                         textAlign={"left"}
                         fontFamily={"ClashDisplay-SemiBold"}
-                        color={colors.purple}
+                        color={colors.colorB}
                       />
 
                       <Spacer width={5} />
@@ -253,7 +253,7 @@ export const WebCompareProducts = (props) => {
                         fontSize={14}
                         title="$95.00"
                         textAlign={"left"}
-                        color={colors.purple}
+                        color={colors.colorB}
                       />
                     </div>
                   </div>
@@ -412,7 +412,7 @@ export const WebCompareProducts = (props) => {
                                     title={item.text1}
                                     fontFamily="ClashDisplay-SemiBold"
                                     fontSize={20}
-                                    color={colors.purple}
+                                    color={colors.colorB}
                                   />
                                   <Spacer width={5} />
                                   <CustomText title="para" fontSize={20} />
@@ -424,7 +424,7 @@ export const WebCompareProducts = (props) => {
                             <Spacer height={30} />
                             <s style={{ color: "#aaa" }}>$135.00</s>
                             <div style={{ ...row, alignItems: "center" }}>
-                              <CustomText title={item.price} color={colors.purple} fontSize={30} />
+                              <CustomText title={item.price} color={colors.colorB} fontSize={30} />
                               <div
                                 style={{
                                   backgroundColor: "#000",
@@ -472,11 +472,11 @@ export const WebCompareProducts = (props) => {
                                 display: "flex",
                                 justifyContent: "space-evenly",
                                 alignItems: "center",
-                                borderColor:colors.purple
+                                borderColor:colors.colorB
                               }}
                             >
                               <div>
-                                <CustomText title={item.text1} color={colors.purple} fontSize={10} />
+                                <CustomText title={item.text1} color={colors.colorB} fontSize={10} />
                               </div>
                               <div>
                                 <img
@@ -549,7 +549,7 @@ export const WebCompareProducts = (props) => {
                                 <Link to="/cart">
                                   <button
                                     style={{
-                                      backgroundColor: colors.green,
+                                      backgroundColor: colors.colorC,
                                       color: "#fff",
                                       paddingRight: 20,
                                       paddingLeft: 20,

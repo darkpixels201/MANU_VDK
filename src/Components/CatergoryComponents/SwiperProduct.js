@@ -42,7 +42,7 @@ const SwiperProduct = (props) => {
           width: window.innerWidth <= 1000 ? "75%" : "85%",
           height: window.innerWidth <= 1000 ? "40vh" : "55vh",
           // backgroundColor: props.on ? colors.black : colors.pureWite,
-          // backgroundColor: colors.lightGreen,
+          // backgroundColor: colors.colorA,
         }}
       >
         {/* <div style={{ width: "90%", height: "40vh" }}> */}
@@ -66,9 +66,10 @@ const SwiperProduct = (props) => {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
+                backgroundColor:colors.colorC
               }}
             >
-              <div style={{display:"flex", flexDirection:"column", justifyContent:"center", alignItens:"center"}} >
+              <div style={{display:"flex", flexDirection:"column", justifyContent:"center", alignItens:"center", }} >
               <CustomText title="30%" color={colors.white} fontSize={17} />
               <CustomText title="OFF" color={colors.white} fontSize={17} />
               </div>
@@ -189,7 +190,7 @@ const SwiperProduct = (props) => {
                 <CustomText
                   title="$95.00"
                   fontSize={15}
-                  color={props.on ? colors.pureWite : colors.black}
+                  color={props.on ? colors.pureWite : colors.colorB}
                 />
               </div>
               <Spacer width={17} />
@@ -214,7 +215,7 @@ const SwiperProduct = (props) => {
                 width={90}
                 height={30}
                 color={colors.white}
-                backgroundColor={colors.grey}
+                backgroundColor={colors.colorC}
                 fontFamily={"ClashDisplay-Light"}
                 // alignSelf={"flex-end"}
               />

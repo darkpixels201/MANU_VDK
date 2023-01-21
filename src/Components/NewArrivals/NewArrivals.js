@@ -54,7 +54,7 @@ const NewArrivals = (props) => {
   // ];
 
   return (
-    <div style={{ backgroundColor: props.on ? colors.purple : colors.lightGreen }}>
+    <div style={{ backgroundColor: props.on ? colors.colorB : colors.colorA }}>
       <Spacer height={100} />
       <div style={{ display: "flex", flexDirection: "row" }}>
         <div style={{ display: "flex", flex: 1 }}></div>
@@ -64,7 +64,7 @@ const NewArrivals = (props) => {
               title="NEW"
               fontFamily={"ClashDisplay-SemiBold"}
               fontSize={window.innerWidth <= 700 ? 25 : 45}
-              color={props.on ? colors.pureWite : colors.purple}
+              color={props.on ? colors.pureWite : colors.colorB}
             />
             <CustomText
               title="ARRIVALS"
@@ -146,7 +146,7 @@ const NewArrivals = (props) => {
                 <SwiperSlide
                   key={index}
                   style={{
-                    backgroundColor: props.on ? colors.purple : colors.lightGreen,
+                    backgroundColor: props.on ? colors.colorB : colors.colorA,
                   }}
                 >
                   <NewArrivalSwiper
@@ -193,7 +193,7 @@ const NewArrivals = (props) => {
                   <SwiperSlide
                     key={index}
                     style={{
-                      backgroundColor: props.on ? colors.purple : colors.lightGreen,
+                      backgroundColor: props.on ? colors.colorB : colors.colorA,
                     }}
                   >
                     <NewArrivalSwiper
