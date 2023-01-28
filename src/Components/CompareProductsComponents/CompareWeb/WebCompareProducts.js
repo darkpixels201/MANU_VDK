@@ -60,7 +60,9 @@ const FilledCircle = [
   //   bgcolor: colors.white,
   // },
 ];
-
+export const StrikeThroughText=()=>(
+  <s style={{ color: "#aaa",fontFamily:"ClashDisplay-Regular" }}>$135.00</s>
+)
 export const WebCompareProducts = (props) => {
   const [mainImage, setMainImage] = useState();
   const { id } = useParams();
@@ -74,6 +76,8 @@ export const WebCompareProducts = (props) => {
   const minusOne = (counter, setCounter) => {
     if (counter > 1) setCounter(counter - 1);
   };
+
+  
   return (
     <div style={{ backgroundColor: colors.colorA }}>
       <DiscountBanner />
@@ -425,7 +429,7 @@ export const WebCompareProducts = (props) => {
                               </div>
                             </div>
                             <Spacer height={30} />
-                            <s style={{ color: "#aaa" }}>$135.00</s>
+                            <StrikeThroughText/>
                             <div style={{ ...row, alignItems: "center" }}>
                               <CustomText title={item.price} color={colors.colorB} fontSize={30} />
                               <div
