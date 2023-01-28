@@ -11,7 +11,7 @@ export const Card = ({ footer, image, ...props }) => (
   <>
     {footer === "up" ? (
       <>
-        <CardFooter />
+        <CardFooter price={props.price} />
         <Spacer height={10} />
       </>
     ) : (
@@ -21,7 +21,7 @@ export const Card = ({ footer, image, ...props }) => (
     {footer === "down" ? (
       <>
         <Spacer height={10} />
-        <CardFooter />
+        <CardFooter price={props.price} />
       </>
     ) : (
       <></>
@@ -99,7 +99,11 @@ export const CardFooter = ({ index, ...props }) => (
       }}
     >
       <div>
-        {index === 0 ? <s style={{ color: "#aaa" }}>$135.00</s> : null}
+        {index === 0 ? (
+          <s style={{ color: "#aaa", fontFamily: "ClashDisplay-Regular" }}>
+            $135.00
+          </s>
+        ) : null}
 
         {/* <s style={{ color: "#aaa" }}>$135.00</s> */}
         <div style={{ marginTop: index === 0 ? 0 : 15 }} />
