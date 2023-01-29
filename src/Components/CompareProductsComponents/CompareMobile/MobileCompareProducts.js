@@ -21,7 +21,7 @@ import { color } from "@mui/system";
 import IconTint from 'react-icon-tint';
 import { StrikeThroughText } from "../CompareWeb/WebCompareProducts";
 // import "../font.css";
-import '../../../Assets/Style/disableScroll.css'
+// import '../../../Assets/Style/disableScroll.css'
 
 
 
