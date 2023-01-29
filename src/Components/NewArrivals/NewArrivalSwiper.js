@@ -33,7 +33,7 @@ const NewArrivalSwiper = (props) => {
   return (
     <div
       style={{
-        height: window.innerWidth <= 700 ? "55vh" : "90vh",
+        height: window.innerWidth <= 700 ? 500 : "90vh",
         width: "89%",
         display: "flex",
         justifyContent: "center",
@@ -81,7 +81,7 @@ const NewArrivalSwiper = (props) => {
             <Link to={`compareproducts/${props.id}`} style={{textDecoration:"none"}} >
             <img
               src={props.image}
-              style={{ width: "95%", height: 260, objectFit: "fill" }}
+              style={{ width: "100%", height: 'auto', objectFit: "fill" }}
             />
             </Link>
           </div>
@@ -202,12 +202,13 @@ const NewArrivalSwiper = (props) => {
                 fontSize={15}
                 color={props.on ? colors.pureWite : colors.black}
               />
+              
             </div>
             <div
               style={{
                 flexDirection: "row",
                 display: "flex",
-                marginRight: 10,
+                // marginRight: 10,
               }}
             >
               <Spacer width={20} />

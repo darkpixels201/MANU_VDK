@@ -202,11 +202,13 @@ const NewArrivals = (props) => {
                       text1={item.text1}
                       text2={item.text2}
                       on={props.on}
+                      price={item.price}
                     />
                   </SwiperSlide>
                 ))}
               </Swiper>
             </div>
+            <Spacer height={20}/>
             <Link to="/categories" style={{ textDecoration: "none" }}>
               <div
                 style={{

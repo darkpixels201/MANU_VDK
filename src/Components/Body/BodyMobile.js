@@ -12,9 +12,9 @@ const BodyMobile = (props) => {
   return (
     <div style={{ backgroundColor: colors.colorA }}>
       <div>
-        <div style={{ width: "100%", height: "40vh" }}>
+        <div style={{ width: "100%", height: "auto" }}>
           <img
-            style={{ width: "100%", position: "absolute", height: "auto" }}
+            style={{ width: "100%", height: "auto" }}
             src={images.mobileHomeBanner}
           />
           <div
@@ -26,6 +26,8 @@ const BodyMobile = (props) => {
               flexDirection: "column",
               justifyContent: "flex-end",
               height: 300,
+              // zIndex:100
+              top:80
             }}
           >
             <div>
@@ -58,20 +60,22 @@ const BodyMobile = (props) => {
             </div>
           </div>
         </div>
+        
       </div>
-      <Spacer height={100} />
+      {/* <Spacer height={100} /> */}
       <div
         style={{
           display: "flex",
           flexDirection: "row",
           justifyContent: "space-between",
+          marginTop:20
         }}
       >
         <div>
-          <img src={images.slide14} style={{ height: 200, width: 190 }} />
+          <img src={images.slide14} style={{ height: 200, width: '95%' }} />
         </div>
         <div>
-          <img src={images.slide17} style={{ height: 200, width: 190 }} />
+          <img src={images.slide17} style={{ height: 200,  width: '100%' }} />
         </div>
       </div>
       <Spacer height={12} />

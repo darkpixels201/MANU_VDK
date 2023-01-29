@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Draggable from "react-draggable";
 import { Link } from "react-router-dom";
 import { FreeMode } from "swiper";
@@ -19,9 +19,18 @@ import NewArrivalSwiper from "../../NewArrivals/NewArrivalSwiper";
 import PlusMinusCom from "../../PlusMinusCom";
 import { color } from "@mui/system";
 import IconTint from 'react-icon-tint';
+import { StrikeThroughText } from "../CompareWeb/WebCompareProducts";
 // import "../font.css";
+import '../../../Assets/Style/disableScroll.css'
+
+
 
 export const MobileCompareProducts = () => {
+  // useEffect(() => {
+  //   document.body.style.overflow = ""
+
+  // }, [])
+  const [mainImage, setMainImage] = useState(images.slide16)
   const [value, setValue] = useState("XS");
   const [position, setPosition] = useState(0);
   const [desc, setDesc] = useState(false);
@@ -61,7 +70,7 @@ export const MobileCompareProducts = () => {
     drag: 0,
   });
   return (
-    <div>
+    <div style={{overflow:'hidden',height:window.innerHeight}}>
       <div>
         <div
           style={{
@@ -85,7 +94,7 @@ export const MobileCompareProducts = () => {
         </div>
         <Spacer height={20} />
         <img
-          src={images.slide16}
+          src={mainImage}
           alt=""
           style={{ height: 340, width: "100%" }}
         />
@@ -102,7 +111,7 @@ export const MobileCompareProducts = () => {
           // className="mySwiper"
         >
           {[images.slide7, images.slide8, images.slide9,images.slide8, images.slide9].map((item, index) => (
-            <SwiperSlide key={index}>
+            <SwiperSlide key={index} onClick={()=>setMainImage(item)}>
               <img
                 src={item}
                 alt=""
@@ -141,7 +150,7 @@ export const MobileCompareProducts = () => {
             borderTopRightRadius: 20,
           }}
         >
-          {state.drag <= 400 && state.drag? (
+          {state.drag <= 500 && state.drag? (
             
             <div>
               <Spacer height={30} />
@@ -204,7 +213,7 @@ export const MobileCompareProducts = () => {
                 }}
               >
                 <div>
-                  <s style={{ color: colors.colorB }}>$135.00</s>
+                  <StrikeThroughText/>
                   <CustomText title="$95.00 " fontSize={20} />
                 </div>
                 <div
@@ -269,7 +278,7 @@ export const MobileCompareProducts = () => {
                     paddingTop: 10,
                     paddingBottom: 10,
                     textDecoration: "none",
-                    fontFamily: "ClashDisplay-R",
+                    fontFamily: "ClashDisplay-Regular",
                   }}
                 >
                   GUÍA DE TALLAS
@@ -359,7 +368,7 @@ export const MobileCompareProducts = () => {
                 }}
               >
                 <div>
-                  <s style={{ color: colors.colorB }}>$135.00</s>
+                <StrikeThroughText/>
                   <CustomText title="$95.00" fontSize={20} />
                 </div>
                 <div

@@ -76,8 +76,6 @@ export const WebCompareProducts = (props) => {
   const minusOne = (counter, setCounter) => {
     if (counter > 1) setCounter(counter - 1);
   };
-
-  
   return (
     <div style={{ backgroundColor: colors.colorA }}>
       <DiscountBanner />
@@ -357,7 +355,7 @@ export const WebCompareProducts = (props) => {
                                       key={index}
                                       style={
                                         {
-                                          // backgroundColor: colors.black,
+                                          backgroundColor: colors.colorA,
                                           // width:"45%"
                                         }
                                       }
@@ -424,7 +422,7 @@ export const WebCompareProducts = (props) => {
                                   <Spacer width={5} />
                                   <CustomText title="para" fontSize={20} />
                                 </div>
-
+                                
                                 <CustomText title={item.text2} fontSize={20} />
                               </div>
                             </div>

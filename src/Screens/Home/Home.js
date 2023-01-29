@@ -1,3 +1,4 @@
+import { useIsFocusVisible } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import Body from "../../Components/Body/Body";
 import BottomBarNavigation from "../../Components/BottomNavigation";
@@ -9,6 +10,7 @@ import Pratice from "../Pratice";
 // import BestSeller from "./Molecules/BestSeller";
 
 function Home() {
+  const f=useIsFocusVisible();
   const [on, setOn] = useState(false);
   const [width, setWidth] = useState(0);
   useEffect(() => {
@@ -22,6 +24,7 @@ function Home() {
 
     return () => window.removeEventListener("resize", updateWindowDimensions);
   }, []);
+  
   return (
     <div>
       {/* <Pratice /> */}

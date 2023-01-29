@@ -1,6 +1,7 @@
 import { Autocomplete, TextField } from "@mui/material";
 import React, { useState } from "react";
 import { colors } from "../../utils/Colors";
+import { StrikeThroughText } from "../CompareProductsComponents/CompareWeb/WebCompareProducts";
 import CustomButton from "../CustomButton";
 import CustomText from "../CustomText";
 import { DropdownCom } from "../DropdownCom";
@@ -16,7 +17,7 @@ const ProductBody = (props) => {
   return (
     <div
       style={{
-        height: 400,
+        height: 500,
         width: 350,
         display: "flex",
         justifyContent: "center",
@@ -61,7 +62,7 @@ const ProductBody = (props) => {
             </div>
             <img
               src={props.image}
-              style={{ width: "100%", height: 260, objectFit: "fill" }}
+              style={{ width: "100%", height: 'auto', objectFit: "fill" }}
             />
           </div>
         </div>
@@ -174,8 +175,10 @@ const ProductBody = (props) => {
             >
               <div>
                 <div style={{ display: "flex", flexDirection: "column" }}>
-                  <s style={{fontSize:10}} >$135.00</s>
-                  <CustomText
+                <s style={{color:colors.colorC,textDecoration:'strikeThrough',fontSize:15,fontFamily:'ClashDisplay-Regular'}}>
+                $135.00
+               
+                </s>                  <CustomText
                     title="$95.00"
                     fontSize={15}
                     color={props.on ? colors.pureWite : colors.colorB}
@@ -192,7 +195,7 @@ const ProductBody = (props) => {
               style={{
                 flexDirection: "row",
                 display: "flex",
-                marginRight: 10,
+                // marginRight: 10,
               }}
             >
               <Spacer width={40} />

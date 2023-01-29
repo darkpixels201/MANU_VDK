@@ -1,6 +1,7 @@
 import { Autocomplete, TextField } from "@mui/material";
 import React, { useState } from "react";
 import { colors } from "../../utils/Colors";
+import { StrikeThroughText } from "../CompareProductsComponents/CompareWeb/WebCompareProducts";
 import CustomButton from "../CustomButton";
 import CustomText from "../CustomText";
 import { DropdownCom } from "../DropdownCom";
@@ -28,7 +29,7 @@ const SwiperProduct = (props) => {
     <div
       style={{
         height: 500,
-        width: 350,
+        width: '100%',
         display: "flex",
         justifyContent: "center",
         display: "inline-block",
@@ -39,8 +40,8 @@ const SwiperProduct = (props) => {
       {/* <Spacer height={20} /> */}
       <div
         style={{
-          width: window.innerWidth <= 1000 ? "75%" : "85%",
-          height: window.innerWidth <= 1000 ? "40vh" : "55vh",
+          // width: window.innerWidth <= 1000 ? "75%" : "85%",
+          // height: window.innerWidth <= 1000 ? "40vh" : "55vh",
           // backgroundColor: props.on ? colors.black : colors.pureWite,
           // backgroundColor: colors.colorA,
         }}
@@ -76,7 +77,7 @@ const SwiperProduct = (props) => {
             </div>
             <img
               src={props.image}
-              style={{ width: "100%", height: 260, objectFit: "fill" }}
+              style={{ width: "100%", height: 'auto', }}
             />
           </div>
         </div>
@@ -175,6 +176,7 @@ const SwiperProduct = (props) => {
               flexDirection: "row",
               display: "flex",
               justifyContent: "space-between",
+              // backgroundColor:'red'
             }}
           >
             <div
@@ -187,6 +189,11 @@ const SwiperProduct = (props) => {
               }}
             >
               <div>
+                
+                <s style={{color:colors.colorC,textDecoration:'strikeThrough',fontSize:15,fontFamily:'ClashDisplay-Regular'}}>
+                $135.00
+               
+                </s>
                 <CustomText
                   title="$95.00"
                   fontSize={15}
@@ -203,7 +210,7 @@ const SwiperProduct = (props) => {
               style={{
                 flexDirection: "row",
                 display: "flex",
-                marginRight: 10,
+                // marginRight: 10,
               }}
             >
               <Spacer width={40} />
