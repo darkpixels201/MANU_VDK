@@ -83,11 +83,12 @@ const CategoryMobile = (props) => {
   return (
     <div style={{backgroundColor:colors.white, }}>
       <Spacer height={5} />
-      <div style={{ display: "flex", justifyContent: "space-around", position: "sticky",
+      <div style={{ display: "flex", justifyContent: "space-around", position: "fixed",
           width: "100%",
           zIndex: 110,
           top: 0,
-          backgroundColor: colors.white, }}>
+          backgroundColor: colors.white,
+          paddingTop:10 }}>
         <Link to="/" style={{textDecoration:"none"}} >
           <CustomText title="VDK" fontFamily="ClashDisplay-SemiBold" />
         </Link>
@@ -110,7 +111,7 @@ const CategoryMobile = (props) => {
 
       <div style={{ width: "100%", height: "50vh" }}>
         <img
-          style={{ width: "100%", height: "60vh", position: "absolute" }}
+          style={{ width: "100%", height: "auto", position: "absolute" }}
           src={images.mobileCatBanner}
         />
         <div

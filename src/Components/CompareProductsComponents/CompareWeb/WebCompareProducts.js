@@ -60,7 +60,9 @@ const FilledCircle = [
   //   bgcolor: colors.white,
   // },
 ];
-
+export const StrikeThroughText=()=>(
+  <s style={{ color: "#aaa",fontFamily:"ClashDisplay-Regular" }}>$135.00</s>
+)
 export const WebCompareProducts = (props) => {
   const [mainImage, setMainImage] = useState();
   const { id } = useParams();
@@ -353,7 +355,7 @@ export const WebCompareProducts = (props) => {
                                       key={index}
                                       style={
                                         {
-                                          // backgroundColor: colors.black,
+                                          backgroundColor: colors.colorA,
                                           // width:"45%"
                                         }
                                       }
@@ -420,12 +422,12 @@ export const WebCompareProducts = (props) => {
                                   <Spacer width={5} />
                                   <CustomText title="para" fontSize={20} />
                                 </div>
-
+                                
                                 <CustomText title={item.text2} fontSize={20} />
                               </div>
                             </div>
                             <Spacer height={30} />
-                            <s style={{ color: "#aaa" }}>$135.00</s>
+                            <StrikeThroughText/>
                             <div style={{ ...row, alignItems: "center" }}>
                               <CustomText title={item.price} color={colors.colorB} fontSize={30} />
                               <div

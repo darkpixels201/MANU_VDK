@@ -180,7 +180,7 @@ export const CartWeb = (props) => {
             {ProductArray.map((item, index) => (
               <Grid item xs={12} sm={12} md={6} key={index}>
                 {item.id >= 3 ? (
-                  ""
+                  <></>
                 ) : (
                   <Card footer={item.footerPos} image={item.image} id={item.id} price={item.price} />
                 )}

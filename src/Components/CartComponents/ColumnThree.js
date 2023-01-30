@@ -46,7 +46,7 @@ const ColumnThree = () => {
           display: "flex",
         }}
       >
-        <CustomText title="SUBTOTAL" fontSize={16} />
+        <CustomText title="SUBTOTAL" fontSize={16}  />
         <CustomText title="$95.00" fontSize={16} />
       </div>
       <Spacer height={12} />
@@ -90,6 +90,7 @@ const ColumnThree = () => {
             color: "#fff",
             width: "25%",
             borderStyle: "hidden",
+            fontFamily:'ClashDisplay-Regular'
           }}
         >
           Apply
@@ -97,7 +98,7 @@ const ColumnThree = () => {
       </div>
       <Spacer height={20} />
       <div style={{ display: "flex", justifyContent: "right" }}>
-        <button
+        <a
           style={{
             backgroundColor: colors.colorC,
             color: "#fff",
@@ -106,17 +107,19 @@ const ColumnThree = () => {
             paddingTop: 10,
             paddingBottom: 10,
             borderStyle: "hidden",
+            fontFamily:'ClashDisplay-Regular',
+            cursor:'pointer'
           }}
         >
           CHECKOUT
-        </button>
+        </a>
       </div>
       <Spacer height={20} />
 
       <div style={{ display: "flex", justifyContent: "right" }}>
-        <button
+        <a
           style={{
-            backgroundColor: "#fff",
+            backgroundColor: colors.colorA,
             color: "#000",
             paddingRight: 25,
             paddingLeft: 25,
@@ -124,11 +127,12 @@ const ColumnThree = () => {
             paddingBottom: 10,
             borderWidth: 1,
             color:colors.colorB,
-            borderColor:colors.colorB
+            borderColor:colors.colorB,
+            borderStyle:"solid"
           }}
         >
           CONTINUE SHOPPING
-        </button>
+        </a>
       </div>
     </div>
   );
@@ -137,7 +141,7 @@ const ColumnThree = () => {
 export default ColumnThree;
 
 const CartItem = ({ image, ...props }) => (
-  <div>
+  <div style={{backgroundColor:colors.colorA}}>
     <Link
       to={`/compareproducts/${props.id}`}
       style={{ textDecoration: "none", color: colors.black }}

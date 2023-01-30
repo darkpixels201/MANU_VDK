@@ -9,6 +9,12 @@ import { DropdownCom } from "../../../Components/DropdownCom";
 import Spacer from "../../../Components/Spacer";
 import { colors } from "../../../utils/Colors";
 import IconTint from 'react-icon-tint';
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import "../../Body/styles.css";
+import { Navigation, Pagination } from "swiper";
+import { StrikeThroughText } from "../../CompareProductsComponents/CompareWeb/WebCompareProducts";
 
 const BestSellerMobile = () => {
   const FilledCircle = [
@@ -78,12 +84,28 @@ const BestSellerMobile = () => {
             style={{
               height: 350,
               width: "100%",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              alignSelf: "center",
-              alignContent: "center",
+              // display: "flex",
+              // justifyContent: "center",
+              // alignItems: "center",
+              // alignSelf: "center",
+              // alignContent: "center",
             }}
+          >
+            <Swiper
+        slidesPerView={window.innerWidth <= 1000 ? window.innerWidth <= 650 ? 1 : 3 : 4}
+        // spaceBetween={-47}
+        freeMode={true}
+        modules={[Pagination]}
+        navigation={true}
+        pagination={true}
+        // color={colors.black}
+      >
+        {[1,2,3,4].map((item, index) => (
+          <SwiperSlide
+            key={index}
+            // style={{
+            //   backgroundColor: props.on ? colors.colorB : colors.colorA,
+            // }}
           >
             <img
               style={{
@@ -97,6 +119,24 @@ const BestSellerMobile = () => {
               }}
               src={images.slide13}
             />
+            {/* <div style={{display:'flex',flexDirection:'row'}}>
+              <div style={{height:5,width:5,borderRadius:3,backgroundColor:'#000'}}/>
+            </div> */}
+          </SwiperSlide>
+        ))}
+      </Swiper>
+            {/* <img
+              style={{
+                height: "100%",
+                width: "100%",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                alignSelf: "center",
+                alignContent: "center",
+              }}
+              src={images.slide13}
+            /> */}
           </div>
         </div>
         <Spacer height={10} />
@@ -205,10 +245,11 @@ const BestSellerMobile = () => {
             display: "flex",
             justifyContent: "space-between",
             flexDirection: "row",
+            alignItems:"center"
           }}
         >
           <div style={{ display: "flex", flexDirection: "column" }}>
-            <s style={{ color: colors.lightcolorB }}>$135.00</s>
+            <StrikeThroughText/>
             <div>
               <CustomText title="$95.00" fontSize={20} />
             </div>
@@ -226,9 +267,10 @@ const BestSellerMobile = () => {
           <div
             style={{
               height: 1,
-              width: 100,
+              width: 150,
               backgroundColor: colors.black,
               marginTop: 10,
+              marginRight:-50
             }}
           ></div>
         </div>
