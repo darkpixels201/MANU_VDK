@@ -1,5 +1,5 @@
 import { Close } from "@mui/icons-material";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Draggable from "react-draggable";
 import { colors } from "../../utils/Colors";
 import { row } from "../../utils/CommonStyles";
@@ -7,11 +7,18 @@ import BottomBarNavigation from "../BottomNavigation";
 import CustomText from "../CustomText";
 import Spacer from "../Spacer";
 import { MobileCartItem } from "./MobileCartItem";
+import '../../Assets/Style/disableScroll.css'
+import { Link } from "react-router-dom";
 
 export const MobileCart = () => {
+  // useEffect(() => {
+  //   document.body.style.overflow = "hidden"
+
+  // }, [])
+  
   const [cartList, setCartList] = useState([1, 2, 3, 4, 5]);
   return (
-    <div style={{ backgroundColor: colors.colorA }}>
+    <div style={{ backgroundColor: colors.colorA,overflow:'hidden',height:window.innerHeight }}>
       <div
         style={{
           paddingRight: 20,
@@ -32,9 +39,9 @@ export const MobileCart = () => {
             fontFamily={"ClashDisplay-SemiBold"}
           />
           {/* <Link to="/"> */}
-          <a onClick={() => {}}>
+          <Link to={'/'}>
             <Close />
-          </a>
+          </Link>
           {/* </Link> */}
         </div>
         <Spacer height={20} />
@@ -88,7 +95,8 @@ export const MobileCart = () => {
 
       <Draggable
         cancel=".cancelDragEffect"
-        bounds={{ top: -1, left: -100, right: 100, bottom: 110 }}
+        bounds={{ top: -100, left: -100, right: 100, bottom: 100 }}
+        // bounds={{ top: -540, left: -100, right: 100, bottom: 0 }}
         axis="y"
         // defaultPosition={{ x: 0, y: 100 }}
         // position={'absolute'}
@@ -137,8 +145,8 @@ export const MobileCart = () => {
               paddingLeft: 20,
             }}
           >
-            <CustomText title="DISCOUNTS " fontSize={16} color={colors.grey} />
-            <CustomText title="$95.00 " fontSize={16} color={colors.grey} />
+            <CustomText title="DISCOUNTS " fontSize={16} color={colors.pureWite} />
+            <CustomText title="$95.00 " fontSize={16} color={colors.pureWite} />
           </div>
           <Spacer height={10} />
           <div
@@ -189,23 +197,25 @@ export const MobileCart = () => {
           >
             <input
               className="cancelDragEffect"
+            color="red"
               style={{
                 width: "75%",
                 padding: 5,
                 backgroundColor: colors.colorB,
-                color: colors.colorC,
+                color: colors.colorA,
                 borderWidth: 2,
-                borderColor: colors.colorC,
+                borderColor: colors.colorA,
                 borderStyle: "solid",
+            
               }}
               placeholder="Enter Coupon Code here"
             />
             <a
               className="cancelDragEffect"
-              href=""
+              // href=""
               style={{
-                backgroundColor: colors.colorC,
-                color: colors.white,
+                backgroundColor: colors.colorA,
+                color: colors.colorB,
                 width: "25%",
                 justifyContent: "center",
                 alignItems: "center",
@@ -233,7 +243,7 @@ export const MobileCart = () => {
                 backgroundColor: colors.colorB,
                 color: "#fff",
                 borderWidth: 2,
-                borderColor: colors.colorC,
+                borderColor: colors.colorA,
                 borderStyle: "solid",
                 width: "35%",
                 justifyContent: "center",

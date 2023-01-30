@@ -179,7 +179,7 @@ const WebTop = (props) => (
 
 const Footer = (props) => (
   <>
-    <Spacer height={200} />
+    <Spacer height={150} />
     <div
       style={{
         display: "flex",
@@ -187,7 +187,7 @@ const Footer = (props) => (
         alignItems: "center",
       }}
     >
-      <div style={{ display: "flex", flexDirection: "column" }}>
+      <div style={{ display: "flex", flexDirection: "column",textAlign:'left' }}>
         <CustomText
           title="Privacy Policy"
           color={colors.white}
@@ -210,8 +210,9 @@ const Footer = (props) => (
           textDecoration={"underline"}
         />
       </div>
-      <div>
-        <img src={icons.headset} height={20} width={20} />
+      <div >
+        <IconTint  src={icons.headset} color={'#ffff'}  style={{ height: 20, width: 20 }}/>
+        {/* <img src={icons.headset} height={20} width={20} /> */}
       </div>
     </div>
     <Spacer height={60} />
