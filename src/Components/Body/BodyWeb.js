@@ -72,7 +72,7 @@ function BodyWeb(props) {
               color={colors.colorB}
             />
           </div>
-          <Spacer height={130} />
+          <Spacer height={window.innerWidth <= 1280  && window.innerHeight <= 720 ? 120 : 130} />
           <div>
             <Link to="/categories" style={{ textDecoration: "none" }}>
               <CustomButton
@@ -90,7 +90,7 @@ function BodyWeb(props) {
             </Link>
           </div>
           <div className="none" >
-            <Spacer height={170} />
+            <Spacer height={window.innerWidth <= 1280  && window.innerHeight <= 720 ? 160 : 170} />
             <CustomText title=". Pagos seguros" fontSize={15} />
             <Spacer height={12} />
             <CustomText title=". Envio a todo US" fontSize={15} />
@@ -104,15 +104,18 @@ function BodyWeb(props) {
         <div
           style={{
             width: "auto",
-            height: "90vh",
+            // height:"90vh" ,
+            height: window.innerWidth <= 1280  && window.innerHeight <= 720 ? "100vh" : "90vh",
             display: "flex",
             justifyContent: "center",
+            // position:"fixed"
           }}
         >
           <img
             src={images.homeBanner}
-            className="resimage"
-            style={{ width: "auto", height: "90vh" }}
+            // className="resimage"
+            // style={{ width: "auto",  height:"90vh"  }}
+            style={{ width: "auto", height:window.innerWidth <= 1280  && window.innerHeight <= 720 ? "100vh" : "90vh"  }}
           />
           <div
             style={{
