@@ -23,37 +23,7 @@ export const colors = {
   // lightGreen:"#f2ffff",
   // purple:"#CA5DFF",
 
-  // master
-  // colorA: "#ffffff",
-  // colorB: "#000000",
-  // colorC: "#8E8E93",
-
-
-// PinkishRed
-//   colorA:"#F7EFED",
-//     colorB:"#E7486F",
-//     colorC:"#39A1BD",
-
-
-// magenta
-//   colorA: "#FDE3D0",
-//   colorB: "#884384",
-//   colorC: "#FF720E",
-
-
-// pinkishpurple
-   colorA:"#f2ffff",
-    colorB:"#CA5DFF",
-    colorC:"#1DC3B1",
-
-
-// redbrown
-//  colorA:"#F9F2EC",
-//     colorB:"#C16565",
-//     colorC:"#542E2E",
-
-// reddishmagenta
-//   colorA:"#FFF9FE",
-//     colorB:"#D84EA9",
-//     colorC:"#EFB733",
+  colorA: "#f2ffff",
+  colorB: "#CA5DFF",
+  colorC: "#1DC3B1",
 };
