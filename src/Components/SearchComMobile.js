@@ -69,7 +69,12 @@ const SearchComMobile = () => {
     };
   });
   return (
-    <div style={{backgroundColor:colors.lightestGrey,height:window.innerHeight}}>
+    <div
+      style={{
+        backgroundColor: colors.lightestGrey,
+        height: window.innerHeight,
+      }}
+    >
       <div
         className="App"
         ref={menuRef}
@@ -99,6 +104,7 @@ const SearchComMobile = () => {
           }}
         />
         <input
+          placeholder="DIANE & GEORI"
           style={{
             height: 20,
             width: window.innerWidth <= 700 ? 150 : 120,
@@ -106,6 +112,7 @@ const SearchComMobile = () => {
             borderRadius: 10,
             borderColor: colors.lightGray,
             borderStyle: "solid",
+            fontFamily: "ClashDisplay-regular",
             paddingLeft: 25,
             borderWidth: open ? 1 : 0,
             backgroundColor:
@@ -118,46 +125,9 @@ const SearchComMobile = () => {
             // setOpen(!open);
           }}
         />
-        <Spacer height={10} />
+        {/* <Spacer height={10} /> */}
 
-        <div style={{ display: "flex", justifyContent: "center" }}>
-          <div
-            className={`dropdown-menu ${open ? "active" : "inactive"}`}
-            style={{ width: 300 }}
-          >
-            <Spacer height={20} />
-            <div style={{ display: "flex", justifyContent: "space-evenly" }}>
-              <CustomText title="RESULTADOS" fontSize={10} />
-              <CustomText
-                title="Mostrando 3 de 25"
-                fontSize={8}
-                textAlign="center"
-              />
-            </div>
-            <Spacer height={20} />
-            <div
-              style={{
-                height: 250,
-                overflowX: "hidden",
-                overflowY: "auto",
-                textAlign: "justify",
-              }}
-            >
-              {SearchArray.map((item, index) => (
-                <div key={index}>
-                  <DropdownItem
-                    text1={item.name1}
-                    text2={item.name2}
-                    text3={item.name3}
-                    img={item.image}
-                    price={item.price}
-                  />
-                </div>
-              ))}
-            </div>
-            <Footer />
-          </div>
-        </div>
+        
       </div>
       {/* {
       id: 1,
@@ -191,36 +161,51 @@ const SearchComMobile = () => {
           />
         </div>
         <Spacer height={30} />
-        {[images.slide8,images.slide6,images.slide7].map((image)=>(
-           <>
+        {[images.slide8, images.slide6, images.slide7].map((image) => (
+          <>
             <div style={{ display: "flex" }}>
-            <div>
-              <img src={image} style={{ height: 130, width: 130,backgroundColor:colors.white, }}></img>
-              <Spacer height={10} />
+              <div>
+                <img
+                  src={image}
+                  style={{
+                    height: 130,
+                    width: 130,
+                    backgroundColor: colors.white,
+                  }}
+                ></img>
+                <Spacer height={10} />
+              </div>
+              <Spacer width={30} />
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "space-between",
+                  paddingBottom: 20,
+                  width: 160,
+                }}
+              >
+                <p style={{ fontFamily: "ClashDisplay-regular", fontSize: 16 }}>
+                  <span style={{ fontFamily: "ClashDisplay-SemiBold" }}>
+                    BRASIER DE BANDA ANCHA
+                  </span>
+                  &nbsp; PARA SOPORTE EN ESPALDA
+                </p>
+
+                <CustomText
+                  title={"$95.00"}
+                  fontSize={14}
+                  textAlign="left"
+                  fontFamily="ClashDisplay-semibold"
+                  maxLines={1}
+                />
+              </div>
             </div>
-            <Spacer width={30}/>
-            <div style={{display:'flex',flexDirection:"column", justifyContent:"space-between",paddingBottom:20,width:160}}>
-              <p style={{ fontFamily: "ClashDisplay-regular",fontSize:16 }}>
-                <span style={{ fontFamily: "ClashDisplay-SemiBold" }}>
-                BRASIER DE BANDA ANCHA  
-                </span>
-               &nbsp; PARA SOPORTE EN ESPALDA
-              </p>
-             
-              <CustomText
-              title={"$95.00"}
-              fontSize={14}
-              textAlign="left"
-              fontFamily="ClashDisplay-semibold"
-              maxLines={1}
-            />
-            </div>
-          </div>
-          <Spacer height={30}/>
+            <Spacer height={30} />
           </>
         ))}
       </div>
-        {Footer()}
+      {Footer()}
     </div>
   );
 };
@@ -286,7 +271,8 @@ function Footer() {
         justifyContent: "center",
         alignItems: "center",
         height: 50,
-        position:"absolute",bottom:0
+        position: "fixed",
+        bottom: 0,
       }}
     >
       <CustomText

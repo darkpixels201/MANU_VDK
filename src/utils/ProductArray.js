@@ -2,7 +2,7 @@ import { images } from "../Assets/Images";
 export const ProductArray = [
     {
       id: 1,
-      image: images.slide10,
+      image: images.slide7,
       text1: "BRASIER DE BANDA",
       text2: "ANCHA",
       price:"$90.00",
@@ -20,7 +20,7 @@ export const ProductArray = [
     },
     {
       id: 3,
-      image: images.slide12,
+      image: images.slide8,
       text1: "BRASIER DE BANDA",
       text2: "ANCHA",
       price:"$100.00",
