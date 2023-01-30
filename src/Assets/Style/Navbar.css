@@ -1,5 +1,5 @@
 .bc:hover {
-    background-color: #884384;     /* colorB */
+    background-color: #000000;     /* colorB */
     color: white;
 }
 .bc{
@@ -11,7 +11,7 @@
   /* background-color: red; */
 }
 .bgwhite {
-  color:#884384;    /* colorB */
+  color:#000000;    /* colorB */
 }
 
 /* .bl-color {
