@@ -24,9 +24,9 @@ export const colors = {
   // purple:"#CA5DFF",
 
   // master
-  colorA: "#ffffff",
-  colorB: "#000000",
-  colorC: "#8E8E93",
+  // colorA: "#ffffff",
+  // colorB: "#000000",
+  // colorC: "#8E8E93",
 
 
 // PinkishRed
@@ -42,9 +42,9 @@ export const colors = {
 
 
 // pinkishpurple
-//    colorA:"#f2ffff",
-//     colorB:"#CA5DFF",
-//     colorC:"#1DC3B1",
+   colorA:"#f2ffff",
+    colorB:"#CA5DFF",
+    colorC:"#1DC3B1",
 
 
 // redbrown
