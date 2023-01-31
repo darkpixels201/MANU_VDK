@@ -100,7 +100,7 @@ const BodySwiper = (props) => {
       
       <Spacer height={window.innerWidth <= 1000 ? 40 : ""} />
       <Swiper
-        slidesPerView={window.innerWidth <= 1000 ? window.innerWidth <= 650 ? 1 : 3 : 4}
+        slidesPerView={window.innerWidth <= 1000 ? window.innerWidth <= 650 ? 1 : 3.5 : 4}
         spaceBetween={-47}
         freeMode={true}
         modules={[Pagination]}
